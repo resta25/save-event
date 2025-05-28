@@ -34,15 +34,15 @@
 
 <div id="wrap">
     <div class="container">
-        <div class="img-area"><img src="//static.resta.co.kr/event/v_${eventSeq}/event_main_00.jpg"></div>
-        <div class="img-area"><img src="//static.resta.co.kr/event/v_${eventSeq}/event_main_01.jpg"></div>
+        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_00.jpg"></div>
+        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.jpg"></div>
     </div>
 
     <div class="form">
         <form id="form-1" method="POST" accept-charset="utf-8"> 
             <div class="formContents">
                 <div class="question_box">
-                    <div class="question"><img src="//static.resta.co.kr/event/v_${eventSeq}/q_01.png"></div>
+                    <div class="question"><img src="//static.savemkt.com/event/v_${eventSeq}/q_01.png"></div>
                     <div class="q_select">
                         <label><input type="radio" name="tadd1" value="5kg 이하"><span>5kg 이하</span></label>
                         <label><input type="radio" name="tadd1" value="5-10kg"><span>5-10kg</span></label>
@@ -60,15 +60,15 @@
                     <div class="formGroup">
                         <div class="input_box">
                             <div class="input_row">
-                                <span class="title"><img src="//static.resta.co.kr/event/v_${eventSeq}/name_01.png" alt=""></span>
+                                <span class="title"><img src="//static.savemkt.com/event/v_${eventSeq}/name_01.png" alt=""></span>
                                 <input type="text" name="name" id="name" value="" class="inp" required="" autocomplete="off" placeholder="이름">
                             </div>
                             <div class="input_row">
-                                <span class="title"><img src="//static.resta.co.kr/event/v_${eventSeq}/age.png" alt=""></span>
+                                <span class="title"><img src="//static.savemkt.com/event/v_${eventSeq}/age.png" alt=""></span>
                                 <input type="tel" name="age" id="age" class="inp" required="" autocomplete="off" maxlength="2" placeholder="나이">
                             </div>
                             <div class="input_row">
-                                <span class="title"><img src="//static.resta.co.kr/event/v_${eventSeq}/phone_01.png" alt=""></span>
+                                <span class="title"><img src="//static.savemkt.com/event/v_${eventSeq}/phone_01.png" alt=""></span>
                                 <input type="tel" name="phone" id="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="전화번호('-')없이 입력">
                             </div>
                             <input type="hidden" name="branch" id="branch" class="inp" required="" value="상상부산점">
@@ -93,7 +93,7 @@
                             <li class="desc">*상기 동의를 거부할 권리가 있으나, 수집 및 이용에 동의하지 않을 경우 ${resVo.objectName} 상담 및 이벤트 참여가 불가능합니다.</li>
                         </ol>
                     </div>		
-                    <div class="submit"><input type="submit" onclick="fnForm('form-1')" value="" src="//static.resta.co.kr/event/v_${eventSeq}/btn_newSb.png"></div>
+                    <div class="submit"><input type="submit" onclick="fnForm('form-1')" value="" src="//static.savemkt.com/event/v_${eventSeq}/btn_newSb.png"></div>
                     <div class="description">
                         <span>대상 : ${resVo.target}</span>
                     </div>
@@ -101,11 +101,11 @@
             </div>
 
             <div class="container">
-                <div class="img-area"><img src="//static.resta.co.kr/event/v_${eventSeq}/event_main_02.jpg"></div>
-                <div class="img-area"><img src="//static.resta.co.kr/event/v_${eventSeq}/event_main_03.jpg"></div>
-                <div class="img-area"><img src="//static.resta.co.kr/event/v_${eventSeq}/event_main_04.jpg"></div>
-                <div class="img-area"><img src="//static.resta.co.kr/event/v_${eventSeq}/event_main_05.jpg"></div>
-                <div class="img-area"><img src="//static.resta.co.kr/event/v_${eventSeq}/event_main_06.jpg"></div>
+                <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg"></div>
+                <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_03.jpg"></div>
+                <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_04.jpg"></div>
+                <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_05.jpg"></div>
+                <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_06.jpg"></div>
             </div>
 			
 			<input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
@@ -130,7 +130,7 @@
 
             <div class="formContents">
                 <div class="question_box">
-                    <div class="question"><img src="//static.resta.co.kr/event/v_${eventSeq}/q_01.png"></div>
+                    <div class="question"><img src="//static.savemkt.com/event/v_${eventSeq}/q_01.png"></div>
                     <div class="q_select">
                         <label><input type="radio" name="tadd1" value="5kg 이하"><span>5kg 이하</span></label>
                         <label><input type="radio" name="tadd1" value="5-10kg"><span>5-10kg</span></label>
@@ -149,15 +149,15 @@
                     <div class="formGroup">
                         <div class="input_box">
                             <div class="input_row">
-                                <span class="title"><img src="//static.resta.co.kr/event/v_${eventSeq}/name_01.png" alt=""></span>
+                                <span class="title"><img src="//static.savemkt.com/event/v_${eventSeq}/name_01.png" alt=""></span>
                                 <input type="text" name="name" id="name" value="" class="inp" required="" autocomplete="off" placeholder="이름">
                             </div>
                             <div class="input_row">
-                                <span class="title"><img src="//static.resta.co.kr/event/v_${eventSeq}/age.png" alt=""></span>
+                                <span class="title"><img src="//static.savemkt.com/event/v_${eventSeq}/age.png" alt=""></span>
                                 <input type="tel" name="age" id="age" class="inp" required="" autocomplete="off" maxlength="2" placeholder="나이">
                             </div>
                             <div class="input_row">
-                                <span class="title"><img src="//static.resta.co.kr/event/v_${eventSeq}/phone_01.png" alt=""></span>
+                                <span class="title"><img src="//static.savemkt.com/event/v_${eventSeq}/phone_01.png" alt=""></span>
                                 <input type="tel" name="phone" id="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="전화번호('-')없이 입력">
                             </div>
                             <input type="hidden" name="branch" id="branch" class="inp" required="" value="상상강남">
@@ -182,7 +182,7 @@
                             <li class="desc">*상기 동의를 거부할 권리가 있으나, 수집 및 이용에 동의하지 않을 경우 ${resVo.objectName} 상담 및 이벤트 참여가 불가능합니다.</li>
                         </ol>
                     </div>		
-                    <div class="submit"><input type="image" onclick="fnForm('form-2')" value="" src="//static.resta.co.kr/event/v_${eventSeq}/btn_newSb.png"></div>
+                    <div class="submit"><input type="image" onclick="fnForm('form-2')" value="" src="//static.savemkt.com/event/v_${eventSeq}/btn_newSb.png"></div>
                     <div class="description">
                         <span>대상 : ${resVo.target}</span>
                     </div>
@@ -190,7 +190,7 @@
             </div>
 
             <div class="container">
-                <div class="img-area"><img src="//static.resta.co.kr/event/v_${eventSeq}/event_main_10.jpg"></div>
+                <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_10.jpg"></div>
                 <div class="subscribe" data-limit="10"></div>
             </div>
 			<!-- Form 필수값 start -->
@@ -213,8 +213,8 @@
 	</div>
 
 		<div class="container">
-		<div class="img-area"><img src="//static.resta.co.kr/event/v_${eventSeq}/notice.jpg"></div>
-		<div class="img-area"><img src="//static.resta.co.kr/event/v_${eventSeq}/footer.jpg"></div>
+		<div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div>
+		<div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div>
 	</div>
 	
 </div>
