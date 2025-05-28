@@ -11,6 +11,7 @@ pageEncoding="UTF-8"%>
 
 <link rel="stylesheet" href="/css/sweetalert2.css">
 <link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/landing.css">
 
 <script src="/js/jquery-3.6.1.min.js"></script>
