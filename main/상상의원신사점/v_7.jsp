@@ -63,7 +63,7 @@ pageEncoding="UTF-8"%>
                             </tr>
                                 <tr>
                                     <th>*휴대폰번호</th>
-                                <td><input type="text" placeholder="연락처를 입력해주세요." id="phone" name="phone" maxlength="11" value=""></td>
+                                <td><input type="tel" placeholder="연락처를 입력해주세요." id="phone" name="phone" maxlength="11" value="010"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -295,6 +295,20 @@ pageEncoding="UTF-8"%>
 	close2.onclick = function () {
 	    modal2.style.display = "none";
 	}
+	
+	document.addEventListener('DOMContentLoaded', function() {
+	    const phoneInput = document.getElementById('phone');
+
+	    // 페이지 로드 시 기본값 설정
+	    phoneInput.value = '010';
+
+	    // 입력값이 사라지면 다시 '010' 넣기
+	    phoneInput.addEventListener('input', function() {
+	        if (!phoneInput.value.startsWith('010')) {
+	            phoneInput.value = '010';
+	        }
+	    });
+	});
 
     //submit
 	function fnForm(formId){
