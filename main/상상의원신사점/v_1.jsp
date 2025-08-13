@@ -24,14 +24,14 @@ pageEncoding="UTF-8"%>
             <div class="wrap_form">
                 <form class="wrap_curd" id="form-1" method="POST" accept-charset="utf-8">
                     <ul class="layout_add01 question">
-                        <li>나이를 선택해 주세요</li>
+                        <li>감량을 원하는 부위를 선택해주세요</li>
                     </ul>
                     <ul class="layout_add02">
                         <li>
-                            <label><input type="radio" name="tadd1" value="20~29세" class="answer">20~29세</label>
-                            <label><input type="radio" name="tadd1" value="30~39세" class="answer">30~39세</label>
-                            <label><input type="radio" name="tadd1" value="40~49세" class="answer">40~49세</label>
-                            <label><input type="radio" name="tadd1" value="50~59세" class="answer">50~59세</label>
+                            <label><input type="radio" name="tadd1" value="뱃살" class="answer">뱃살</label>
+                            <label><input type="radio" name="tadd1" value="팔뚝살" class="answer">팔뚝살</label>
+                            <label><input type="radio" name="tadd1" value="허벅지살" class="answer">허벅지살</label>
+                            <label><input type="radio" name="tadd1" value="기타" class="answer">기타</label>
                         </li>
                     </ul>
                     <p id="event-period"></p>
@@ -61,9 +61,13 @@ pageEncoding="UTF-8"%>
                                 <th>*이름</th>
                                 <td><input type="text" placeholder="이름을 입력해주세요." id="name" name="name"></td>
                             </tr>
-                                <tr>
-                                    <th>*휴대폰번호</th>
-                                <td><input type="text" placeholder="연락처를 입력해주세요." id="phone" name="phone" maxlength="11" value=""></td>
+                            <tr>
+                                <th>*나이</th>
+                                <td><input type="tel" name="age" id="age" class="inp" required="" autocomplete="off" maxlength="2" placeholder="나이를 입력해주세요."></td>
+                            </tr>
+                            <tr>
+                                <th>*휴대폰번호</th>
+                                <td><input type="tel" placeholder="연락처를 입력해주세요." id="phone" name="phone" maxlength="11" value="010"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -90,6 +94,10 @@ pageEncoding="UTF-8"%>
                     <input type="hidden" id="add4" 			name="add4" value=""/>
                     <input type="hidden" id="add5" 			name="add5" value=""/>
                     <input type="hidden" id="add6" 			name="add6" value=""/>
+
+                    <input type="hidden" id="agent" 		name="agent" 		value="${resVo.agent}"/>
+                    <input type="hidden" id="objectItems" 	name="objectItems" 	value="${resVo.objectItems}"/>
+                    <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
                 </form>
             </div>
 
@@ -296,6 +304,20 @@ pageEncoding="UTF-8"%>
 	    modal2.style.display = "none";
 	}
 
+    document.addEventListener('DOMContentLoaded', function() {
+	    const phoneInput = document.getElementById('phone');
+
+	    // 페이지 로드 시 기본값 설정
+	    phoneInput.value = '010';
+
+	    // 입력값이 사라지면 다시 '010' 넣기
+	    phoneInput.addEventListener('input', function() {
+	        if (!phoneInput.value.startsWith('010')) {
+	            phoneInput.value = '010';
+	        }
+	    });
+	});
+
     //submit
 	function fnForm(formId){
 		/* form 자동 처리 방지 */
@@ -323,7 +345,7 @@ pageEncoding="UTF-8"%>
 		// 필수값 체크 항목
 		var required = {
 			'name': '이름'
-			// , 'age': '나이'
+			, 'age': '나이'
 			,'phone': '전화번호'
 			,'add1': '설문1'
 			// ,'add2': '설문2'

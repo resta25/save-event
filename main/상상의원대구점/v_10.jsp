@@ -94,6 +94,10 @@ pageEncoding="UTF-8"%>
                     <input type="hidden" id="add4" 			name="add4" value=""/>
                     <input type="hidden" id="add5" 			name="add5" value=""/>
                     <input type="hidden" id="add6" 			name="add6" value=""/>
+
+                    <input type="hidden" id="agent" 		name="agent" 		value="${resVo.agent}"/>
+                    <input type="hidden" id="objectItems" 	name="objectItems" 	value="${resVo.objectItems}"/>
+                    <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
                 </form>
             </div>
                 
@@ -300,6 +304,20 @@ pageEncoding="UTF-8"%>
 	    modal2.style.display = "none";
 	}
 
+    document.addEventListener('DOMContentLoaded', function() {
+	    const phoneInput = document.getElementById('phone');
+
+	    // 페이지 로드 시 기본값 설정
+	    phoneInput.value = '010';
+
+	    // 입력값이 사라지면 다시 '010' 넣기
+	    phoneInput.addEventListener('input', function() {
+	        if (!phoneInput.value.startsWith('010')) {
+	            phoneInput.value = '010';
+	        }
+	    });
+	});
+
     //submit
 	function fnForm(formId){
 		/* form 자동 처리 방지 */
@@ -327,7 +345,7 @@ pageEncoding="UTF-8"%>
 		// 필수값 체크 항목
 		var required = {
 			'name': '이름'
-			, 'age': '나이'
+			,'age': '나이'
 			,'phone': '전화번호'
 			,'add1': '설문1'
 			// ,'add2': '설문2'
