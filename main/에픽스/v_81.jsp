@@ -5,8 +5,44 @@ pageEncoding="UTF-8"%>
         height: 100%;
     }
 	.content {padding: 20px 10px;}
-	.content + .content {border-top: 1px solid #333F50;}
-	.content * {padding: 10px;}
+	.content + .content {border-top: 1px solid #ddd;}
+	.content * {padding: 8px 10px;}
+
+    /* 실시간 신청 현황 */
+    .subscribe_container {width: 100%; background: #fff; padding: 0 5.5rem 6.5rem;}
+    .subscribe_bg {background: #f8f8f8; padding: 3.75% 8.5%; border-radius: 20px}
+    .subscribe_container .title {padding: 7.5rem 0 0; font-size: 4.5rem; text-align: center; color: #000; font-weight: 700; margin-bottom: 2.8rem;}
+    .subscribe_container .img-area {width: 40%; margin: 3% auto;}
+    .subscribe {height: 530px; overflow: hidden;}
+    .subscribe .content {display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0rem; border-bottom: 1px solid rgba(28, 28, 28, 0.1);}
+    .subscribe .content > div {font-size: 1.35rem; width: calc(100% / 4);}
+    .subscribe .content .text {border: 1px solid #333f50; color: #333f50; width: 20%; max-width: 150px; text-align: center; border-radius: 999px; font-weight: 700;}
+    .subscribe .content .text.color-bg {
+        background-color: #333f50;
+        color: #fff;
+    }
+    .subscribe .content .date {text-align: right;}
+
+@media screen and (max-width: 768px){
+    .subscribe {padding: 3% 2%; height: 150px;}
+    .subscribe .content {padding: 0.5rem 0.7rem;}
+    .subscribe .content > div {margin-right: 0; font-size: 0.8rem;}
+    .subscribe_container {padding: 0 1.5rem 1rem 1.5rem;}
+    .subscribe .content .name {width: 10%;}
+
+    .subscribe_bg {padding: 3.75% 3.5%;}
+    .content * {padding: 8px 0px;}
+    .content .text {padding: 4px 0;}
+    .subscribe_container .title {padding: 2rem 0 0; font-size: 1.8rem; margin-bottom: 0.6875rem;}
+}
+
+@media screen and (max-width: 395px){
+    .subscribe .content {padding: 0.5rem 0.2rem;}
+
+}
+@media screen and (max-width: 375px){
+    .subscribe {padding: 0;}
+}
 </style>
 
 <link rel="stylesheet" href="/css/sweetalert2.css">
@@ -41,7 +77,7 @@ pageEncoding="UTF-8"%>
                             <col width="70%">
                         </colgroup>
                         <tbody>
-                            <tr>
+                            <!-- <tr>
                                 <th class="branch_th">*지점 선택</th>
                                 <td class="branch_td">
                                     <div class="wrap_radio">
@@ -56,7 +92,7 @@ pageEncoding="UTF-8"%>
                                         });
                                     </script>
                                 </td>
-                            </tr>
+                            </tr> -->
                             <tr>
                                 <th>*이름</th>
                                 <td><input type="text" placeholder="이름을 입력해주세요." id="name" name="name"></td>
@@ -101,9 +137,14 @@ pageEncoding="UTF-8"%>
                 </form>
             </div>
                 
-            <div class="wrap_applicants">
-                <p>현재까지 신청자</p>
-                <ul class="subscribe"></ul>
+            <div class="subscribe_container">
+                <div class="title">
+                    실시간 신청현황
+                </div>
+                <div class="subscribe_bg">
+                    <div class="subscribe" data-limit="10">
+                    </div>
+                </div>
             </div>
         
         <div id="modal2" class="modal modal2" style="display: none;">
@@ -143,42 +184,46 @@ pageEncoding="UTF-8"%>
         
         //신청현황 리스트
         getComment(`${eventSeq}`);
-        $('.wrap_applicants').on("click", ".btn_moreSubscribe", function(e) {
-			$('.btn_moreSubscribe').prop('disabled', true);
-			e.preventDefault();
-			getComment(`${eventSeq}`);
-		});
     });
 
-    function returnComment(resultData, meoreData){
-		var today = new Date();   
-			var month = today.getMonth() + 1;
-			var dateNum;
+    let dataNum;
+
+	function returnComment(resultData, meoreData){
 		$('.subscribe').each(function(idx,obj) {
-			var data = resultData;
-			
-			for(v in resultData) {
-				var html  = '<li class="content" data-id="'+ data[v].seq +'">';
-					html += '	<div class="name">'+ data[v].name +' | '+ data[v].phone +'</div>';
-					html += '	<div class="msg">'+ data[v].memo +'</div>';
-					html += '	<div class="date">'+ data[v].regDate +'</div>';
-					html += '</li>';
-				
+            
+            for(v in resultData) {
+                var data = resultData;
+                var reg = (data[v].regDate || '').trim();      // "08-21 09:59"
+                var parts = reg.split(/\s+/);                   // ["08-21", "09:59"]
+                var md = parts[0] || "";                        // "08-21"
+                var tm = parts[1] || "";   
+				var statusText = Math.random() < 0.5 ? '접수중' : '신청완료'; // 랜덤으로 '접수중' 또는 '접수완료' 선택
+				var backgroundClass = statusText === '신청완료' ? 'color-bg' : ''; // '접수완료'일 경우에만 클래스 추가
+				var html  = '<div class="content" data-id="'+ data[v].seq +'">';
+					html += '	<div class="name">'+ data[v].name +'</div>';
+					html += '	<div class="phone">'+ data[v].phone +'</div>';
+					html += '   <div class="text ' + backgroundClass + '">' + statusText + '</div>'; // 랜덤 텍스트 및 클래스 적용
+					html += '  <div class="date">'+ data[v].regDate +'</div>';
+					html += '</div>';
 				$(obj).append(html);
 			}
-            if(meoreData > 10) {
-				$('.wrap_applicants').append('<button type="button" class="btn_moreSubscribe">댓글 더보기 &raquo;</button>');	
-			}
+            
 		});
 
         if(resultData.length >= 10){
-            $('.wrap_applicants').show();
+            $('.subscribe_container').show();
             return;
         } else {
-            $('.wrap_applicants').hide();
+            $('.subscribe_container').hide();
             return;
         }
 	}
+
+	setInterval(function(){
+        $('.subscribe .content:first').slideUp(function(){
+            $(this).show().parent().append(this)
+        })
+    },2000);
 	
 	var modal2 = document.getElementById("modal2");
 	var agree = document.getElementById("agree");
