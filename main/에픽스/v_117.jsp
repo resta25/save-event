@@ -114,7 +114,7 @@ pageEncoding="UTF-8"%>
                             <label id="agree">[자세히보기]</label>
                         </div>
                     </div>
-                    <button type="button" class="btn_submit b_point" onclick="fnForm('form-1')">이벤트<br>신청하기</button>
+                    <button type="button" class="btn_submit b_point" onclick="fnForm('form-1')">비밀상담 및<br>이벤트 신청하기</button>
 
                     <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
                     <input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
