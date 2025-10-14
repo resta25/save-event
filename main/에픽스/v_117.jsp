@@ -64,10 +64,9 @@ pageEncoding="UTF-8"%>
                     </ul>
                     <ul class="layout_add02">
                         <li>
-                            <label><input type="radio" name="tadd1" value="성기능" class="answer">성기능</label>
                             <label><input type="radio" name="tadd1" value="전립선" class="answer">전립선</label>
-                            <label><input type="radio" name="tadd1" value="체력" class="answer">체력</label>
-                            <label><input type="radio" name="tadd1" value="기타" class="answer">기타</label>
+                            <label><input type="radio" name="tadd1" value="남성기능" class="answer">남성기능</label>
+                            <label><input type="radio" name="tadd1" value="전립선+남성기능" class="answer">전립선+남성기능</label>
                         </li>
                     </ul>
                     <p id="event-period"></p>
