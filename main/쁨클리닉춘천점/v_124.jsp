@@ -73,7 +73,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .form .form_bg_box {padding: 4rem 3.7rem; background-color: #f2ecff; border-radius: 36px;}
     #page_landing_c .form .form_box {width: 70%; margin: 6em auto 2em; display: grid; gap: 2em;}
     #page_landing_c .form .form_box .user-info {display: flex; align-items: center;}
-    #page_landing_c .form .legend {width: 25%; text-align: center; display: inline-block; padding-bottom: 0.5rem; color: #030303; font-size: 2.5rem; font-weight: 700; flex-shrink: 0; font-family: 'YeogiOttaeJalnan';}
+    #page_landing_c .form .legend {width: 25%; text-align: center; display: inline-block; color: #030303; font-size: 2.5rem; font-weight: 700; flex-shrink: 0; font-family: 'YeogiOttaeJalnan';}
     #page_landing_c .form .form_box .user-info input {background: #fff; height: auto; border: solid 1px #757575; border-radius: 0.6rem; padding: 1.5rem; padding-right: 0; font-size: 1.2rem;}
 
     .form .form_box .form_row {display: grid; gap: 0.4em;}
@@ -154,9 +154,9 @@ pageEncoding="UTF-8"%>
     #page_landing_c .form .form_bg_box {padding: 2rem 1.7rem;}
     #page_landing_c .form .form_box {margin: 2em auto 2em; width: 80%;}
     #page_landing_c .form .legend {font-size: 4.5vw;}
-    #page_landing_c .form .form_box .user-info input {padding: 1rem;}
-    #page_landing_c .form .description .ad_txt {font-size: 2.5vw;}
-    #page_landing_c .form .description p {font-size: 3.1vw;}
+    #page_landing_c .form .form_box .user-info input {padding: 1rem; font-size: 1rem;}
+    #page_landing_c .form .description .ad_txt {font-size: 2.7vw;}
+    #page_landing_c .form .description p {font-size: 3.3vw;}
 }
 @media screen and (max-width: 500px){
     .popup-coupon {width: 85%;}
