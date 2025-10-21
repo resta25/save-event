@@ -31,10 +31,9 @@ pageEncoding="UTF-8"%>
     #page_landing_c .btn_submit {background-color: transparent !important;}
     input:not( [type="checkbox"], [type="radio"], [type="range"] ):disabled, input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border: none;}
     #page_landing_c .wrap_form .container .img-area {width: 95%; margin: 0 auto;}
-    #page_landing_c .wrap_form .submit {position: relative; width: 100%; max-width: 491px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newSb.png') no-repeat center center / 100%; margin: 2% auto 0; padding: 0;}
+    #page_landing_c .wrap_form .submit {position: relative; width: 100%; max-width: 491px;     height: 189px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newSb.png') no-repeat top center / 100%; margin: 2% auto 0; padding: 4% 0;}
     #page_landing_c .wrap_form .submit .submit-box {display: flex; flex-direction: column; align-items: center; justify-content:  center; text-align: center; font-family: 'GangwonEducationTteontteon'; font-size: 400%; height: 100%;}
-    #page_landing_c .wrap_form .submit input {margin: 0; padding: 0 !important; width: 100%; height: 100% !important; cursor: pointer;}
-
+    #page_landing_c .wrap_form .submit input {margin: 0; padding: 0 !important; width: 30%; height: auto !important; cursor: pointer; border-radius: 0;}
     #wrap { width: 100%; background: url("//static.savemkt.com/event/v_${eventSeq}/bg_01.jpg") no-repeat; background-size: 100%; font-family: 'Pretendard';}
     .form {background: transparent;}
     .line {display: inline-block; width: 100%; content: ''; height: 1px; background: #1f1f1f;}
@@ -160,6 +159,8 @@ pageEncoding="UTF-8"%>
     #page_landing_c .form .description .ad_txt {font-size: 3.2vw;}
     #page_landing_c .form .description p {font-size: 2.7vw;}
     .spinmachine_container #start-img {top: 49%;}
+
+    #page_landing_c .wrap_form .submit {height: 84px; padding: 7% 0;}
 }
 @media screen and (max-width: 500px){
     .popup-coupon {width: 85%;}
@@ -255,7 +256,7 @@ pageEncoding="UTF-8"%>
                                 <label><input name="agBox" type="checkbox"><span>개인정보수집이용동의</span></label> <a href="#" class="btn-agreement">[자세히 보기]</a>
                             </div>
                             
-                            <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.savemkt.com/event/v_${eventSeq}/btn_newSb.png"></div>
+                            <div class="submit"><input type="image" onclick="fnForm('form-1');" value="" src="//static.savemkt.com/event/v_${eventSeq}/btn_newSb_txt.png"></div>
                         </div>
                     </div>
                     <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
