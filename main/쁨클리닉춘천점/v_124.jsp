@@ -190,7 +190,7 @@ pageEncoding="UTF-8"%>
     .nice-select.wide.open .list { height: 25vh; overflow: auto;}
 }
 @media screen and (max-width: 395px){
-    .spinmachine_container #spinmachine {padding: 5% 0 7%;}
+    /* .spinmachine_container #spinmachine {padding: 5% 0 7%;} */
 }
 
 </style>
