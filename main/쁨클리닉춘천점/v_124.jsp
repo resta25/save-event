@@ -61,6 +61,7 @@ pageEncoding="UTF-8"%>
     .spinmachine_container #spin-pin {position: absolute; max-width: 70px; top: 3.5%; left: 50%; transform: translateX(-50%); width: 10%; z-index: 990;}
     .spinmachine_container #spin-img {width: 87%; margin: 0 auto;}
     .rotate {animation: rotate 3s cubic-bezier(0.25, 0.25, 0.1, 1) forwards; transform: rotate(360deg);} /* 룰렛 애니메이션 */
+    .spinmachine_container #start-img {position: absolute; top: 49%; left: 50%; transform: translate(-50%, -50%); width: 23.5%;}
 
     .clear {clear: both;}
 
@@ -210,6 +211,7 @@ pageEncoding="UTF-8"%>
                         <img id="spin-pin" src="//static.savemkt.com/event/v_${eventSeq}/pin.png">
                         <div id="spin-start"></div>
                         <img id="spin-img" src="//static.savemkt.com/event/v_${eventSeq}/roulette.png">
+                        <img id="start-img" src="//static.savemkt.com/event/v_${eventSeq}/start.png">
                     </div>
                 </div>
             </div>
@@ -448,6 +450,15 @@ pageEncoding="UTF-8"%>
             //$('.form').delay(100).fadeIn();
         }, 3000);
     });
+
+    const startImg = document.getElementById('start-img');
+    const basePath = `//static.savemkt.com/event/v_${eventSeq}/`;
+    let toggle = false;
+
+    setInterval(() => {
+        toggle = !toggle;
+        startImg.src = basePath + (toggle ? 'start-on.png' : 'start.png');
+    }, 1000);
 
     $(".popup-coupon").on('click', function (e) {
         $(this).fadeOut(200);
