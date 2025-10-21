@@ -181,6 +181,8 @@ pageEncoding="UTF-8"%>
     .form .legend {font-size: 1.2rem;}
     .form .form_box .user-info input {padding: 1rem; padding-right: 0;}
     .form .form_box .form_row {gap: 0;}
+
+    .spinmachine_container #spin-pin {top: 5.5%; max-width: 35px;}
 }
 @media screen and (max-width: 430px){
     .form .form_box .form_row .package,
