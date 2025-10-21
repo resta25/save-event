@@ -35,7 +35,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .wrap_form .submit .submit-box {display: flex; flex-direction: column; align-items: center; justify-content:  center; text-align: center; font-family: 'GangwonEducationTteontteon'; font-size: 400%; height: 100%;}
     #page_landing_c .wrap_form .submit input {margin: 0; padding: 0 !important; width: 100%; height: 100% !important; cursor: pointer;}
 
-   #wrap { width: 100%; background: url("//static.savemkt.com/event/v_${eventSeq}/bg_01.jpg") no-repeat; background-size: 100%; font-family: 'Pretendard';}
+    #wrap { width: 100%; background: url("//static.savemkt.com/event/v_${eventSeq}/bg_01.jpg") no-repeat; background-size: 100%; font-family: 'Pretendard';}
     .form {background: transparent;}
     .line {display: inline-block; width: 100%; content: ''; height: 1px; background: #1f1f1f;}
 
@@ -53,15 +53,15 @@ pageEncoding="UTF-8"%>
     .form .count-box {position: absolute; top: 2%; left: 50%; transform: translateX(-50%);}
 
     /* Hotevent roulette CSS */
-    .spinmachine_container {position: relative; padding-top: 11.77%;}
+    .spinmachine_container {position: relative; padding: 11.77% 0;}
     .spinmachine_container > .img-area {width: 80%; margin: 0 auto;}
     .spinmachine_container .present_img {z-index: 1; position: absolute; left: 0; bottom: 0;}
-    .spinmachine_container #spinmachine {position: relative; bottom: 0; padding: 7% 0 10%; width: 100%; text-align: center; background-color: #d1d7ff; overflow: hidden;}
-    .spinmachine_container #spin-start {z-index: 998; cursor: pointer; position: absolute; width: 89%; height: 76%; top: 47%; left: 50%; transform: translate(-50%, -50%); border-radius: 9999px;}
+    .spinmachine_container #spinmachine {position: relative; bottom: 0; padding: 2.5% 0 10%; width: 100%; text-align: center; overflow: hidden;}
+    .spinmachine_container #spin-start {z-index: 998; cursor: pointer; position: absolute; width: 79%; height: 79%; top: 47.5%; left: 50%; transform: translate(-50%, -50%); border-radius: 9999px;}
     .spinmachine_container #spin-pin {position: absolute; max-width: 70px; top: 3.5%; left: 50%; transform: translateX(-50%); width: 10%; z-index: 990;}
     .spinmachine_container #spin-img {width: 87%; margin: 0 auto;}
     .rotate {animation: rotate 3s cubic-bezier(0.25, 0.25, 0.1, 1) forwards; transform: rotate(360deg);} /* 룰렛 애니메이션 */
-    .spinmachine_container #start-img {position: absolute; top: 49%; left: 50%; transform: translate(-50%, -50%); width: 23.5%;}
+    .spinmachine_container #start-img {position: absolute; top: 46.5%; left: 50%; transform: translate(-50%, -50%); width: 23.5%;}
 
     .clear {clear: both;}
 
@@ -71,7 +71,7 @@ pageEncoding="UTF-8"%>
     /* form css */
     #page_landing_c .form {overflow: hidden; display: none;}
     #page_landing_c .form .formContents {padding: 0 5% 5%;}
-    #page_landing_c .form .form_bg_box {padding: 4rem 3.7rem; background-color: #f2ecff; border-radius: 36px;}
+    #page_landing_c .form .form_bg_box {padding: 4rem 3.7rem; background-color: #f1eaff; border-radius: 36px;}
     #page_landing_c .form .form_box {width: 70%; margin: 6em auto 2em; display: grid; gap: 2em;}
     #page_landing_c .form .form_box .user-info {display: flex; align-items: center;}
     #page_landing_c .form .legend {width: 25%; text-align: center; display: inline-block; color: #030303; font-size: 2.5rem; font-weight: 700; flex-shrink: 0; font-family: 'YeogiOttaeJalnan';}
@@ -136,7 +136,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .form .description p,
     #page_landing_c .form .description span,
     #page_landing_c .form .description .ad_txt {margin: 0; padding: 0; font-weight: normal; font-size: 180%;}
-    #page_landing_c .form .description p {font-weight: 700; margin-bottom: 1%; font-size: 250%;}
+    #page_landing_c .form .description p {font-weight: 700; margin-bottom: 1%; font-size: 250%; letter-spacing: -0.02em;}
 
     @keyframes rotate {
     0% {transform: rotate(10deg);}
@@ -158,6 +158,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .form .form_box .user-info input {padding: 1rem; font-size: 1rem;}
     #page_landing_c .form .description .ad_txt {font-size: 2.7vw;}
     #page_landing_c .form .description p {font-size: 3.3vw;}
+    .spinmachine_container #start-img {top: 49%;}
 }
 @media screen and (max-width: 500px){
     .popup-coupon {width: 85%;}
