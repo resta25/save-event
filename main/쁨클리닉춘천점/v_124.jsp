@@ -27,11 +27,11 @@ pageEncoding="UTF-8"%>
     .wrap_form .agBox {margin: 7px auto;}
 
     #page_landing_c main {max-width: 1080px; background-color: #d1d7ff;}
-    #page_landing_c .wrap_form {padding: 0; padding-top: 9.77%; border: 0; width: 100%; background: url("//static.savemkt.com/event/v_${eventSeq}/bg_01.jpg") no-repeat; background-size: 100%;}
+    #page_landing_c .wrap_form {padding: 0; padding-top: 4.77%; border: 0; width: 100%; background: url("//static.savemkt.com/event/v_${eventSeq}/bg_02.jpg") no-repeat; background-size: 100%;}
     #page_landing_c .btn_submit {background-color: transparent !important;}
     input:not( [type="checkbox"], [type="radio"], [type="range"] ):disabled, input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border: none;}
     #page_landing_c .wrap_form .container .img-area {width: 95%; margin: 0 auto;}
-    #page_landing_c .wrap_form .submit {position: relative; width: 100%; max-width: 491px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newSb.png') no-repeat center center / 100%; margin: 0 auto; padding: 0;}
+    #page_landing_c .wrap_form .submit {position: relative; width: 100%; max-width: 491px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newSb.png') no-repeat center center / 100%; margin: 2% auto 0; padding: 0;}
     #page_landing_c .wrap_form .submit .submit-box {display: flex; flex-direction: column; align-items: center; justify-content:  center; text-align: center; font-family: 'GangwonEducationTteontteon'; font-size: 400%; height: 100%;}
     #page_landing_c .wrap_form .submit input {margin: 0; padding: 0 !important; width: 100%; height: 100% !important; cursor: pointer;}
 
@@ -53,7 +53,7 @@ pageEncoding="UTF-8"%>
     .form .count-box {position: absolute; top: 2%; left: 50%; transform: translateX(-50%);}
 
     /* Hotevent roulette CSS */
-    .spinmachine_container {position: relative; padding: 11.77% 0;}
+    .spinmachine_container {position: relative; padding: 16.77% 0 11.77%;}
     .spinmachine_container > .img-area {width: 80%; margin: 0 auto;}
     .spinmachine_container .present_img {z-index: 1; position: absolute; left: 0; bottom: 0;}
     .spinmachine_container #spinmachine {position: relative; bottom: 0; padding: 2.5% 0 10%; width: 100%; text-align: center; overflow: hidden;}
@@ -71,11 +71,12 @@ pageEncoding="UTF-8"%>
     /* form css */
     #page_landing_c .form {overflow: hidden; display: none;}
     #page_landing_c .form .formContents {padding: 0 5% 5%;}
+    #page_landing_c .form .formContents > .img-area {margin: 8.65% auto 9.27%; width: 88.9%;}
     #page_landing_c .form .form_bg_box {padding: 4rem 3.7rem; background-color: #f1eaff; border-radius: 36px;}
-    #page_landing_c .form .form_box {width: 70%; margin: 6em auto 2em; display: grid; gap: 2em;}
+    #page_landing_c .form .form_box {width: 70%; margin: 5em auto 2em; display: grid; gap: 1.22em;}
     #page_landing_c .form .form_box .user-info {display: flex; align-items: center;}
     #page_landing_c .form .legend {width: 25%; text-align: center; display: inline-block; color: #030303; font-size: 2.5rem; font-weight: 700; flex-shrink: 0; font-family: 'YeogiOttaeJalnan';}
-    #page_landing_c .form .form_box .user-info input {background: #fff; height: auto; border: solid 1px #757575; border-radius: 0.6rem; padding: 1.5rem; padding-right: 0; font-size: 1.2rem;}
+    #page_landing_c .form .form_box .user-info input {background: #fff; height: auto; border: solid 1px #757575; padding: 1.5rem; padding-right: 0; font-size: 1.2rem; border-radius: 0;}
 
     .form .form_box .form_row {display: grid; gap: 0.4em;}
     .form .form_box .form_row .grid2 {display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7em;}
@@ -132,11 +133,11 @@ pageEncoding="UTF-8"%>
     .description.bottom p,
     .description.bottom span {padding: 0; margin: 0; font-size: 1rem;}
 
-    #page_landing_c .form .description {margin: 6.5% auto !important;}
+    #page_landing_c .form .description {margin: 0;}
     #page_landing_c .form .description p,
     #page_landing_c .form .description span,
-    #page_landing_c .form .description .ad_txt {margin: 0; padding: 0; font-weight: normal; font-size: 180%;}
-    #page_landing_c .form .description p {font-weight: 700; margin-bottom: 1%; font-size: 250%; letter-spacing: -0.02em;}
+    #page_landing_c .form .description .ad_txt {margin: 0; padding: 0; font-size: 250%; line-height: 1.27; letter-spacing: -0.02em; font-weight: 500;}
+    #page_landing_c .form .description p {font-weight: 500; margin-bottom: 2%; font-size: 215%;}
 
     @keyframes rotate {
     0% {transform: rotate(10deg);}
@@ -152,12 +153,12 @@ pageEncoding="UTF-8"%>
 
 @media screen and (max-width: 768px){
     .popup-coupon {transform: translate(-50%, -50%);}
-    #page_landing_c .form .form_bg_box {padding: 2rem 1.7rem;}
+    #page_landing_c .form .form_bg_box {padding: 2rem 1.7rem; border-radius: 24px;}
     #page_landing_c .form .form_box {margin: 2em auto 2em; width: 80%;}
     #page_landing_c .form .legend {font-size: 4.5vw;}
     #page_landing_c .form .form_box .user-info input {padding: 1rem; font-size: 1rem;}
-    #page_landing_c .form .description .ad_txt {font-size: 2.7vw;}
-    #page_landing_c .form .description p {font-size: 3.3vw;}
+    #page_landing_c .form .description .ad_txt {font-size: 3.2vw;}
+    #page_landing_c .form .description p {font-size: 2.7vw;}
     .spinmachine_container #start-img {top: 49%;}
 }
 @media screen and (max-width: 500px){
@@ -182,7 +183,7 @@ pageEncoding="UTF-8"%>
     .form .form_box .user-info input {padding: 1rem; padding-right: 0;}
     .form .form_box .form_row {gap: 0;}
 
-    .spinmachine_container #spin-pin {top: 5.5%; max-width: 35px;}
+    .spinmachine_container #spin-pin {top: 7.5%; max-width: 30px;}
 }
 @media screen and (max-width: 430px){
     .form .form_box .form_row .package,
@@ -227,14 +228,14 @@ pageEncoding="UTF-8"%>
                                 <span>지원금 선착순 <span id="count2"></span> 남았습니다.</span>
                             </div> -->
                     </div>
-                    <div class="description">
-                        <p id="event-period"></p>
-                        <div class="ad_txt">안심하세요! 본페이지에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
-                        <!-- <span class="target">대상 : ${resVo.target}</span> -->
-                    </div>
                     <div class="formContents">
+                        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/txt_01.png"></div>
                         <div class="form_bg_box">
-                            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/txt_01.png"></div>
+                            <div class="description">
+                                <p id="event-period"></p>
+                                <div class="ad_txt">안심하세요! 본원에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
+                                <!-- <span class="target">대상 : ${resVo.target}</span> -->
+                            </div>
                             <div class="form_box">
                                 <div class="user-info">
                                     <span class="legend">이름</span>
