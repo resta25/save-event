@@ -174,7 +174,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .agBox label span, #page_landing_c .agBox a {font-size: 85%;}
     #page_landing_c .wrap_form {padding: 0 23px 30px !important;}
     #page_landing_c .legend {font-size: 125%;}
-    #page_landing_c .question_box .q_select label {height: 56px;}
+    #page_landing_c .question_box .q_select label {height: 56px; font-size: 70%;}
     
 }
 @media screen and (max-width: 395px){
