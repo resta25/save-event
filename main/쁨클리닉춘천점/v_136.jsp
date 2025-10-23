@@ -26,7 +26,7 @@ pageEncoding="UTF-8"%>
 	.content * {padding: 8px 10px;}
     .wrap_form .agBox {margin: 7px auto;}
 
-    #page_landing_c main {max-width: 1080px; background-color: #d1d7ff;}
+    #page_landing_c main {max-width: 1080px; background-color: #ffd8dc;}
     #page_landing_c .wrap_form {padding: 0; padding-top: 4.77%; border: 0; width: 100%; background: url("//static.savemkt.com/event/v_${eventSeq}/bg_02.jpg") no-repeat; background-size: 100%;}
     #page_landing_c .btn_submit {background-color: transparent !important;}
     input:not( [type="checkbox"], [type="radio"], [type="range"] ):disabled, input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border: none;}
