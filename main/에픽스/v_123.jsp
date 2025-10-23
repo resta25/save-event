@@ -57,19 +57,26 @@ pageEncoding="UTF-8"%>
 
     /* user db입력칸 (이름) */
     #page_landing_c .wrap_curd .q_select {display: grid; grid-template-columns: repeat(3, 1fr); gap: 1%; font-size: 150%; flex-grow: 1;}
-    #page_landing_c .description {width: 100%;}
     #page_landing_c .description p, #page_landing_c .description .ad_txt {text-align: center;}
-    #page_landing_c .description.orage-box{display: flex; justify-content: flex-start; padding-top:3%; padding-bottom: 3%; padding-left: 1.5%; gap: 4px;}
-    #page_landing_c .description.orage-box > * {background-color: #0a151e; color:#fff; font-size:110%; border-radius:999px; color:#fff; padding:2% 3%; line-height: 1.06; font-weight: 500; letter-spacing: -0.9px; margin: 0;}
-    #page_landing_c .description.orage-box > span{background-color: #0a151e;}
+    
+    #page_landing_c .description {width: 100%; padding: 3.37% 3.9% 1.37%; background-color: #000; text-align: left;}
+    #page_landing_c .description p {color: #fff; padding: 0; font-weight: 300; font-size: 175%; letter-spacing: -0.02em;}
+    #page_landing_c .description .ad_txt {color: #fff; font-size: 175%; padding: 0; letter-spacing: -0.02em; font-weight: 300;}
+    #page_landing_c .description .ad_txt b {color: #fff640; font-size: 100%; letter-spacing: -0.02em; font-weight: 400;}
 
     #page_landing_c .question {position: relative;}
     #page_landing_c .question_box > div:not(.formContents),
     #page_landing_c .question_box > label {display: flex; align-items: center; gap: 6%; border-radius: 10px; border: solid 1px #bebebe; background-color: #efefef; padding: 1em 2em; box-sizing: border-box; width: 100%; margin-bottom: 2%;}
     #page_landing_c .question_box > label input {background: url("//static.savemkt.com/event/v_${eventSeq}/check.png") no-repeat right 1.5rem center; background-color: #fff;}
     #page_landing_c .legend {max-width: 130px; width: 100%; font-size: 185%; font-weight: 800; line-height: 1; letter-spacing: -1.78px; color: #0a151e;}
-    #page_landing_c .agBox {text-align: center; display: flex; align-items: center; justify-content: center;}
+    #page_landing_c .agBox {text-align: center; display: flex; align-items: center; justify-content: center; color: #fff; margin-bottom: 3%;}
     #page_landing_c .agBox .legend {max-width: max-content;}
+
+    #page_landing_c input[type="checkbox"] + span {color: #fff;}
+    #page_landing_c input[type="checkbox"]:checked + span:after {border-color: #fff;}
+    #page_landing_c .agBox label {display: flex; align-items: center;} 
+    #page_landing_c .agBox label span {color: #fff;} 
+
     .selected_area{background-color:#000; padding:3% 5%;}
     #page_landing_c .question_box .agBox .question {display: flex; align-items: center; width: 100%;}
     /* #page_landing_c .question_box .q_select{position: absolute; z-index: 1; display: flex; top: 23%; left: 29%; width: 70%;} */
@@ -110,17 +117,6 @@ pageEncoding="UTF-8"%>
     #page_landing_c ul.table_box li .td.cursor_box span{position: absolute; top: 50%; left: 60%; transform: translateY(-50%); display: block; font-size:120%;}
 
     .question_container {padding: 3% 0;}
-
-    #page_landing_c .agBox {color: #fff; margin-top: -2%;}
-    #page_landing_c input[type="checkbox"] + span {color: #fff;}
-    #page_landing_c input[type="checkbox"]:checked + span:after {border-color: #fff;}
-    #page_landing_c .agBox label {display: flex; align-items: center;} 
-    #page_landing_c .agBox label span {color: #fff;} 
-
-    #page_landing_c .description {width: 100%; padding: 3.37% 3.9% 5.37%; background-color: #000; text-align: left;}
-    #page_landing_c .description p {color: #fff; padding: 0; font-weight: 300; font-size: 175%; letter-spacing: -0.02em;}
-    #page_landing_c .description .ad_txt {color: #fff; font-size: 175%; padding: 0; letter-spacing: -0.02em; font-weight: 300;}
-    #page_landing_c .description .ad_txt b {color: #fff640; font-size: 100%; letter-spacing: -0.02em; font-weight: 400;}
 
     .btn-area {position: relative;}
     .btn-area .db_btn {position: absolute; bottom: 3.07%; padding: 0 3.7%;}
@@ -206,21 +202,17 @@ pageEncoding="UTF-8"%>
                 <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_07.jpg">
             </div>
 
-            <div class="description">
-                <p id="event-period"></p>
-                <div class="ad_txt">
-                    꼭! 기억하세요. 본인만 신청 가능!<br />
-                    정확한 정보를 기입하셔야 <b>사은품 제공 및 안내 가능합니다.</b><br />
-                    안내 후 개인정보는 <b>즉시 파기</b>됩니다.
-                </div>
-                
-                <!-- <span class="target">대상 : ${resVo.target}</span> -->
-
-            </div>
-            
-            
             <div class="wrap_form">
                 <form class="wrap_curd" id="form-1" method="POST" accept-charset="utf-8">
+                     <div class="description">
+                        <p id="event-period"></p>
+                        <div class="ad_txt">
+                            꼭! 기억하세요. 본인만 신청 가능!<br />
+                            정확한 정보를 기입하셔야 <b>사은품 제공 및 안내 가능합니다.</b><br />
+                            안내 후 개인정보는 <b>즉시 파기</b>됩니다.
+                        </div>
+                        <!-- <span class="target">대상 : ${resVo.target}</span> -->
+                    </div>
                         <div class="agBox">
                             <label><input name="agBox" type="checkbox"><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함</span></label> <a href="#" class="btn-agreement">[자세히 보기]</a>
                         </div>
