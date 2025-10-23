@@ -41,12 +41,9 @@ pageEncoding="UTF-8"%>
     .subscribe .content .date {text-align: right;}
 
     #page_landing_c main {max-width: 1080px;}
-    #page_landing_c .wrap_form {padding: 0; border: 0;}
+    #page_landing_c {padding: 0; border: 0;}
     #page_landing_c .btn_submit {background-color: transparent !important;}
     input:not( [type="checkbox"], [type="radio"], [type="range"] ):disabled, input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border: none;}
-    #page_landing_c .wrap_form .submit {position: relative; width: 100%; max-width: 491px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newSb.png') no-repeat center center / 100%; margin: 0 auto; padding: 0;}
-    #page_landing_c .wrap_form .submit .submit-box {display: flex; flex-direction: column; align-items: center; justify-content:  center; text-align: center; font-family: 'GangwonEducationTteontteon'; font-size: 400%; height: 100%;}
-    #page_landing_c .wrap_form .submit input {margin: 0; padding: 0 !important; width: 100%; height: 100% !important; position: absolute; top: 0; left: 0; cursor: pointer;}
 
     #wrap{font-family: 'noto sans kr'; overflow: hidden;}
     .top-img {width: 100%; margin: 0 auto;}
@@ -54,39 +51,76 @@ pageEncoding="UTF-8"%>
     .select-box {width: 100%;}
     .select-box .q_select {outline: none; border: none; width: 100%; padding: 3%; text-align: center; border: 1px solid #bebebe; border-radius: 0.3em; font-weight: 600;}
    
+    #page_landing_c .wrap_form {background-color: #000; padding: 0 43px 30px !important;}
+    #page_landing_c .wrap_curd {background-color: #000; }
+    #page_landing_c .wrap_curd .question_container {padding-top: 0 !important;}
+
     /* user db입력칸 (이름) */
-    #page_landing_c .wrap_form .user_info {}
-    #page_landing_c .wrap_form .user_info .user_name {position: relative; margin-bottom: 2%;}
-    #page_landing_c .wrap_form .user_info .user_name img {width:100%;}
+    #page_landing_c .wrap_curd .q_select {display: grid; grid-template-columns: repeat(3, 1fr); gap: 1%; font-size: 150%; flex-grow: 1;}
+    #page_landing_c .description {width: 100%;}
+    #page_landing_c .description p, #page_landing_c .description .ad_txt {text-align: center;}
+    #page_landing_c .description.orage-box{display: flex; justify-content: flex-start; padding-top:3%; padding-bottom: 3%; padding-left: 1.5%; gap: 4px;}
+    #page_landing_c .description.orage-box > * {background-color: #0a151e; color:#fff; font-size:110%; border-radius:999px; color:#fff; padding:2% 3%; line-height: 1.06; font-weight: 500; letter-spacing: -0.9px; margin: 0;}
+    #page_landing_c .description.orage-box > span{background-color: #0a151e;}
+
+    #page_landing_c .question {position: relative;}
+    #page_landing_c .question_box > div:not(.formContents),
+    #page_landing_c .question_box > label {display: flex; align-items: center; gap: 6%; border-radius: 10px; border: solid 1px #bebebe; background-color: #efefef; padding: 1em 2em; box-sizing: border-box; width: 100%; margin-bottom: 2%;}
+    #page_landing_c .question_box > label input {background: url("//static.savemkt.com/event/v_${eventSeq}/check.png") no-repeat right 1.5rem center; background-color: #fff;}
+    #page_landing_c .legend {max-width: 130px; width: 100%; font-size: 185%; font-weight: 800; line-height: 1; letter-spacing: -1.78px; color: #0a151e;}
+    #page_landing_c .agBox {text-align: center; display: flex; align-items: center; justify-content: center;}
+    #page_landing_c .agBox .legend {max-width: max-content;}
+    .selected_area{background-color:#000; padding:3% 5%;}
+    #page_landing_c .question_box .agBox .question {display: flex; align-items: center; width: 100%;}
+    /* #page_landing_c .question_box .q_select{position: absolute; z-index: 1; display: flex; top: 23%; left: 29%; width: 70%;} */
+
+    /* 설문값, 동의, 미동의 버튼 공통 */
+    
+    #page_landing_c .question_box .q_select label {background-color: #fff; width: 100%; height: 76px;}
+    #page_landing_c .question_box .q_select label, 
+    label.selected_label {display: inline-flex; align-items: center; justify-content: center; border-radius:0.5rem; font-size: 100%; text-align: center;  color: #0a151e; font-weight: 400; cursor: pointer; padding: 3% 2%; border:1px solid #bebebe;}
+     #page_landing_c .question_box .q_select label + label {margin-left: 1%;}
+     /* #page_landing_c .question_box .question:nth-of-type(2) .q_select label:last-child {padding: 0;} */
+    #page_landing_c .question_box .q_select:nth-of-type(2) label.on, label.add1{background-color: #000; color:#fff;}
+    #page_landing_c .question_box .q_select label.on, label.add3{background-color: #8ed3ff; color:#00385c;}
+
+    /* user db입력칸 (이름) */
+    #page_landing_c .user_info {width: 90%; margin: 0 auto;}
+    #page_landing_c .user_info .user_name {position: relative; margin-bottom: 2%;}
+    #page_landing_c .user_info .user_name img {width:100%;}
 
     /* user db입력칸 (연락처) */
-    #page_landing_c .wrap_form .user_info .user_phone {position: relative; margin-bottom: 2%;}
-    #page_landing_c .wrap_form .user_info .user_phone img {width:100%;}
+    #page_landing_c .user_info .user_phone {position: relative; margin-bottom: 2%;}
+    #page_landing_c .user_info .user_phone img {width:100%;}
 
     /* 이름, 연락처 공통 */
-    #page_landing_c .formGroup {padding: 6.02% 3.43% 2.95%; background-color: #2f2d2d;}
-    #page_landing_c .formGroup .form_inner {display: flex; gap: 1.9%; width: 100%;}
-    #page_landing_c .formGroup .info-box {width: 50%;}
-    #page_landing_c .formGroup .user_info {display: flex; align-items: center; padding: 4.9% 5.95% 5%; font-size: 2.85rem; background-color: #fff;}
-    #page_landing_c .formGroup .user_info + .user_info {margin-top: 1.57rem; }
-    #page_landing_c .legend {flex-shrink: 0; font-weight: 500; font-size: 100%; width: 150px; height: 42px; line-height: 42px; border-right: 2px solid #000; text-align: justify; padding-right: 12.5%;}
-    #page_landing_c .legend::after { content: ""; display: inline-block; width: 100%;}
-    /* .legend::after {display: inline-block; content: '*'; color: #22ab41; position: relative; top: -2px; left: 2px;} */
-    #page_landing_c .formGroup .user_info input {font-size: 100%; width: 100%; padding-right: 0;}
-    #page_landing_c .formGroup .user_info input::placeholder {font-size: 100%; color: #7c7c7c;}
+    #page_landing_c .user_info input {background: #ffeef4; padding: 2%; font-size: 150%; border-radius: 0.5rem; width: 67%;
+    position: absolute; left: 29%; top: 14%; height: 70%; border: 1px solid #e3ccd4;}
 
-    .change-color {animation: colorChange 0.4s linear infinite;}
-    .change-color.deley {animation: colorChange2 0.4s linear infinite;}
+    #page_landing_c .inp{font-size: 120%; border-radius: 10px; border: solid 1px #bebebe; background-color: #fff; min-height: 34px; padding: 3%; box-sizing: border-box;}
+    #page_landing_c input[type="checkbox"] + span:before{border-color:#fff;}
+    #page_landing_c .submit input[type="image"]{animation: pulsating 0.8s linear infinite; -webkit-animation: pulsating 0.8s linear infinite;}
 
-    .wrap_form .agBox {color: #fff;}
-    .wrap_form input[type="checkbox"] + span {color: #fff;}
-    .wrap_form input[type="checkbox"]:checked + span:after {border-color: #fff;}
-    .wrap_form .agBox a {margin: 10px 5px 0 0px;}
+    #page_landing_c ul.table_box{width:90%;}
+    #page_landing_c ul.table_box li{display: flex; margin-bottom:2%;   }
+    #page_landing_c ul.table_box li  >*{background-color: #fff;  padding:1% 10px; border-radius:25px; border:1px solid #000; box-sizing: border-box;}
+    #page_landing_c ul.table_box li .th{width:20%;}
+    #page_landing_c ul.table_box li .td{width: 78%; display:none; position: relative;}
+    #page_landing_c ul.table_box li .td.cursor_box::after{position: absolute; top: 50%; left: 54%; transform: translateY(-50%); display: block; content: ''; width: 2px; height: 50%; background-color: #000; animation: blink-effect 1s step-end infinite;}
+    #page_landing_c ul.table_box li .td.cursor_box span{position: absolute; top: 50%; left: 60%; transform: translateY(-50%); display: block; font-size:120%;}
 
-    .wrap_form .description {width: 100%; padding: 5.37% 3.9%; background-color: #000; text-align: left;}
-    .wrap_form .description p {color: #fff; padding: 0; font-weight: 300; font-size: 175%; letter-spacing: -0.02em;}
-    .wrap_form .description .ad_txt {color: #fff; font-size: 175%; padding: 0; letter-spacing: -0.02em; font-weight: 300;}
-    .wrap_form .description .ad_txt b {color: #fff640; font-size: 100%; letter-spacing: -0.02em; font-weight: 500;}
+    .question_container {padding: 3% 0;}
+
+    #page_landing_c .agBox {color: #fff; margin-top: -2%;}
+    #page_landing_c input[type="checkbox"] + span {color: #fff;}
+    #page_landing_c input[type="checkbox"]:checked + span:after {border-color: #fff;}
+    #page_landing_c .agBox label {display: flex; align-items: center;} 
+    #page_landing_c .agBox label span {color: #fff;} 
+
+    #page_landing_c .description {width: 100%; padding: 3.37% 3.9% 5.37%; background-color: #000; text-align: left;}
+    #page_landing_c .description p {color: #fff; padding: 0; font-weight: 300; font-size: 175%; letter-spacing: -0.02em;}
+    #page_landing_c .description .ad_txt {color: #fff; font-size: 175%; padding: 0; letter-spacing: -0.02em; font-weight: 300;}
+    #page_landing_c .description .ad_txt b {color: #fff640; font-size: 100%; letter-spacing: -0.02em; font-weight: 400;}
 
     .btn-area {position: relative;}
     .btn-area .db_btn {position: absolute; bottom: 3.07%; padding: 0 3.7%;}
@@ -96,24 +130,20 @@ pageEncoding="UTF-8"%>
 
     .mr-1 {width: calc(100% + 1px);}
 
-    /* submit 버튼 애니메이션 */
-    @keyframes pulsating {
-        0% {transform: scale(1);}
-        50% {transform: scale(0.95);}
-        100% {transform: scale(1);}
-    }
-    @keyframes blink-effect {
-        50% {opacity: 0;}
+    #page_landing_c .wrap_curd .submit {margin: 1em auto 0; padding: 0; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newSb.png') no-repeat center center / 100%;}
+    #page_landing_c .wrap_curd .submit input[type="image"] {
+        animation: pulsating 0.8s linear infinite;
+        -webkit-animation: pulsating 0.8s linear infinite;
     }
 
-    /* 텍스트 색상 변경 애니메이션 */
-    @keyframes colorChange {
-        0% {color: #a49a01}
-        100% {color: #ff0000;}
+    #page_landing_c input[type="checkbox"]:checked + span:after {
+        border-color: #fff;
     }
-    @keyframes colorChange2 {
-        0% {color: #ff0000;}
-        100% {color: #a49a01}
+        
+    @keyframes pulsating {
+        50% {
+            transform: scale(0.95);
+        }
     }
 
 @media screen and (max-width: 768px){
@@ -129,7 +159,6 @@ pageEncoding="UTF-8"%>
     .subscribe_container .title {padding: 2rem 0 0; font-size: 1.8rem; margin-bottom: 0.6875rem;}
 
     #page_landing_c .formGroup .user_info {font-size: 4vw; padding: 2.9% 3.95% 3%;}
-    #page_landing_c .wrap_form .submit {max-width: 44vw;}
     #page_landing_c .wrap_form .submit .submit-box {padding-top: 4%; font-size: 5.5vw;}
 
     .wrap_form .agBox {width: 100%;}
@@ -139,22 +168,16 @@ pageEncoding="UTF-8"%>
     #page_landing_c .formGroup .user_info input {margin-left: 5px;}
 
     .wrap_form .description p, .wrap_form .description .ad_txt {font-size: 3.85vw;}
-
+    #page_landing_c .question_box .q_select label, label.selected_label {font-size: 85%;}
 }
 
 @media screen and (max-width: 480px){
-        #page_landing_c .wrap_form .question_box .q_select label, 
-    label.selected_label, 
-    #page_landing_c .wrap_form .agBox .disagree {width: 31%; font-size: 60%;}
-    #page_landing_c .wrap_form .agBox .ag_btn {width: 45%;}
-    #page_landing_c .wrap_form .agBox .disagree {width: 45%; margin-left: 0;}
-    #page_landing_c .wrap_form .result .value .add_value {font-size: 90%; padding: 0.5em;}
-    /* #page_landing_c .wrap_form .legend {font-size: 100%; max-width: 50px;} */
-    #page_landing_c .wrap_form .description.orage-box > * {font-size: 95%;}
-    #page_landing_c .wrap_form .inp {font-size: 13px;}
-    .wrap_form .agBox a {margin-top: 0; white-space: nowrap;}
-
-    #page_landing_c .wrap_curd .btn-agreement {font-size: 12px;}
+    #page_landing_c .description p {font-size: 105%;}
+    #page_landing_c .description .ad_txt {font-size: 105%;}
+    #page_landing_c .agBox label span, #page_landing_c .agBox a {font-size: 85%;}
+    #page_landing_c .wrap_form {padding: 0 23px 30px !important;}
+    #page_landing_c .legend {font-size: 125%;}
+    #page_landing_c .question_box .q_select label {height: 56px;}
 }
 @media screen and (max-width: 395px){
     .subscribe .content {padding: 0.5rem 0.2rem;}
@@ -173,42 +196,69 @@ pageEncoding="UTF-8"%>
     <main>
         <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.jpg"></div>
         <!-- <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.png" alt="landing_top" class="landing_top"> -->
+
+            <div class="img-area gif-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.gif"></div>
+            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_03.jpg"></div>
+            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_04.jpg"></div>
+            <div class="img-area mr-1"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_05.jpg"></div>
+            <div class="img-area mr-1">
+                <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_06.jpg">
+                <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_07.jpg">
+            </div>
+
+            <div class="description">
+                <p id="event-period"></p>
+                <div class="ad_txt">
+                    꼭! 기억하세요. 본인만 신청 가능!<br />
+                    정확한 정보를 기입하셔야 <b>사은품 제공 및 안내 가능합니다.</b><br />
+                    안내 후 개인정보는 <b>즉시 파기</b>됩니다.
+                </div>
+                
+                <!-- <span class="target">대상 : ${resVo.target}</span> -->
+
+            </div>
+            
+            
             <div class="wrap_form">
                 <form class="wrap_curd" id="form-1" method="POST" accept-charset="utf-8">
-                    <div class="formGroup">
-                        <div class="form_inner">
-                            <div class="info-box">
-                                <div class="user_info name">
-                                    <span class="legend">이 름</span>
-                                    <input type="text" name="name" id="name" class="inp" required autocomplete="off" placeholder="이름">
-                                </div>
-                                <div class="user_info age">
-                                    <span class="legend">나 이</span>
-                                    <input type="tel" name="age" id="age" class="inp" required="" autocomplete="off" maxlength="2" placeholder="나이">
-                                </div>
-                                <div class="user_info phone">
-                                        <span class="legend">연락처</span>
-                                    <input type="tel" name="phone" id="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="연락처">
-                                </div>
-                            </div>
-    
-                            <div class="submit">
-                                <span class="submit-box">
-                                    <span class="change-color">무료 비밀상담</span>
-                                    <span>
-                                        이벤트 <span class="change-color deley">신청하기</span> 
-                                    </span>
-                                </span>
-                                <input type="submit" onclick="fnForm('form-1')" value="" class="btn_submit" />
-                            </div>	
-                        </div>
-
-
                         <div class="agBox">
                             <label><input name="agBox" type="checkbox"><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함</span></label> <a href="#" class="btn-agreement">[자세히 보기]</a>
                         </div>
+                    <div class="formGroup">
+                        <div class="form_inner">
+                            <div class="question_container">
+                                <div class="question_box">
+                                    <div class="question">
+                                        <span class="legend">연령대</span>
+                                        <div class="q_select">
+                                            <label>50대<input type="radio" name="tadd1" value="50대"></label>
+                                            <label>60대<input type="radio" name="tadd1" value="60대"></label>
+                                            <label>70+<input type="radio" name="tadd1" value="70+"></label>
+                                        </div>
+                                    </div>
+                                    <div class="question">
+                                        <span class="legend">고민사항</span>
+                                        <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_04.png"></div> -->
+                                        <div class="q_select">
+                                            <label>전립선<input type="radio" name="tadd2" value="전립선"></label>
+                                            <label>남성기능<input type="radio" name="tadd2" value="남성기능"></label>
+                                            <label>전립선<br/>남성기능<input type="radio" name="tadd2" value="전립선 + 남성기능"></label>
+                                        </div>
+                                    </div>        
+
+                                    <div class="user_name">
+                                        <span class="legend">이름</span>
+                                        <input type="text" name="name" id="name" class="inp" required autocomplete="off">
+                                    </div>
+                                    <div class="user_phone">
+                                        <span class="legend">연락처</span>
+                                        <input type="tel" name="phone" id="phone" class="inp" required autocomplete="off" maxlength="11">
+                                    </div>
+                                </div>   
+                            </div>
     
-                        
+                        </div>
+                        <div class="submit"><input type="image" onclick="fnForm('form-1')" value="" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newSb_txt.png" /></div>	
                     </div>
 
 
@@ -231,24 +281,6 @@ pageEncoding="UTF-8"%>
                     <input type="hidden" id="objectItems" 	name="objectItems" 	value="${resVo.objectItems}"/>
                     <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
                 </form>
-                <div class="description">
-                    <p id="event-period"></p>
-                    <div class="ad_txt">
-                        꼭! 기억하세요. 본인만 신청 가능!<br />
-                        정확한 정보를 기입하셔야 <b>사은품 제공 및 안내 가능합니다.</b><br />
-                        안내 후 개인정보는 <b>즉시 파기</b>됩니다.
-                    </div>
-                    <!-- <span class="target">대상 : ${resVo.target}</span> -->
-                </div>
-            </div>
-
-            <div class="img-area gif-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.gif"></div>
-            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_03.jpg"></div>
-            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_04.jpg"></div>
-            <div class="img-area mr-1"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_05.jpg"></div>
-            <div class="img-area btn-area mr-1">
-                <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_06.jpg">
-                <img class="db_btn" src="//static.savemkt.com/event/v_${eventSeq}/btn_newSb_01.png">
             </div>
                 
             <div class="subscribe_container">
@@ -329,7 +361,13 @@ pageEncoding="UTF-8"%>
             
 		});
 
-        $('.subscribe_container').show();
+        if(resultData.length >= 10){
+            $('.subscribe_container').show();
+            return;
+        } else {
+            $('.subscribe_container').hide();
+            return;
+        }
 	}
 
 	setInterval(function(){
@@ -364,14 +402,26 @@ pageEncoding="UTF-8"%>
 	    });
 	});
 
-    // db-btn 클릭시 db단 이동
-    $('.db_btn').on('click',function(){
-        const formOffset = $('.formGroup').offset().top;
+    $('li.btn_submit').bind('click',function() {
+		$('#form-1').submit();
+	})
 
-        $('html, body').animate({
-            scrollTop: formOffset
-        }, 500); // 500ms 동안 스크롤 이동
-    })
+	$('input[name*="tadd"]').bind('click', function() {
+		$(this).closest('.q_select').find('label').removeClass('on');			
+		$(this.parentNode).addClass('on');	
+	});
+
+	$('.submit').bind('click',function(){
+		if(!$('input[name="name"]').is(':visible')){
+			$('.db-name').click();
+			$('input[name="name"]').focus();
+		}
+		else if(!$('input[name="phone"]').is(':visible')){
+			$('.db-phone').click();
+			$('input[name="phone"]').focus();
+		}
+		var phoneNum = $('input[name="phone"]').val();
+	});
 
     //submit
 	function fnForm(formId){
@@ -380,7 +430,7 @@ pageEncoding="UTF-8"%>
 		/* form id로 proc */
 		let procForm = document.getElementById(formId);
 		
-        /*
+        
 		// 라디오버튼에 대한 필수값 확인 - 체크된게 하나도 없을때 경고창
 		let selectedRadio1 = procForm.querySelector('input[name="tadd1"]:checked');
 		if (!selectedRadio1) {
@@ -392,26 +442,26 @@ pageEncoding="UTF-8"%>
 
 		let selectedRadio2 = procForm.querySelector('input[name="tadd2"]:checked');
 		if (!selectedRadio2) {
-			alert("필요한 개수를 선택해주세요.");
+			alert("고민사항을 선택해주세요.");
 			return;
 		} else {
 			procForm.querySelector("input[name='add2']").value = selectedRadio2.value;
 		}
 
-		let selectedRadio2 = procForm.querySelector(`input[name="tadd2"]:checked`).value;
-		procForm.querySelector("input[name='add2']").value = selectedRadio2;
+		// let selectedRadio2 = procForm.querySelector(`input[name="tadd2"]:checked`).value;
+		// procForm.querySelector("input[name='add2']").value = selectedRadio2;
 		
-		let selectedRadio3 = procForm.querySelector(`input[name="tadd3"]:checked`).value;
-		procForm.querySelector("input[name='add3']").value = selectedRadio3;
-		*/
+		// let selectedRadio3 = procForm.querySelector(`input[name="tadd3"]:checked`).value;
+		// procForm.querySelector("input[name='add3']").value = selectedRadio3;
+		
 		
 		// 필수값 체크 항목
 		var required = {
 			'name': '이름'
-			,'age': '나이'
+			//,'age': '나이'
 			,'phone': '전화번호'
-			// ,'add1': '설문1'
-			// ,'add2': '설문2'
+			,'add1': '설문1'
+			,'add2': '설문2'
 			// ,'add3': '설문3'
 			,'agBox': '개인정보'
 		};
