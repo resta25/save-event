@@ -168,12 +168,14 @@ pageEncoding="UTF-8"%>
 }
 
 @media screen and (max-width: 480px){
+    #page_landing_c .description {padding: 3.37% 0 1.37%;}
     #page_landing_c .description p {font-size: 105%;}
     #page_landing_c .description .ad_txt {font-size: 105%;}
     #page_landing_c .agBox label span, #page_landing_c .agBox a {font-size: 85%;}
     #page_landing_c .wrap_form {padding: 0 23px 30px !important;}
     #page_landing_c .legend {font-size: 125%;}
     #page_landing_c .question_box .q_select label {height: 56px;}
+    
 }
 @media screen and (max-width: 395px){
     .subscribe .content {padding: 0.5rem 0.2rem;}
