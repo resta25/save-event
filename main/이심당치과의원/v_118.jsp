@@ -8,6 +8,13 @@ pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/css/common_sand.css">
 
 <style>
+    @font-face {
+        font-family: 'GangwonEducationTteontteon';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+        font-weight: normal;
+        font-display: swap;
+    }
+
     html{
         height: 100%;
     }
@@ -128,6 +135,59 @@ pageEncoding="UTF-8"%>
         color: #ff0000;
     }
 
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    .popup {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: max-content;
+        margin: 0;
+        padding: 30px 0;
+        background-color: #fff;
+        border-radius: 10px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        opacity: 1;
+        visibility: visible;
+    }
+    .popup p {
+        text-align: center;
+        font-size: 250%;
+        font-weight: 900;
+        font-family: 'GangwonEducationTteontteon';
+    }
+    .popup strong {
+        color: #ff0000;
+        font-weight: 900;
+        font-family: 'GangwonEducationTteontteon';
+    }
+    .popup .btn-box {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 2%;
+    }
+    .popup .btn-box button {
+        background-color: #000;
+        color: #fff;
+        width: 150px;
+        height: 50px;
+        font-size: 125%;
+        font-weight: 700;
+        border-radius: 0.5rem;
+    }
+
     /* submit 버튼 애니메이션 */
     @keyframes pulsating {
         0% {transform: scale(1);}
@@ -149,6 +209,10 @@ pageEncoding="UTF-8"%>
     .content * {padding: 8px 0px;}
     .content .text {padding: 4px 0;}
     .subscribe_container .title {padding: 2rem 0 0; font-size: 1.8rem; margin-bottom: 0.6875rem;}
+
+    .popup {width: 450px;}
+    .popup p {font-size: 200%;}
+    .popup .btn-box button {width: 120px; height: 40px; font-size: 100%;}
 }
 
 @media screen and (max-width: 480px){
@@ -166,10 +230,16 @@ pageEncoding="UTF-8"%>
     #page_landing_c .wrap_curd .warn-txt {font-size: 100%;}
 
     #page_landing_c .wrap_curd .btn-agreement {font-size: 12px;}
+
+    .popup {width: 370px;}
+    .popup p {font-size: 175%;}
 }
 @media screen and (max-width: 395px){
     .subscribe .content {padding: 0.5rem 0.2rem;}
     #page_landing_c .wrap_form .description.orage-box > * {font-size: 85%;}
+
+    .popup {width: 360px;}
+    .popup p {font-size: 150%;}
 
 }
 @media screen and (max-width: 375px){
@@ -248,7 +318,7 @@ pageEncoding="UTF-8"%>
                             허위·부정확한 정보 제출 시 <br />
                             <strong>법적 책임 및 손해배상 청구</strong>가 발생할 수 있습니다
                         </p>
-                        <div class="submit"><input type="image" onclick="fnForm('form-1')" value="" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newSb_01.png" /></div>	
+                        <div class="submit"><input type="image" value="" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newSb_01.png" /></div>	
 
                             <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
                             <input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
@@ -285,6 +355,18 @@ pageEncoding="UTF-8"%>
                 <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div>
                 <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div> -->
             </div>
+
+        <div class="overlay"></div>
+        <div class="popup">
+            <p>
+                본 이벤트는 <br />
+                <strong>대구 거주자</strong>만 신청 가능합니다.
+            </p>
+            <div class="btn-box">
+                <button type="button" class="btn-confirm">확인</button>
+                <button type="button" class="btn-out">해당없음<br />(나가기)</button>
+            </div>
+        </div>
         
         <div id="modal2" class="modal modal2" style="display: none;">
             <div class="modal-content">
@@ -513,6 +595,37 @@ pageEncoding="UTF-8"%>
 		$(this).closest('.q_select').find('label').removeClass('on');			
 		$(this.parentNode).addClass('on');	
 	});
+
+    $('.overlay').hide();
+    $('.popup').hide();
+
+    let isConfirm = false;
+
+    $('.submit .btn_submit').on('click', function(e){
+        e.preventDefault();
+       // $('.popup').css({opacity: 1, visibility: 'visible'});
+        if (!isConfirm) {
+            $('.overlay, .popup').show();
+            return;
+        }
+
+        fnForm('form-1');
+    });
+
+    $('.btn-confirm').on('click', function(){
+        isConfirm = true;
+        $('.overlay, .popup').hide();
+    });
+
+    $('.btn-out').on('click', function(){
+        isConfirm = false; // 다시 뜨게 만들려면 false 유지
+        $('.overlay, .popup').hide();
+
+        $('.submit .btn_submit')
+            .prop('disabled', true)
+            .css({ opacity: 0.5 });
+    });
+
 
 	$('.agBox label').bind('click',function(){
 		$('input[name="agBox"]').closest('.agBox').addClass('on');
