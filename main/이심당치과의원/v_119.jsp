@@ -168,6 +168,8 @@ pageEncoding="UTF-8"%>
     #page_landing_c .wrap_form .inp {font-size: 13px;}
     .wrap_form .agBox a {margin-top: 0; white-space: nowrap;}
 
+    #page_landing_c .wrap_curd .warn-txt {font-size: 100%;}
+
     #page_landing_c .wrap_curd .btn-agreement {font-size: 12px;}
 }
 @media screen and (max-width: 395px){
