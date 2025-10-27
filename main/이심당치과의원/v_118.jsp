@@ -16,7 +16,7 @@ pageEncoding="UTF-8"%>
 	.content * {padding: 8px 10px;}
 
     /* 실시간 신청 현황 */
-    .subscribe_container {width: 100%; background: #fff; padding: 0 4.5rem 6.5rem;}
+    .subscribe_container {width: 100%; background: #fff; padding: 0 4.5rem 4.5rem;}
     .subscribe_bg {background: #f8f8f8; padding: 3.75% 8.5%; border-radius: 20px}
     .subscribe_container .title {padding: 3.5rem 0 0; font-size: 3.5rem; text-align: center; color: #000; font-weight: 700; margin-bottom: 2.8rem;}
     .subscribe_container .img-area {width: 40%; margin: 3% auto;}
@@ -112,6 +112,21 @@ pageEncoding="UTF-8"%>
     #page_landing_c .wrap_form .result .value .add2_value {}
 
     .wrap_form .agBox a {margin: 10px 5px 0 7px;}
+
+    #page_landing_c .wrap_curd .warn-txt {
+        padding: 2% 3% 0%;
+        line-height: 1.27;
+        font-weight: 400;
+        letter-spacing: -0.9px;
+        font-size: 125%;
+        text-align: center;
+        margin: 0;
+    }
+    #page_landing_c .wrap_curd strong {
+        font-size: 100%;
+        font-weight: 700;
+        color: #ff0000;
+    }
 
     /* submit 버튼 애니메이션 */
     @keyframes pulsating {
@@ -227,6 +242,10 @@ pageEncoding="UTF-8"%>
                             <span id="cursor"></span>
                         </div>
 
+                        <p class="warn-txt">
+                            허위·부정확한 정보 제출 시 <br />
+                            <strong>법적 책임 및 손해배상 청구</strong>가 발생할 수 있습니다
+                        </p>
                         <div class="submit"><input type="image" onclick="fnForm('form-1')" value="" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newSb_01.png" /></div>	
 
                             <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
