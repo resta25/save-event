@@ -79,11 +79,11 @@ pageEncoding="UTF-8"%>
                             <col width="70%">
                         </colgroup>
                         <tbody>
-                            <!-- <tr>
+                            <tr>
                                 <th class="branch_th">*지점 선택</th>
                                 <td class="branch_td">
                                     <div class="wrap_radio">
-                                        <label><input type="radio" name="branch" class="store-radio"> 혜택대상자 </label>
+                                        <label><input type="radio" name="branch" class="store-radio"> 울산점 </label>
                                     </div>
                                     <script>
                                         document.addEventListener('DOMContentLoaded', function() {
@@ -94,7 +94,7 @@ pageEncoding="UTF-8"%>
                                         });
                                     </script>
                                 </td>
-                            </tr> -->
+                            </tr>
                             <tr>
                                 <th>*이름</th>
                                 <td><input type="text" placeholder="이름을 입력해주세요." id="name" name="name"></td>
