@@ -620,10 +620,6 @@ pageEncoding="UTF-8"%>
     $('.btn-out').on('click', function(){
         isConfirm = false; // 다시 뜨게 만들려면 false 유지
         $('.overlay, .popup').hide();
-
-        $('.submit .btn_submit')
-            .prop('disabled', true)
-            .css({ opacity: 0.5 });
     });
 
 
