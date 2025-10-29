@@ -45,6 +45,7 @@ pageEncoding="UTF-8"%>
     .wrap_checkbox input:is([type="checkbox"],[type="radio"]) {width: 15px; height: 15px;}
     .btn_submit {background-color: transparent !important;}
     :is(#page_landing_a, #page_landing_c) .wrap_checkbox > div {justify-content: center;}
+    #page_landing_c .wrap_curd input[type="radio"] {margin-left: 0;}
 
     :is(#page_landing_a, #page_landing_c) .wrap_curd .btn_submit {
         height: auto;
@@ -78,7 +79,7 @@ pageEncoding="UTF-8"%>
 
     /* 설문영역 */
     #page_landing_c .wrap_curd .q_select {width: 90%; margin: 0 auto;}
-    #page_landing_c .wrap_curd .q_select label {width: 100%; margin-bottom: 2%;}
+    #page_landing_c .wrap_curd .q_select label {width: 100%; margin-bottom: 2%; justify-content: center;}
     #page_landing_c .wrap_curd .q_select label img {width: 100%;}
 
     /* db영역 */
