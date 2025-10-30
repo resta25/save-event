@@ -20,6 +20,7 @@ pageEncoding="UTF-8"%>
     html{
         height: 100%;
     }
+    main {position: relative;}
 	.content {padding: 20px 10px;}
 	.content + .content {border-top: 1px solid #ddd;}
 	.content * {padding: 8px 10px;}
@@ -141,6 +142,39 @@ pageEncoding="UTF-8"%>
             transform: scale(0.95);
         }
     }
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    .pop-up {
+        position: absolute;
+        bottom: 8%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 40rem;
+        width: 50rem;
+        background: url('//static.savemkt.com/event/v_${eventSeq}/popup.png') no-repeat center center / 100%;
+    }
+    .pop-up .popup-inner {position: relative; width: 100%; height: 100%;}
+    .pop-up .btn-box    {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        justify-content: space-between;
+        position: absolute;
+        width: 75%;
+        /* height: 100%; */
+        bottom: 5rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .pop-up .btn-box button {
+        width: 50%;
+    }
 
 @media screen and (max-width: 768px){
     .subscribe {padding: 3% 2%; height: 150px;}
@@ -159,7 +193,7 @@ pageEncoding="UTF-8"%>
 
     .wrap_form .agBox {width: 100%;}
     #page_landing_c .wrap_curd label {font-size: 12px;}
-    #page_landing_c .legend {max-width: 14vw; padding-right: 7%; height: 27px; line-height: 27px;}
+    #page_landing_c .legend {max-width: 14vw; padding-right: 7%; line-height: 27px;}
     #page_landing_c .formGroup .user_info + .user_info {margin-top: 3%;}
     #page_landing_c .formGroup .user_info input {margin-left: 5px;}
 
@@ -232,11 +266,19 @@ pageEncoding="UTF-8"%>
                                     </div>
                                     <div class="question">
                                         <span class="legend">고민사항</span>
-                                        <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_04.png"></div> -->
                                         <div class="q_select">
                                             <label>전립선<input type="radio" name="tadd2" value="전립선"></label>
                                             <label>남성기능<input type="radio" name="tadd2" value="남성기능"></label>
                                             <label>전립선<br/>남성기능<input type="radio" name="tadd2" value="전립선 + 남성기능"></label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="question">
+                                        <span class="legend">전화상담<br/>가능시간</span>
+                                        <div class="q_select">
+                                            <label>오전<input type="radio" name="tadd3" value="오전"></label>
+                                            <label>오후<input type="radio" name="tadd3" value="오후"></label>
+                                            <label>아무때나<br/>상관없음<input type="radio" name="tadd3" value="아무때나상관없음"></label>
                                         </div>
                                     </div>        
 
@@ -252,9 +294,8 @@ pageEncoding="UTF-8"%>
                             </div>
     
                         </div>
-                        <div class="submit"><input type="image" onclick="fnForm('form-1')" value="" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newSb_txt.png" /></div>	
+                        <div class="submit"><input type="image" value="" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newSb_txt.png" /></div>	
                     </div>
-
 
                     <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
                     <input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
@@ -317,6 +358,15 @@ pageEncoding="UTF-8"%>
                     └ 서비스 제공을 위해 필요한 개인정보 관련 업무 처리<br />
                     - 위탁 항목 : 이름, 연락처, 성별, 출생연도, 설문내용
                 </p>
+            </div>
+        </div>
+        <div class="overlay"></div>
+        <div class="pop-up">
+            <div class="popup-inner">
+                <div class="btn-box">
+                    <button type="button" class="btn-confirm"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_check.png"></button>
+                    <button type="button" class="btn-out"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_close.png"></button>
+                </div>
             </div>
         </div>
     </main>
@@ -396,9 +446,33 @@ pageEncoding="UTF-8"%>
 	    });
 	});
 
-    $('li.btn_submit').bind('click',function() {
-		$('#form-1').submit();
-	})
+    let isConfirm = false;
+
+    $('.submit .btn_submit').on('click', function(e){
+        e.preventDefault();
+       // $('.popup').css({opacity: 1, visibility: 'visible'});
+        if (!isConfirm) {
+            $('.overlay, .pop-up').show();
+            return;
+        }
+
+        fnForm('form-1');
+    });
+
+    $('.btn-confirm').on('click', function(){
+        isConfirm = true;
+        $('.overlay, .pop-up').hide();
+    });
+
+    $('.btn-out').on('click', function(){
+        isConfirm = false; // 다시 뜨게 만들려면 false 유지
+        $('.overlay, .pop-up').hide();
+    });
+
+
+    // $('li.btn_submit').bind('click',function() {
+	// 	$('#form-1').submit();
+	// })
 
 	$('input[name*="tadd"]').bind('click', function() {
 		$(this).closest('.q_select').find('label').removeClass('on');			
@@ -442,6 +516,14 @@ pageEncoding="UTF-8"%>
 			procForm.querySelector("input[name='add2']").value = selectedRadio2.value;
 		}
 
+		let selectedRadio3 = procForm.querySelector('input[name="tadd3"]:checked');
+		if (!selectedRadio3) {
+			alert("전화상담 가능시간을 선택해주세요.");
+			return;
+		} else {
+			procForm.querySelector("input[name='add3']").value = selectedRadio3.value;
+		}
+
 		// let selectedRadio2 = procForm.querySelector(`input[name="tadd2"]:checked`).value;
 		// procForm.querySelector("input[name='add2']").value = selectedRadio2;
 		
@@ -456,7 +538,7 @@ pageEncoding="UTF-8"%>
 			,'phone': '전화번호'
 			,'add1': '설문1'
 			,'add2': '설문2'
-			// ,'add3': '설문3'
+			,'add3': '설문3'
 			,'agBox': '개인정보'
 		};
 		
