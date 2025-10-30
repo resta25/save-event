@@ -149,6 +149,7 @@ pageEncoding="UTF-8"%>
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.7);
+        display: none;
     }
     .pop-up {
         position: absolute;
@@ -158,6 +159,7 @@ pageEncoding="UTF-8"%>
         height: 40rem;
         width: 50rem;
         background: url('//static.savemkt.com/event/v_${eventSeq}/popup.png') no-repeat center center / 100%;
+        display: none;
         
     }
     .pop-up .popup-inner {position: relative; width: 100%; height: 100%;}
