@@ -158,6 +158,7 @@ pageEncoding="UTF-8"%>
         height: 40rem;
         width: 50rem;
         background: url('//static.savemkt.com/event/v_${eventSeq}/popup.png') no-repeat center center / 100%;
+        
     }
     .pop-up .popup-inner {position: relative; width: 100%; height: 100%;}
     .pop-up .btn-box    {
@@ -199,6 +200,8 @@ pageEncoding="UTF-8"%>
 
     .wrap_form .description p, .wrap_form .description .ad_txt {font-size: 3.85vw;}
     #page_landing_c .question_box .q_select label, label.selected_label {font-size: 85%;}
+
+    .pop-up {width: 40rem;}
 }
 
 @media screen and (max-width: 480px){
@@ -209,7 +212,9 @@ pageEncoding="UTF-8"%>
     #page_landing_c .wrap_form {padding: 0 23px 30px !important;}
     #page_landing_c .legend {font-size: 125%;}
     #page_landing_c .question_box .q_select label {height: 56px; font-size: 70%;}
-    
+
+    .pop-up {width: 30rem;}
+    .pop-up .btn-box {bottom: 11rem;}
 }
 @media screen and (max-width: 395px){
     .subscribe .content {padding: 0.5rem 0.2rem;}
