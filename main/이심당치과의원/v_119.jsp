@@ -141,7 +141,10 @@ pageEncoding="UTF-8"%>
         height: 100%;
         background-color: rgba(0, 0, 0, 0.7);
     }
-    .popup {
+    .font-red {
+        color: #ff0000;
+    }
+    [class^="popup-"] {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -155,28 +158,28 @@ pageEncoding="UTF-8"%>
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
+        text-align: center;
         opacity: 1;
         visibility: visible;
     }
-    .popup p {
+    [class^="popup-"] p,
+    [class^="popup-"] span {
         text-align: center;
         font-size: 250%;
         font-weight: 900;
-        font-family: 'GangwonEducationTteontteon';
     }
-    .popup strong {
+    [class^="popup-"] strong {
         color: #ff0000;
         font-weight: 900;
-        font-family: 'GangwonEducationTteontteon';
     }
-    .popup .btn-box {
+    [class^="popup-"] .btn-box {
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 1rem;
-        margin-top: 2%;
+        margin-top: 5%;
     }
-    .popup .btn-box button {
+    [class^="popup-"] .btn-box button {
         background-color: #000;
         color: #fff;
         width: 150px;
@@ -184,6 +187,12 @@ pageEncoding="UTF-8"%>
         font-size: 125%;
         font-weight: 700;
         border-radius: 0.5rem;
+    }
+    .popup-valid .btn-box button {
+        width: 65%;
+        margin: 0 auto;
+        font-size: 175%;
+        font-weight: 500;
     }
 
     /* submit 버튼 애니메이션 */
@@ -208,13 +217,16 @@ pageEncoding="UTF-8"%>
     .content .text {padding: 4px 0;}
     .subscribe_container .title {padding: 2rem 0 0; font-size: 1.8rem; margin-bottom: 0.6875rem;}
 
-    .popup {width: 450px;}
-    .popup p {font-size: 200%;}
-    .popup .btn-box button {width: 120px; height: 40px; font-size: 100%;}
+    /* .popup-confirm {width: 450px;}
+    .popup-confirm p {font-size: 200%;}
+    .popup-confirm .btn-box button {width: 120px; height: 40px; font-size: 100%;} */
+
+    [class^="popup-"] {width: 90vw; font-size: 2.5vw; border-radius: 20px; top: 57%;}
+    .popup-valid .btn-box button {width: 50vw; height: 40px}
 }
 
 @media screen and (max-width: 480px){
-        #page_landing_c .wrap_form .question_box .q_select label, 
+    #page_landing_c .wrap_form .question_box .q_select label, 
     label.selected_label, 
     #page_landing_c .wrap_form .agBox .disagree {width: 31%; font-size: 60%;}
     #page_landing_c .wrap_form .agBox .ag_btn {width: 45%;}
@@ -229,15 +241,15 @@ pageEncoding="UTF-8"%>
 
     #page_landing_c .wrap_curd .btn-agreement {font-size: 12px;}
 
-    .popup {width: 370px;}
-    .popup p {font-size: 175%;}
+    /* .popup-confirm {width: 370px;}
+    .popup-confirm p {font-size: 175%;} */
 }
 @media screen and (max-width: 395px){
     .subscribe .content {padding: 0.5rem 0.2rem;}
     #page_landing_c .wrap_form .description.orage-box > * {font-size: 85%;}
 
-    .popup {width: 360px;}
-    .popup p {font-size: 150%;}
+    /* .popup-confirm {width: 360px;}
+    .popup-confirm p {font-size: 150%;} */
 
 }
 @media screen and (max-width: 375px){
@@ -355,7 +367,13 @@ pageEncoding="UTF-8"%>
             </div>
 
         <div class="overlay"></div>
-        <div class="popup">
+        <div class="popup-valid">
+            <span class="font-red">필수 항목을 모두 입력해주세요.</span>
+            <div class="btn-box">
+                <button type="button" class="btn-valid">확인</button>
+            </div>
+        </div>
+        <div class="popup-confirm">
             <p>
                 본 이벤트는 <br />
                 <strong>대구 거주자</strong>만 신청 가능합니다.
@@ -586,9 +604,9 @@ pageEncoding="UTF-8"%>
 	});
 
 
-    $('li.btn_submit').bind('click',function() {
-		$('#form-1').submit();
-	})
+    // $('li.btn_submit').bind('click',function() {
+	// 	$('#form-1').submit();
+	// })
 
 	$('input[name*="tadd"]').bind('click', function() {
 		$(this).closest('.q_select').find('label').removeClass('on');			
@@ -596,31 +614,46 @@ pageEncoding="UTF-8"%>
 	});
 
     $('.overlay').hide();
-    $('.popup').hide();
+    $('.popup-valid').hide();
+    $('.popup-confirm').hide();
 
     let isConfirm = false;
 
+    // 제출 버튼 클릭
     $('.submit .btn_submit').on('click', function(e){
         e.preventDefault();
-       // $('.popup').css({opacity: 1, visibility: 'visible'});
-        if (!isConfirm) {
-            $('.overlay, .popup').show();
+
+        const tadd1 = $('input[name="tadd1"]:checked').val();
+        const tadd2 = $('input[name="tadd2"]:checked').val();
+        const agBox = $('.ag_btn input[name="agBox"]:checked').val();
+        const nameVal = $('input[name="name"]').val();
+        const phoneVal = $('input[name="phone"]').val();
+
+        // 필수값 체크
+        if (!tadd1 || !tadd2 || !agBox || !nameVal || !phoneVal || phoneVal.length < 11) {
+            $('.overlay').show();
+            $('.popup-valid').show();   // ⛔ 미입력 → 유효성 팝업
             return;
         }
 
-        fnForm('form-1');
+        // ✅ 모두 입력됨 → 확인 팝업 띄움
+        $('.overlay, .popup-confirm').show();
     });
 
+    $('.btn-valid').on('click', function(){
+        $('.overlay, .popup-valid').hide();
+    });
+
+    // popup-confirm > 확인 버튼
     $('.btn-confirm').on('click', function(){
-        isConfirm = true;
-        $('.overlay, .popup').hide();
+        $('.overlay, .popup-confirm').hide();
+        fnForm('form-1'); // ✅ 실제 제출 실행
     });
 
+    // popup-confirm > 취소 버튼
     $('.btn-out').on('click', function(){
-        isConfirm = false; // 다시 뜨게 만들려면 false 유지
-        $('.overlay, .popup').hide();
+        $('.overlay, .popup-confirm').hide();
     });
-
 
 	$('.agBox label').bind('click',function(){
 		$('input[name="agBox"]').closest('.agBox').addClass('on');
