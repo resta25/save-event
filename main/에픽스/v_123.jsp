@@ -151,31 +151,48 @@ pageEncoding="UTF-8"%>
         background-color: rgba(0, 0, 0, 0.7);
         display: none;
     }
-    .pop-up {
+    [class^="popup-"] {
         position: absolute;
         bottom: 8%;
         left: 50%;
         transform: translateX(-50%);
-        height: 40rem;
         width: 50rem;
-        background: url('//static.savemkt.com/event/v_${eventSeq}/popup.png') no-repeat center center / 100%;
+        background: #fff;
+        border-radius: 30px;
+        display: block;
+        padding: 5% 0 4.5%;
+        text-align: center;
+        font-size: 270%;
         display: none;
-        
     }
-    .pop-up .popup-inner {position: relative; width: 100%; height: 100%;}
-    .pop-up .btn-box    {
+    .font-red {
+        color: #ff0000;
+    }
+    [class^="popup-"] span, [class^="popup-"] p {font-size: 100%; text-align: center; font-weight: 700;}
+    [class^="popup-"] p + p {margin-top: 4%;}
+    .btn-box {margin-top: 5%;}
+    .popup-valid .btn-box button {
+        height: 100px;
+    }
+    .popup-valid .btn-box button img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .popup-confirm {
+        display: none;
+    }
+    .popup-confirm .pop-inner {position: relative; width: 100%; height: 100%; padding: 0; font-size: 100%;}
+    .popup-confirm .btn-box    {
         display: flex;
         align-items: center;
         gap: 1rem;
         justify-content: space-between;
-        position: absolute;
         width: 75%;
+        margin: 5% auto 0;
         /* height: 100%; */
-        bottom: 5rem;
-        left: 50%;
-        transform: translateX(-50%);
     }
-    .pop-up .btn-box button {
+    .popup-confirm .btn-box button {
         width: 50%;
     }
     .timer-box {position: relative;}
@@ -205,6 +222,10 @@ pageEncoding="UTF-8"%>
     .wrap_form .description p, .wrap_form .description .ad_txt {font-size: 3.85vw;}
     #page_landing_c .question_box .q_select label, label.selected_label {font-size: 85%;}
 
+    [class^="popup-"] {width: 90vw; font-size: 6vw; border-radius: 20px; bottom: 7%;}
+    .popup-valid .btn-box button {width: 27vw; height: auto;}
+    .popup-confirm {font-size: 5vw;}
+    /* .popup-confirm {width: 40rem;} */
     .pop-up {width: 40rem;}
     .timer-box #timer {font-size: 2.5rem;}
 }
@@ -218,9 +239,8 @@ pageEncoding="UTF-8"%>
     #page_landing_c .legend {font-size: 125%;}
     #page_landing_c .question_box .q_select label {height: 56px; font-size: 70%;}
 
-    .pop-up {width: 30rem;}
-    .pop-up .btn-box {bottom: 11rem;}
-    .timer-box #timer {font-size: 1.5rem; letter-spacing: 2px;}
+    /* .popup-confirm {width: 30rem;} */
+    /* .popup-confirm .btn-box {bottom: 11rem;} */
 }
 @media screen and (max-width: 395px){
     .subscribe .content {padding: 0.5rem 0.2rem;}
@@ -381,8 +401,26 @@ pageEncoding="UTF-8"%>
             </div>
         </div>
         <div class="overlay"></div>
-        <div class="pop-up">
-            <div class="popup-inner">
+        <div class="popup-valid">
+            <span class="font-red">필수 항목을 모두 입력해주세요.</span>
+            <div class="btn-box">
+                <button type="button" class="btn-valid"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_check.png"></button>
+            </div>
+        </div>
+        <div class="popup-confirm">
+            <div class="pop-inner">
+                <p>
+                    본 제품은 <span class="font-red">프리미엄 제품</span>입니다.
+                </p>
+                <p>
+                    이벤트 혜택 안내를 위해<br />
+                    <span class="font-red">전문 상담원이 곧 연락드릴 예정입니다.</span>
+                </p>
+                <p>
+                    혜택이 제한되어 있으니<br />
+                    <span class="font-red">전화를 꼭 받아주세요.</span>
+                </p>
+                
                 <div class="btn-box">
                     <button type="button" class="btn-confirm"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_check.png"></button>
                     <button type="button" class="btn-out"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_close.png"></button>
@@ -468,27 +506,41 @@ pageEncoding="UTF-8"%>
 
     let isConfirm = false;
 
+// 제출 버튼 클릭
     $('.submit .btn_submit').on('click', function(e){
         e.preventDefault();
-       // $('.popup').css({opacity: 1, visibility: 'visible'});
-        if (!isConfirm) {
-            $('.overlay, .pop-up').show();
+
+        const tadd1 = $('input[name="tadd1"]:checked').val();
+        const tadd2 = $('input[name="tadd2"]:checked').val();
+        const tadd3 = $('input[name="tadd3"]:checked').val();
+        const nameVal = $('input[name="name"]').val();
+        const phoneVal = $('input[name="phone"]').val();
+
+        // 필수값 체크
+        if (!tadd1 || !tadd2 || !tadd3 || !nameVal || !phoneVal || phoneVal.length < 11) {
+            $('.overlay').show();
+            $('.popup-valid').show();   // ⛔ 미입력 → 유효성 팝업
             return;
         }
 
-        fnForm('form-1');
+        // ✅ 모두 입력됨 → 확인 팝업 띄움
+        $('.overlay, .popup-confirm').show();
     });
 
+    $('.btn-valid').on('click', function(){
+        $('.overlay, .popup-valid').hide();
+    });
+
+    // popup-confirm > 확인 버튼
     $('.btn-confirm').on('click', function(){
-        isConfirm = true;
-        $('.overlay, .pop-up').hide();
+        $('.overlay, .popup-confirm').hide();
+        fnForm('form-1'); // ✅ 실제 제출 실행
     });
 
+    // popup-confirm > 취소 버튼
     $('.btn-out').on('click', function(){
-        isConfirm = false; // 다시 뜨게 만들려면 false 유지
-        $('.overlay, .pop-up').hide();
+        $('.overlay, .popup-confirm').hide();
     });
-
 
     // $('li.btn_submit').bind('click',function() {
 	// 	$('#form-1').submit();
@@ -562,7 +614,6 @@ pageEncoding="UTF-8"%>
 		/* form id로 proc */
 		let procForm = document.getElementById(formId);
 		
-        
 		// 라디오버튼에 대한 필수값 확인 - 체크된게 하나도 없을때 경고창
 		let selectedRadio1 = procForm.querySelector('input[name="tadd1"]:checked');
 		if (!selectedRadio1) {
