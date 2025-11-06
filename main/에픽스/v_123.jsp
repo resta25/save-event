@@ -208,7 +208,7 @@ pageEncoding="UTF-8"%>
 
     .pop-up {width: 40rem;}
 
-    .timer-box #timer {font-size: 2.5rem;}
+    .timer-box #timer {font-size: 2.2rem; right: 3%;}
 }
 
 @media screen and (max-width: 480px){
@@ -222,17 +222,17 @@ pageEncoding="UTF-8"%>
 
     .pop-up {width: 30rem;}
     .pop-up .btn-box {bottom: 11rem;}
-    .timer-box #timer {font-size: 1.5rem; letter-spacing: 2px;}
+    .timer-box #timer {font-size: 1.3rem; letter-spacing: 2px;}
 }
 @media screen and (max-width: 395px){
     .subscribe .content {padding: 0.5rem 0.2rem;}
     #page_landing_c .wrap_form .description.orage-box > * {font-size: 85%;}
-    .timer-box #timer {font-size: 1.2rem;}
+    .timer-box #timer {font-size: 1.1rem;}
 
 }
 @media screen and (max-width: 375px){
     .subscribe {padding: 0;}
-    .timer-box #timer {font-size: 1.1rem; right: 2%;}
+    .timer-box #timer {font-size: 1.1rem; right: 2%; letter-spacing: 1px;}
 }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/GmarketSans/GmarketSans.css" type="text/css"/>
