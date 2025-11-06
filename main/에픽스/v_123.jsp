@@ -178,6 +178,8 @@ pageEncoding="UTF-8"%>
     .pop-up .btn-box button {
         width: 50%;
     }
+    .timer-box {position: relative;}
+    .timer-box #timer {position: absolute; top: 51%; color: #fff; transform: translateY(-50%); right: 1%; font-size: 3.7rem; font-weight: 700; font-family: 'Gmarket Sans'; letter-spacing: 3px;}
 
 @media screen and (max-width: 768px){
     .subscribe {padding: 3% 2%; height: 150px;}
@@ -204,6 +206,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .question_box .q_select label, label.selected_label {font-size: 85%;}
 
     .pop-up {width: 40rem;}
+    .timer-box #timer {font-size: 2.5rem;}
 }
 
 @media screen and (max-width: 480px){
@@ -217,22 +220,32 @@ pageEncoding="UTF-8"%>
 
     .pop-up {width: 30rem;}
     .pop-up .btn-box {bottom: 11rem;}
+    .timer-box #timer {font-size: 1.5rem; letter-spacing: 2px;}
 }
 @media screen and (max-width: 395px){
     .subscribe .content {padding: 0.5rem 0.2rem;}
     #page_landing_c .wrap_form .description.orage-box > * {font-size: 85%;}
+    .timer-box #timer {font-size: 1.2rem;}
 
 }
 @media screen and (max-width: 375px){
     .subscribe {padding: 0;}
+    .timer-box #timer {font-size: 1.1rem; right: 2%;}
 }
 </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/GmarketSans/GmarketSans.css" type="text/css"/>
+
 <script src="/js/jquery-3.6.1.min.js"></script>
 <script src="/js/sweetalert2.js"></script>
 <script src="/js/common.js"></script>
 
+
 <body id="page_landing_c" class="loaded">
     <main>
+        <div class="img-area timer-box">
+            <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_00.png">
+            <span id="timer"></span>
+        </div>
         <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.jpg"></div>
         <!-- <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.png" alt="landing_top" class="landing_top"> -->
 
@@ -242,12 +255,12 @@ pageEncoding="UTF-8"%>
             <div class="img-area mr-1"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_05.jpg"></div>
             <div class="img-area mr-1">
                 <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_06.jpg">
-                <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_07.jpg">
+                <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_07.gif">
             </div>
 
             <div class="wrap_form">
                 <form class="wrap_curd" id="form-1" method="POST" accept-charset="utf-8">
-                     <div class="description">
+                    <div class="description">
                         <p id="event-period"></p>
                         <div class="ad_txt">
                             꼭! 기억하세요. 본인만 신청 가능!<br />
@@ -497,6 +510,50 @@ pageEncoding="UTF-8"%>
 		}
 		var phoneNum = $('input[name="phone"]').val();
 	});
+
+    //상단 타이머
+    $(document).ready(function () {
+        var display = document.querySelector('#timer');
+
+        // 현재 시각
+        var now = new Date();
+
+        // 내일 자정 (00:00:00)
+        var midnight = new Date();
+        midnight.setDate(now.getDate() + 1);
+        midnight.setHours(0, 0, 0, 0);
+
+        // 남은 시간 (ms 단위)
+        var remaining = midnight - now;
+
+        startTimer(remaining, display);
+    });
+
+    // 타이머 함수
+    function startTimer(duration, display) {
+        var end = Date.now() + duration;
+
+        var timerInterval = setInterval(function () {
+        var remaining = end - Date.now();
+
+        if (remaining <= 0) {
+            clearInterval(timerInterval);
+            display.textContent = "00 :00 : 00";
+            return;
+        }
+
+        var hours = Math.floor((remaining / (1000 * 60 * 60)) % 24);
+        var minutes = Math.floor((remaining / (1000 * 60)) % 60);
+        var seconds = Math.floor((remaining / 1000) % 60);
+
+        // 10 미만일 경우 앞에 0 붙이기
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = hours + ":" + minutes + ":" + seconds;
+        }, 1000); // 1초 간격
+    }
 
     //submit
 	function fnForm(formId){
