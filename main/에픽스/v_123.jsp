@@ -181,7 +181,9 @@ pageEncoding="UTF-8"%>
 
     .timer-box {position: relative;}
     .timer-box #timer {position: absolute; top: 51%; color: #fff; transform: translateY(-50%); right: 1%; font-size: 3.7rem; font-weight: 700; font-family: 'Gmarket Sans'; letter-spacing: 3px;}
-
+@media screen and (max-width: 820px){
+    .timer-box #timer {font-size: 2.5rem;}
+}
 @media screen and (max-width: 768px){
     .subscribe {padding: 3% 2%; height: 150px;}
     .subscribe .content {padding: 0.5rem 0.7rem;}
