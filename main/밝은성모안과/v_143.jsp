@@ -63,7 +63,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
     -moz-appearance: none;    /* Firefox */
     appearance: none;
     width: 100%;
-    text-align: center; font-size: 2rem; font-weight: 700;  padding: 1rem 0; border: 1px solid #c3c3c3; border-radius: 1rem; height: auto; background: url("//static.savemkt.com/event/v_${eventSeq}/arrow.png") no-repeat center right 2rem; background-size: 2rem 1.5rem; background-color: #e8e8e8; outline: none; margin-left: 0;}
+    margin: 0 auto;
+    text-align: center; font-size: 2rem; font-weight: 700;  padding: 1rem 2rem; border: 1px solid #c3c3c3; border-radius: 1rem; height: auto; background: url("//static.savemkt.com/event/v_${eventSeq}/arrow.png") no-repeat center right 2rem; background-size: 2rem 1.5rem; background-color: #e8e8e8; outline: none; margin-left: 0;}
 #page_landing_c .wrap_curd .select-box select option {font-size: 2rem; font-weight: 500; text-align: center;}
 
 /* 설문 팝업 */
