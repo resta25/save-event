@@ -364,6 +364,30 @@ $('input[name="tadd2"]').on('change', function() {
     scrollToBottom();
 });
 
+$('.button-box .check').on('click', function() {
+    const yesRadio = $('input[name="tadd1"][value="예"]');
+    const yesLabel = yesRadio.parent();
+
+    // 라디오 체크
+    yesRadio.prop('checked', true);
+
+    // 다른 버튼들 이미지 모두 off로
+    $('label', yesRadio.parents('.q_select')).each(function(i, t) {
+        $('img', t).attr('src', function(index, src) {
+            return src.replace('_on', '_off');
+        });
+    });
+
+    // 예 버튼만 on으로 변경
+    $('img', yesLabel).attr('src', function(index, src) {
+        return src.replace('_off', '_on');
+    });
+
+    // 예 클릭 시 실행되는 slide() 함수 호출
+    if (typeof slide === 'function') {
+        slide();
+    }
+});
 
 // 개인정보 처리방침 관련 이벤트
 var modal2 = document.getElementById("modal2");
