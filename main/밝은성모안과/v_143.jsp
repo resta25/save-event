@@ -46,7 +46,6 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
 
 .wrap_form {padding-bottom: 10%;}
 .wrap_form .formContents{padding: 0;}
-.title-img {width: 80%; margin: 0 auto 5%;}
 
 /* 상단 스탬프영역 */
 #page_landing_c .wrap_curd .stamp-box {position: relative;}
@@ -64,44 +63,19 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
 
 #page_landing_c .wrap_curd .select-box {padding-bottom: 3rem; border-top: 3px dashed #000; display: none;}
 #page_landing_c .wrap_curd .select-box .question {font-size: 3rem; padding: 2rem 0; text-align: center; font-weight: 700;}
-#page_landing_c .wrap_curd .select-box select {
-    -webkit-appearance: none; /* iOS, Safari */
-    -moz-appearance: none;    /* Firefox */
-    appearance: none;
-    width: 100%;
-    margin: 0 auto;
-    text-align: center; text-align-last: center; font-size: 2rem; font-weight: 700;  padding: 1rem 0; border: 1px solid #c3c3c3; border-radius: 1rem; height: auto; background: url("//static.savemkt.com/event/v_${eventSeq}/arrow.png") no-repeat center right 2rem; background-size: 2rem 1.5rem; background-color: #e8e8e8; outline: none; margin-left: 0;}
-#page_landing_c .wrap_curd .select-box select option {font-size: 2rem; font-weight: 500; text-align: center;}
 #page_landing_c .wrap_curd .select-box .q_select {}
 #page_landing_c .wrap_curd .select-box .q_select .question-txt {text-align: center; font-size: 2rem;  border: 2px solid #c3c3c3; border-radius: 1rem; padding: 1.5rem 0; background: url("//static.savemkt.com/event/v_${eventSeq}/arrow.png") no-repeat center right 2rem; background-size: 2rem 1.5rem; background-color: #e8e8e8; cursor: pointer; letter-spacing: -1px; font-weight: 700;}
-#page_landing_c .wrap_curd .select-box .q_select .select-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #e8e8e8;
-    border: 2px solid #c3c3c3;
-    border-radius: 1rem;
-    margin-top: 0.7rem;
-    display: none;
-}
-#page_landing_c .wrap_curd .select-box .q_select label {
-    padding: 1rem 0;
-    width: 100%;
-}
+#page_landing_c .wrap_curd .select-box .q_select .select-inner { display: flex; flex-direction: column; align-items: center; background: #e8e8e8; border: 2px solid #c3c3c3; border-radius: 1rem; margin-top: 0.7rem; display: none; }
+#page_landing_c .wrap_curd .select-box .q_select label { padding: 1rem 0; width: 100%; }
+#page_landing_c .wrap_curd .select-box .q_select label:nth-child(1) {border-radius: 1rem 1rem 0 0;}
+#page_landing_c .wrap_curd .select-box .q_select label:nth-child(3) {border-radius: 0 0 1rem 1rem;}
 #page_landing_c .wrap_curd .select-box .q_select label:hover {background: #000;}
 #page_landing_c .wrap_curd .select-box .q_select label input {}
-#page_landing_c .wrap_curd .select-box .q_select label span {
-    font-size: 2rem;
-    width: 100%;
-    text-align: center;
-    font-weight: 700;
-}
+#page_landing_c .wrap_curd .select-box .q_select label span { font-size: 2rem; width: 100%; text-align: center; font-weight: 700; }
 #page_landing_c .wrap_curd .select-box .q_select label:hover span {color: #ffff00;}
-
 
 /* 설문 팝업 */
 #page_landing_c .wrap_curd .question-popup {position: absolute; z-index: 999; top: 0%; left: 50%; transform: translateX(-50%); width: 93%; display: none;}
-#page_landing_c .wrap_curd .question-popup .popup-text {font-size: 4rem; line-height: 0.5; font-weight: 700; text-align: center; font-family: 'Gmarket Sans';}
 #page_landing_c .wrap_curd .question-popup .button-box { display: flex ; align-items: center; justify-content: center; width: 60%; gap: 2rem; position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%);}
 #page_landing_c .wrap_curd .question-popup .button-box > div {width: calc(100% / 2);}
 #page_landing_c .wrap_curd .question-popup .button-box > div img {width: 100%;}
@@ -120,7 +94,6 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
 #page_landing_c .wrap_curd .description {text-align: center; padding: 1rem 0;}
 
 .wrap_form .agBox{width: 100%;}
-form .description p{margin: 0;}
 
 /* 모달창 - 개인정보처리방침 */
 .overlay {z-index: 888; position: fixed; top: 0; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
@@ -134,10 +107,13 @@ form .description p{margin: 0;}
 .agreeModalBox .newAgreement ol li {line-height: 12px; font-size: 10px;}
 .btn-agreement {text-align: center; cursor: pointer;}
 
+
+/* submit 애니메이션 */
 @keyframes pulsating {
     50% { transform: scale(0.95); }
 }
 
+/* 스탬프 애니메이션 */
 @keyframes stampPop {
     0% {
         opacity: 0;
@@ -164,8 +140,6 @@ form .description p{margin: 0;}
 }
 
 @media screen and (max-width: 820px){
-    #page_landing_c .wrap_curd .question-popup .popup-text,
-    .pointColor {font-size: 3rem !important;}
 }
 @media screen and (max-width: 768px){
 }
@@ -228,12 +202,6 @@ form .description p{margin: 0;}
                 </div>
                 <div class="select-box">
                     <div class="question">추가 이벤트 혜택</div>
-                    <!-- <select name="tadd2">
-                        <option value="" disabled>추가 이벤트 혜택을 선택해 주세요</option>
-                        <option value="수술비 의료법상 최대할인">수술비 의료법상 최대할인</option>
-                        <option value="검사비 무료(아벨리노 검사 포함)">검사비 무료(아벨리노 검사 포함)</option>
-                        <option value="선글라스, 보조배터리 제공">선글라스, 보조배터리 제공</option>
-                    </select> -->
                     <div class="q_select">
                         <div class="question-txt">추가 이벤트 혜택을 선택해 주세요</div>
                         <div class="select-inner">
@@ -396,19 +364,6 @@ $('input[name="tadd2"]').on('change', function() {
     scrollToBottom();
 });
 
-// $('.select-box select').on('change', function () {
-//     const val = $(this).val();
-//     if (val && val !== '') {
-//         // 이미 열려있으면 또 애니메이션 겹치지 않도록 처리
-//         if (!$('.user-box').is(':visible')) {
-//             $('.user-box').stop(true, true).slideDown(300);
-//             scrollToBottom();
-//         }
-//     } else {
-//         // "선택해 주세요"로 다시 바꾸면 숨기고 싶으면 아래 주석 해제
-//         // $('.user-box').slideUp(300);
-//     }
-// });
 
 // 개인정보 처리방침 관련 이벤트
 var modal2 = document.getElementById("modal2");
