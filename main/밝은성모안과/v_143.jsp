@@ -48,8 +48,14 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
 .wrap_form .formContents{padding: 0;}
 .title-img {width: 80%; margin: 0 auto 5%;}
 
+/* 상단 스탬프영역 */
+#page_landing_c .wrap_curd .stamp-box {position: relative;}
+#page_landing_c .wrap_curd .stamp-box > img {width: 100%;}
+#page_landing_c .wrap_curd .stamp-box .stamp {position: absolute; bottom: 6%; right: 8%; opacity: 0; transform-origin: center; animation: stampPop 0.45s ease-out forwards; animation-delay: 0.3s; width: 47%;}
+#page_landing_c .wrap_curd .stamp-box .stamp img { width: 100%;}
+
 /* 설문영역 */
-#page_landing_c .wrap_curd .form-inner {padding: 2rem;}
+#page_landing_c .wrap_curd .form-inner {padding: 2rem; padding-top: 0;}
 #page_landing_c .wrap_curd .question_box { padding-bottom: 2rem; position: relative;}
 #page_landing_c .wrap_curd .question_box .question {font-size: 3rem; padding: 2rem 0; text-align: center; font-weight: 700;}
 #page_landing_c .wrap_curd .question_box .q_select {width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 2rem;}
@@ -64,7 +70,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
     appearance: none;
     width: 100%;
     margin: 0 auto;
-    text-align: center; text-align-last: center; font-size: 2rem; font-weight: 700;  padding: 1rem 2rem; border: 1px solid #c3c3c3; border-radius: 1rem; height: auto; background: url("//static.savemkt.com/event/v_${eventSeq}/arrow.png") no-repeat center right 2rem; background-size: 2rem 1.5rem; background-color: #e8e8e8; outline: none; margin-left: 0;}
+    text-align: center; text-align-last: center; font-size: 2rem; font-weight: 700;  padding: 1rem 0; border: 1px solid #c3c3c3; border-radius: 1rem; height: auto; background: url("//static.savemkt.com/event/v_${eventSeq}/arrow.png") no-repeat center right 2rem; background-size: 2rem 1.5rem; background-color: #e8e8e8; outline: none; margin-left: 0;}
 #page_landing_c .wrap_curd .select-box select option {font-size: 2rem; font-weight: 500; text-align: center;}
 
 /* 설문 팝업 */
@@ -105,13 +111,45 @@ form .description p{margin: 0;}
     50% { transform: scale(0.95); }
 }
 
+@keyframes stampPop {
+    0% {
+        opacity: 0;
+        transform: scale(2.2) rotate(-10deg);
+        filter: blur(2px);
+    }
+    40% {
+        opacity: 1;
+        transform: scale(0.98) rotate(3deg);
+        filter: blur(0);
+        /* box-shadow: 0 8px 18px rgba(0,0,0,0.25); */
+    }
+    65% {
+        transform: scale(1.04) rotate(-2deg);
+    }
+    85% {
+        transform: scale(0.98) rotate(1deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+        /* box-shadow: 0 4px 10px rgba(0,0,0,0.18); */
+    }
+}
+
 @media screen and (max-width: 820px){
+    #page_landing_c .wrap_curd .question-popup .popup-text,
+    .pointColor {font-size: 3rem !important;}
 }
 @media screen and (max-width: 768px){
 }
 @media screen and (max-width: 640px){
     #page_landing_c .wrap_curd .question_box .question,
     #page_landing_c .wrap_curd .select-box .question {font-size: 3rem;}
+
+    #page_landing_c .wrap_curd .question-popup .popup-text,
+    .pointColor {font-size: 2rem !important;}
+    #page_landing_c .wrap_curd .question-popup .button-box > div {font-size: 1.5rem; width: 10rem; height: 5rem;}
+    #page_landing_c .wrap_curd .question-popup .button-box .check {font-size: 3rem;}
 }
 @media screen and (max-width: 480px){
     #page_landing_c .wrap_curd .question_box .question,
@@ -119,6 +157,12 @@ form .description p{margin: 0;}
     #page_landing_c .wrap_curd .select-box select {font-size: 1.4rem; background-size: 1.5rem 1rem;}
     #page_landing_c .wrap_curd .select-box select option {font-size: 1.4rem;}
     #page_landing_c .wrap_curd .user-box .user-info input {font-size: 1rem;}
+    #page_landing_c .wrap_curd .question_box .q_select {gap: 1rem;}
+
+    #page_landing_c .wrap_curd .question-popup .popup-text,
+    .pointColor {font-size: 1.5rem !important;}
+    #page_landing_c .wrap_curd .question-popup .button-box > div {font-size: 1rem; width: 8rem; height: 3rem;}
+    #page_landing_c .wrap_curd .question-popup .button-box .check {font-size: 2rem;}
 }
 @media screen and (max-width: 395px){
     #page_landing_c .wrap_curd .question_box .question,
@@ -130,6 +174,7 @@ form .description p{margin: 0;}
     #page_landing_c .wrap_checkbox * {font-size: 10px;}
 }
 @media screen and (max-width: 375px){
+    #page_landing_c .wrap_curd .question-popup .popup-text, .pointColor {font-size: 1.2em !important;}
 }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/GmarketSans/GmarketSans.css" type="text/css"/>
@@ -142,7 +187,10 @@ form .description p{margin: 0;}
 <main>
     <div class="wrap_form">
         <form class="wrap_curd" id="form-1" method="POST" accept-charset="utf-8">
-            <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.jpg" class="landing_top">
+            <div class="img-area stamp-box">
+                <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.jpg">
+                <span class="stamp"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.png"></span>
+            </div>
             <div class="form-inner">
                 <div class="question_box">
                     <div class="question">수험생 이신가요?</div>
