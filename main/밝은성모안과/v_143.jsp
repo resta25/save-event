@@ -58,7 +58,11 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
 
 #page_landing_c .wrap_curd .select-box {padding-bottom: 3rem; border-top: 3px dashed #000; display: none;}
 #page_landing_c .wrap_curd .select-box .question {font-size: 3rem; padding: 2rem 0; text-align: center; font-weight: 700;}
-#page_landing_c .wrap_curd .select-box select {text-align: center; font-size: 2rem; font-weight: 700;  padding: 1rem 0; border: 1px solid #c3c3c3; border-radius: 1rem; height: auto; background: url("//static.savemkt.com/event/v_${eventSeq}/arrow.png") no-repeat center right 2rem; background-size: 2rem 1.5rem; background-color: #e8e8e8; outline: none; margin-left: 0;}
+#page_landing_c .wrap_curd .select-box select {
+    -webkit-appearance: none; /* iOS, Safari */
+    -moz-appearance: none;    /* Firefox */
+    appearance: none;
+    text-align: center; text-align: center; font-size: 2rem; font-weight: 700;  padding: 1rem 0; border: 1px solid #c3c3c3; border-radius: 1rem; height: auto; background: url("//static.savemkt.com/event/v_${eventSeq}/arrow.png") no-repeat center right 2rem; background-size: 2rem 1.5rem; background-color: #e8e8e8; outline: none; margin-left: 0;}
 #page_landing_c .wrap_curd .select-box select option {font-size: 2rem; font-weight: 500;}
 
 /* 설문 팝업 */
