@@ -72,13 +72,40 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
     margin: 0 auto;
     text-align: center; text-align-last: center; font-size: 2rem; font-weight: 700;  padding: 1rem 0; border: 1px solid #c3c3c3; border-radius: 1rem; height: auto; background: url("//static.savemkt.com/event/v_${eventSeq}/arrow.png") no-repeat center right 2rem; background-size: 2rem 1.5rem; background-color: #e8e8e8; outline: none; margin-left: 0;}
 #page_landing_c .wrap_curd .select-box select option {font-size: 2rem; font-weight: 500; text-align: center;}
+#page_landing_c .wrap_curd .select-box .q_select {}
+#page_landing_c .wrap_curd .select-box .q_select .question-txt {text-align: center; font-size: 2rem;  border: 2px solid #c3c3c3; border-radius: 1rem; padding: 1.5rem 0; background: url("//static.savemkt.com/event/v_${eventSeq}/arrow.png") no-repeat center right 2rem; background-size: 2rem 1.5rem; background-color: #e8e8e8; cursor: pointer; letter-spacing: -1px; font-weight: 700;}
+#page_landing_c .wrap_curd .select-box .q_select .select-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #e8e8e8;
+    border: 2px solid #c3c3c3;
+    border-radius: 1rem;
+    margin-top: 0.7rem;
+    display: none;
+}
+#page_landing_c .wrap_curd .select-box .q_select label {
+    padding: 1rem 0;
+    width: 100%;
+}
+#page_landing_c .wrap_curd .select-box .q_select label:hover {background: #000;}
+#page_landing_c .wrap_curd .select-box .q_select label input {}
+#page_landing_c .wrap_curd .select-box .q_select label span {
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+}
+#page_landing_c .wrap_curd .select-box .q_select label:hover span {color: #ffff00;}
+
 
 /* 설문 팝업 */
-#page_landing_c .wrap_curd .question-popup {background: #fff; border-radius: 1rem; padding: 3rem 2rem 2rem; position: absolute; z-index: 999; top: 0%; left: 50%; transform: translateX(-50%); width: 93%; display: none;}
+#page_landing_c .wrap_curd .question-popup {position: absolute; z-index: 999; top: 0%; left: 50%; transform: translateX(-50%); width: 93%; display: none;}
 #page_landing_c .wrap_curd .question-popup .popup-text {font-size: 4rem; line-height: 0.5; font-weight: 700; text-align: center; font-family: 'Gmarket Sans';}
-#page_landing_c .wrap_curd .question-popup .button-box { display: flex ; align-items: center; justify-content: center; gap: 2rem; margin: 1.5rem 0 0; }
-#page_landing_c .wrap_curd .question-popup .button-box > div {background: #000; color: #fff; font-size: 2rem; text-align: center; border-radius: 1rem; width: 15rem; height: 7rem; cursor: pointer;}
-#page_landing_c .wrap_curd .question-popup .button-box .check {font-size: 4rem;}
+#page_landing_c .wrap_curd .question-popup .button-box { display: flex ; align-items: center; justify-content: center; width: 60%; gap: 2rem; position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%);}
+#page_landing_c .wrap_curd .question-popup .button-box > div {width: calc(100% / 2);}
+#page_landing_c .wrap_curd .question-popup .button-box > div img {width: 100%;}
+#page_landing_c .wrap_curd .question-popup .button-box .check {}
 #page_landing_c .wrap_curd .question-popup .button-box .close {}
 
 /* db영역 */
@@ -145,36 +172,29 @@ form .description p{margin: 0;}
 @media screen and (max-width: 640px){
     #page_landing_c .wrap_curd .question_box .question,
     #page_landing_c .wrap_curd .select-box .question {font-size: 3rem;}
-
-    #page_landing_c .wrap_curd .question-popup .popup-text,
-    .pointColor {font-size: 2rem !important;}
-    #page_landing_c .wrap_curd .question-popup .button-box > div {font-size: 1.5rem; width: 10rem; height: 5rem;}
-    #page_landing_c .wrap_curd .question-popup .button-box .check {font-size: 3rem;}
 }
 @media screen and (max-width: 480px){
     #page_landing_c .wrap_curd .question_box .question,
     #page_landing_c .wrap_curd .select-box .question {font-size: 2.4rem;}
-    #page_landing_c .wrap_curd .select-box select {font-size: 1.4rem; background-size: 1.5rem 1rem;}
-    #page_landing_c .wrap_curd .select-box select option {font-size: 1.4rem;}
-    #page_landing_c .wrap_curd .user-box .user-info input {font-size: 1rem;}
-    #page_landing_c .wrap_curd .question_box .q_select {gap: 1rem;}
+    #page_landing_c .wrap_curd .user-box .user-info input {font-size: 1.5rem;}
 
-    #page_landing_c .wrap_curd .question-popup .popup-text,
-    .pointColor {font-size: 1.5rem !important;}
-    #page_landing_c .wrap_curd .question-popup .button-box > div {font-size: 1rem; width: 8rem; height: 3rem;}
-    #page_landing_c .wrap_curd .question-popup .button-box .check {font-size: 2rem;}
 }
 @media screen and (max-width: 395px){
     #page_landing_c .wrap_curd .question_box .question,
     #page_landing_c .wrap_curd .select-box .question {font-size: 1.7rem; padding: 1rem 0;}
-    #page_landing_c .wrap_curd .select-box {padding-bottom: 2rem;}
-    #page_landing_c .wrap_curd .select-box select {font-size: 1rem; background-size: 1rem 0.7rem;}
-    #page_landing_c .wrap_curd .select-box select option {font-size: 1rem;}
+
+    #page_landing_c .wrap_curd .select-box .q_select .question-txt {font-size: 1.5rem; background-size: 1.5rem 1rem; padding: 1.2rem 0;}
+    #page_landing_c .wrap_curd .select-box .q_select label span {font-size: 1.5rem;}
+
     #page_landing_c .wrap_curd .user-box {padding: 2rem 0 0;}
     #page_landing_c .wrap_checkbox * {font-size: 10px;}
+    #page_landing_c .wrap_curd .select-box {padding-bottom: 2rem;}
+    #page_landing_c .wrap_curd .select-box .q_select .question-txt {font-size: 1.2rem; background-size: 1rem 0.7rem;}
+    #page_landing_c .wrap_curd .select-box .q_select label span {font-size: 1.2rem;}
+    #page_landing_c .wrap_curd .user-box .user-info input {font-size: 1rem;}
+    #page_landing_c .wrap_curd * {font-size: 10px;}
 }
 @media screen and (max-width: 375px){
-    #page_landing_c .wrap_curd .question-popup .popup-text, .pointColor {font-size: 1.2em !important;}
 }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/GmarketSans/GmarketSans.css" type="text/css"/>
@@ -199,21 +219,29 @@ form .description p{margin: 0;}
                         <label><input type="radio" name="tadd1" value="아니오" onclick="popup()"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_02.png"></label>
                     </div>
                     <div class="question-popup">
-                        <p class="popup-text">본 이벤트는<br/><span class="pointColor">수험생</span>만 신청 가능합니다.</p>
+                        <img src="//static.savemkt.com/event/v_${eventSeq}/popup.png">
                         <div class="button-box">
-                            <div class="check" onclick="reset()">확인</div>
-                            <div class="close" onclick="windowClose()">해당없을<br/>(나가기)</div>
+                            <div class="check" onclick="reset()"><img src="//static.savemkt.com/event/v_${eventSeq}/check_btn.png"></div>
+                            <div class="close" onclick="windowClose()"><img src="//static.savemkt.com/event/v_${eventSeq}/close_btn.png"></div>
                         </div>
                     </div>
                 </div>
                 <div class="select-box">
                     <div class="question">추가 이벤트 혜택</div>
-                    <select name="tadd2">
+                    <!-- <select name="tadd2">
                         <option value="" disabled>추가 이벤트 혜택을 선택해 주세요</option>
                         <option value="수술비 의료법상 최대할인">수술비 의료법상 최대할인</option>
                         <option value="검사비 무료(아벨리노 검사 포함)">검사비 무료(아벨리노 검사 포함)</option>
                         <option value="선글라스, 보조배터리 제공">선글라스, 보조배터리 제공</option>
-                    </select>
+                    </select> -->
+                    <div class="q_select">
+                        <div class="question-txt">추가 이벤트 혜택을 선택해 주세요</div>
+                        <div class="select-inner">
+                            <label><input type="radio" name="tadd2" value="수술비 의료법상 최대할인"><span>수술비 의료법상 최대할인</span></label>
+                            <label><input type="radio" name="tadd2" value="검사비 무료 (아벨리노 검사 포함)"><span>검사비 무료 (아벨리노 검사 포함)</span></label>
+                            <label><input type="radio" name="tadd2" value="선글라스, 보조배터리 제공"><span>선글라스, 보조배터리 제공</span></label>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="user-box">
@@ -315,7 +343,7 @@ $(document).ready(function(){
 });
 
 //설문 클릭시 이미지 on/off
-$('input[name*="tadd"]').on('click', function(){
+$('input[name="tadd1"]').on('click', function(){
     $('label', $(this).parents('.q_select')).each(function(i,t) {
         $('img', t).attr('src', $('img', t).attr('src').replace('_on', '_off'));
     });
@@ -336,10 +364,7 @@ function reset () {
 
 // 나가기 버튼 이벤트
 function windowClose() {
-    window.close();
-    self.close();
-    window.opener = window.location.href;
-    window.open('about:blank', '_self').close();
+    location.reload();
 }
 
 // 스크롤 이동
@@ -355,19 +380,35 @@ function slide() {
     }
 }
 
-$('.select-box select').on('change', function () {
-    const val = $(this).val();
-    if (val && val !== '') {
-        // 이미 열려있으면 또 애니메이션 겹치지 않도록 처리
-        if (!$('.user-box').is(':visible')) {
-            $('.user-box').stop(true, true).slideDown(300);
-            scrollToBottom();
-        }
-    } else {
-        // "선택해 주세요"로 다시 바꾸면 숨기고 싶으면 아래 주석 해제
-        // $('.user-box').slideUp(300);
-    }
+$('.select-box .q_select .question-txt').on('click',function(){
+    $('.select-inner').stop(true, true).slideDown(500);
+    scrollToBottom();
+})
+
+$('input[name="tadd2"]').on('change', function() {
+    // 선택된 라디오의 값 가져오기
+    var selectedValue = $(this).val();
+    // question-txt에 텍스트 변경
+    $('.q_select .question-txt').text(selectedValue).css({ 'background': '#000', 'color': '#ff0' });
+
+    $('.select-inner').hide();
+    $('.user-box').stop(true, true).slideDown(300);
+    scrollToBottom();
 });
+
+// $('.select-box select').on('change', function () {
+//     const val = $(this).val();
+//     if (val && val !== '') {
+//         // 이미 열려있으면 또 애니메이션 겹치지 않도록 처리
+//         if (!$('.user-box').is(':visible')) {
+//             $('.user-box').stop(true, true).slideDown(300);
+//             scrollToBottom();
+//         }
+//     } else {
+//         // "선택해 주세요"로 다시 바꾸면 숨기고 싶으면 아래 주석 해제
+//         // $('.user-box').slideUp(300);
+//     }
+// });
 
 // 개인정보 처리방침 관련 이벤트
 var modal2 = document.getElementById("modal2");
@@ -406,13 +447,21 @@ function fnForm(formId){
         procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
     }
 
-    let selectedRadio2 = procForm.querySelector('select[name="tadd2"]');
+    let selectedRadio2 = procForm.querySelector('input[name="tadd2"]:checked');
     if (!selectedRadio2) {
         alert("설문을 선택해주세요.");
         return;
     } else {
         procForm.querySelector("input[name='add2']").value = selectedRadio2.value;
     }
+
+    // let selectedRadio2 = procForm.querySelector('select[name="tadd2"]');
+    // if (!selectedRadio2) {
+    //     alert("설문을 선택해주세요.");
+    //     return;
+    // } else {
+    //     procForm.querySelector("input[name='add2']").value = selectedRadio2.value;
+    // }
 
     /*
     let selectedRadio2 = procForm.querySelector(`input[name="tadd2"]:checked`).value;
