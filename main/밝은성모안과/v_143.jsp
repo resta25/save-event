@@ -77,7 +77,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
 /* 설문 팝업 */
 #page_landing_c .wrap_curd .question-popup {position: absolute; z-index: 999; top: 0%; left: 50%; transform: translateX(-50%); width: 93%; display: none;}
 #page_landing_c .wrap_curd .question-popup .button-box { display: flex ; align-items: center; justify-content: center; width: 60%; gap: 2rem; position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%);}
-#page_landing_c .wrap_curd .question-popup .button-box > div {width: calc(100% / 2);}
+#page_landing_c .wrap_curd .question-popup .button-box > div {width: calc(100% / 2); cursor: pointer;}
 #page_landing_c .wrap_curd .question-popup .button-box > div img {width: 100%;}
 #page_landing_c .wrap_curd .question-popup .button-box .check {}
 #page_landing_c .wrap_curd .question-popup .button-box .close {}
@@ -88,8 +88,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
 #page_landing_c .wrap_curd .user-box .user-info img {width: 100%;}
 #page_landing_c .wrap_curd .user-box .user-info input {position: absolute; top: 50%; transform: translateY(-50%); left: 23%; font-size: 2rem; padding: 2rem; padding-left: 0; background: transparent; border: none; width: 70%;}
 
-.wrap_form .submit {width: 100%; margin: 1rem auto; padding: 0; animation: pulsating 0.8s linear infinite; -webkit-animation: pulsating 0.8s linear infinite;}
-.wrap_form .submit input[type="image"]{width: 100%; height: 100%;}
+.wrap_form .submit {width: 100%; margin: 1rem auto; padding: 0; animation: pulsating 0.8s linear infinite; -webkit-animation: pulsating 0.8s linear infinite; }
+.wrap_form .submit input[type="image"]{width: 100%; height: 100%; cursor: pointer;}
 
 #page_landing_c .wrap_curd .description {text-align: center; padding: 1rem 0;}
 
