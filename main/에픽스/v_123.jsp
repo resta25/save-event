@@ -129,6 +129,7 @@ pageEncoding="UTF-8"%>
 
     #page_landing_c .wrap_curd .submit {margin: 1em auto 0; padding: 0; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newSb.png') no-repeat center center / 100%;}
     #page_landing_c .wrap_curd .submit input[type="image"] {
+        margin: 1.5% auto 0;
         animation: pulsating 0.8s linear infinite;
         -webkit-animation: pulsating 0.8s linear infinite;
     }
@@ -180,7 +181,63 @@ pageEncoding="UTF-8"%>
     }
 
     .timer-box {position: relative;}
-    .timer-box #timer {position: absolute; top: 51%; color: #fff; transform: translateY(-50%); right: 1%; font-size: 3.7rem; font-weight: 700; font-family: 'Gmarket Sans'; letter-spacing: 3px;}
+    .timer-box #timer {position: absolute;top: 0;color: #fff;right: 0;font-size: 3.7rem;font-weight: 700;font-family: 'Gmarket Sans';letter-spacing: 3px;width: 26.25%;height: 100%;display: flex; align-items: center; justify-content: center;}
+
+    .font-red {
+        color: #ff0000;
+    }
+
+    [class^="popup-"] {
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: max-content;
+        margin: 0;
+        padding: 70px 0 30px;
+        background-color: #fff;
+        border-radius: 30px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        opacity: 1;
+        visibility: visible;
+    }
+    [class^="popup-"] p,
+    [class^="popup-"] span {
+        text-align: center;
+        font-size: 250%;
+        font-weight: 900;
+    }
+    [class^="popup-"] strong {
+        color: #ff0000;
+        font-weight: 900;
+    }
+    [class^="popup-"] .btn-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 10%;
+    }
+    [class^="popup-"] .btn-box button {
+        background-color: #000;
+        color: #fff;
+        width: 150px;
+        height: 50px;
+        font-size: 125%;
+        font-weight: 700;
+        border-radius: 0.5rem;
+    }
+    .popup-valid .btn-box button {
+        width: 65%;
+        margin: 0 auto;
+        font-size: 175%;
+        font-weight: 500;
+    } 
+    
 @media screen and (max-width: 820px){
     .timer-box #timer {font-size: 2.5rem;}
 }
@@ -209,8 +266,10 @@ pageEncoding="UTF-8"%>
     #page_landing_c .question_box .q_select label, label.selected_label {font-size: 85%;}
 
     .pop-up {width: 40rem;}
+    [class^="popup-"] {width: 90vw; font-size: 2.5vw; border-radius: 20px; padding: 30px 0;}
+    .popup-valid .btn-box button {width: 50vw; height: 40px}
 
-    .timer-box #timer {font-size: 2.2rem; right: 3%;}
+    .timer-box #timer {font-size: 2.2rem;}
 }
 @media screen and (max-width: 640px){
     .timer-box #timer {font-size: 1.7rem;}
@@ -224,7 +283,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .legend {font-size: 125%;}
     #page_landing_c .question_box .q_select label {height: 56px; font-size: 70%;}
 
-    .pop-up {width: 30rem;}
+    .pop-up {width: 30rem; bottom: 4.5%;}
     .pop-up .btn-box {bottom: 11rem;}
     .timer-box #timer {font-size: 1.3rem; letter-spacing: 2px;}
 }
@@ -236,7 +295,7 @@ pageEncoding="UTF-8"%>
 }
 @media screen and (max-width: 375px){
     .subscribe {padding: 0;}
-    .timer-box #timer {font-size: 1.1rem; right: 2%; letter-spacing: 1px;}
+    .timer-box #timer {font-size: 1.1rem; letter-spacing: 1px;}
 }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/GmarketSans/GmarketSans.css" type="text/css"/>
@@ -254,13 +313,12 @@ pageEncoding="UTF-8"%>
         <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.jpg"></div>
         <!-- <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.png" alt="landing_top" class="landing_top"> -->
 
-            <div class="img-area gif-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.gif"></div>
-            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_03.jpg"></div>
+            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg"></div>
+            <div class="img-area gif-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_03.gif"></div>
             <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_04.jpg"></div>
             <div class="img-area mr-1"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_05.jpg"></div>
             <div class="img-area mr-1">
-                <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_06.jpg">
-                <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_07.jpg">
+                <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_06.gif">
             </div>
 
             <div class="wrap_form">
@@ -386,12 +444,16 @@ pageEncoding="UTF-8"%>
             </div>
         </div>
         <div class="overlay"></div>
+        <div class="popup-valid">
+            <span class="font-red">필수 항목을 모두 입력해주세요.</span>
+            <div class="btn-box">
+                <button type="button" class="btn-valid">확인</button>
+            </div>
+        </div>
         <div class="pop-up">
-            <div class="popup-inner">
-                <div class="btn-box">
-                    <button type="button" class="btn-confirm"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_check.png"></button>
-                    <button type="button" class="btn-out"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_close.png"></button>
-                </div>
+            <div class="btn-box">
+                <button type="button" class="btn-confirm"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_check.png"></button>
+                <button type="button" class="btn-out"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_close.png"></button>
             </div>
         </div>
     </main>
@@ -471,26 +533,49 @@ pageEncoding="UTF-8"%>
 	    });
 	});
 
+    $('.overlay').hide();
+    $('.popup-valid').hide();
+    $('.pop-up').hide();
+
     let isConfirm = false;
 
-    $('.submit .btn_submit').on('click', function(e){
+    $('.submit .btn_submit').on('click', function(e) {
         e.preventDefault();
-       // $('.popup').css({opacity: 1, visibility: 'visible'});
-        if (!isConfirm) {
-            $('.overlay, .pop-up').show();
+
+        const tadd1 = $('input[name="tadd1"]:checked').val();
+        const tadd2 = $('input[name="tadd2"]:checked').val();
+        const tadd3 = $('input[name="tadd3"]:checked').val();
+        const agBox = $('input[name="agBox"]:checked').val();
+        const nameVal = $('input[name="name"]').val();
+        const phoneVal = $('input[name="phone"]').val();
+
+        // ✅ 필수값 유효성 검사
+        if (!tadd1 || !tadd2 || !tadd3 || !agBox || !nameVal || !phoneVal || phoneVal.length < 11) {
+            $('.overlay').show();
+            $('.popup-valid').show();
             return;
         }
 
-        fnForm('form-1');
+        // ✅ 모든 항목이 입력된 경우 → 확인 팝업 표시
+        $('.overlay, .pop-up').show();
+        isConfirm = false;
     });
 
-    $('.btn-confirm').on('click', function(){
+    $('.btn-valid').on('click', function() {
+        $('.overlay, .popup-valid').hide();
+    });
+
+    $('.btn-confirm').on('click', function() {
         isConfirm = true;
         $('.overlay, .pop-up').hide();
+
+        if (isConfirm) {
+            fnForm('form-1'); // ✅ 폼 전송 함수 실행
+        }
     });
 
-    $('.btn-out').on('click', function(){
-        isConfirm = false; // 다시 뜨게 만들려면 false 유지
+    $('.btn-out').on('click', function() {
+        isConfirm = false;
         $('.overlay, .pop-up').hide();
     });
 
