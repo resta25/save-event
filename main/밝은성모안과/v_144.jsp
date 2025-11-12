@@ -234,7 +234,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
 }
 @media screen and (max-width: 768px){
     [class^="popup-"] {width: 90%;}
-    [class^="popup-"] p, [class^="popup-"] span {font-size: 170%;}
+    [class^="popup-"] p, [class^="popup-"] span {font-size: 150%;}
     [class^="popup-question"] span, [class^="popup-form"] span {font-size: 100%;}
     [class^="popup-question"] {bottom: 50%;}
     [class^="popup-form"],
@@ -247,6 +247,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
     .wrap_form .submit {text-align: center;}
     :is(#page_landing_a, #page_landing_c) .wrap_curd .btn_submit {margin-bottom: 3%;}
     #page_landing_c .wrap_curd .question_box .q_select label img {height: 48px; width: 100%;}
+    [class^="popup-"] .btn-box button {width: 120px; height: 40px;}
 }
 @media screen and (max-width: 640px){
     #page_landing_c .wrap_curd .question_box .question,
