@@ -58,7 +58,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
 #page_landing_c .wrap_curd .question_box { padding-bottom: 2rem; position: relative;}
 #page_landing_c .wrap_curd .question_box .question {font-size: 3rem; padding: 2rem 0; text-align: center; font-weight: 700;}
 #page_landing_c .wrap_curd .question_box .q_select {width: 100%;  margin-bottom: 2%;  display: flex; align-items: center; justify-content: space-between; gap: 2rem;}
-#page_landing_c .wrap_curd .question_box .q_select label {width: 100%; justify-content: center; background-color: #e8e8e8; padding: 1.1rem 1rem; border: 2px solid #c3c3c3; font-size: 215%; border-radius: 15px; font-weight: 500;}
+#page_landing_c .wrap_curd .question_box .q_select label {width: 100%; gap: 0; justify-content: center; background-color: #e8e8e8; padding: 1.1rem 1rem; border: 2px solid #c3c3c3; font-size: 215%; border-radius: 15px; font-weight: 500;}
 #page_landing_c .wrap_curd .question_box .q_select label.checked {background-color: #000; border-color: #000; color: #fffc00;}
 
 #page_landing_c .wrap_curd .select-box {padding-bottom: 3rem; border-top: 3px dashed #000; display: none;}
