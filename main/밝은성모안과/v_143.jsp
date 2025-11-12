@@ -6,13 +6,6 @@ pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/css/landing.css">
 <link rel="stylesheet" href="/css/common.css">
 <style>
-
-.thank_eventseq, .thank_media, .thank_media, .thank_phone {
-    height: 0;
-    opacity: 0;
-    visibility: hidden;
-    width: 0;
-}
 * {box-sizing: border-box; font-family: 'Noto Sans KR', sans-serif;}
 .pointColor {color: #ff0000; font-size: 4rem !important; font-weight: 700;}
 
