@@ -57,9 +57,9 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
 #page_landing_c .wrap_curd .form-inner {padding: 2rem; padding-top: 0;}
 #page_landing_c .wrap_curd .question_box { padding-bottom: 2rem; position: relative;}
 #page_landing_c .wrap_curd .question_box .question {font-size: 3rem; padding: 2rem 0; text-align: center; font-weight: 700;}
-#page_landing_c .wrap_curd .question_box .q_select {width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 2rem;}
-#page_landing_c .wrap_curd .question_box .q_select label {width: 100%; margin-bottom: 2%; justify-content: center;}
-#page_landing_c .wrap_curd .question_box .q_select label img {width: 100%;}
+#page_landing_c .wrap_curd .question_box .q_select {width: 100%;  margin-bottom: 2%;  display: flex; align-items: center; justify-content: space-between; gap: 2rem;}
+#page_landing_c .wrap_curd .question_box .q_select label {width: 100%; justify-content: center; background-color: #e8e8e8; padding: 1.1rem 1rem; border: 2px solid #c3c3c3; font-size: 215%; border-radius: 15px; font-weight: 500;}
+#page_landing_c .wrap_curd .question_box .q_select label.checked {background-color: #000; border-color: #000; color: #fffc00;}
 
 #page_landing_c .wrap_curd .select-box {padding-bottom: 3rem; border-top: 3px dashed #000; display: none;}
 #page_landing_c .wrap_curd .select-box .question {font-size: 3rem; padding: 2rem 0; text-align: center; font-weight: 700;}
@@ -75,12 +75,12 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
 #page_landing_c .wrap_curd .select-box .q_select label:hover span {color: #ffff00;}
 
 /* 설문 팝업 */
-#page_landing_c .wrap_curd .question-popup {position: absolute; z-index: 999; top: 0%; left: 50%; transform: translateX(-50%); width: 93%; display: none;}
-#page_landing_c .wrap_curd .question-popup .button-box { display: flex ; align-items: center; justify-content: center; width: 60%; gap: 2rem; position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%);}
-#page_landing_c .wrap_curd .question-popup .button-box > div {width: calc(100% / 2); cursor: pointer;}
-#page_landing_c .wrap_curd .question-popup .button-box > div img {width: 100%;}
-#page_landing_c .wrap_curd .question-popup .button-box .check {}
-#page_landing_c .wrap_curd .question-popup .button-box .close {}
+/* #page_landing_c .wrap_curd .popup-question {position: absolute; z-index: 999; top: 0%; left: 50%; transform: translateX(-50%); width: 93%; display: none;}
+#page_landing_c .wrap_curd .popup-question .button-box { display: flex ; align-items: center; justify-content: center; width: 60%; gap: 2rem; position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%);}
+#page_landing_c .wrap_curd .popup-question .button-box > div {width: calc(100% / 2); cursor: pointer;}
+#page_landing_c .wrap_curd .popup-question .button-box > div img {width: 100%;}
+#page_landing_c .wrap_curd .popup-question .button-box .check {}
+#page_landing_c .wrap_curd .popup-question .button-box .close {} */
 
 /* db영역 */
 #page_landing_c .wrap_curd .user-box {padding: 4rem 0 0; border-top: 3px dashed #000; display: none; }
@@ -88,7 +88,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
 #page_landing_c .wrap_curd .user-box .user-info img {width: 100%;}
 #page_landing_c .wrap_curd .user-box .user-info input {position: absolute; top: 50%; transform: translateY(-50%); left: 23%; font-size: 2rem; padding: 2rem; padding-left: 0; background: transparent; border: none; width: 70%;}
 
-.wrap_form .submit {width: 100%; margin: 1rem auto; padding: 0; animation: pulsating 0.8s linear infinite; -webkit-animation: pulsating 0.8s linear infinite; }
+.wrap_form .submit {width: 100%; margin: 1rem auto; padding: 0; animation: pulsating 0.8s linear infinite; -webkit-animation: pulsating 0.8s linear infinite; text-align: center;}
 .wrap_form .submit input[type="image"]{width: 100%; height: 100%; cursor: pointer;}
 
 #page_landing_c .wrap_curd .description {text-align: center; padding: 1rem 0;}
@@ -106,6 +106,97 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
 .agreeModalBox .newAgreement h3 {margin: 1% 0; font-size: 11px;}
 .agreeModalBox .newAgreement ol li {line-height: 12px; font-size: 10px;}
 .btn-agreement {text-align: center; cursor: pointer;}
+
+.popup-form .btn-box    {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+    position: absolute;
+    width: 75%;
+    /* height: 100%; */
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.popup-form .btn-box button {
+    width: 50%;
+}
+
+.timer-box {position: relative;}
+.timer-box #timer {position: absolute;top: 0;color: #fff;right: 0;font-size: 3.7rem;font-weight: 700;font-family: 'Gmarket Sans';letter-spacing: 3px;width: 26.25%;height: 100%;display: flex; align-items: center; justify-content: center;}
+
+.font-red {
+    color: #ff0000;
+}
+
+[class^="popup-"] {
+    z-index: 999;
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 600px;
+    height: max-content;
+    margin: 0;
+    padding: 40px 0 30px;
+    background-color: #fff;
+    border-radius: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 1;
+    visibility: visible;
+}
+[class^="popup-question"] {
+    bottom: 10%;
+}
+[class^="popup-"] p,
+[class^="popup-"] span {
+    text-align: center;
+    font-size: 250%;
+    font-weight: 900;
+}
+[class^="popup-form"] p {
+    padding-bottom: 15%;
+}
+[class^="popup-question"] span,
+[class^="popup-form"] span {
+    font-size: 100%;
+}
+[class^="popup-"] strong {
+    color: #ff0000;
+    font-weight: 900;
+}
+[class^="popup-"] .btn-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 5%;
+}
+[class^="popup-form"] .btn-box {
+    margin-top: 0;
+}
+[class^="popup-"] .btn-box button {
+    background-color: #000;
+    color: #fff;
+    width: 150px;
+    height: 50px;
+    font-size: 125%;
+    font-weight: 700;
+    border-radius: 0.5rem;
+}
+[class^="popup-form"] .btn-box button {
+    background-color: #fff;
+}
+.popup-valid .btn-box button {
+    width: 65%;
+    margin: 0 auto;
+    font-size: 175%;
+    font-weight: 500;
+} 
 
 
 /* submit 애니메이션 */
@@ -142,6 +233,20 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
 @media screen and (max-width: 820px){
 }
 @media screen and (max-width: 768px){
+    [class^="popup-"] {width: 90%;}
+    [class^="popup-"] p, [class^="popup-"] span {font-size: 170%;}
+    [class^="popup-question"] span, [class^="popup-form"] span {font-size: 100%;}
+    [class^="popup-question"] {bottom: 50%;}
+    [class^="popup-form"],
+    [class^="popup-valid"] {bottom: 0;}
+    [class^="popup-form"] p {padding-bottom: 22%;}
+    [class^="popup-"] .btn-box {width: 70%; margin: 5% auto 0;}
+    #page_landing_c .wrap_curd .select-box .q_select .question-txt {font-size: 1.5rem; padding: 0.5rem; background-position: center right 1.15rem; background-size: 1.5rem 1rem;}
+    #page_landing_c .wrap_curd .question_box .q_select label {font-size: 1.5rem; padding: 0.5rem;}
+    #page_landing_c .wrap_curd .select-box .q_select label span {font-size: 1.5rem;}
+    .wrap_form .submit {text-align: center;}
+    :is(#page_landing_a, #page_landing_c) .wrap_curd .btn_submit {margin-bottom: 3%;}
+    #page_landing_c .wrap_curd .question_box .q_select label img {height: 48px; width: 100%;}
 }
 @media screen and (max-width: 640px){
     #page_landing_c .wrap_curd .question_box .question,
@@ -189,16 +294,17 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
                 <div class="question_box">
                     <div class="question">수험생 이신가요?</div>
                     <div class="q_select">
-                        <label><input type="radio" name="tadd1" value="예" onclick="slide()"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_01.png"></label>
-                        <label><input type="radio" name="tadd1" value="아니오" onclick="popup()"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_02.png"></label>
+                        <label><input type="radio" name="tadd1" value="예" onclick="slide()">예</label>
+                        <label><input type="radio" name="tadd1" value="아니오" onclick="popup()">아니오</label>
                     </div>
-                    <div class="question-popup">
+                    <!-- <div class="popup-question popup-question">
                         <img src="//static.savemkt.com/event/v_${eventSeq}/popup.png">
+                        <p>본 이벤트는 <br /><span class="font-red">수험생</span>만 신청 가능합니다.</p>
                         <div class="button-box">
                             <div class="check" onclick="reset()"><img src="//static.savemkt.com/event/v_${eventSeq}/check_btn.png"></div>
                             <div class="close" onclick="windowClose()"><img src="//static.savemkt.com/event/v_${eventSeq}/close_btn.png"></div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="select-box">
                     <div class="question">추가 이벤트 혜택</div>
@@ -230,7 +336,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
                             <label><input name="agBox" type="checkbox"><span>개인정보 수집 및 이용에 관한 내용을 확인하고 동의함</span></label> <a href="#" class="btn-agreement">[자세히 보기]</a>
                         </div>
                     </div>                        
-                    <div class="submit"><input type="image" onclick="fnForm('form-1')" value="" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png"></div>
+                    <div class="submit"><input type="image" class="btn_submit" value="" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png"></div>
                     <div class="description">
                         <p id="event-period"></p>
                         <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를<br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
@@ -280,6 +386,30 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
             <p></p>
         </div>
     </div>
+    <div class="overlay"></div>
+    <div class="popup-question">
+        <p>본 이벤트는 <br /><span class="font-red">수험생</span>만 신청 가능합니다.</p>
+        <div class="btn-box">
+            <div class="check" onclick="reset()"><img src="//static.savemkt.com/event/v_${eventSeq}/check_btn.png"></div>
+            <div class="close" onclick="windowClose()"><img src="//static.savemkt.com/event/v_${eventSeq}/close_btn.png"></div>
+        </div>
+    </div>
+    <div class="popup-valid">
+        <span class="font-red">필수 항목을 모두 입력해주세요.</span>
+        <div class="btn-box">
+            <button type="button" class="btn-valid">확인</button>
+        </div>
+    </div>
+    <div class="popup-form">
+        <p>
+            스마일라식 장학금 이벤트는 <br />
+            <span class="font-red">강남점 방문고객</span>만 신청 가능합니다!
+        </p>
+        <div class="btn-box">
+            <button type="button" class="btn-confirm"><img src="//static.savemkt.com/event/v_${eventSeq}/check_btn.png"></button>
+            <button type="button" class="btn-out"><img src="//static.savemkt.com/event/v_${eventSeq}/close_btn.png"></button>
+        </div>
+    </div>
 </main>
 </body>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
@@ -292,23 +422,24 @@ $(document).ready(function(){
 });
 
 //설문 클릭시 이미지 on/off
-$('input[name="tadd1"]').on('click', function(){
-    $('label', $(this).parents('.q_select')).each(function(i,t) {
-        $('img', t).attr('src', $('img', t).attr('src').replace('_on', '_off'));
-    });
-    $('img', $(this.parentNode)).attr('src', $('img', $(this.parentNode)).attr('src').replace('_off', '_on'));
-});
+// $('input[name="tadd1"]').on('click', function(){
+//     $('label', $(this).parents('.q_select')).each(function(i,t) {
+//         $('img', t).attr('src', $('img', t).attr('src').replace('_on', '_off'));
+//     });
+//     $('img', $(this.parentNode)).attr('src', $('img', $(this.parentNode)).attr('src').replace('_off', '_on'));
+// });
 
 // 팝업
 function popup (){
     $('.overlay').fadeIn();
-    $('.question-popup').fadeIn();
+    $('.popup-question').fadeIn();
 }
 
 // reset 버튼 이벤트
 function reset () {
     $('.overlay').fadeOut();
-    $('.question-popup').fadeOut();
+    $('.popup-question').fadeOut();
+    $('label:nth-child(1) input[name="tadd1"]').closest('label').addClass('checked')
 }
 
 // 나가기 버튼 이벤트
@@ -332,7 +463,19 @@ function slide() {
 $('.select-box .q_select .question-txt').on('click',function(){
     $('.select-inner').stop(true, true).slideDown(500);
     scrollToBottom();
-})
+});
+
+// ✅ 설문 클릭 시 이미지 on/off (선택 토글)
+$('label:nth-child(1) input[name*="tadd1"]').on('click', function () {
+    const $parent = $(this).closest('.q_select'); // 부모 영역 지정
+
+    // 모든 label에서 checked 클래스 제거
+    $parent.find('label').removeClass('checked');
+
+    // 클릭한 input의 label에 checked 클래스 추가
+    $(this).closest('label').addClass('checked');
+});
+
 
 $('input[name="tadd2"]').on('change', function() {
     // 선택된 라디오의 값 가져오기
@@ -345,7 +488,7 @@ $('input[name="tadd2"]').on('change', function() {
     scrollToBottom();
 });
 
-$('.button-box .check').on('click', function() {
+$('.popup-question .btn-box .check').on('click', function() {
     const yesRadio = $('input[name="tadd1"][value="예"]');
     const yesLabel = yesRadio.parent();
 
@@ -390,6 +533,53 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+    $('.overlay').hide();
+    $('.popup-question').hide();
+    $('.popup-valid').hide();
+    $('.popup-form').hide();
+
+    let isConfirm = false;
+
+    $('.submit .btn_submit').on('click', function(e) {
+        e.preventDefault();
+
+        const tadd1 = $('input[name="tadd1"]:checked').val();
+        const tadd2 = $('input[name="tadd2"]:checked').val();
+        const agBox = $('input[name="agBox"]:checked').val();
+        const nameVal = $('input[name="name"]').val();
+        const phoneVal = $('input[name="phone"]').val();
+
+        // ✅ 필수값 유효성 검사
+        if (!tadd1 || !tadd2 || !agBox || !nameVal || !phoneVal || phoneVal.length < 11) {
+            $('.overlay').show();
+            $('.popup-valid').show();
+            return;
+        }
+
+        // ✅ 모든 항목이 입력된 경우 → 확인 팝업 표시
+        $('.overlay, .popup-form').show();
+        isConfirm = false;
+    });
+
+    $('.btn-valid').on('click', function() {
+        $('.overlay, .popup-valid').hide();
+    });
+
+    $('.btn-confirm').on('click', function() {
+        isConfirm = true;
+        $('.overlay, .popup-form').hide();
+
+        if (isConfirm) {
+            fnForm('form-1'); // ✅ 폼 전송 함수 실행
+        }
+    });
+
+    $('.btn-out').on('click', function() {
+        isConfirm = false;
+        $('.overlay, .popup-form').hide();
+    });
+
 
 //submit
 function fnForm(formId){
