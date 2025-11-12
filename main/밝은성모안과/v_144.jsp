@@ -12,7 +12,7 @@ pageEncoding="UTF-8"%>
 
 /* 기본 css 초기화 */
 #page_landing_c main {max-width: 818px; background-color: transparent;}
-#page_landing_c .wrap_form {background-color: transparent; border: none; padding: 0; position: relative;}
+#page_landing_c .wrap_form {background-color: transparent; border: none; padding: 0; position: relative; overflow: hidden;}
 #page_landing_c .wrap_curd {background-color: transparent;}
 .form input[type="checkbox"], .form input[type="radio"] {
     border: 0;
@@ -581,14 +581,22 @@ document.addEventListener('DOMContentLoaded', function() {
         $('.overlay, .popup-form').hide();
     });
 
+    
+    $('#age').on('keyup', function(){
+        $('.btn_submit').prop('disabled', false);
+    });
+
 
 //submit
 function fnForm(formId){
     /* form 자동 처리 방지 */
     event.preventDefault();
+
+    
     /* form id로 proc */
     let procForm = document.getElementById(formId);
-    
+
+   
     // 라디오버튼에 대한 필수값 확인 - 체크된게 하나도 없을때 경고창
     let selectedRadio1 = procForm.querySelector('input[name="tadd1"]:checked');
     if (!selectedRadio1) {
