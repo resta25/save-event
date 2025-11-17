@@ -229,6 +229,9 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {border: 
     }
 }
 
+@media screen and (min-width: 1921px) {
+    [class^="popup-"] {bottom: 0;}
+}
 @media screen and (max-width: 820px){
 }
 @media screen and (max-width: 768px){
