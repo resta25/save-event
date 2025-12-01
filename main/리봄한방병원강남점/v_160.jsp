@@ -113,28 +113,7 @@ border-radius: 2rem 2rem 0 0;}
 <script src="/js/jquery-3.6.1.min.js"></script>
 <script src="/js/sweetalert2.js"></script>
 <script src="/js/common.js"></script>
-<!-- include end -->
-<!-- 개인정보처리방침 모달창 -->
-<!-- <div class="overlay"></div>
-<div class="agreeModalBox">
-    <div class="closeBtn">X</div>
-    <div class="newAgreement">
-        <div class="button"><a href="${resVo.agreementUrl}" target="_agreement" onclick="window.open(this.href, this.target,'resizable=no, scrollbars=yes, width=1000, height=800, left=200, top=200'); return false;"  target="_blank">개인정보 처리방침</a></div>
-        <h3>개인정보처리방침</h3>
-        <ol>
-            <li>개인정보 수집주체 : ${resVo.agent}</li>
-            <li>개인정보 수집항목 : ${resVo.objectItems}</li>
-            <li>개인정보 수집 및 이용목적 : ${resVo.agent}에서 ${resVo.objectName} 상담활용(전화,문자)</li>
-            <li>개인정보 보유 및 이용기간 : 수집일로부터 6개월 (고객 동의 철회시 지체없이 파기)</li>
-        </ol><br/>
-        <h3>개인정보 취급 위탁</h3>
-        <ol>
-            <li>개인정보 취급 위탁을 받는자 : (주)리스타</li>
-            <li>개인정보 취급 위탁을 하는 업무의 내용 : 고객정보 저장 및 서버관리</li>
-            <li class="desc">*상기 동의를 거부할 권리가 있으나, 수집 및 이용에 동의하지 않을 경우 ${resVo.objectName} 상담 및 이벤트 참여가 불가능합니다.</li>
-        </ol>
-    </div>
-</div> -->
+
 <body id="page_landing_c" class="loaded">
     <main>
         <div id="wrap"> 
