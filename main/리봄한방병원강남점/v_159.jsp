@@ -30,6 +30,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {
     height: auto;
     padding: 0;
 }
+input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border: none;}
 
 /* 비디오 영역 */
 .form #location {width: 100%;} 
