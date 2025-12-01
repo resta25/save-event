@@ -140,13 +140,6 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                             <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg"></div>
                             <video id="location" playsinline="" muted="" loop="" src="//static.savemkt.com/event/v_${eventSeq}/video.mp4" type="video/mp4"></video>
                             <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
-                            <!-- 개인정보처리방침 전문 -->
-                            <div id="modal2" class="modal modal2" style="display: none;">
-                                <div class="modal-content">
-                                    <span class="close" id="close">×</span>
-                                    <p></p>
-                                </div>
-                            </div>
                         </div>
         
                         <p class="paging poster_02">
@@ -222,6 +215,13 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                             </div>
                         </div>
                     </section>
+                    <!-- 개인정보처리방침 전문 -->
+                    <div id="modal2" class="modal modal2" style="display: none;">
+                        <div class="modal-content">
+                            <span class="close" id="close">×</span>
+                            <p></p>
+                        </div>
+                    </div>
                     <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div>	
                     <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div>	
                 </div>
