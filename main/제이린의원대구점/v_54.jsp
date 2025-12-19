@@ -7,6 +7,42 @@ pageEncoding="UTF-8"%>
 	.content {padding: 20px 10px;}
 	.content + .content {border-top: 1px solid #333F50;}
 	.content * {padding: 10px;}
+
+    /* 실시간 신청 현황 */
+    .subscribe_container {width: 100%; background: #fff; padding: 0 5.5rem 6.5rem;}
+    .subscribe_bg {background: #f8f8f8; padding: 3.75% 8.5%; border-radius: 20px}
+    .subscribe_container .title {padding: 7.5rem 0 0; font-size: 4.5rem; text-align: center; color: #000; font-weight: 700; margin-bottom: 2.8rem;}
+    .subscribe_container .img-area {width: 40%; margin: 3% auto;}
+    .subscribe {height: 530px; overflow: hidden;}
+    .subscribe .content {display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0rem; border-bottom: 1px solid rgba(28, 28, 28, 0.1);}
+    .subscribe .content > div {font-size: 1.35rem; width: calc(100% / 4);}
+    .subscribe .content .text {border: 1px solid #333f50; color: #333f50; width: 20%; max-width: 150px; text-align: center; border-radius: 999px; font-weight: 700;}
+    .subscribe .content .text.color-bg {
+        background-color: #333f50;
+        color: #fff;
+    }
+    .subscribe .content .date {text-align: right;}
+
+    @media screen and (max-width: 768px){
+        .subscribe {padding: 3% 2%; height: 150px;}
+        .subscribe .content {padding: 0.5rem 0.7rem;}
+        .subscribe .content > div {margin-right: 0; font-size: 0.8rem;}
+        .subscribe_container {padding: 0 1.5rem 1rem 1.5rem;}
+        .subscribe .content .name {width: 10%;}
+
+        .subscribe_bg {padding: 3.75% 3.5%;}
+        .content * {padding: 8px 0px;}
+        .content .text {padding: 4px 0;}
+        .subscribe_container .title {padding: 2rem 0 0; font-size: 1.8rem; margin-bottom: 0.6875rem;}
+    }
+
+    @media screen and (max-width: 395px){
+        .subscribe .content {padding: 0.5rem 0.2rem;}
+
+    }
+    @media screen and (max-width: 375px){
+        .subscribe {padding: 0;}
+    }
 </style>
 
 <link rel="stylesheet" href="/css/sweetalert2.css">
@@ -101,10 +137,15 @@ pageEncoding="UTF-8"%>
                 </form>
             </div>
                 
-            <!-- <div class="wrap_applicants">
-                <p>현재까지 신청자</p>
-                <ul class="subscribe"></ul>
-            </div> -->
+            <div class="subscribe_container">
+                <div class="title">
+                    실시간 신청현황
+                </div>
+                <div class="subscribe_bg">
+                    <div class="subscribe" data-limit="10">
+                    </div>
+                </div>
+            </div>
         
         <div id="modal2" class="modal modal2" style="display: none;">
             <div class="modal-content">
