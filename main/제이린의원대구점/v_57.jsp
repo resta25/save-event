@@ -64,9 +64,9 @@ pageEncoding="UTF-8"%>
                     </ul>
                     <ul class="layout_add02">
                         <li>
-                            <label><input type="radio" name="tadd1" value="모공축소" class="answer">모공축소</label>
-                            <label><input type="radio" name="tadd1" value="피부탄력" class="answer">피부탄력</label>
-                            <label><input type="radio" name="tadd1" value="잔주름" class="answer">잔주름</label>
+                            <label><input type="radio" name="tadd1" value="팔자주름" class="answer">팔자주름</label>
+                            <label><input type="radio" name="tadd1" value="심부볼" class="answer">심부볼</label>
+                            <label><input type="radio" name="tadd1" value="이중턱" class="answer">이중턱</label>
                             <label><input type="radio" name="tadd1" value="기타" class="answer">기타</label>
                         </li>
                     </ul>
