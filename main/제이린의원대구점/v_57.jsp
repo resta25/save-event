@@ -123,39 +123,48 @@ pageEncoding="UTF-8"%>
 
         jrynAgreement(); // 개인정보 전문
         
-        // //신청현황 리스트
-        // getComment(`${eventSeq}`);
-        // $('.wrap_applicants').on("click", ".btn_moreSubscribe", function(e) {
-        //     $('.btn_moreSubscribe').prop('disabled', true);
-        //     e.preventDefault();
-        //     getComment(`${eventSeq}`);
-        // });
+        //신청현황 리스트
+        getComment(`${eventSeq}`);
     });
     
-    // function returnComment(resultData, meoreData){
-	// 	var today = new Date();   
-	// 		var month = today.getMonth() + 1;
-	// 		var dateNum;
-	// 	$('.subscribe').each(function(idx,obj) {
-	// 		var data = resultData;
-			
-	// 		for(v in resultData) {
-	// 			var html  = '<div class="content" data-id="'+ data[v].seq +'">';
-	// 				html += '	<div class="name">'+ data[v].name +' | '+ data[v].phone +'</div>';
-	// 				html += '	<div class="msg">'+ data[v].memo +'</div>';
-	// 				html += '	<div class="date">'+ data[v].regDate +'</div>';
-	// 				html += '</div>';
-				
-	// 			$(obj).append(html);
-	// 		}
-	// 		// 기존 버튼 제거 후 다시 추가
-	//         $('.wrap_applicants .btn_moreSubscribe').remove();
+    let dataNum;
 
-	//         if(meoreData > 10) {
-	//             $('.subscribe').after('<button type="button" class="btn_moreSubscribe">더보기 ▼</button>');
-	//         }
-	// 	});
-	// }
+	function returnComment(resultData, meoreData){
+		$('.subscribe').each(function(idx,obj) {
+            
+            for(v in resultData) {
+                var data = resultData;
+                var reg = (data[v].regDate || '').trim();      // "08-21 09:59"
+                var parts = reg.split(/\s+/);                   // ["08-21", "09:59"]
+                var md = parts[0] || "";                        // "08-21"
+                var tm = parts[1] || "";   
+				var statusText = Math.random() < 0.5 ? '접수중' : '신청완료'; // 랜덤으로 '접수중' 또는 '접수완료' 선택
+				var backgroundClass = statusText === '신청완료' ? 'color-bg' : ''; // '접수완료'일 경우에만 클래스 추가
+				var html  = '<div class="content" data-id="'+ data[v].seq +'">';
+					html += '	<div class="name">'+ data[v].name +'</div>';
+					html += '	<div class="phone">'+ data[v].phone +'</div>';
+					html += '   <div class="text ' + backgroundClass + '">' + statusText + '</div>'; // 랜덤 텍스트 및 클래스 적용
+					html += '  <div class="date">'+ data[v].regDate +'</div>';
+					html += '</div>';
+				$(obj).append(html);
+			}
+            
+		});
+        
+        if(resultData.length >= 10){
+            $('.subscribe_container').show();
+            return;
+        } else {
+            $('.subscribe_container').hide();
+            return;
+        }
+	}
+
+	setInterval(function(){
+        $('.subscribe .content:first').slideUp(function(){
+            $(this).show().parent().append(this)
+        })
+    },2000);
 	
 	var modal2 = document.getElementById("modal2");
 	var agree = document.getElementById("agree");
