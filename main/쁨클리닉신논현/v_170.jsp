@@ -154,13 +154,13 @@ pageEncoding="UTF-8"%>
 @media screen and (max-width: 768px){
     .spinmachine_container {padding: 9.95% 0 11.77%;}
     /* #page_landing_c .form {padding-bottom: 2%;} */
-    .popup-coupon {top: 57%; transform: translate(-50%, -50%);}
+    .popup-coupon {top: 65%; transform: translate(-50%, -50%);}
     #page_landing_c .form .form_bg_box {padding: 2rem 1.7rem 1rem; border-radius: 24px;}
-    #page_landing_c .form .form_box {margin: 2em auto 1em; width: 80%;}
-    #page_landing_c .form .legend {font-size: 4.5vw;}
+    #page_landing_c .form .form_box {margin: 2em auto 1em; width: 80%; gap: 0.7em;}
+    #page_landing_c .form .legend {font-size: 4.1vw;}
     #page_landing_c .form .form_box .user-info input {padding: 1rem; font-size: 1rem;}
-    #page_landing_c .form .description .ad_txt {font-size: 3.2vw;}
-    #page_landing_c .form .description p {font-size: 2.7vw;}
+    #page_landing_c .form .description .ad_txt {font-size: 3vw;}
+    #page_landing_c .form .description p {font-size: 2.9vw;}
     .spinmachine_container #start-img {top: 49%;}
 
     #page_landing_c .wrap_form .submit {height: 84px; padding: 7% 0;}
