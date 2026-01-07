@@ -34,7 +34,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .wrap_form .submit {position: relative; width: 100%; max-width: 491px; height: 189px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png') no-repeat top center / 100%; margin: 2% auto 0; padding: 4% 0;}
     #page_landing_c .wrap_form .submit .submit-box {display: flex; flex-direction: column; align-items: center; justify-content:  center; text-align: center; font-family: 'GangwonEducationTteontteon'; font-size: 400%; height: 100%;}
     #page_landing_c .wrap_form .submit input {margin: 0; padding: 0 !important; width: 30%; height: auto !important; cursor: pointer; border-radius: 0;}
-    #wrap { width: 100%; background: url("//static.savemkt.com/event/v_${eventSeq}/bg_01.png") no-repeat; background-size: 100%; font-family: 'Pretendard';}
+    #wrap { width: 100%; background: url("//static.savemkt.com/event/v_${eventSeq}/bg_02.png") no-repeat; background-size: 100%; font-family: 'Pretendard';}
     .form {background: transparent;}
     .line {display: inline-block; width: 100%; content: ''; height: 1px; background: #1f1f1f;}
 
@@ -52,7 +52,7 @@ pageEncoding="UTF-8"%>
     .form .count-box {position: absolute; top: 2%; left: 50%; transform: translateX(-50%);}
 
     /* Hotevent roulette CSS */
-    .spinmachine_container {position: relative; padding: 14.95% 0 11.77%;}
+    .spinmachine_container {position: relative; padding: 14.95% 0 7.77%;}
     .spinmachine_container > .img-area {width: 80%; margin: 0 auto;}
     .spinmachine_container .present_img {z-index: 1; position: absolute; left: 0; bottom: 0;}
     .spinmachine_container #spinmachine {position: relative; bottom: 0; padding: 7.5% 0 0; width: 100%; text-align: center; overflow: hidden;}
