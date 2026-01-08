@@ -27,14 +27,14 @@ pageEncoding="UTF-8"%>
     .wrap_form .agBox {margin: 7px auto;}
 
     #page_landing_c main {max-width: 1080px;}
-    #page_landing_c .wrap_form {padding: 0; border: 0; width: 100%; background: url("//static.savemkt.com/event/v_${eventSeq}/bg_02.png") no-repeat; background-size: 100%;}
+    #page_landing_c .wrap_form {padding: 0; border: 0; width: 100%; background: url("//static.savemkt.com/event/v_${eventSeq}/bg_01.jpg") no-repeat; background-size: 100%;}
     #page_landing_c .btn_submit {background-color: transparent !important;}
     input:not( [type="checkbox"], [type="radio"], [type="range"] ):disabled, input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border: none;}
     #page_landing_c .wrap_form .container .img-area {width: 95%; margin: 0 auto;}
     #page_landing_c .wrap_form .submit {position: relative; width: 100%; max-width: 491px; height: 189px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png') no-repeat top center / 100%; margin: 2% auto 0; padding: 4% 0;}
     #page_landing_c .wrap_form .submit .submit-box {display: flex; flex-direction: column; align-items: center; justify-content:  center; text-align: center; font-family: 'GangwonEducationTteontteon'; font-size: 400%; height: 100%;}
     #page_landing_c .wrap_form .submit input {margin: 0; padding: 0 !important; width: 30%; height: auto !important; cursor: pointer; border-radius: 0;}
-    #wrap { width: 100%; background: url("//static.savemkt.com/event/v_${eventSeq}/bg_02.png") no-repeat; background-size: 100%; font-family: 'Pretendard';}
+    #wrap { width: 100%; background: url("//static.savemkt.com/event/v_${eventSeq}/bg_01.jpg") no-repeat; background-size: 100%; font-family: 'Pretendard';}
     .form {background: transparent;}
     .line {display: inline-block; width: 100%; content: ''; height: 1px; background: #1f1f1f;}
 
@@ -52,7 +52,7 @@ pageEncoding="UTF-8"%>
     .form .count-box {position: absolute; top: 2%; left: 50%; transform: translateX(-50%);}
 
     /* Hotevent roulette CSS */
-    .spinmachine_container {position: relative; padding: 14.95% 0 7.77%;}
+    .spinmachine_container {position: relative; padding: 4.95% 0 9.77%;}
     .spinmachine_container > .img-area {width: 80%; margin: 0 auto;}
     .spinmachine_container .present_img {z-index: 1; position: absolute; left: 0; bottom: 0;}
     .spinmachine_container #spinmachine {position: relative; bottom: 0; padding: 7.5% 0 0; width: 100%; text-align: center; overflow: hidden;}
@@ -64,7 +64,7 @@ pageEncoding="UTF-8"%>
 
     .clear {clear: both;}
 
-    /* .overlay {z-index: 998; position: absolute; top: 0; left: 0; display: none; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7);} */
+    .overlay {z-index: 998; position: fixed; top: 0; left: 0; bottom: 0; right: 0; display: none; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7);}
     .popup-coupon {z-index: 999; position: absolute; top: 90%; left: 50%; transform: translate(-50%, 50%); max-width: 970px; width: 100%; margin: 0 auto; display: none;}
 
     /* form css */
@@ -136,7 +136,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .form .description p,
     #page_landing_c .form .description span,
     #page_landing_c .form .description .ad_txt {margin: 0; padding: 0; font-size: 250%; line-height: 1.27; letter-spacing: -0.02em; font-weight: 500;}
-    #page_landing_c .form .description p {font-weight: 700; font-family: 'GmarketSans'; margin-bottom: 2%; font-size: 215%;}
+    #page_landing_c .form .description p {font-weight: 700; font-family: 'GmarketSans'; margin-bottom: 2%; font-size: 250%; letter-spacing: -0.05em;}
     #page_landing_c .form .description .ad_txt {font-weight: 100;}
 
     @keyframes rotate {
@@ -284,7 +284,7 @@ pageEncoding="UTF-8"%>
                 </form>
             </div>
         </div>
-        <!-- <div class="overlay"></div> -->
+        <div class="overlay"></div>
         <div class="popup-coupon">
             <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/coupon.png"></div>	
         </div>
@@ -314,6 +314,7 @@ pageEncoding="UTF-8"%>
         $('#spin-img').addClass('rotate');
 
         setTimeout(function () {
+            $('.overlay').delay(200).fadeIn();
             $('.popup-coupon').delay(200).fadeIn();
             // alert('축하합니다! 1등 당첨!!');
 
@@ -340,6 +341,7 @@ pageEncoding="UTF-8"%>
 
     $(".popup-coupon").on('click', function (e) {
         $(this).fadeOut(200);
+        $('.overlay').fadeOut(200);
 
         $('#wrap .container').fadeOut(); 
         $('.form').delay(100).fadeIn();
