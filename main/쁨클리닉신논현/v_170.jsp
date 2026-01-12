@@ -206,7 +206,7 @@ pageEncoding="UTF-8"%>
 
     .spinmachine_container #spin-pin {top: 4%; max-width: 25px;}
 
-    .wrap_form .wrap_radio span {font-size: 115% !important;}
+    .wrap_form .wrap_radio span {font-size: 100% !important;}
     .wrap_form .wrap_radio input[type="checkbox"] + span:after, .wrap_form .wrap_radio input[type="radio"] + span:after {
         transform: translate(35%, -30%);
         width: 8px;
