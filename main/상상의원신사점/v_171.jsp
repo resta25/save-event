@@ -8,6 +8,11 @@ pageEncoding="UTF-8"%>
 	.content + .content {border-top: 1px solid #ddd;}
 	.content * {padding: 8px 10px;}
 
+    .video-area {width: 100%; background-color: #74b9c9; padding: 35px;}
+    #location {width: 100%;}
+
+    #page_landing_c main {background-color: #fff !important;}
+
     /* 실시간 신청 현황 */
     .subscribe_container {width: 100%; background: #fff; padding: 0 5.5rem 6.5rem;}
     .subscribe_bg {background: #f8f8f8; padding: 3.75% 8.5%; border-radius: 20px}
@@ -36,6 +41,9 @@ pageEncoding="UTF-8"%>
     .subscribe_container .title {padding: 2rem 0 0; font-size: 1.8rem; margin-bottom: 0.6875rem;}
 }
 
+@media screen and (max-width: 500px){
+    .video-area {padding: 15px;}
+}
 @media screen and (max-width: 395px){
     .subscribe .content {padding: 0.5rem 0.2rem;}
 
@@ -145,6 +153,10 @@ pageEncoding="UTF-8"%>
                     <div class="subscribe" data-limit="10">
                     </div>
                 </div>
+            </div>
+            <div class="video-area">
+                <video id="location" playsinline autoplay loop muted src="//static.savemkt.com/event/v_${eventSeq}/video.mp4" type="video/mp4"></video>
+                <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
             </div>
             <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg" alt="landing_top" class="landing_top">
         
