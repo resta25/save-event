@@ -140,9 +140,23 @@ pageEncoding="UTF-8"%>
     #page_landing_c .form .description .ad_txt {font-weight: 100;}
 
     @keyframes rotate {
-    0% {transform: rotate(10deg);}
-    100% {transform: rotate(720deg);}
-}
+        0% {transform: rotate(10deg);}
+        100% {transform: rotate(720deg);}
+    }
+
+    .wrap_form .wrap_radio input[type="checkbox"] + span:before, .wrap_form .wrap_radio input[type="radio"] + span:before {border-color: #000;}
+    .wrap_form .wrap_radio input[type="checkbox"]:hover + span:before, .wrap_form .wrap_radio input[type="checkbox"]:focus + span:before, .wrap_form .wrap_radio input[type="radio"]:hover + span:before, .wrap_form .wrap_radio input[type="radio"]:focus + span:before {border-color: #000;}
+    .wrap_form .wrap_radio input[type="checkbox"] + span:after, .wrap_form .wrap_radio input[type="radio"] + span:after {
+        border: 3px solid #000;
+        background-color: #000;
+        transform: translate(36%, -1%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+    .wrap_form .wrap_radio input[type="checkbox"]:checked + span:after, .wrap_form .wrap_radio input[type="radio"]:checked + span:after {
+        border: none;
+    }
 
 
 @keyframes pulsating {
@@ -189,6 +203,12 @@ pageEncoding="UTF-8"%>
     .form .form_box .form_row {gap: 0;}
 
     .spinmachine_container #spin-pin {top: 4%; max-width: 25px;}
+
+    .wrap_form .wrap_radio input[type="checkbox"] + span:after, .wrap_form .wrap_radio input[type="radio"] + span:after {
+        transform: translate(32%, 11%);
+        width: 8px;
+        height: 8px;
+    }
 }
 @media screen and (max-width: 430px){
     .form .form_box .form_row .package,
@@ -240,6 +260,20 @@ pageEncoding="UTF-8"%>
                                 <!-- <span class="target">대상 : ${resVo.target}</span> -->
                             </div>
                             <div class="form_box">
+                                <div class="user-info">
+                                    <span class="legend">지점</span>
+                                    <div class="wrap_radio">
+                                        <label><input type="radio" name="branch" class="store-radio"> <span>강남본점(구 신논현점)</span> </label>
+                                    </div>
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', function() {
+                                            var storeRadios = document.querySelectorAll('.store-radio');
+                                            if (storeRadios.length === 1) {
+                                                storeRadios[0].checked = true;
+                                            }
+                                        });
+                                    </script>
+                                </div>
                                 <div class="user-info">
                                     <span class="legend">이름</span>
                                     <input type="text" name="name" id="name" value="" class="inp" required autocomplete="off" placeholder="이름 입력" />
