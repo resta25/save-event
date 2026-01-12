@@ -144,12 +144,14 @@ pageEncoding="UTF-8"%>
         100% {transform: rotate(720deg);}
     }
 
-    .wrap_form .wrap_radio input[type="checkbox"] + span:before, .wrap_form .wrap_radio input[type="radio"] + span:before {border-color: #000;}
+    .wrap_form .wrap_radio span {font-family: 'GmarketSans' !important; font-size: 170% !important; line-height: 1;}
+    .wrap_form .wrap_radio input[type="checkbox"] + span:before, .wrap_form .wrap_radio input[type="radio"] + span:before {transform: translateY(-75%); border-color: #000;}
     .wrap_form .wrap_radio input[type="checkbox"]:hover + span:before, .wrap_form .wrap_radio input[type="checkbox"]:focus + span:before, .wrap_form .wrap_radio input[type="radio"]:hover + span:before, .wrap_form .wrap_radio input[type="radio"]:focus + span:before {border-color: #000;}
     .wrap_form .wrap_radio input[type="checkbox"] + span:after, .wrap_form .wrap_radio input[type="radio"] + span:after {
         border: 3px solid #000;
         background-color: #000;
-        transform: translate(36%, -1%);
+        /* transform: translate(36%, -1%); */
+            transform: translate(36%, -44%);
         width: 10px;
         height: 10px;
         border-radius: 50%;
@@ -204,8 +206,9 @@ pageEncoding="UTF-8"%>
 
     .spinmachine_container #spin-pin {top: 4%; max-width: 25px;}
 
+    .wrap_form .wrap_radio span {font-size: 115% !important;}
     .wrap_form .wrap_radio input[type="checkbox"] + span:after, .wrap_form .wrap_radio input[type="radio"] + span:after {
-        transform: translate(32%, 11%);
+        transform: translate(35%, -30%);
         width: 8px;
         height: 8px;
     }
