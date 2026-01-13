@@ -65,100 +65,180 @@ pageEncoding="UTF-8"%>
 <body id="page_landing_c" class="loaded">
     <main>
         <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.jpg" alt="landing_top" class="landing_top">
-            <div class="wrap_form">
-                <form class="wrap_curd" id="form-1" method="POST" accept-charset="utf-8">
-                    <ul class="layout_add01 question">
-                        <li>감량을 원하는 부위를 선택해주세요</li>
-                    </ul>
-                    <ul class="layout_add02">
-                        <li>
-                            <label><input type="radio" name="tadd1" value="뱃살" class="answer">뱃살</label>
-                            <label><input type="radio" name="tadd1" value="팔뚝살" class="answer">팔뚝살</label>
-                            <label><input type="radio" name="tadd1" value="허벅지살" class="answer">허벅지살</label>
-                            <label><input type="radio" name="tadd1" value="기타" class="answer">기타</label>
-                        </li>
-                    </ul> 
-                    <p id="event-period"></p>
-                    <table>
-                        <colgroup>
-                            <col width="30%">
-                            <col width="70%">
-                        </colgroup>
-                        <tbody>
-                            <tr>
-                                <th class="branch_th">*지점 선택</th>
-                                <td class="branch_td">
-                                    <div class="wrap_radio">
-                                        <label><input type="radio" name="branch" class="store-radio"> 신사본점 </label>
-                                    </div>
-                                    <script>
-                                        document.addEventListener('DOMContentLoaded', function() {
-                                            var storeRadios = document.querySelectorAll('.store-radio');
-                                            if (storeRadios.length === 1) {
-                                                storeRadios[0].checked = true;
-                                            }
-                                        });
-                                    </script>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>*이름</th>
-                                <td><input type="text" placeholder="이름을 입력해주세요." id="name" name="name"></td>
-                            </tr>
-                            <tr>
-                                <th>*나이</th>
-                                <td><input type="tel" name="age" id="age" class="inp" required="" autocomplete="off" maxlength="2" placeholder="나이를 입력해주세요."></td>
-                            </tr>
-                            <tr>
-                                <th>*휴대폰번호</th>
-                                <td><input type="tel" placeholder="연락처를 입력해주세요." id="phone" name="phone" maxlength="11" value="010"></td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <div class="wrap_form">
+            <form class="wrap_curd" id="form-1" method="POST" accept-charset="utf-8">
+                <ul class="layout_add01 question">
+                    <li>감량을 원하는 부위를 선택해주세요</li>
+                </ul>
+                <ul class="layout_add02">
+                    <li>
+                        <label><input type="radio" name="tadd1" value="뱃살" class="answer">뱃살</label>
+                        <label><input type="radio" name="tadd1" value="팔뚝살" class="answer">팔뚝살</label>
+                        <label><input type="radio" name="tadd1" value="허벅지살" class="answer">허벅지살</label>
+                        <label><input type="radio" name="tadd1" value="기타" class="answer">기타</label>
+                    </li>
+                </ul> 
+                <p id="event-period"></p>
+                <table>
+                    <colgroup>
+                        <col width="30%">
+                        <col width="70%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th class="branch_th">*지점 선택</th>
+                            <td class="branch_td">
+                                <div class="wrap_radio">
+                                    <label><input type="radio" name="branch" class="store-radio store-radio1"> 신사본점 </label>
+                                </div>
+                                <script>
+                                    document.addEventListener('DOMContentLoaded', function() {
+                                        var storeRadios = document.querySelectorAll('.store-radio1');
+                                        if (storeRadios.length === 1) {
+                                            storeRadios[0].checked = true;
+                                        }
+                                    });
+                                </script>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>*이름</th>
+                            <td><input type="text" placeholder="이름을 입력해주세요." id="name" name="name"></td>
+                        </tr>
+                        <tr>
+                            <th>*나이</th>
+                            <td><input type="tel" name="age" id="age" class="inp" required="" autocomplete="off" maxlength="2" placeholder="나이를 입력해주세요."></td>
+                        </tr>
+                        <tr>
+                            <th>*휴대폰번호</th>
+                            <td><input type="tel" placeholder="연락처를 입력해주세요." id="phone" name="phone" maxlength="11" value="010"></td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                    <div class="wrap_checkbox">
-                        <div>
-                            <label><input type="checkbox" name="agBox" id="privacyCheckbox" value="y" name="terms">개인정보이용동의</label>
-                            <label id="agree">[자세히보기]</label>
-                        </div>
-                    </div>
-                    <button type="button" class="btn_submit b_point" onclick="fnForm('form-1')">이벤트<br />신청하기</button>
-
-                    <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
-                    <input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
-                    <input type="hidden" id="site" 			name="site" value="${site}"/>
-                    <input type="hidden" id="media" 		name="site" value="${media}"/>
-                    <input type="hidden" id="interlock" 	name="interlock" value="${resVo.interlock}"/>
-                    <input type="hidden" id="checkAgeMin" 	name="checkAgeMin" value="${resVo.checkAgeMin}"/>
-                    <input type="hidden" id="checkAgeMax" 	name="checkAgeMax" value="${resVo.checkAgeMax}"/>
-                    <input type="hidden" id="checkGender" 	name="checkGender" value="${resVo.checkGender}"/>
-                    <input type="hidden" id="add1" 			name="add1" value=""/>
-                    <input type="hidden" id="add2" 			name="add2" value=""/>
-                    <input type="hidden" id="add3" 			name="add3" value=""/>
-                    <input type="hidden" id="add4" 			name="add4" value=""/>
-                    <input type="hidden" id="add5" 			name="add5" value=""/>
-                    <input type="hidden" id="add6" 			name="add6" value=""/>
-
-                    <input type="hidden" id="agent" 		name="agent" 		value="${resVo.agent}"/>
-                    <input type="hidden" id="objectItems" 	name="objectItems" 	value="${resVo.objectItems}"/>
-                    <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
-                </form>
-            </div>
-                
-            <div class="subscribe_container">
-                <div class="title">
-                    실시간 신청현황
-                </div>
-                <div class="subscribe_bg">
-                    <div class="subscribe" data-limit="10">
+                <div class="wrap_checkbox">
+                    <div>
+                        <label><input type="checkbox" name="agBox" id="privacyCheckbox" value="y" name="terms">개인정보이용동의</label>
+                        <label id="agree" class="agree">[자세히보기]</label>
                     </div>
                 </div>
+                <button type="button" class="btn_submit b_point" onclick="fnForm('form-1')">이벤트<br />신청하기</button>
+
+                <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
+                <input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
+                <input type="hidden" id="site" 			name="site" value="${site}"/>
+                <input type="hidden" id="media" 		name="site" value="${media}"/>
+                <input type="hidden" id="interlock" 	name="interlock" value="${resVo.interlock}"/>
+                <input type="hidden" id="checkAgeMin" 	name="checkAgeMin" value="${resVo.checkAgeMin}"/>
+                <input type="hidden" id="checkAgeMax" 	name="checkAgeMax" value="${resVo.checkAgeMax}"/>
+                <input type="hidden" id="checkGender" 	name="checkGender" value="${resVo.checkGender}"/>
+                <input type="hidden" id="add1" 			name="add1" value=""/>
+                <input type="hidden" id="add2" 			name="add2" value=""/>
+                <input type="hidden" id="add3" 			name="add3" value=""/>
+                <input type="hidden" id="add4" 			name="add4" value=""/>
+                <input type="hidden" id="add5" 			name="add5" value=""/>
+                <input type="hidden" id="add6" 			name="add6" value=""/>
+
+                <input type="hidden" id="agent" 		name="agent" 		value="${resVo.agent}"/>
+                <input type="hidden" id="objectItems" 	name="objectItems" 	value="${resVo.objectItems}"/>
+                <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
+            </form>
+        </div>
+            
+        <div class="subscribe_container">
+            <div class="title">
+                실시간 신청현황
             </div>
-            <div class="video-area">
-                <video id="location" playsinline autoplay loop muted src="//static.savemkt.com/event/v_${eventSeq}/video.mp4" type="video/mp4"></video>
-                <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
+            <div class="subscribe_bg">
+                <div class="subscribe" data-limit="10">
+                </div>
             </div>
-            <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg" alt="landing_top" class="landing_top">
+        </div>
+        <div class="video-area">
+            <video id="location" playsinline autoplay loop muted src="//static.savemkt.com/event/v_${eventSeq}/video.mp4" type="video/mp4"></video>
+            <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
+        </div>
+        <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg" alt="landing_top" class="landing_top">
+
+        <div class="wrap_form">
+            <form class="wrap_curd" id="form-2" method="POST" accept-charset="utf-8">
+                <ul class="layout_add01 question">
+                    <li>감량을 원하는 부위를 선택해주세요</li>
+                </ul>
+                <ul class="layout_add02">
+                    <li>
+                        <label><input type="radio" name="tadd1" value="뱃살" class="answer">뱃살</label>
+                        <label><input type="radio" name="tadd1" value="팔뚝살" class="answer">팔뚝살</label>
+                        <label><input type="radio" name="tadd1" value="허벅지살" class="answer">허벅지살</label>
+                        <label><input type="radio" name="tadd1" value="기타" class="answer">기타</label>
+                    </li>
+                </ul> 
+                <p id="event-period"></p>
+                <table>
+                    <colgroup>
+                        <col width="30%">
+                        <col width="70%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th class="branch_th">*지점 선택</th>
+                            <td class="branch_td">
+                                <div class="wrap_radio">
+                                    <label><input type="radio" name="branch" class="store-radio store-radio2"> 신사본점 </label>
+                                </div>
+                                <script>
+                                    document.addEventListener('DOMContentLoaded', function() {
+                                        var storeRadios = document.querySelectorAll('.store-radio2');
+                                        if (storeRadios.length === 1) {
+                                            storeRadios[0].checked = true;
+                                        }
+                                    });
+                                </script>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>*이름</th>
+                            <td><input type="text" placeholder="이름을 입력해주세요." id="name" name="name"></td>
+                        </tr>
+                        <tr>
+                            <th>*나이</th>
+                            <td><input type="tel" name="age" id="age" class="inp" required="" autocomplete="off" maxlength="2" placeholder="나이를 입력해주세요."></td>
+                        </tr>
+                        <tr>
+                            <th>*휴대폰번호</th>
+                            <td><input type="tel" placeholder="연락처를 입력해주세요." id="phone" name="phone" maxlength="11" value="010"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="wrap_checkbox">
+                    <div>
+                        <label><input type="checkbox" name="agBox" id="privacyCheckbox" value="y" name="terms">개인정보이용동의</label>
+                        <label id="agree" class="agree">[자세히보기]</label>
+                    </div>
+                </div>
+                <button type="button" class="btn_submit b_point" onclick="fnForm('form-2')">이벤트<br />신청하기</button>
+
+                <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
+                <input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
+                <input type="hidden" id="site" 			name="site" value="${site}"/>
+                <input type="hidden" id="media" 		name="site" value="${media}"/>
+                <input type="hidden" id="interlock" 	name="interlock" value="${resVo.interlock}"/>
+                <input type="hidden" id="checkAgeMin" 	name="checkAgeMin" value="${resVo.checkAgeMin}"/>
+                <input type="hidden" id="checkAgeMax" 	name="checkAgeMax" value="${resVo.checkAgeMax}"/>
+                <input type="hidden" id="checkGender" 	name="checkGender" value="${resVo.checkGender}"/>
+                <input type="hidden" id="add1" 			name="add1" value=""/>
+                <input type="hidden" id="add2" 			name="add2" value=""/>
+                <input type="hidden" id="add3" 			name="add3" value=""/>
+                <input type="hidden" id="add4" 			name="add4" value=""/>
+                <input type="hidden" id="add5" 			name="add5" value=""/>
+                <input type="hidden" id="add6" 			name="add6" value=""/>
+
+                <input type="hidden" id="agent" 		name="agent" 		value="${resVo.agent}"/>
+                <input type="hidden" id="objectItems" 	name="objectItems" 	value="${resVo.objectItems}"/>
+                <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
+            </form>
+        </div>
         
         <div id="modal2" class="modal modal2" style="display: none;">
             <div class="modal-content">
@@ -356,12 +436,17 @@ pageEncoding="UTF-8"%>
     },2000);
 	
 	var modal2 = document.getElementById("modal2");
-	var agree = document.getElementById("agree");
+	// var agree = document.getElementById("agree");
+	var agree = document.querySelectorAll(".agree");
 	var close2 = document.getElementById("close");
 
-	agree.onclick = function () {
-	    modal2.style.display = "block";
-	}
+	// agree.onclick = function () {
+	//     modal2.style.display = "block";
+	// }
+
+    agree.forEach(ag => ag.addEventListener('click', function(){
+        modal2.style.display = "block";
+    }))
 
 	close2.onclick = function () {
 	    modal2.style.display = "none";
