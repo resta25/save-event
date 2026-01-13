@@ -452,19 +452,23 @@ pageEncoding="UTF-8"%>
 	    modal2.style.display = "none";
 	}
 	
-	document.addEventListener('DOMContentLoaded', function() {
-	    const phoneInput = document.getElementById('phone');
+    document.addEventListener('DOMContentLoaded', function () {
+        const phoneInputs = document.getElementsByName('phone');
 
-	    // 페이지 로드 시 기본값 설정
-	    phoneInput.value = '010';
+        // 페이지 로드 시 기본값 설정
+        phoneInputs.forEach(phone => {
+            phone.value = '010';
+        });
 
-	    // 입력값이 사라지면 다시 '010' 넣기
-	    phoneInput.addEventListener('input', function() {
-	        if (!phoneInput.value.startsWith('010')) {
-	            phoneInput.value = '010';
-	        }
-	    });
-	});
+        // 입력값이 사라지거나 010이 아니면 다시 '010' 넣기
+        phoneInputs.forEach(phone => {
+            phone.addEventListener('input', function () {
+                if (!this.value.startsWith('010')) {
+                    this.value = '010';
+                }
+            });
+        });
+    });
 
     //submit
 	function fnForm(formId){
