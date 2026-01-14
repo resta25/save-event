@@ -284,7 +284,7 @@ pageEncoding="UTF-8"%>
                                     <span class="legend">지점선택</span>
                                     <select name="branch" id="branch" required>
                                         <option value="">지점 선택</option>
-                                        <option value="상상강남점">상상강남점</option>
+                                        <option value="상상강남">상상강남</option>
                                         <option value="상상부산점">상상부산점</option>
                                         <option value="상상대전점">상상대전점</option>
                                     </select>
