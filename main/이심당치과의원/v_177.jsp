@@ -340,7 +340,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         animation02.to('#page-2', { display: 'block', duration: 0.1 });
         // animation02.to('.count_box', { top: '38%', duration: 0 }, "<");
         animation02.set('.count_box', {
-            top: isMobile ? '35%' : '38%'
+            top: isMobile ? '35.5%' : '38%'
         }, "<");
         animation02.to('.roulette', { paddingBottom: '5.19%', duration: 0 }, "<");
         animation02.from('#page-2 .poster_03', {x: +200, opacity: 0, duration: 0.2});
