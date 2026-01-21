@@ -138,7 +138,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         .form .table_box {border-radius: 9px;}
         #page_landing_c .form .table_box input {padding: 1.5rem 0 1rem 2rem;
         font-size: 1.4rem;}
-        .count_box {top: 35%; left: 56%;}
+        .count_box {top: 36%; left: 56%;}
         .count_box, .count {font-size: 2.2rem;}
         .page .paging button {height: 66px;}
         .form .submit {height: 53px;}
@@ -340,7 +340,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         animation02.to('#page-2', { display: 'block', duration: 0.1 });
         // animation02.to('.count_box', { top: '38%', duration: 0 }, "<");
         animation02.set('.count_box', {
-            top: isMobile ? '36%' : '38%'
+            top: isMobile ? '35%' : '38%'
         }, "<");
         animation02.to('.roulette', { paddingBottom: '5.19%', duration: 0 }, "<");
         animation02.from('#page-2 .poster_03', {x: +200, opacity: 0, duration: 0.2});
