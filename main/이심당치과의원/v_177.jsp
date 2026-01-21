@@ -97,7 +97,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     .formGroup {}
     .form .table_box{ padding:0;background:#f4f4f4;border-radius:27px; margin-bottom: 18px; }
     .form .table_box input {background: #ededed; border-radius: 0.8rem; font-size: 2.8rem; border: none; background: transparent; width: 100%; padding: 1.5rem 0 1.5rem 2rem; font-family: 'GmarketSans'; font-weight: 500;}
-    .form .table_box input::placeholder{color: #000; text-align: left; font-family: 'GmarketSans'; font-weight: 500;}
+    .form .table_box input::placeholder{color: rgba(0, 0, 0, 0.7); text-align: left; font-family: 'GmarketSans'; font-weight: 500;}
     
     .form .table_box.top {width:95%;}
     .form .table_box.middle {width: 95%;}
