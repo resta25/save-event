@@ -153,6 +153,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         .form .description span {font-size: 80%;}
         .form .question_box .q_select label {font-size: 1.45rem;}
         #page_landing_c input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {padding: unset;}
+        .form-box .description {padding-bottom: 4%;}
         /* #page_landing_c .form .table_box input {padding: 1.5rem 0 1.5rem 2rem;} */
     }
     
@@ -216,9 +217,9 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                         <div class="img-area poster_06" style="margin-top: 5%;"><img src="//static.savemkt.com/event/v_${eventSeq}/q_02.png"></div>
                         <div class="question_box">
                             <div class="q_select">
-                                <label><input type="radio" onclick="setTimeout(show4pg, 100)" onclick="pageFuc(3,$(this))" name="tadd2" value="허리">허리</label>
-                                <label><input type="radio" onclick="setTimeout(show4pg, 100)" onclick="pageFuc(3,$(this))" name="tadd2" value="골반">골반</label>
-                                <label><input type="radio" onclick="setTimeout(show4pg, 100)" onclick="pageFuc(3,$(this))" name="tadd2" value="그 외">그 외</label>
+                                <label><input type="radio" onclick="setTimeout(show4pg, 100)" onclick="pageFuc(3,$(this))" name="tage" value="40">40대</label>
+                                <label><input type="radio" onclick="setTimeout(show4pg, 100)" onclick="pageFuc(3,$(this))" name="tage" value="50">50대</label>
+                                <label><input type="radio" onclick="setTimeout(show4pg, 100)" onclick="pageFuc(3,$(this))" name="tage" value="60">60대</label>
                             </div>
                         </div>
                         <div class="next_btn_inQuestion"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_02.png" onclick="pageSelFuc(2,$(this))"></div> 
@@ -246,9 +247,9 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                                 <div class="table_box top">
                                     <input type="text" name="name" id="name" value="" class="inp" required autocomplete="off" placeholder="이름"/>
                                 </div>
-                                <div class="table_box middle">
+                                <!-- <div class="table_box middle">
                                     <input type="tel" name="age" id="age" value="" class="inp" required autocomplete="off" maxlength="2" placeholder="나이"/>
-                                </div>
+                                </div> -->
                                 <div class="table_box bottom">
                                     <input type="tel" name="phone" id="phone" value="" class="inp inp-phone" required autocomplete="off" maxlength="11" placeholder="전화번호"/>
                                 </div>
@@ -281,6 +282,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                 <input type="hidden" id="checkAgeMin" 	name="checkAgeMin" value="${resVo.checkAgeMin}"/>
                 <input type="hidden" id="checkAgeMax" 	name="checkAgeMax" value="${resVo.checkAgeMax}"/>
                 <input type="hidden" id="checkGender" 	name="checkGender" value="${resVo.checkGender}"/>
+                <input type="hidden" id="age" 			name="age" value=""/>
                 <input type="hidden" id="add1" 			name="add1" value=""/>
                 <input type="hidden" id="add2" 			name="add2" value=""/>
                 <input type="hidden" id="add3" 			name="add3" value=""/>
@@ -469,13 +471,21 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
 		}
 
-		let selectedRadio2 = procForm.querySelector('input[name="tadd2"]:checked');
-		if (!selectedRadio2) {
-			alert("설문을 선택해주세요.");
+        let tage = procForm.querySelector(`input[name="tage"]:checked`);
+		if (!tage) {
+			alert("연령을 선택해주세요.");
 			return;
 		} else {
-			procForm.querySelector("input[name='add2']").value = selectedRadio2.value;
+			procForm.querySelector("input[name='age']").value = tage.value;
 		}
+
+		// let selectedRadio2 = procForm.querySelector('input[name="tadd2"]:checked');
+		// if (!selectedRadio2) {
+		// 	alert("설문을 선택해주세요.");
+		// 	return;
+		// } else {
+		// 	procForm.querySelector("input[name='add2']").value = selectedRadio2.value;
+		// }
 	
 		/*
 		let selectedRadio2 = procForm.querySelector(`input[name="tadd2"]:checked`).value;
@@ -491,7 +501,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 			, 'age': '나이'
 			,'phone': '전화번호'
 			,'add1': '설문1'
-			,'add2': '설문2'
+			// ,'add2': '설문2'
 			// ,'add3': '설문3'
 			// ,'agBox': '개인정보'
 		};
