@@ -133,22 +133,25 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         font-style: normal;
     }
     @media screen and (max-width: 786px) {
-        .roulette {padding-bottom: 5.19%;}
+        #page-1 .paging {padding-top: 2.5%;}
+        .agBox {padding-bottom: 2.5%;}
+        .roulette {padding: 5% 7.5% 5.19%;}
         .form .table_box {border-radius: 9px;}
         #page_landing_c .form .table_box input {padding: 1.5rem 0 1rem 2rem;
         font-size: 1.4rem;}
-        .count_box {top: 32%;}
+        .count_box {top: 34%; left: 56%;}
         .count_box, .count {font-size: 2.2rem;}
         .page .paging button {height: 66px;}
         .form .submit {height: 53px;}
         .agBox, .btn-agreement {font-size: 1rem;}
     }
     @media screen and (max-width: 500px){
-        .count_box, .count {font-size: 1.5rem;}
+        .poster_01 > .img-area {width: 77.03%;}
+        .count_box, .count {font-size: 1.2rem;}
         .form .description p,
         .form .description .ad_txt,
         .form .description span {font-size: 80%;}
-        .form .question_box .q_select label {font-size: 1.5rem;}
+        .form .question_box .q_select label {font-size: 1.45rem;}
         #page_landing_c input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {padding: unset;}
         /* #page_landing_c .form .table_box input {padding: 1.5rem 0 1.5rem 2rem;} */
     }
@@ -337,7 +340,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         animation02.to('#page-2', { display: 'block', duration: 0.1 });
         // animation02.to('.count_box', { top: '38%', duration: 0 }, "<");
         animation02.set('.count_box', {
-            top: isMobile ? '32%' : '38%'
+            top: isMobile ? '34%' : '38%'
         }, "<");
         animation02.to('.roulette', { paddingBottom: '5.19%', duration: 0 }, "<");
         animation02.from('#page-2 .poster_03', {x: +200, opacity: 0, duration: 0.2});
