@@ -135,19 +135,19 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     @media screen and (max-width: 786px) {
         #page-1 .paging {padding-top: 2.5%;}
         .agBox {padding-bottom: 2.5%;}
-        .roulette {padding: 5% 7.5% 5.19%;}
         .form .table_box {border-radius: 9px;}
         #page_landing_c .form .table_box input {padding: 1.5rem 0 1rem 2rem;
         font-size: 1.4rem;}
-        .count_box {top: 34%; left: 56%;}
+        .count_box {top: 35%; left: 56%;}
         .count_box, .count {font-size: 2.2rem;}
         .page .paging button {height: 66px;}
         .form .submit {height: 53px;}
         .agBox, .btn-agreement {font-size: 1rem;}
     }
     @media screen and (max-width: 500px){
-        .poster_01 > .img-area {width: 77.03%;}
-        .count_box, .count {font-size: 1.2rem;}
+        .roulette {padding: 4% 9.5% 4.19%;}
+        .poster_01 > .img-area {width: 67.03%; margin: 0 auto 4.15%;}
+        .count_box, .count {font-size: 1.25rem;}
         .form .description p,
         .form .description .ad_txt,
         .form .description span {font-size: 80%;}
@@ -340,7 +340,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         animation02.to('#page-2', { display: 'block', duration: 0.1 });
         // animation02.to('.count_box', { top: '38%', duration: 0 }, "<");
         animation02.set('.count_box', {
-            top: isMobile ? '34%' : '38%'
+            top: isMobile ? '35%' : '38%'
         }, "<");
         animation02.to('.roulette', { paddingBottom: '5.19%', duration: 0 }, "<");
         animation02.from('#page-2 .poster_03', {x: +200, opacity: 0, duration: 0.2});
