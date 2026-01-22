@@ -52,6 +52,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 
 /* 비디오 영역 */
 .form .video-area {position: relative; padding-top: 75.27%; border: 8px solid #6ebfff; border-right: 0; border-left: 0;}
+.form .video-area::after {position: absolute; bottom: 12px; right: 12px; content: '*생성형 ai 영상'; color: #858585; font-size: 10px; }
 .form #location {position: absolute; top: 0; left: 0; width: 100%; height: 100%; max-height: 813px; object-fit: cover;} 
 
 /* 룰렛 영역 */
@@ -119,6 +120,64 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         width: 71.46% !important; margin: 0 auto; margin-left: auto; margin-right: 9%; animation: pulsating 0.8s linear infinite;
         -webkit-animation: pulsating 0.8s linear infinite;
     }
+
+    /* 거주자 팝업 */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    [class^="popup-"] {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: max-content;
+        margin: 0;
+        padding: 30px 0;
+        background-color: #fff;
+        border-radius: 10px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        opacity: 1;
+        visibility: visible;
+    }
+    [class^="popup-"] p,
+    [class^="popup-"] span {
+        text-align: center;
+        font-size: 250%;
+        font-weight: 700;
+        font-family: 'GmarketSans';
+    }
+    [class^="popup-"] strong {
+        color: #ff0000;
+        font-weight: 700;
+        font-family: 'GmarketSans';
+    }
+    [class^="popup-"] .btn-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 5%;
+    }
+    [class^="popup-"] .btn-box button {
+        background-color: #0202c5;
+        color: #fff;
+        width: 150px;
+        height: 50px;
+        font-size: 125%;
+        font-weight: 700;
+        border-radius: 0.5rem;
+        font-family: 'GmarketSans';
+    }
+
     @keyframes pulsating {
         50% {
             transform: scale(0.95);
@@ -144,6 +203,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         .page .paging button {height: 66px;}
         .form .submit {height: 53px;}
         .agBox, .btn-agreement {font-size: 1rem;}
+
+        [class^="popup-"] {width: 90vw; font-size: 2.5vw; border-radius: 20px; top: 57%;}
     }
     @media screen and (max-width: 500px){
         .roulette {padding: 4% 9.5% 4.19%;}
@@ -156,6 +217,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         #page_landing_c input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {padding: unset;}
         .form-box .description {padding-bottom: 4%;}
         .form .video-area {border-width: 4px;}
+        .form .video-area::after {bottom: 8px; right: 8px;}
         /* #page_landing_c .form .table_box input {padding: 1.5rem 0 1.5rem 2rem;} */
     }
     
@@ -210,7 +272,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                         <div class="question_box">
                             <div class="q_select">
                                 <label><input type="radio" onclick="setTimeout(show3pg, 100)" onclick="pageFuc(2,$(this))" name="tadd1" value="예">예</label>
-                                <label><input type="radio" onclick="setTimeout(show3pg, 100)" onclick="pageFuc(2,$(this))" name="tadd1" value="아니오">아니오</label>
+                                <label><input type="radio" name="tadd1" value="아니오">아니오</label>
                             </div>
                         </div>
                         <div class="next_btn_inQuestion"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_02.png" onclick="pageSelFuc(4,$(this))"></div>
@@ -268,6 +330,19 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                             </div>
                         </div>
                     </section>
+
+                    <div class="overlay"></div>
+                    <div class="popup-confirm">
+                        <p>
+                            본 이벤트는 <br />
+                            <strong>대구 거주자</strong>만 신청 가능합니다.
+                        </p>
+                        <div class="btn-box">
+                            <button type="button" class="btn-confirm">확인</button>
+                            <button type="button" class="btn-out">해당없음<br />(나가기)</button>
+                        </div>
+                    </div>
+
                     <!-- 개인정보처리방침 전문 -->
                     <div id="modal2" class="modal modal2" style="display: none;">
                         <div class="modal-content">
@@ -309,8 +384,51 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 		initDate();
         isimdangAgreement();
 
-        $('.form #location').css({})
+        $('.overlay').hide();
+        $('.popup-confirm').hide();
 	});
+
+    $('input[name="tadd1"]').on('change', function () {
+        if ($(this).val() === "아니오") {
+            $('.overlay, .popup-confirm').show();
+        }
+    });
+
+    // popup-confirm > 확인 버튼
+    $('.btn-confirm').on('click', function () {
+        $('.overlay, .popup-confirm').hide();
+
+        // ✅ 선택 초기화
+        $('input[name="tadd1"]').prop('checked', false);
+        $('.q_select label').removeClass('on');
+    });
+
+    // popup-confirm > 나가기 버튼
+    $('.btn-out').on('click', function(){
+        $('.overlay, .popup-confirm').hide();
+
+        $('.page').hide();   // 다른 페이지 숨기기
+        resetPage1();        // ⭐ GSAP 상태 초기화
+        show1pg();           // 애니메이션 다시 실행
+
+        $('input[name="tadd1"]').prop('checked', false);
+        $('.q_select label').removeClass('on');
+        $(document).scrollTop(0);
+    });
+
+    function resetPage1() {
+        // page-1 자체
+        gsap.set('#page-1', { display: 'block', opacity: 1 });
+
+        // 내부 요소들 원위치
+        gsap.set('#page-1 .poster_01, #page-1 .poster_02, #page-1 .agBox', {
+            x: 0,
+            y: 0,
+            opacity: 1,
+            clearProps: 'transform'
+        });
+    }
+
 
     // 개인정보 처리방침 관련 이벤트
     var modal2 = document.getElementById("modal2");

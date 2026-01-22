@@ -89,16 +89,18 @@ pageEncoding="UTF-8"%>
                             <th class="branch_th">*지점 선택</th>
                             <td class="branch_td">
                                 <div class="wrap_radio">
-                                    <label><input type="radio" name="branch" class="store-radio store-radio1"> 신사본점 </label>
+                                    <label><input type="radio" name="branch" value="신사본점" class="store-radio store-radio1"> 신사본점 </label>
+                                    <label><input type="radio" name="branch" value="부산점" class="store-radio store-radio1"> 부산점 </label>
+                                    <label><input type="radio" name="branch" value="대전점" class="store-radio store-radio1"> 대전점 </label>
                                 </div>
-                                <script>
+                                <!-- <script>
                                     document.addEventListener('DOMContentLoaded', function() {
                                         var storeRadios = document.querySelectorAll('.store-radio1');
                                         if (storeRadios.length === 1) {
                                             storeRadios[0].checked = true;
                                         }
                                     });
-                                </script>
+                                </script> -->
                             </td>
                         </tr>
                         <tr>
@@ -184,16 +186,18 @@ pageEncoding="UTF-8"%>
                             <th class="branch_th">*지점 선택</th>
                             <td class="branch_td">
                                 <div class="wrap_radio">
-                                    <label><input type="radio" name="branch" class="store-radio store-radio2"> 신사본점 </label>
+                                    <label><input type="radio" name="branch" value="신사본점" class="store-radio store-radio2"> 신사본점 </label>
+                                    <label><input type="radio" name="branch" value="부산점" class="store-radio store-radio2"> 부산점 </label>
+                                    <label><input type="radio" name="branch" value="대전점" class="store-radio store-radio2"> 대전점 </label>
                                 </div>
-                                <script>
+                                <!-- <script>
                                     document.addEventListener('DOMContentLoaded', function() {
                                         var storeRadios = document.querySelectorAll('.store-radio2');
                                         if (storeRadios.length === 1) {
                                             storeRadios[0].checked = true;
                                         }
                                     });
-                                </script>
+                                </script> -->
                             </td>
                         </tr>
                         <tr>
@@ -486,6 +490,14 @@ pageEncoding="UTF-8"%>
 			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
 		}
 
+		let branch = procForm.querySelector('input[name="branch"]:checked');
+		if (!branch) {
+			alert("지점을 선택해주세요.");
+			return;
+		} else {
+			procForm.querySelector("#branch").value = branch.value;
+		}
+
 		/*
 		let selectedRadio2 = procForm.querySelector(`input[name="tadd2"]:checked`).value;
 		procForm.querySelector("input[name='add2']").value = selectedRadio2;
@@ -502,6 +514,7 @@ pageEncoding="UTF-8"%>
 			,'add1': '설문1'
 			// ,'add2': '설문2'
 			// ,'add3': '설문3'
+            ,'branch': '지점'
 			,'agBox': '개인정보'
 		};
 		
