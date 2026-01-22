@@ -155,6 +155,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         .form .question_box .q_select label {font-size: 1.45rem;}
         #page_landing_c input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {padding: unset;}
         .form-box .description {padding-bottom: 4%;}
+        .form .video-area {border-width: 4px;}
         /* #page_landing_c .form .table_box input {padding: 1.5rem 0 1.5rem 2rem;} */
     }
     
