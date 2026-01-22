@@ -51,7 +51,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {
 input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border: none;}
 
 /* 비디오 영역 */
-.form .video-area {position: relative; padding-top: 75.27%;}
+.form .video-area {position: relative; padding-top: 75.27%; border: 8px solid #6ebfff; border-right: 0; border-left: 0;}
 .form #location {position: absolute; top: 0; left: 0; width: 100%; height: 100%; max-height: 813px; object-fit: cover;} 
 
 /* 룰렛 영역 */
