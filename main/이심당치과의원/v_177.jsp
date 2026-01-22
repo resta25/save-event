@@ -135,10 +135,11 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 600px;
+        width: 785px;
         height: max-content;
         margin: 0;
         padding: 30px 0;
+        font-size: 150%;
         background-color: #fff;
         border-radius: 10px;
         flex-direction: column;
@@ -166,14 +167,17 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         justify-content: center;
         gap: 1rem;
         margin-top: 5%;
+        font-size: 150%;
     }
     [class^="popup-"] .btn-box button {
         background-color: #0202c5;
         color: #fff;
-        width: 150px;
-        height: 50px;
+        width: 195px;
+        height: 80px;
+        padding-top: 1%;
         font-size: 125%;
-        font-weight: 700;
+        line-height: 1;
+        font-weight: 400;
         border-radius: 0.5rem;
         font-family: 'GmarketSans';
     }
@@ -218,6 +222,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         .form-box .description {padding-bottom: 4%;}
         .form .video-area {border-width: 4px;}
         .form .video-area::after {bottom: 8px; right: 8px;}
+        [class^="popup-"] .btn-box button {width: 115px; height: 50px;}
         /* #page_landing_c .form .table_box input {padding: 1.5rem 0 1.5rem 2rem;} */
     }
     
