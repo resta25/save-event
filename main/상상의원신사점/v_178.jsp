@@ -89,9 +89,9 @@ pageEncoding="UTF-8"%>
                             <th class="branch_th">*지점 선택</th>
                             <td class="branch_td">
                                 <div class="wrap_radio">
-                                    <label><input type="radio" name="branch" value="신사본점" class="store-radio store-radio1"> 신사본점 </label>
-                                    <label><input type="radio" name="branch" value="부산점" class="store-radio store-radio1"> 부산점 </label>
-                                    <label><input type="radio" name="branch" value="대전점" class="store-radio store-radio1"> 대전점 </label>
+                                    <label><input type="radio" name="branch" value="상상강남" class="store-radio store-radio1"> 상상강남 </label>
+                                    <label><input type="radio" name="branch" value="상상부산점" class="store-radio store-radio1"> 상상부산점 </label>
+                                    <label><input type="radio" name="branch" value="상상대전점" class="store-radio store-radio1"> 상상대전점 </label>
                                 </div>
                                 <!-- <script>
                                     document.addEventListener('DOMContentLoaded', function() {
@@ -186,9 +186,9 @@ pageEncoding="UTF-8"%>
                             <th class="branch_th">*지점 선택</th>
                             <td class="branch_td">
                                 <div class="wrap_radio">
-                                    <label><input type="radio" name="branch" value="신사본점" class="store-radio store-radio2"> 신사본점 </label>
-                                    <label><input type="radio" name="branch" value="부산점" class="store-radio store-radio2"> 부산점 </label>
-                                    <label><input type="radio" name="branch" value="대전점" class="store-radio store-radio2"> 대전점 </label>
+                                    <label><input type="radio" name="branch" value="상상강남" class="store-radio store-radio2"> 상상강남 </label>
+                                    <label><input type="radio" name="branch" value="상상부산점" class="store-radio store-radio2"> 상상부산점 </label>
+                                    <label><input type="radio" name="branch" value="상상대전점" class="store-radio store-radio2"> 상상대전점 </label>
                                 </div>
                                 <!-- <script>
                                     document.addEventListener('DOMContentLoaded', function() {
