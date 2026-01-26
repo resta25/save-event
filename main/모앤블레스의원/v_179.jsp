@@ -6,7 +6,7 @@ pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/css/landing.css">
 <style>
     .wrap_form {max-width: 1080px;}
-    #page_landing_c .wrap_form {padding: 0 !important;}
+    #page_landing_c .wrap_form {padding: 0 !important; border: none;}
 	.content {padding: 20px 10px;}
 	.content + .content {border-top: 1px solid #ddd;}
 	.content * {padding: 8px 10px;}
@@ -16,6 +16,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c main {background-color: #fff !important;}
 
     .btn_submit {background: none; background-color: transparent !important;}
+    .btn_submit:disabled {opacity: 0.5;}
     input:not( [type="checkbox"], [type="radio"], [type="range"] ):disabled, input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border: none;}
     /* cta 버튼 */
     .form .submit{width: 70%; margin: 0 auto; padding: 0 0 5%;}
@@ -24,7 +25,7 @@ pageEncoding="UTF-8"%>
     /* 실시간 신청 현황 */
     .subscribe_container {width: 100%; background: #fff; padding: 0 5.5rem 6.5rem;}
     .subscribe_bg {background: #f8f8f8; padding: 3.75% 8.5%; border-radius: 20px}
-    .subscribe_container .title {padding: 7.5rem 0 0; font-size: 4.5rem; text-align: center; color: #000; font-weight: 700; margin-bottom: 2.8rem;}
+    #page_landing_c .wrap_curd .subscribe_container .title {padding: 7.5rem 0 0; font-size: 4.5rem; text-align: center; color: #000; font-weight: 700; margin-bottom: 2.8rem;}
     .subscribe_container .img-area {width: 40%; margin: 3% auto;}
     .subscribe {height: 530px; overflow: hidden;}
     .subscribe .content {display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0rem; border-bottom: 1px solid rgba(28, 28, 28, 0.1);}
@@ -36,14 +37,14 @@ pageEncoding="UTF-8"%>
     }
     .subscribe .content .date {text-align: right;}
 
-    .question_box .question img {max-width: 801px; margin: 0 auto 7%;}
+    .question_box .question img {max-width: 801px; margin: 4.65% auto 7%;}
     .select-box {display: flex; align-items: center; justify-content: center; column-gap: 22px; padding: 0 20px 74px;}
     .select-box .img-area {width: 47.11%;}
     .question_box .q_select {display: flex; flex-direction: column; row-gap: 16px; width: 44.32%; box-sizing: border-box;}
     /* .question_box .q_select label {height: 134px;} */
     #page_landing_c .wrap_curd input[type="radio"] {display: none; appearance: none; margin-left: 0; width: 0;}
 
-    .user-box {background-color: #f5f8ff; padding: 75px 93px 48px 63px;}
+    .user-box {}
     .user-box .user-info {display: flex; font-size: 150% !important; justify-content: flex-end;}
     .user-box .user-info + .user-info {margin-top: 3%;}
     .user-box .user-info input {width: 74.5% !important; border: 3px solid #dddede; font-size: 270% !important; height: auto; padding: 1.7% 0; text-align: center; line-height: 1; box-sizing: border-box; border-radius: 30px !important;}
@@ -54,6 +55,25 @@ pageEncoding="UTF-8"%>
     .description {text-align: center;}
     .description #target {margin: 1% 0;}
     .description p {font-size: 175% !important; font-weight: 700;}
+
+    #page_landing_c main img.t_img {width: 88.22%; margin: 0 auto 3.35%;}
+
+    .first {display: block; width: 88.22%; margin: 0 auto 4.65%;}
+    /* .first img {} */
+
+    #page-2 {display: none;}
+    #page-2 .question_group {background-color: #f5f8ff; padding: 6.96% 10% 4.45%;}
+    #page-2 .question_group .q_select {display: flex; flex-direction: row; justify-content: space-between; width: 100%; margin: 5.1% 0 7.16%;}
+    #page-2 .question_group .img-area {height: 5%; width: auto;}
+    #page-2 .question_group .q_01_img {max-width: 66.1%; margin: 0 auto;}
+    #page-2 .question_group .q_02_img {max-width: 67.3%; margin: 0 auto;}
+    #page-2 .question_group .q_03_img {max-width: 73.17%; margin: 0 auto;}
+    #page-2 .question_group .q_04_img {max-width: 79.2%; margin: 0 auto;}
+    #page-2 .question_group .q_05_img {max-width: 92.42%; margin: 0 auto;}
+    #page-2 .question_group .img-area img {margin: 0 auto;}
+    #page-2 .question_group .q_select input {height: 13vh; width: 100%; font-size: 270%; margin-left: 0;}
+    #page_landing_c .wrap_curd #page-2 label {justify-content: space-evenly;}
+    #page_landing_c .wrap_curd #page-2 label + label {margin-left: 1%;}
 
 @media screen and (max-width: 820px){
     .question_box .question img {max-width: 90%;}
@@ -67,16 +87,19 @@ pageEncoding="UTF-8"%>
 
     .description p {font-size: 95% !important;}
 
-    .subscribe {padding: 3% 2%; height: 150px;}
+    .subscribe {padding: 2% 2%; height: 150px;}
     .subscribe .content {padding: 0.5rem 0.7rem;}
     .subscribe .content > div {margin-right: 0; font-size: 0.8rem;}
+    .subscribe .content > div.phone {width: 30%;}
     .subscribe_container {padding: 0 1.5rem 1rem 1.5rem;}
     .subscribe .content .name {width: 10%;}
-
+    
     .subscribe_bg {padding: 3.75% 3.5%;}
     .content * {padding: 8px 0px;}
     .content .text {padding: 4px 0;}
-    .subscribe_container .title {padding: 2rem 0 0; font-size: 1.8rem; margin-bottom: 0.6875rem;}
+    #page_landing_c .wrap_curd .subscribe_container .title {padding: 2rem 0 0; font-size: 1.8rem; margin-bottom: 0.6875rem;}
+
+    #page-2 .question_group .q_select input {height: 6.5vh; font-size: 150%; padding: 0 10px;}
 }
 
 @media screen and (max-width: 500px){
@@ -99,10 +122,13 @@ pageEncoding="UTF-8"%>
 <body id="page_landing_c" class="loaded">
     <main>
         <div class="wrap_form">
-            <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.jpg" alt="landing_top" class="landing_top">
             <form class="wrap_curd" id="form-1" method="POST" accept-charset="utf-8">
-
-                <div class="form-inner">
+                
+                <section class="page" id="page-1">
+                    <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.jpg" alt="landing_top" class="landing_top">
+                    <img class="t_img" src="//static.savemkt.com/event/v_${eventSeq}/t_off_01.png" alt="landing_top" class="landing_top">
+                    <img class="t_img" src="//static.savemkt.com/event/v_${eventSeq}/t_off_02.png" alt="landing_top" class="landing_top">
+                    
                     <div class="question_box">
                         <div class="question">
                             <img src="//static.savemkt.com/event/v_${eventSeq}/txt_01.png" />
@@ -119,26 +145,62 @@ pageEncoding="UTF-8"%>
                             </div>
                         </div>
                     </div>
+                    <button type="button" disabled onclick="show2pg()" class="first"><img src="//static.savemkt.com/event/v_${eventSeq}/next_off_btn.png"></button>
+                </section>
 
-                    <div class="user-box">
-                        <div class="user-info">
-                            <label for="">이름</label>
-                            <input type="text" name="name" id="name" class="inp" required placeholder=""  autocomplete="off" >
+                <section class="page" id="page-2">
+                    <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg" alt="landing_top" class="landing_top">
+                    <div class="question_group">
+                        <div class="question_box">
+                            <div class="img-area q_01_img">
+                                <img src="//static.savemkt.com/event/v_${eventSeq}/q_01.png">
+                            </div>
+                            <div class="q_select">
+                                <label><input type="radio" name="tadd2" value="남성"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_05.png"></label>
+                                <label><input type="radio" name="tadd2" value="여성"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_06.png"></label>
+                            </div>
                         </div>
-                        <div class="user-info">
-                            <label for="">나이</label>
-                            <input type="tel" name="age" id="age" class="inp" required="" autocomplete="off" maxlength="2" placeholder="">
+                        <div class="question_box">
+                            <div class="img-area q_02_img">
+                                <img src="//static.savemkt.com/event/v_${eventSeq}/q_02.png">
+                            </div>
+                            <div class="q_select">
+                                <input type="text" name="name" id="name" class="inp" required placeholder=""  autocomplete="off" >
+                            </div>
                         </div>
-                        <div class="user-info">
-                            <label for="">연락처</label>
-                            <input type="tel" placeholder="" id="phone" name="phone" maxlength="11" value="010">
+                        <div class="question_box">
+                            <div class="img-area q_03_img">
+                                <img src="//static.savemkt.com/event/v_${eventSeq}/q_03.png">
+                            </div>
+                            <div class="q_select">
+                                <input type="tel" placeholder="" id="phone" name="phone" maxlength="11" value="010">
+                            </div>
+                        </div>
+                        <div class="question_box">
+                            <div class="img-area q_04_img">
+                                <img src="//static.savemkt.com/event/v_${eventSeq}/q_04.png">
+                            </div>
+                            <div class="q_select">
+                                <label><input type="radio" name="tadd3" value="고밀도 모발이식"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_07.png"></label>
+                                <label><input type="radio" name="tadd3" value="디자인 헤어라인"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_08.png"></label>
+                            </div>
+                        </div>
+                        <div class="question_box">
+                            <div class="img-area q_05_img">
+                                <img src="//static.savemkt.com/event/v_${eventSeq}/q_05.png">
+                            </div>
+                            <div class="q_select">
+                                <label><input type="radio" name="tadd4" value="10시~12시"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_09.png"></label>
+                                <label><input type="radio" name="tadd4" value="13시~15시"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_10.png"></label>
+                                <label><input type="radio" name="tadd4" value="15시~16시"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_11.png"></label>
+                            </div>
                         </div>
                         <div class="wrap_checkbox">
                             <div class="agBox">
                                 <label><input name="agBox" type="checkbox"><span>개인정보 수집 및 이용동의</span></label> <label id="agree" class="btn-agreement">[자세히 보기]</label>
                             </div>
                         </div>                        
-                        <div class="submit"><input type="image" onclick="fnForm('form-1')" value="" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png"></div>
+                        <div class="submit"><input type="image" onclick="fnForm('form-1')" value="" disabled class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png"></div>
                         <div class="description">
                             <div class="ad_txt">안심하세요! 본원에서는 고객님의 소중한 개인정보를<br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
                             <span id="target">대상 :  ${resVo.target}</span>
@@ -146,9 +208,18 @@ pageEncoding="UTF-8"%>
                         </div>
                     </div>
 
-                </div>
-            
+                    <div class="subscribe_container">
+                        <div class="title">
+                            실시간 신청현황
+                        </div>
+                        <div class="subscribe_bg">
+                            <div class="subscribe" data-limit="10">
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div>
+                </section>
 
                 <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
                 <input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
@@ -171,16 +242,6 @@ pageEncoding="UTF-8"%>
             </form>
         </div>
             
-        <div class="subscribe_container">
-            <div class="title">
-                실시간 신청현황
-            </div>
-            <div class="subscribe_bg">
-                <div class="subscribe" data-limit="10">
-                </div>
-            </div>
-        </div>
-
         <div id="modal2" class="modal modal2" style="display: none;">
             <div class="modal-content">
                 <span class="close" id="close">×</span>
@@ -189,7 +250,6 @@ pageEncoding="UTF-8"%>
                 </p>
             </div>
         </div>
-        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div>
     </main>
 </body>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
@@ -202,6 +262,46 @@ pageEncoding="UTF-8"%>
         //신청현황 리스트
         getComment(`${eventSeq}`);
     });
+
+    let isOn = false;
+    setInterval(() => {
+        $('.t_img').each(function () {
+        const $img = $(this);
+        const src = $img.attr('src');
+
+        if (isOn) {
+            $img.attr('src', src.replace('t_on_', 't_off_'));
+        } else {
+            $img.attr('src', src.replace('t_off_', 't_on_'));
+        }
+        });
+
+        isOn = !isOn;
+    }, 1000)
+
+    function show2pg() {
+      $('#page-1').hide();
+      $('#page-2').show();
+    }
+
+    const $submit = $('.btn_submit');
+
+    function checkRequiredRadios() {
+        const isTadd2 = $('input[name="tadd2"]:checked').length > 0;
+        const isName = $('input#name').val().trim().length >= 2;
+        const isPhoneNum = $('input#phone').val().length === 11;
+        const isTadd3 = $('input[name="tadd3"]:checked').length > 0;
+        const isTadd4 = $('input[name="tadd4"]:checked').length > 0;
+
+        if (isTadd2 && isName && isPhoneNum && isTadd3 && isTadd4) {
+        $submit.prop('disabled', false);
+        } else {
+        $submit.prop('disabled', true);
+        }
+    }
+
+    // 라디오 변경 감지
+    $('input').on('change keyup', checkRequiredRadios);
 
     //설문 클릭시 이미지 on/off
     $('input[name*="tadd"]').on('click', function(){
@@ -217,10 +317,11 @@ pageEncoding="UTF-8"%>
 
         
         const imgNum = String(index).padStart(2, '0'); // 01, 02, 03...
-        console.log(imgNum)
         const imgSrc = '//static.savemkt.com/event/v_${eventSeq}' + '/head_'+ imgNum +'.png';
 
         $('.select-box .img-area img').attr('src', imgSrc);
+        $('.first img').attr('src', '//static.savemkt.com/event/v_${eventSeq}/next_on_btn.png');
+        $('.first').prop('disabled', false)
     });
 
     let dataNum;
@@ -308,6 +409,30 @@ pageEncoding="UTF-8"%>
 			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
 		}
 
+        let selectedRadio2 = procForm.querySelector('input[name="tadd2"]:checked');
+		if (!selectedRadio2) {
+			alert("설문을 선택해주세요.");
+			return;
+		} else {
+			procForm.querySelector("input[name='add2']").value = selectedRadio2.value;
+		}
+
+        let selectedRadio3 = procForm.querySelector('input[name="tadd3"]:checked');
+		if (!selectedRadio3) {
+			alert("설문을 선택해주세요.");
+			return;
+		} else {
+			procForm.querySelector("input[name='add3']").value = selectedRadio3.value;
+		}
+
+        let selectedRadio4 = procForm.querySelector('input[name="tadd4"]:checked');
+		if (!selectedRadio4) {
+			alert("설문을 선택해주세요.");
+			return;
+		} else {
+			procForm.querySelector("input[name='add4']").value = selectedRadio4.value;
+		}
+
 		/*
 		let selectedRadio2 = procForm.querySelector(`input[name="tadd2"]:checked`).value;
 		procForm.querySelector("input[name='add2']").value = selectedRadio2;
@@ -319,11 +444,12 @@ pageEncoding="UTF-8"%>
 		// 필수값 체크 항목
 		var required = {
 			'name': '이름'
-			,'age': '나이'
+			// ,'age': '나이'
 			,'phone': '전화번호'
 			,'add1': '설문1'
-			// ,'add2': '설문2'
-			// ,'add3': '설문3'
+			,'add2': '설문2'
+			,'add3': '설문3'
+			,'add4': '설문4'
 			,'agBox': '개인정보'
 		};
 		
