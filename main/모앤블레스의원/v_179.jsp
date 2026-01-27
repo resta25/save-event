@@ -11,16 +11,29 @@ pageEncoding="UTF-8"%>
 	.content + .content {border-top: 1px solid #ddd;}
 	.content * {padding: 8px 10px;}
 
+    .popup {max-width: 1080px; background-color: rgba(0, 0, 0, 0.3); backdrop-filter: blur(0);}
+    #page_landing_c main .popup img {width: 91.83%; margin: 0 auto;}
+    
     #location {width: 100%;}
-
-    #page_landing_c main {background-color: #fff !important;}
-
+    
+    #page_landing_c main {max-width: 1080px; background-color: #fff !important;}
+    
     .btn_submit {background: none; background-color: transparent !important;}
     .btn_submit:disabled {opacity: 0.5;}
     input:not( [type="checkbox"], [type="radio"], [type="range"] ):disabled, input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border: none;}
     /* cta 버튼 */
-    .form .submit{width: 70%; margin: 0 auto; padding: 0 0 5%;}
-    .form .submit input[type="image"]{width: 100%;}
+    .wrap_form .submit {position: relative; display: flex; align-items: center; width: 87.875%; height: 180px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb_01.png') no-repeat center center / 100% 100%; margin: 3% auto; padding: 0% 0;}
+    .wrap_form .submit input[type="image"] {
+        width: 71.46% !important; margin: 0 auto; margin-left: auto; animation: pulsating 0.8s linear infinite;
+        -webkit-animation: pulsating 0.8s linear infinite;
+    }
+
+    @keyframes pulsating {
+        50% {
+            transform: scale(0.95);
+        }
+    }
+    
 
     /* 실시간 신청 현황 */
     .subscribe_container {width: 100%; background: #fff; padding: 0 5.5rem 6.5rem;}
@@ -37,6 +50,8 @@ pageEncoding="UTF-8"%>
     }
     .subscribe .content .date {text-align: right;}
 
+    #page-1 {padding-bottom: 5%;}
+    #page-1 .question_box {margin: 0 2.97%; border: 4px solid #000; border-radius: 10px; background-color: #e9ecec;}
     .question_box .question img {max-width: 801px; margin: 4.65% auto 7%;}
     .select-box {display: flex; align-items: center; justify-content: center; column-gap: 22px; padding: 0 20px 74px;}
     .select-box .img-area {width: 47.11%;}
@@ -61,8 +76,8 @@ pageEncoding="UTF-8"%>
     .first {display: block; width: 88.22%; margin: 0 auto 4.65%;}
     /* .first img {} */
 
-    #page-2 {display: none;}
-    #page-2 .question_group {background-color: #f5f8ff; padding: 6.96% 10% 4.45%;}
+    #page-2 {display: none; background-color: #f5f8ff;}
+    #page-2 .question_group {padding: 6.96% 10% 1.45%;}
     #page-2 .question_group .q_select {display: flex; flex-direction: row; justify-content: space-between; width: 100%; margin: 5.1% 0 7.16%;}
     #page-2 .question_group .img-area {height: 5%; width: auto;}
     #page-2 .question_group .q_01_img {max-width: 66.1%; margin: 0 auto;}
@@ -103,7 +118,9 @@ pageEncoding="UTF-8"%>
 }
 
 @media screen and (max-width: 500px){
-    .form-group, .form .submit{width: 90%;}
+    .form-group, .wrap_form .submit{width: 90%;}
+    .wrap_form .submit {height: 70px;}
+    #page-1 .question_box {border-width: 2px;}
 
     .ad_txt, #target {font-size: 90% !important;}
 }
@@ -138,14 +155,17 @@ pageEncoding="UTF-8"%>
                                 <img src="//static.savemkt.com/event/v_${eventSeq}/head_00.png">
                             </div>
                             <div class="q_select">
-                                <label><input type="radio" name="tadd1" value="이마/헤어라인"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_01.png"></label>
-                                <label><input type="radio" name="tadd1" value="정수리/가르마"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_02.png"></label>
-                                <label><input type="radio" name="tadd1" value="옆/뒷머리"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_03.png"></label>
-                                <label><input type="radio" name="tadd1" value="여러 부위"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_04.png"></label>
+                                <label><input type="radio" name="tadd1" onclick="setTimeout(show2pg, 500)" value="이마/헤어라인"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_01.png"></label>
+                                <label><input type="radio" name="tadd1" onclick="setTimeout(show2pg, 500)" value="정수리/가르마"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_02.png"></label>
+                                <label><input type="radio" name="tadd1" onclick="setTimeout(show2pg, 500)" value="옆/뒷머리"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_03.png"></label>
+                                <label><input type="radio" name="tadd1" onclick="setTimeout(show2pg, 500)" value="여러 부위"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_04.png"></label>
                             </div>
                         </div>
                     </div>
-                    <button type="button" disabled onclick="show2pg()" class="first"><img src="//static.savemkt.com/event/v_${eventSeq}/next_off_btn.png"></button>
+                    <!-- <button type="button" disabled onclick="show2pg()" class="first"><img src="//static.savemkt.com/event/v_${eventSeq}/next_off_btn.png"></button> -->
+                    <div class="popup popup_01">
+                        <img src="//static.savemkt.com/event/v_${eventSeq}/popup.png" alt="">
+                    </div>
                 </section>
 
                 <section class="page" id="page-2">
@@ -165,7 +185,7 @@ pageEncoding="UTF-8"%>
                                 <img src="//static.savemkt.com/event/v_${eventSeq}/q_02.png">
                             </div>
                             <div class="q_select">
-                                <input type="text" name="name" id="name" class="inp" required placeholder=""  autocomplete="off" >
+                                <input type="text" name="name" id="name" class="inp" placeholder=""  autocomplete="off" >
                             </div>
                         </div>
                         <div class="question_box">
@@ -200,12 +220,12 @@ pageEncoding="UTF-8"%>
                                 <label><input name="agBox" type="checkbox"><span>개인정보 수집 및 이용동의</span></label> <label id="agree" class="btn-agreement">[자세히 보기]</label>
                             </div>
                         </div>                        
-                        <div class="submit"><input type="image" onclick="fnForm('form-1')" value="" disabled class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png"></div>
-                        <div class="description">
-                            <div class="ad_txt">안심하세요! 본원에서는 고객님의 소중한 개인정보를<br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
-                            <span id="target">대상 :  ${resVo.target}</span>
-                            <p id="event-period"></p>
-                        </div>
+                    </div>
+                    <div class="submit"><input type="image" value="" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_txt.png" /></div>
+                    <div class="description">
+                        <!-- <div class="ad_txt">안심하세요! 본원에서는 고객님의 소중한 개인정보를<br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div> -->
+                        <p id="event-period"></p>
+                        <span id="target">대상 :  ${resVo.target}</span>
                     </div>
 
                     <div class="subscribe_container">
@@ -219,6 +239,9 @@ pageEncoding="UTF-8"%>
                     </div>
 
                     <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div>
+                    <div class="popup popup_02">
+                        <img src="//static.savemkt.com/event/v_${eventSeq}/popup_02.png" alt="">
+                    </div>
                 </section>
 
                 <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
@@ -241,7 +264,7 @@ pageEncoding="UTF-8"%>
                 <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
             </form>
         </div>
-            
+
         <div id="modal2" class="modal modal2" style="display: none;">
             <div class="modal-content">
                 <span class="close" id="close">×</span>
@@ -263,21 +286,40 @@ pageEncoding="UTF-8"%>
         getComment(`${eventSeq}`);
     });
 
-    let isOn = false;
-    setInterval(() => {
-        $('.t_img').each(function () {
-        const $img = $(this);
-        const src = $img.attr('src');
+    let current = 0;
 
-        if (isOn) {
-            $img.attr('src', src.replace('t_on_', 't_off_'));
-        } else {
+    function toggleAction(){
+        $('.t_img').each(function (index) {
+            const $img = $(this);
+            const src = $img.attr('src');
+
+            if (index === current) {
             $img.attr('src', src.replace('t_off_', 't_on_'));
-        }
+            } else {
+            $img.attr('src', src.replace('t_on_', 't_off_'));
+            }
         });
 
-        isOn = !isOn;
-    }, 1000)
+        current = (current + 1) % $('.t_img').length;
+    }
+
+    setTimeout(toggleAction, 0);
+    setInterval(toggleAction, 2000);
+
+    $('#page-1').on('click', function (e) {
+        if (!$(e.target).closest('.question_box').length) {
+            closeQuestionBox('.popup_01');
+        }
+    });
+
+    function closeQuestionBox(popup) {
+        const $popup = $(popup);
+        $popup.css({ visibility: 'visible', opacity: 1 });
+
+        setTimeout(() => {
+            $popup.css({ visibility: 'hidden', opacity: 0 });
+        }, 1500);
+    }
 
     function show2pg() {
       $('#page-1').hide();
@@ -286,7 +328,8 @@ pageEncoding="UTF-8"%>
 
     const $submit = $('.btn_submit');
 
-    function checkRequiredRadios() {
+    function checkRequiredRadios(e) {
+        e.preventDefault();
         const isTadd2 = $('input[name="tadd2"]:checked').length > 0;
         const isName = $('input#name').val().trim().length >= 2;
         const isPhoneNum = $('input#phone').val().length === 11;
@@ -294,14 +337,14 @@ pageEncoding="UTF-8"%>
         const isTadd4 = $('input[name="tadd4"]:checked').length > 0;
 
         if (isTadd2 && isName && isPhoneNum && isTadd3 && isTadd4) {
-        $submit.prop('disabled', false);
+            fnForm('form-1');
         } else {
-        $submit.prop('disabled', true);
+            closeQuestionBox('.popup_02');
         }
     }
 
     // 라디오 변경 감지
-    $('input').on('change keyup', checkRequiredRadios);
+    $submit.on('click', (e) => checkRequiredRadios(e));
 
     //설문 클릭시 이미지 on/off
     $('input[name*="tadd"]').on('click', function(){
