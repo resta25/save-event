@@ -284,6 +284,8 @@ pageEncoding="UTF-8"%>
         moandblessAgreement();
         //신청현황 리스트
         getComment(`${eventSeq}`);
+
+        $('html, body').animate( { scrollTop : 0 }, 0 );
     });
 
     let current = 0;
@@ -322,8 +324,8 @@ pageEncoding="UTF-8"%>
     }
 
     function show2pg() {
-        $('#page-1').hide();
         $('html, body').animate( { scrollTop : 0 }, 0 );
+        $('#page-1').hide();
         $('#page-2').show();
     }
 
