@@ -322,8 +322,9 @@ pageEncoding="UTF-8"%>
     }
 
     function show2pg() {
-      $('#page-1').hide();
-      $('#page-2').show();
+        $('#page-1').hide();
+        $('html, body').animate( { scrollTop : 0 }, 0 );
+        $('#page-2').show();
     }
 
     const $submit = $('.btn_submit');
