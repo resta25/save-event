@@ -490,7 +490,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 
         animation02.to('#page-1 .poster_01', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
         animation02.to('#page-1', { display: 'none' });
-        animation02.to('#page-2', { display: 'block', duration: 0.1 }, 0);
+        animation02.to('#page-2', { display: 'block', duration: 0.1 });
         animation02.from('#page-2 .poster_03', {x: +200, opacity: 0, duration: 0.2});
         animation02.from('#page-2 .question_box .q_select > label', {x: +200, opacity: 0, duration: 0.2, stagger: 0.1});
         animation02.from('#page-2 .next_btn_inQuestion', {x: +200, opacity: 0, duration: 0.3, stagger: 0.1});
@@ -510,7 +510,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         animation03.to('#page-2 .question_box .q_select > label', {x: -100, opacity: 0});
         animation03.to('#page-2 .next_btn_inQuestion', {x: -100, opacity: 0});
         animation03.to('#page-2', { display: 'none' });
-        animation03.to('#page-3', { display: 'block', duration: 0.1 }, 0);
+        animation03.to('#page-3', { display: 'block', duration: 0.1 });
         animation03.from('#page-3 .poster_05', {x: +200, opacity: 0, duration: 0});
         animation03.from('#page-3 .question_box .q_select > label', {x: +200, opacity: 0, duration: 0.2, stagger: 0.1});
         animation03.from('#page-3 .next_btn_inQuestion', {x: +200, opacity: 0, duration: 0.2, stagger: 0.1});
@@ -530,7 +530,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         animation04.to('#page-3 .question_box .q_select > label', {x: -100, opacity: 0});
         animation04.to('#page-3 .next_btn_inQuestion', {x: -100, opacity: 0});
         animation04.to('#page-3', { display: 'none' });
-        animation04.to('#page-4', { display: 'block', duration: 0.1 }, 0);
+        animation04.to('#page-4', { display: 'block', duration: 0.1 });
         animation04.from('#page-4 .table_box.top', {x: +200, opacity: 0, duration: 0.2});
         animation04.from('#page-4 .table_box.middle', {x: +200, opacity: 0, duration: 0.2});
         animation04.from('#page-4 .table_box.bottom', {x: +200, opacity: 0, duration: 0.2});
