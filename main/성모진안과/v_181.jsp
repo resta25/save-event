@@ -398,7 +398,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 		//드래그, 우클릭 방지
 		blockSourceView();
 		initDate();
-        isimdangAgreement();
+        jineyeAgreement();
 
         $('.overlay').hide();
         $('.popup-confirm').hide();
