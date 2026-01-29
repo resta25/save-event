@@ -506,7 +506,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                 isAnimating = false; // 애니메이션 끝나면 플래그 해제
             }
         });
-        animation03.to('#page-2 .poster_03', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
+        animation03.to('#page-2 .poster_03', { x: -100, opacity: 0, delay: 0.1, duration: 0.2, ease: "power1.out"}, 0);
         animation03.to('#page-2 .question_box .q_select > label', {x: -100, opacity: 0});
         animation03.to('#page-2 .next_btn_inQuestion', {x: -100, opacity: 0});
         animation03.to('#page-2', { display: 'none' });
@@ -526,7 +526,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                 isAnimating = false; // 애니메이션 끝나면 플래그 해제
             }
         });
-        animation04.to('#page-3 .poster_05', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
+        animation04.to('#page-3 .poster_05', { x: -100, opacity: 0, delay: 0.1, duration: 0.2, ease: "power1.out"}, 0);
         animation04.to('#page-3 .question_box .q_select > label', {x: -100, opacity: 0});
         animation04.to('#page-3 .next_btn_inQuestion', {x: -100, opacity: 0});
         animation04.to('#page-3', { display: 'none' });
