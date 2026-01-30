@@ -423,8 +423,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         $('.overlay, .popup-confirm').hide();
 
         // ✅ 선택 초기화
-        $('input[name="tadd1"]').prop('checked', false);
-        $('.q_select label').removeClass('on');
+        $('input[name="tadd1"][value="예"]').prop('checked', false);
+        $('input[name="tadd1"][value="예"]').closest('label').removeClass('on');
     });
 
     // popup-confirm > 확인 버튼
@@ -432,8 +432,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         $('.overlay, .popup-confirm2').hide();
 
         // ✅ 선택 초기화
-        $('input[name="tadd2"]').prop('checked', false);
-        $('.q_select label').removeClass('on');
+        $('input[name="tadd2"][value="아니오"]').prop('checked', false);
+        $('input[name="tadd2"][value="아니오"]').closest('label').removeClass('on');
     });
 
     // popup-confirm > 나가기 버튼
