@@ -94,11 +94,13 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 .form .table_box input {background: #ededed; border-radius: 0.8rem; font-size: 2.8rem; border: none; background: transparent; width: 100%; padding: 1.85rem 1.5rem 1.15rem; text-align: center; font-family: 'GmarketSans'; font-weight: 500;}
 .form .table_box input::placeholder{color: rgba(0, 0, 0, 0.7); text-align: center; font-family: 'GmarketSans'; font-weight: 500;}
 
-.form .table_box.top {width:95%;}
-.form .table_box.middle {width: 95%;}
-.form .table_box.bottom {width:95%;}
-.form .table_box.txt_box {width:95%; height: 130px;}
+.form .table_box.top {width:95%; margin-left: 2.5%;}
+.form .table_box.middle {width: 95%; margin-left: 2.5%;}
+.form .table_box.bottom {width:95%; margin-left: 2.5%;}
+.form .table_box.txt_box {width:95%; margin-left: 2.5%; height: 130px;}
 .form .table_box.bottom input {}
+
+:is(#page_landing_a, #page_landing_c) .wrap_checkbox > div {justify-content: center;}
 
 /* 개인정보 처리방침 */
 .agBox {display: flex; align-items: center; justify-content: center; padding-bottom: 5%; font-family: 'GmarketSans'; font-weight: 500; font-size: 1.4rem; line-height: 1;}
@@ -303,7 +305,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                         </section> -->
             
                         <section class="page" id="page-4">
-                            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.jpg"></div>
+                            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg"></div>
                             <div class="img-area poster_09">
                                 <img src="//static.savemkt.com/event/v_${eventSeq}/gage_03.png">
                                 <div class="img-area poster_10" style="margin-top: 5%;"><img src="//static.savemkt.com/event/v_${eventSeq}/q_03.png"></div>
