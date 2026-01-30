@@ -29,7 +29,7 @@ pageEncoding="UTF-8"%>
 .page:not(#page-1){display:none;}
 #wrap{background:#ffffff;}
 .form, .form .formContents{background-color:#ffffff;}
-.page > .img-area:nth-child(1) {margin-bottom: 3%;}
+.page > .img-area:nth-child(1) {margin-bottom: 9%;}
 
 /* 초기화 css */
 #page_landing_c main {max-width: unset;}
@@ -65,11 +65,11 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 #page-1 .poster_01 > div.img-area:nth-child(3) {position: relative;}
 #page-1 .poster_02 {position: absolute; left: 50%; bottom: 21%; width: 100%; transform: translateX(-50%);}
 
-#page-2 .poster_03 {width: 100%; padding: 7.63% 14.25% 25%; background: url('//static.savemkt.com/event/v_${eventSeq}/content_bg.png') no-repeat top center / 100% 100%;}
+#page-2 .poster_03 {width: 100%; padding: 7.63% 14.25% 2%; background: url('//static.savemkt.com/event/v_${eventSeq}/content_bg.png') no-repeat top center / 100% 105%;}
 #page-2 .poster_03 .img-area {margin-bottom: 3%;}
-#page-3 .poster_05 {width: 100%; padding: 7.63% 14.25% 25%; background: url('//static.savemkt.com/event/v_${eventSeq}/content_bg.png') no-repeat top center / 100% 100%;}
+#page-3 .poster_05 {width: 100%; padding: 7.63% 14.25% 2%; background: url('//static.savemkt.com/event/v_${eventSeq}/content_bg.png') no-repeat top center / 100% 105%;}
 #page-3 .poster_05 .img-area {margin-bottom: 3%;}
-#page-4 .poster_09 {width: 100%; padding: 7.63% 14.25% 25%; background: url('//static.savemkt.com/event/v_${eventSeq}/content_bg.png') no-repeat top center / 100% 100%;}
+#page-4 .poster_09 {width: 100%; padding: 7.63% 14.25% 12%; background: url('//static.savemkt.com/event/v_${eventSeq}/content_bg.png') no-repeat top center / 100% 105%;}
 #page-4 .poster_09 .img-area {margin-bottom: 3%;}
 
 .form-box {margin-top: 10%;}
@@ -78,20 +78,20 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 .form .formContents .description * {font-family: 'GmarketSans'; font-weight: 300;}
 .form-box .form-box-top {padding:5% 5% 0;}
 .form-box .description {padding-bottom:2%;}
-.form .question_box {text-align: center; padding: 4% 0 0; margin-bottom: 5%;}
+.form .question_box {text-align: center; padding: 4% 0 0; margin-bottom: 7%;}
 .form .question_box .q_select {display: flex; flex-direction: column; font-size: 150%;}
 .form .question_box .q_select label{width:100%; padding: 4% 0 2.5%; cursor:pointer; background: #ededed; border-radius: 0.8rem; font-size: 200%; font-weight: 500; font-family: 'GmarketSans';}
 .form .question_box .q_select label.on{background: #aaa;}
 .form .question_box .q_select label:not(:last-child){margin-bottom: 5%;}
 .form .question_box .q_select label img{width:95%;}
 
-.form .next_btn_inQuestion {width: 100%; cursor: pointer;}
+.form .next_btn_inQuestion {width: 100%; cursor: pointer; padding-bottom: 19%;}
 .form .next_btn_inQuestion img {width: 100%;}
 
 /* 이름, 전화번호 boz */
 .formGroup {}
 .form .table_box{ padding:0; border: 2px solid #000 ; border-radius:27px; margin-bottom: 18px; }
-.form .table_box input {background: #ededed; border-radius: 0.8rem; font-size: 2.8rem; border: none; background: transparent; width: 100%; padding: 1.5rem; text-align: center; font-family: 'GmarketSans'; font-weight: 500;}
+.form .table_box input {background: #ededed; border-radius: 0.8rem; font-size: 2.8rem; border: none; background: transparent; width: 100%; padding: 1.85rem 1.5rem 1.15rem; text-align: center; font-family: 'GmarketSans'; font-weight: 500;}
 .form .table_box input::placeholder{color: rgba(0, 0, 0, 0.7); text-align: center; font-family: 'GmarketSans'; font-weight: 500;}
 
 .form .table_box.top {width:95%;}
@@ -110,7 +110,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 
 .form .submit {display: flex; align-items: center; justify-content: flex-end; width:100%; box-sizing: border-box; background: none; padding: 0; cursor: pointer; position: relative; width: 100%; height: 149px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png') no-repeat center center / 100% 100%;  margin: 3% auto;  padding: 0;}
 .form .submit input[type="image"] {
-    width: 78.01% !important; height: 100%; margin: 5% auto 0; padding-left: 5%; object-fit: cover; animation: pulsating 0.8s linear infinite;
+    width: 78.01% !important; object-fit: cover; animation: pulsating 0.8s linear infinite;
     -webkit-animation: pulsating 0.8s linear infinite;
 }
 
@@ -131,9 +131,9 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     width: 785px;
     height: max-content;
     margin: 0;
-    padding: 30px 0;
+    /* padding: 30px 0; */
     font-size: 150%;
-    background-color: #fff;
+    /* background-color: #fff; */
     border-radius: 10px;
     flex-direction: column;
     justify-content: center;
@@ -155,24 +155,28 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     font-family: 'GmarketSans';
 }
 [class^="popup-"] .btn-box {
+    position: absolute;
+    left: 50%;
+    bottom: 14.12%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    margin-top: 5%;
     font-size: 150%;
 }
 [class^="popup-"] .btn-box button {
     background-color: #0a2f85;
     color: #fff;
-    width: 195px;
-    height: 80px;
+    width: 192px;
+    height: 77px;
     padding-top: 1%;
     font-size: 125%;
     line-height: 1;
     font-weight: 400;
     border-radius: 1.5rem;
     font-family: 'GmarketSans';
+    background: url('//static.savemkt.com/event/v_${eventSeq}/btn_confirm.png') no-repeat center center / 100% 100%;
 }
 
 [class^="popup-confirm2"] strong {
@@ -209,7 +213,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 @media screen and (max-width: 500px){
     .form + .description > * {font-size: 60%;}
 
-    .form .submit input[type="image"] {height: unset; margin: 10% 0 0;}
+    .form .submit input[type="image"] {height: unset;}
 
     #page_landing_c .wrap_checkbox * {justify-content: center; font-size: 12px !important;}
     .form .description p,
@@ -220,7 +224,9 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     .form-box .description {padding-bottom: 4%;}
     .form .video-area {border-width: 4px;}
     .form .video-area::after {bottom: 8px; right: 8px;}
-    [class^="popup-"] .btn-box button {width: 115px; height: 50px;}
+    [class^="popup-"] .btn-box button {width: 85px; height: 37px;}
+
+    #page-4 .poster_09 {margin-top: 11%; background-size: 100% 107%;}
     /* #page_landing_c .form .table_box input {padding: 1.5rem 0 1.5rem 2rem;} */
 }
     
@@ -253,7 +259,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                         </section>
             
                         <section class="page" id="page-2">
-                            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.jpg"></div>
+                            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg"></div>
                             <div class="poster_03">
                                 <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/gage_01.png"></div>
                                 <div class="img-area poster_04"><img src="//static.savemkt.com/event/v_${eventSeq}/q_01.png"></div>
@@ -268,7 +274,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                         </section>
             
                         <section class="page" id="page-3">
-                            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.jpg"></div>
+                            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg"></div>
                             <div class="poster_05">
                                 <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/gage_02.png"></div>
                                 <div class="img-area poster_06"><img src="//static.savemkt.com/event/v_${eventSeq}/q_02.png"></div>
@@ -332,22 +338,17 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 
                         <div class="overlay"></div>
                         <div class="popup-confirm">
-                            <p>
-                                <strong>혜택 제공 대상이 아닙니다.</strong>
-                            </p>
+                            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/popup_01.png"></div>
                             <div class="btn-box">
-                                <button type="button" class="btn-confirm">확인</button>
+                                <button type="button" class="btn-confirm"></button>
                                 <!-- <button type="button" class="btn-out">해당없음<br />(나가기)</button> -->
                             </div>
                         </div>
 
                         <div class="popup-confirm2">
-                            <p>
-                                <strong>서울/경기도</strong><br />
-                                거주자 한정 이벤트입니다
-                            </p>
+                            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/popup_02.png"></div>
                             <div class="btn-box">
-                                <button type="button" class="btn-confirm">확인</button>
+                                <button type="button" class="btn-confirm"></button>
                                 <!-- <button type="button" class="btn-out">해당없음<br />(나가기)</button> -->
                             </div>
                         </div>
