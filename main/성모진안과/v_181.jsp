@@ -218,7 +218,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     #page_landing_c .wrap_checkbox * {justify-content: center; font-size: 12px !important;}
     .form .description p,
     .form .description .ad_txt,
-    .form .description span {font-size: 80%;}
+    .form .description span {font-size: 75%;}
     .form .question_box .q_select label {font-size: 1.45rem;}
     #page_landing_c input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {padding: unset;}
     .form-box .description {padding-bottom: 4%;}
