@@ -78,6 +78,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     .page .paging button a {display:block;}
     
     #page-1 .paging{padding-top:5%;}
+
+    .page#page-4 {background:url('//static.savemkt.com/event/v_${eventSeq}/bg_03.jpg') no-repeat top center / cover;}
     
     .form-box {margin-top: 10%;}
     #wrap .formContents {position: static;}
