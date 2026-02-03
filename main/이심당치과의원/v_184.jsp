@@ -25,7 +25,7 @@ pageEncoding="UTF-8"%>
     font-style: normal;
 }
 * {font-family: 'Gmarket Sans';}
-.page:not(#page-1){display:none; background:url('//static.savemkt.com/event/v_${eventSeq}/bg_01.jpg') no-repeat top center / 100% 100%;}
+.page:not(#page-1){display:none; background:url('//static.savemkt.com/event/v_${eventSeq}/bg_02.jpg') no-repeat top center / 100% 100%;}
 #wrap{background:#ffffff;}
 .form, .form .formContents{background-color:#ffffff;}
 .page:not(#page-1) {padding: 5.39% 7.5% 3.34%;}
@@ -67,7 +67,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 .hourHand{width: 1.5%; height: 2px; transform: translate(-50%, -50%) rotate(0deg);}
 .secondHand{left: 12.5%; width: 2.5%; height: 2px; transform: translate(-50%, -50%) rotate(0deg);} */
 
-.page#page-2 {padding-top: 8.72%; background:url('//static.savemkt.com/event/v_${eventSeq}/bg_02.jpg') no-repeat top center / cover;}
+.poster_01 {padding-top: 8.72%; background:url('//static.savemkt.com/event/v_${eventSeq}/bg_01.jpg') no-repeat top center / cover;}
 .poster_01 > .img-area {width: 84.79%; margin: 0 auto 3.25%;}
 
 .page .paging{padding:15% 10% 3%; margin: 0 auto; display: flex;    justify-content: space-between;}
