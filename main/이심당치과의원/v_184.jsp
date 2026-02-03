@@ -67,7 +67,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 .hourHand{width: 1.5%; height: 2px; transform: translate(-50%, -50%) rotate(0deg);}
 .secondHand{left: 12.5%; width: 2.5%; height: 2px; transform: translate(-50%, -50%) rotate(0deg);} */
 
-.poster_01 {padding-top: 8.72%; background:url('//static.savemkt.com/event/v_${eventSeq}/bg_02.jpg') no-repeat top center / 100% 100%;}
+.poster_01 {padding-top: 8.72%; background:url('//static.savemkt.com/event/v_${eventSeq}/bg_02.jpg') no-repeat top center / cover;}
 .poster_01 > .img-area {width: 84.79%; margin: 0 auto 3.25%;}
 
 .page .paging{padding:15% 10% 3%; margin: 0 auto; display: flex;    justify-content: space-between;}
