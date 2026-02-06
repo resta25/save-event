@@ -41,7 +41,7 @@ pageEncoding="UTF-8"%>
     }
     .subscribe .content .date {text-align: right;}
 
-    #page_landing_c main {max-width: 1200px; padding-bottom: 21rem; background-color: #000;}
+    #page_landing_c main {max-width: 1200px; padding-bottom: 15rem; background-color: #000;}
     #page_landing_c {padding: 0; border: 0;}
     #page_landing_c .btn_submit {background-color: transparent !important;}
     input:not( [type="checkbox"], [type="radio"], [type="range"] ):disabled, input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border: none;}
