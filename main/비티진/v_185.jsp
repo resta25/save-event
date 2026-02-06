@@ -52,15 +52,15 @@ pageEncoding="UTF-8"%>
     .select-box {width: 100%;}
     .select-box .q_select {outline: none; border: none; width: 100%; padding: 3%; text-align: center; border: 1px solid #bebebe; border-radius: 0.3em; font-weight: 600;}
    
-    #page_landing_c .wrap_form {background-color: #000; padding: 123px 34px 30px !important;}
-    #page_landing_c .wrap_curd {background-color: #000; }
+    #page_landing_c .wrap_form {background-color: #272727; padding: 123px 34px 30px !important;}
+    #page_landing_c .wrap_curd {background-color: #272727;}
     #page_landing_c .wrap_curd .question_container {padding-top: 0 !important;}
 
     /* user db입력칸 (이름) */
     #page_landing_c .wrap_curd .q_select {display: grid; grid-template-columns: repeat(3, 1fr); gap: 1%; font-size: 150%; flex-grow: 1;}
     #page_landing_c .description p, #page_landing_c .description .ad_txt {text-align: center;}
     
-    #page_landing_c .description {width: 100%; padding: 3.37% 3.9% 1.37%; background-color: #000; text-align: center;}
+    #page_landing_c .description {width: 100%; padding: 3.37% 3.9% 1.37%; background-color: #272727; text-align: center;}
     #page_landing_c .description p {color: #fff; padding: 0; font-weight: 300; font-size: 175%; letter-spacing: -0.02em;}
     #page_landing_c .description .ad_txt {margin: 3% 0;}
     #page_landing_c .description .ad_txt b {color: #fff640; font-size: 100%; letter-spacing: -0.02em; font-weight: 400;}
@@ -261,11 +261,6 @@ pageEncoding="UTF-8"%>
                     </div>
 
                     <div class="description">
-                        <p id="event-period"></p>
-                        <div class="ad_txt">
-                            안녕하세요! 본사에서는 고객님의 소중한 개인정보를 <br />
-                            상담 외 어떠한 목적으로 사용하지 않습니다.
-                        </div>
                         <span class="target">대상 : ${resVo.target}</span>
                     </div>
 
@@ -302,7 +297,7 @@ pageEncoding="UTF-8"%>
 
             <div class="container">
                 <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div> -->
-                <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div> -->
+                <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div>
             </div>
         
         <div id="modal2" class="modal modal2" style="display: none;">
@@ -320,7 +315,6 @@ pageEncoding="UTF-8"%>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
 <script>
     $(document).ready(function(){
-        initDate();/* 기간항목 start */
         blockSourceView();//드래그, 우클릭 방지
         btginAgreement();
 
