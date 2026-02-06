@@ -90,6 +90,57 @@ pageEncoding="UTF-8"%>
     #page_landing_c .wrap_curd #page-2 label {justify-content: space-evenly;}
     #page_landing_c .wrap_curd #page-2 label + label {margin-left: 1%;}
 
+    /* 거주자 팝업 */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    [class^="popup-"] {
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+        transform: translate(-50%, 100%);
+        width: 54.97%;
+        height: max-content;
+        margin: 0;
+        padding: 3.68% 1.84% 1.84%;
+        font-size: 150%;
+        background-color: #fff;
+        border-radius: 70px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        opacity: 1;
+        visibility: visible;
+    }
+    .popup-confirm > .img-area {
+        width: 93.86%;
+        margin: 0 auto;
+    }
+    [class^="popup-"] .btn-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4rem;
+        margin-top: 3.9%;
+        font-size: 150%;
+    }
+    [class^="popup-"] .btn-box button {
+        color: #fff;
+        width: 273px;
+        height: 105px;
+        line-height: 1;
+        background: url('//static.savemkt.com/event/v_${eventSeq}/btn_popup_confirm.png') no-repeat center center / 100% 100%;
+    }
+    [class^="popup-"] .btn-box button.btn-out {
+        background-image: url('//static.savemkt.com/event/v_${eventSeq}/btn_popup_out.png') ;
+    }
+
 @media screen and (max-width: 820px){
     .question_box .question img {max-width: 90%;}
 }
@@ -115,6 +166,8 @@ pageEncoding="UTF-8"%>
     #page_landing_c .wrap_curd .subscribe_container .title {padding: 2rem 0 0; font-size: 1.8rem; margin-bottom: 0.6875rem;}
 
     #page-2 .question_group .q_select input {height: 6.5vh; font-size: 150%; padding: 0 10px;}
+
+    [class^="popup-"] {width: 90vw; font-size: 2.5vw; border-radius: 20px; top: 57%;}
 }
 
 @media screen and (max-width: 500px){
@@ -123,6 +176,12 @@ pageEncoding="UTF-8"%>
     #page-1 .question_box {border-width: 2px;}
 
     .ad_txt, #target {font-size: 90% !important;}
+
+    [class^="popup-"] .btn-box {gap: 1rem;}
+    [class^="popup-"] .btn-box button {
+        width: 91px;
+        height: 35px;
+    }
 }
 @media screen and (max-width: 395px){
     .subscribe .content {padding: 0.5rem 0.2rem;}
@@ -155,10 +214,10 @@ pageEncoding="UTF-8"%>
                                 <img src="//static.savemkt.com/event/v_${eventSeq}/head_00.png">
                             </div>
                             <div class="q_select">
-                                <label><input type="radio" name="tadd1" onclick="setTimeout(show2pg, 500)" value="이마/헤어라인"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_01.png"></label>
-                                <label><input type="radio" name="tadd1" onclick="setTimeout(show2pg, 500)" value="정수리/가르마"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_02.png"></label>
-                                <label><input type="radio" name="tadd1" onclick="setTimeout(show2pg, 500)" value="옆/뒷머리"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_03.png"></label>
-                                <label><input type="radio" name="tadd1" onclick="setTimeout(show2pg, 500)" value="여러 부위"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_04.png"></label>
+                                <label><input type="radio" name="tadd1" value="이마/헤어라인"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_01.png"></label>
+                                <label><input type="radio" name="tadd1" value="정수리/가르마"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_02.png"></label>
+                                <label><input type="radio" name="tadd1" value="옆/뒷머리"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_03.png"></label>
+                                <label><input type="radio" name="tadd1" value="여러 부위"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_04.png"></label>
                             </div>
                         </div>
                     </div>
@@ -244,6 +303,15 @@ pageEncoding="UTF-8"%>
                     </div>
                 </section>
 
+                <div class="overlay"></div>
+                <div class="popup-confirm">
+                    <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/popup_txt.png"></div>
+                    <div class="btn-box">
+                        <button type="button" class="btn-confirm"></button>
+                        <button type="button" class="btn-out"></button>
+                    </div>
+                </div>
+
                 <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
                 <input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
                 <input type="hidden" id="site" 			name="site" value="${site}"/>
@@ -284,6 +352,9 @@ pageEncoding="UTF-8"%>
         moandblessAgreement();
         //신청현황 리스트
         getComment(`${eventSeq}`);
+
+        $('.overlay').hide();
+        $('.popup-confirm').hide();
     });
 
     let current = 0;
@@ -321,6 +392,17 @@ pageEncoding="UTF-8"%>
         }, 1500);
     }
 
+    $('input[name="tadd1"]').on('click', function () {
+        $('.overlay, .popup-confirm').show();
+    });
+
+    // popup-confirm > 확인 버튼
+    $('.btn-confirm').on('click', function () {
+        $('.overlay, .popup-confirm').hide();
+
+        show2pg();
+    });
+
     function show2pg() {
       $('#page-1').hide();
       $('#page-2').show();
@@ -354,17 +436,45 @@ pageEncoding="UTF-8"%>
         $('img', $(this.parentNode)).attr('src', $('img', $(this.parentNode)).attr('src').replace('_off', '_on'));
     });
 
+    let imgNum = 0;
+    let imgSrc = 0;
+
     $('input[name="tadd1"]').on('change', function () {
         const $label = $(this).closest('label');
         const index = $label.index() + 1; // 1부터 시작
-
         
-        const imgNum = String(index).padStart(2, '0'); // 01, 02, 03...
-        const imgSrc = '//static.savemkt.com/event/v_${eventSeq}' + '/head_'+ imgNum +'.png';
+        imgNum = String(index).padStart(2, '0'); // 01, 02, 03...
+        imgSrc = '//static.savemkt.com/event/v_${eventSeq}' + '/head_'+ imgNum +'.png';
 
         $('.select-box .img-area img').attr('src', imgSrc);
         $('.first img').attr('src', '//static.savemkt.com/event/v_${eventSeq}/next_on_btn.png');
-        $('.first').prop('disabled', false)
+        $('.first').prop('disabled', false);
+    });
+
+    // popup-confirm > 나가기 버튼
+    $('.btn-out').on('click', function(){
+        $('.overlay, .popup-confirm').hide();
+
+        // 1️⃣ 라디오 체크 해제
+        $('input[name="tadd1"]').prop('checked', false);
+
+        // 2️⃣ 설문 이미지 전부 off
+        $('input[name="tadd1"]').each(function(){
+            const img = $('img', this.parentNode)[0];
+            img.src = img.src.replace('_on', '_off');
+        });
+
+        // 3️⃣ 메인 이미지 초기화
+        $('.select-box .img-area img')
+            .attr('src', `//static.savemkt.com/event/v_${eventSeq}/head_00.png`);
+
+        // 4️⃣ next 버튼 초기화
+        $('.first img')
+            .attr('src', `//static.savemkt.com/event/v_${eventSeq}/next_off_btn.png`);
+        // $('.first').prop('disabled', true);
+
+        // 5️⃣ 스크롤 초기화
+        $(document).scrollTop(0);
     });
 
     let dataNum;
