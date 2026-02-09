@@ -101,7 +101,7 @@ pageEncoding="UTF-8"%>
     }
     [class^="popup-"] {
         position: absolute;
-        bottom: -75%;
+        bottom: -35%;
         left: 50%;
         transform: translate(-50%, 100%);
         width: 54.97%;
