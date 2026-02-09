@@ -167,7 +167,7 @@ pageEncoding="UTF-8"%>
 
     #page-2 .question_group .q_select input {height: 6.5vh; font-size: 150%; padding: 0 10px;}
 
-    [class^="popup-"] {width: 90vw; font-size: 2.5vw; border-radius: 20px; top: 37%;}
+    [class^="popup-"] {width: 90vw; font-size: 2.5vw; border-radius: 20px; top: 25%;}
 }
 
 @media screen and (max-width: 500px){
