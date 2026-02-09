@@ -101,13 +101,13 @@ pageEncoding="UTF-8"%>
     }
     [class^="popup-"] {
         position: absolute;
-        bottom: 0%;
+        bottom: -75%;
         left: 50%;
         transform: translate(-50%, 100%);
         width: 54.97%;
         height: max-content;
         margin: 0;
-        padding: 3.68% 1.84% 1.84%;
+        padding: 4.4% 1.84%;
         font-size: 150%;
         background-color: #fff;
         border-radius: 70px;
@@ -167,7 +167,7 @@ pageEncoding="UTF-8"%>
 
     #page-2 .question_group .q_select input {height: 6.5vh; font-size: 150%; padding: 0 10px;}
 
-    [class^="popup-"] {width: 90vw; font-size: 2.5vw; border-radius: 20px; top: 57%;}
+    [class^="popup-"] {width: 90vw; font-size: 2.5vw; border-radius: 20px; top: 37%;}
 }
 
 @media screen and (max-width: 500px){
