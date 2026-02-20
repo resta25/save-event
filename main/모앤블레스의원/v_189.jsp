@@ -652,29 +652,32 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
 		}
 
-        let selectedRadio2 = procForm.querySelector(`select[name="tadd2"]`).value;
-		if (!selectedRadio2) {
-			alert("성별 항목을 입력해주세요.");
-			return;
-		} else {
-			procForm.querySelector("input[name='add2']").value = selectedRadio2.value;
-		}
+        if($('input[name="name"]').val() != "" && $('input[name="phone"]').val().length == 11){
+            let selectedRadio2 = procForm.querySelector(`select[name="tadd2"]`).value;
+            if (!selectedRadio2) {
+                alert("성별 항목을 입력해주세요.");
+                return;
+            } else {
+                procForm.querySelector("input[name='add2']").value = selectedRadio2.value;
+            }
+    
+            let selectedRadio3 = procForm.querySelector(`select[name="tadd3"]`).value;
+            if (!selectedRadio3) {
+                alert("진료과목 항목을 입력해주세요.");
+                return;
+            } else {
+                procForm.querySelector("input[name='add3']").value = selectedRadio3.value;
+            }
+            
+            let selectedRadio4 = procForm.querySelector(`select[name="tadd4"]`).value;
+            if (!selectedRadio4) {
+                alert("희망 상담시간 항목을 입력해주세요.");
+                return;
+            } else {
+                procForm.querySelector("input[name='add4']").value = selectedRadio4.value;
+            }
+        }
 
-        let selectedRadio3 = procForm.querySelector(`select[name="tadd3"]`).value;
-		if (!selectedRadio3) {
-			alert("진료과목 항목을 입력해주세요.");
-			return;
-		} else {
-			procForm.querySelector("input[name='add3']").value = selectedRadio3.value;
-		}
-        
-        let selectedRadio4 = procForm.querySelector(`select[name="tadd4"]`).value;
-		if (!selectedRadio4) {
-			alert("희망 상담시간 항목을 입력해주세요.");
-			return;
-		} else {
-			procForm.querySelector("input[name='add4']").value = selectedRadio4.value;
-		}
 
         // let tage = procForm.querySelector(`input[name="tage"]:checked`);
 		// if (!tage) {
