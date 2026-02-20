@@ -127,9 +127,9 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     .form .table_box.bottom input {}
     
     /* 개인정보 처리방침 */
-    .agBox {display: flex; align-items: center; justify-content: center; padding-bottom: 5%; font-family: 'Pretendard';; font-weight: 500; font-size: 1.4rem; line-height: 1;}
-    .btn-agreement {flex-shrink: 0; text-align: center; font-size: 1.4rem;  display: block; color: #000; font-family: 'Pretendard';}
-    .btn-agreement b {font-weight: 700; font-size: 100%; font-family: 'Pretendard';;}
+    .agBox {padding-bottom: 5%; font-family: 'Pretendard';; font-weight: 500; font-size: 1.4rem; line-height: 1; text-align: center;}
+    .btn-agreement {flex-shrink: 0; text-align: center; font-size: 1.4rem; color: #000; font-family: 'Pretendard';}
+    .btn-agreement b {font-weight: 700; font-size: 100%; font-family: 'Pretendard';}
     /* submit btn */
     /* .form .submit {width: 85%; margin: 0 auto; padding: 5% 0;}
     .form .submit input[type="image"] {width: 100%;} */
@@ -505,7 +505,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         animation02.to('#page-2', { display: 'block', duration: 0.1 });
         // animation02.to('.count_box', { top: '38%', duration: 0 }, "<");
         animation02.set('.count_box', {
-            top: isMobile ? '32%' : '34%'
+            top: isMobile ? '31%' : '33%'
         }, "<");
         animation02.to('.roulette', { paddingBottom: '5.19%', duration: 0 }, "<");
         animation02.from('#page-2 .poster_03', {x: +200, opacity: 0, duration: 0.2});
