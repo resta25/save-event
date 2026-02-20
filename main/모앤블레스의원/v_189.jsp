@@ -285,7 +285,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                             <button type="button" onclick="show2pg()" class="first"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_txt.png"></button>
                         </p>
                         <div class="agBox">
-                            혜택 제공을 위한&nbsp;
+                            혜택 제공을 위한
                             <a href="javascript:void(0);" class="btn-agreement"><b>개인정보처리방침</b></a>
                             에 동의해 주세요
                         </div>
