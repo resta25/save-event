@@ -226,7 +226,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         .form .table_box {border-radius: 9px;}
         #page_landing_c .form .table_box input, #page_landing_c .form select.table_box {padding: 1.5rem 0 1rem 2rem; font-size: 1.4rem; border-radius: 9px;}
         #page_landing_c .form select.table_box  {padding: 1.45rem 0 1.45rem 2rem;}
-        .count_box {top: 32%; left: 56%;}
+        .count_box {top: 28%; left: 55.7%;}
         .count_box, .count {font-size: 2.2rem;}
         .page .paging button {height: 66px;}
         .form .submit {height: 53px;}
@@ -238,7 +238,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         .roulette {padding: 4% 9.5% 4.19%;}
         .poster_01 > .img-area {width: 67.03%; margin: 0 auto 4.15%;}
         .poster_01 > .full-area {width: 100%; margin: 0 0 2.15%;}
-        .count_box, .count {font-size: 1.25rem;}
+        .count_box, .count {font-size: 1.35rem;}
         .form .description p,
         .form .description .ad_txt,
         .form .description span {font-size: 80%;}
