@@ -71,8 +71,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 /* 룰렛 영역 */
 .roulette {padding: 4.92% 5% 8.8%;}
 .roulette image {width: 100%;}
-.count_box {width: 70%; text-align: center; font-size: 2.8rem; color: #fff; position: absolute; top: 28.5%; left: 56.5%; transform: translateX(-50%);}
-.count {color: #f0ff00; font-size: 4rem; font-family: 'Pretendard';; font-weight: 500;}
+.count_box {width: 70%; text-align: center; font-size: 2.8rem; color: #fff; position: absolute; top: 26.5%; left: 56.5%; transform: translateX(-50%);}
+.count {color: #f0ff00; font-size: 4.5rem; font-family: 'Pretendard';; font-weight: 500;}
 
 /* 시침, 초침 */
 .container {position: relative;}
@@ -151,7 +151,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         background-color: rgba(0, 0, 0, 0.7);
     }
     [class^="popup-"] {
-        position: absolute;
+        position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -513,7 +513,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         animation02.from('#page-2 .question_box .q_select > label', {x: +200, opacity: 0, duration: 0.2, stagger: 0.1});
         animation02.from('#page-2 .next_btn_inQuestion', {x: +200, opacity: 0, duration: 0.3, stagger: 0.1});
         animation02.from('#noticeImg', {opacity: 0, duration: 0.1});
-        document.getElementById('noticeImg').src = '//static.savemkt.com/event/v_${eventSeq}/notice_01.jpg';
+        document.getElementById('noticeImg').src = '//static.savemkt.com/event/v_${eventSeq}/notice.jpg';
     }
 
     // 세번째 페이지
