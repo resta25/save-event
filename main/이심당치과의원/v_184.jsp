@@ -117,7 +117,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     /* .form .submit {width: 85%; margin: 0 auto; padding: 5% 0;}
     .form .submit input[type="image"] {width: 100%;} */
     
-    .sub-txt {font-size: 20px; color: #fff;}
+    .sub-txt {font-size: 20px; color: #fff; text-align: center;}
 
     .form .submit {display: flex; align-items: center; justify-content: center; margin: 1em auto 0; padding: 0;}
     .form .submit {position: relative; width: 70.155%; height: 134px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png') no-repeat center center / 100% 100%; margin: 3% auto; padding: 0% 0;}
