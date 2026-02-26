@@ -117,6 +117,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     /* .form .submit {width: 85%; margin: 0 auto; padding: 5% 0;}
     .form .submit input[type="image"] {width: 100%;} */
     
+    .sub-txt {font-size: 20px; color: #fff;}
+
     .form .submit {display: flex; align-items: center; justify-content: center; margin: 1em auto 0; padding: 0;}
     .form .submit {position: relative; width: 70.155%; height: 134px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png') no-repeat center center / 100% 100%; margin: 3% auto; padding: 0% 0;}
     .form .submit input[type="image"] {
@@ -230,6 +232,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         [class^="popup-"] p, [class^="popup-"] span {font-size: 250%;}
         [class^="popup-"] .btn-box button {width: 115px; height: 50px;}
         [class^="popup-"] .btn-box button.btn-out {font-size: 105%;}
+        .sub-txt {font-size: 11px;}
         /* #page_landing_c .form .table_box input {padding: 1.5rem 0 1.5rem 2rem;} */
     }
     
@@ -320,6 +323,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                                 <div class="table_box bottom">
                                     <input type="tel" name="phone" id="phone" value="" class="inp inp-phone" required autocomplete="off" maxlength="11" placeholder="전화번호"/>
                                 </div>
+                                <p class="sub-txt">※ 동일 정보로 <strong>중복 신청 시, 전체 신청이 무효 처리</strong>될 수 있습니다.</p>
                                 <div class="submit"><input type="image" onclick="fnForm('form-1')" value="" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_txt_02.png" /></div>
                             </div>
                             <div class="description">
