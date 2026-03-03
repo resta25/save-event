@@ -85,7 +85,7 @@ pageEncoding="UTF-8"%>
                             <th class="branch_th">*지점 선택</th>
                             <td class="branch_td">
                                 <div class="wrap_radio">
-                                    <label><input type="radio" name="branch" value="대전점" class="store-radio store-radio1"> 대전점 </label>
+                                    <label><input type="radio" name="" class="store-radio store-radio1"> ${resVo.branch} </label>
                                     <!-- <label><input type="radio" name="branch" value="상상부산점" class="store-radio store-radio1"> 상상부산점 </label>
                                     <label><input type="radio" name="branch" value="상상대전점" class="store-radio store-radio1"> 상상대전점 </label> -->
                                 </div>
@@ -399,13 +399,13 @@ pageEncoding="UTF-8"%>
 			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
 		}
 
-		let branch = procForm.querySelector('input[name="branch"]:checked');
-		if (!branch) {
-			alert("지점을 선택해주세요.");
-			return;
-		} else {
-			procForm.querySelector("#branch").value = branch.value;
-		}
+		// let branch = procForm.querySelector('input[name="branch"]:checked');
+		// if (!branch) {
+		// 	alert("지점을 선택해주세요.");
+		// 	return;
+		// } else {
+		// 	procForm.querySelector("#branch").value = branch.value;
+		// }
 
 		/*
 		let selectedRadio2 = procForm.querySelector(`input[name="tadd2"]:checked`).value;
@@ -423,7 +423,7 @@ pageEncoding="UTF-8"%>
 			,'add1': '설문1'
 			// ,'add2': '설문2'
 			// ,'add3': '설문3'
-            ,'branch': '지점'
+            // ,'branch': '지점'
 			,'agBox': '개인정보'
 		};
 		

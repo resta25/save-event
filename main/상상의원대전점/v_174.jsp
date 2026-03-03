@@ -89,7 +89,7 @@ pageEncoding="UTF-8"%>
                             <th class="branch_th">*지점 선택</th>
                             <td class="branch_td">
                                 <div class="wrap_radio">
-                                    <label><input type="radio" name="branch" class="store-radio store-radio1"> 대전점 </label>
+                                    <label><input type="radio" name="" class="store-radio store-radio1"> ${resVo.branch} </label>
                                 </div>
                                 <script>
                                     document.addEventListener('DOMContentLoaded', function() {
@@ -184,7 +184,7 @@ pageEncoding="UTF-8"%>
                             <th class="branch_th">*지점 선택</th>
                             <td class="branch_td">
                                 <div class="wrap_radio">
-                                    <label><input type="radio" name="branch" class="store-radio store-radio2"> 대전점 </label>
+                                    <label><input type="radio" name="" class="store-radio store-radio2"> ${resVo.branch} </label>
                                 </div>
                                 <script>
                                     document.addEventListener('DOMContentLoaded', function() {
