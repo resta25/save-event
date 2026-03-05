@@ -255,7 +255,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .question_box .q_select label {height: 56px; font-size: 70%;}
 
     #page_landing_c .legend {width: 25%;}
-    #page_landing_c input:not( [type="checkbox"], [type="radio"], [type="range"], [type="image"] ), select { font-size: 105%; border-radius: 0px; padding: 2% 3%; margin-left: 0;}
+    #page_landing_c input:not( [type="checkbox"], [type="radio"], [type="range"], [type="image"] ), select { font-size: 85%; border-radius: 0px; padding: 2% 3%; margin-left: 0;}
 
     #page_landing_c main .count-area .count {left: 20%; font-size: 120%;}
 }
