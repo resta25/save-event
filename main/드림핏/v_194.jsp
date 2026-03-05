@@ -439,7 +439,6 @@ pageEncoding="UTF-8"%>
 	const countdownInterval = setInterval(() => {
 		if (remainingCount > 39) {
 			remainingCount--; // 1명 차감
-            console.log($countElement)
 			$countElement.text(remainingCount ); // 새로운 값 표시
 		}
 	}, 5000); // 5000ms = 5초 간격
