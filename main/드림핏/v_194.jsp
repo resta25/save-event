@@ -387,7 +387,7 @@ pageEncoding="UTF-8"%>
 <script>
     $(document).ready(function(){
         blockSourceView();//드래그, 우클릭 방지
-        btginAgreement();
+        saleupAgreement();
 
         //신청현황 리스트
         getComment(`${eventSeq}`);
