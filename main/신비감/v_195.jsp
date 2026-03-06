@@ -172,6 +172,16 @@ pageEncoding="UTF-8"%>
     #page_landing_c input[type="checkbox"]:checked + span:after {
         border-color: #fff;
     }
+
+    #page_landing_c .wrap_curd .submit {display: flex; align-items: center; justify-content: center;  width: 67.52%; height: 120px; margin: 3.88% auto 4%; padding: 3.2% 0; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png') no-repeat center center / 100% 100%;}
+    #page_landing_c .wrap_curd .submit input[type="image"] {
+        width: 84.35%;
+        margin: 0 auto 0;
+        padding: 0;
+        animation: pulsating 0.8s linear infinite;
+        -webkit-animation: pulsating 0.8s linear infinite;
+        border-radius: 0;
+    }
         
     @keyframes pulsating {
         50% {
@@ -198,6 +208,8 @@ pageEncoding="UTF-8"%>
     .subscribe_container {padding: 0 1.5rem 1rem 1.5rem;}
     .subscribe .content .name {width: 10%;}
 
+     #page_landing_c .wrap_curd .submit {height: 90px;}
+
     .subscribe_bg {padding: 3.75% 3.5%;}
     .content * {padding: 8px 0px;}
     .content .text {padding: 4px 0;}
@@ -219,6 +231,8 @@ pageEncoding="UTF-8"%>
 }
 @media screen and (max-width: 640px){
     #page_landing_c .question {font-size: 24px; margin-bottom: 32px;}
+
+    #page_landing_c .wrap_curd .submit {height: 75px;}
 }
 @media screen and (max-width: 480px){
     .question_box > div {padding: 17px 21px 19px;}
@@ -240,6 +254,8 @@ pageEncoding="UTF-8"%>
     .wrap_form .description .ad_txt {padding: 3% 0 0%;}
 
     #page_landing_c main .count-area .count-box {font-size: 140%;}
+
+    #page_landing_c .wrap_curd .submit {height: 60px;}
 }
 @media screen and (max-width: 395px){
     #page_landing_c .question {font-size: 18px; margin-bottom: 20px;}
@@ -263,7 +279,7 @@ pageEncoding="UTF-8"%>
             <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg">
             <div class="count-box img-area">
                 <strong class="">선착순 혜택</strong>&nbsp;마감까지&nbsp;
-                <span class="count">15명</span>&nbsp;남았습니다.
+                <span class="count">30명</span>&nbsp;남았습니다.
             </div>
         </div>
             <div class="wrap_form">
@@ -294,13 +310,13 @@ pageEncoding="UTF-8"%>
                         </div>
 
                         <div class="agBox">
-                            <label><input name="agBox" type="checkbox" checked><span>개인 정보 수집 및 이용에 관한 내용을 확인하고 동의함</span></label> <a href="#" class="btn-agreement">[자세히 보기]</a>
+                            <label><input name="agBox" type="checkbox"><span>개인 정보 수집 및 이용에 관한 내용을 확인하고 동의함</span></label> <a href="#" class="btn-agreement">[자세히 보기]</a>
                         </div>
                         <!-- <div class="agBox">
                             <a href="javascript:void(0);" class="btn-agreement">혜택 제공을 위한 <b>개인정보처리방침</b>에 동의해 주세요</a>
                         </div> -->
 
-                        <div class="submit"><input type="image" value="" onclick="fnForm('form-1')" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png" /></div>	
+                        <div class="submit"><input type="image" value="" onclick="fnForm('form-1')" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_txt.png" /></div>	
                     </div>
 
                     <div class="description">
@@ -408,7 +424,7 @@ pageEncoding="UTF-8"%>
     },2000);
 
     /* 인원 카운트 다운 항목 start */
-	let remainingCount = 15; // 초기 인원수
+	let remainingCount = 30; // 초기 인원수
 	const $countElement = $('.count'); // 숫자를 표시하는 요소
 
 	const countdownInterval = setInterval(() => {
@@ -577,7 +593,7 @@ pageEncoding="UTF-8"%>
 			// ,'add1': '설문1'
 			// ,'add2': '설문2'
 			// ,'add3': '설문3'
-			// ,'agBox': '개인정보'
+			,'agBox': '개인정보'
 		};
 		
 		validateForm(procForm, required);
