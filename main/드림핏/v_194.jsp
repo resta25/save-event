@@ -319,7 +319,7 @@ pageEncoding="UTF-8"%>
                         </div>
 
                         <div class="agBox">
-                            <label><input name="agBox" type="checkbox" checked><span>개인정보수잡이용동의</span></label> <a href="#" class="btn-agreement">[자세히 보기]</a>
+                            <label><input name="agBox" type="checkbox" checked><span>개인정보수집이용동의</span></label> <a href="#" class="btn-agreement">[자세히 보기]</a>
                         </div>
                         <!-- <div class="agBox">
                             <a href="javascript:void(0);" class="btn-agreement">혜택 제공을 위한 <b>개인정보처리방침</b>에 동의해 주세요</a>
