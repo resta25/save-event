@@ -421,6 +421,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         </div>
     </main>
 </body>
+<!--공통_script start --><script src="/js/agreement.js"></script><!--공통_script end-->
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
 <script>
     $(document).ready(function() {
@@ -433,7 +434,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 		//드래그, 우클릭 방지
 		blockSourceView();
 		initDate();
-        saleupAgreement();
+        aceEyeAgreement();
 
         $('.overlay').hide();
         $('.popup-confirm').hide();
