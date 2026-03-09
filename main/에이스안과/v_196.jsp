@@ -68,7 +68,7 @@ pageEncoding="UTF-8"%>
 /* .form, .form .formContents{background-color:#ffffff;} */
 .page:not(#page-1) {width: 100%; margin: 0 auto; background-color: #fff;}
 .page .inner {padding: 4.67% 10.75%; }
-.page:not(#page-1) .img-area {margin-bottom: 3%;}
+.page:not(#page-1) .img-area:not(.notice-area) {margin-bottom: 3%;}
 
 /* 초기화 css */
 .form input[type="radio"] {
@@ -303,7 +303,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                             에 동의해 주세요
                         </div>
 
-                        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice_01.jpg"></div>
+                        <div class="img-area notice-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice_01.jpg"></div>
                     </section>
         
                     <section class="page" id="page-2">
@@ -318,7 +318,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                             </div>
                             <div class="next_btn_inQuestion"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_02.png" onclick="pageSelFuc(4,$(this))"></div>
                         </div>
-                        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice_02.jpg"></div>
+                        <div class="img-area notice-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice_02.jpg"></div>
                     </section>
         
                     <!-- <section class="page" id="page-3">
@@ -374,7 +374,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                                 </div>
                             </div>
                         </div>
-                        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice_02.jpg"></div>
+                        <div class="img-area notice-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice_02.jpg"></div>
                     </section>
 
                     <div class="overlay"></div>
