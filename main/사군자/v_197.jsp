@@ -64,7 +64,7 @@ pageEncoding="UTF-8"%>
 }
 
 * {font-family: 'GmarketSans', sans-serif; box-sizing: border-box;}
-html{height: 100%;}
+html{height: 100%; background-color: transparent;}
 #page_landing_c {padding: 0; border: 0;}
 #page_landing_c main {max-width: 818px; position: relative;}
 #page_landing_c .wrap_curd * {font-size: 100%; font-family: inherit;}
@@ -289,22 +289,22 @@ position: absolute; left: 29%; top: 14%; height: 70%; border: 1px solid #e3ccd4;
             </div>
         </div>
         <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_04.jpg"></div>
-                
-            <div class="subscribe_container">
-                <div class="title">
-                    실시간 신청현황
-                </div>
-                <div class="subscribe_bg">
-                    <div class="subscribe" data-limit="10">
-                    </div>
-                </div>
-            </div>
+        <div class="container">
+            <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div> -->
+            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div>
+        </div>
 
-            <div class="container">
-                <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div> -->
-                <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div> -->
+        <div class="subscribe_container">
+            <div class="title">
+                실시간 신청현황
             </div>
-        
+            <div class="subscribe_bg">
+                <div class="subscribe" data-limit="10">
+                </div>
+            </div>
+        </div>
+
+    
         <div id="modal2" class="modal modal2" style="display: none;">
             <div class="modal-content">
                 <span class="close" id="close">×</span>
@@ -351,7 +351,7 @@ position: absolute; left: 29%; top: 14%; height: 70%; border: 1px solid #e3ccd4;
 			}
             
 		});
-
+        
         if(resultData.length >= 10){
             $('.subscribe_container').show();
             return;
