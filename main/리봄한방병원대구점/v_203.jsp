@@ -49,9 +49,9 @@ border-radius: 2rem 2rem 0 0;}
 
 /* db단 */
 .form-group {display: grid; gap: 10px; width: 70%; margin: 0 auto; padding: 4% 0;}
-.form-group > .item {display: block; background: #fff; border: 1px solid #e2e2e2; border-radius: 1em; text-align: center;}
+.form-group > .item {display: block; background: #fff; border: 1px solid #e2e2e2; border-radius: 1em; text-align: center; overflow: hidden;}
 .form-group > .item:last-of-type{margin: 0;}
-.form-group .inp{padding: 4% 3%; box-sizing: border-box; border: 0; text-align: center; font-size: clamp(14px, 5vmin, 1.5rem);}
+.form-group .inp {width: 80%; padding: 4% 3%; box-sizing: border-box; border: 0; text-align: center; font-size: clamp(14px, 5vmin, 1.5rem);}
 
 /* cta 버튼 */
 .form .submit{width: 70%; margin: 0 auto; padding: 0 0 5%;}
