@@ -55,9 +55,13 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 
 
 /* 비디오 영역 */
-.video-area {position: relative; padding-top: 75.27%;}
+.video-area {position: relative; padding-top: 60%;}
 .video-area video {display: block; width: 100%; height: 100%;}
 .video-area::after {position: absolute; bottom: 12px; right: 12px; content: '실제 시술 영상을 생성형 AI로 변환한 콘텐츠입니다.'; color: #858585; font-size: 10px; }
+.video-area .img-area {position: absolute; top: 0; left: 0; display: flex; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7);}
+#page_landing_c main .video-area .img-area img {width: 62.871%;
+    margin-top: auto;
+    margin-bottom: 6.49%; margin-left: 5%;}
 #location {position: absolute; top: 0; left: 0; width: 100%; height: 100%; max-height: 813px; object-fit: cover;} 
 
 /* 룰렛 영역 */
@@ -264,6 +268,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                             <div class="video-area">
                                 <video id="location" playsinline="" muted="" loop="" src="//static.savemkt.com/event/v_${eventSeq}/video.mp4" type="video/mp4"></video>
                                 <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
+                                <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/top_txt.png"></div>
                             </div>
                             <div class="poster_01">
                                 <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/intro.png"></div> -->
