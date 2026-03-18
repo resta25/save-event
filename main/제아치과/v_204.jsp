@@ -216,7 +216,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         .form .table_box {border-radius: 9px;}
         #page_landing_c .form .table_box input {padding: 1.5rem 0 1rem 2rem;
         font-size: 1.4rem;}
-        .count_box {top: 36%; left: 54%;}
+        .count_box {top: 36%; left: 55%;}
         .count_box, .count {font-size: 2.2rem;}
         .page .paging button {height: 66px;}
         .form .submit {height: 53px;}
@@ -230,7 +230,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     @media screen and (max-width: 500px){
         /* .roulette {padding: 4% 9.5% 4.19%;} */
         .poster_01 > .img-area {width: 67.03%; margin: 0 auto 4.15%;}
-        .count_box, .count {font-size: 1.25rem;}
+        .count_box, .count {font-size: 1.5rem;}
         .form .description p,
         .form .description .ad_txt,
         .form .description span {font-size: 80%;}
@@ -241,6 +241,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         .form .video-area::after {bottom: 8px; right: 8px;}
         [class^="popup-"] .btn-box button {width: 115px; height: 50px;}
         /* #page_landing_c .form .table_box input {padding: 1.5rem 0 1.5rem 2rem;} */
+
+        .form .submit input[type="image"] {width: 71.46% !important;}
     }
     
 </style>
@@ -511,7 +513,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         animation02.to('#page-2', { display: 'block', duration: 0.1 });
         // animation02.to('.count_box', { top: '38%', duration: 0 }, "<");
         animation02.set('.count_box', {
-            top: isMobile ? '30.5%' : '21.5%'
+            top: isMobile ? '14.5%' : '21.5%'
         }, "<");
         animation02.to('.roulette', { paddingBottom: '5.19%', duration: 0 }, "<");
         animation02.from('#page-2 .poster_03', {x: +200, opacity: 0, duration: 0.2});
