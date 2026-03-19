@@ -89,7 +89,7 @@ pageEncoding="UTF-8"%>
     .subscribe .content .date {text-align: right;}
 
     #page_landing_c main {max-width: 1080px;}
-    #page_landing_c .wrap_form {padding: 0; border: 0;  background: url('//static.savemkt.com/event/v_${eventSeq}/bg.jpg') no-repeat center top / 100% auto;}
+    #page_landing_c .wrap_form {padding: 0; border: 0;  background: url('//static.savemkt.com/event/v_${eventSeq}/bg.jpg') no-repeat center top / 100% 100%;}
     .btn_submit {background-color: transparent !important;}
     input:not( [type="checkbox"], [type="radio"], [type="range"] ):disabled, input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border: none;}
     .wrap_form .submit {position: relative; width: 85.466%; height: auto; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png') no-repeat center center / 100% 100%; margin: 3% auto; padding: 0% 0;}
