@@ -323,6 +323,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .wrap_curd .warn-txt {font-size: 100%;}
 
     #page_landing_c .description.footer p, #page_landing_c .description.footer #target {font-size: 80%;}
+    #page_landing_c .wrap_form .description .ad_txt {font-size: 12px;}
 
     /* #page_landing_c .wrap_curd .btn-agreement {font-size: 12px;} */
 
