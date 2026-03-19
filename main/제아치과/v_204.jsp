@@ -248,10 +248,10 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         .form .description span {font-size: 80%;}
         .form .footer_01 .description p,
         .form .footer_01 .description .ad_txt,
-        .form .footer_01 .description span {font-size: 75%;}
+        .form .footer_01 .description span {font-size: 70%;}
         .form .footer_02 .description p,
         .form .footer_02 .description .ad_txt,
-        .form .footer_02 .description span {font-size: 75%;}
+        .form .footer_02 .description span {font-size: 70%;}
         .form .question_box .q_select label {font-size: 1.45rem;}
         #page_landing_c input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {padding: unset;}
         .form-box .description {padding-bottom: 4%;}
