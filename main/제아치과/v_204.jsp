@@ -205,6 +205,14 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
             transform: scale(0.95);
         }
     }
+
+    .footer_01 {background-color: #000; padding: 0.5% 0;}
+    .footer_01 .description * { color: #fff;}
+    .footer_01 .description .description-info {font-size: 75%;}
+
+    .footer_02 {background-color: #8e8e8e; padding: 0.5% 0;}
+    .footer_02 .description * { color: #000;}
+    .footer_02 .description .description-info {font-size: 75%;}
     
     
     /* font */
@@ -283,7 +291,16 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                                 </div>
                             </div>
                             <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.gif"></div>
-                            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div>
+                            <div class="img-area footer_01">
+                                <div class="description">
+                                    <span id="target">대상자 : ${resVo.target}</span>
+                                    <p id="event-period">이벤트 기간 :  <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
+                                    <div class="description-info">
+                                        <div class="ad_txt">시술 결과는 개인에 따라 상이할 수 있으며, 치료방법에 따라 수가가 변동될 수 있습니다.</div>
+                                    </div>
+                                </div>
+                                <!-- <img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"> -->
+                            </div>
                         </section>
             
                         <section class="page" id="page-2">
@@ -313,7 +330,16 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                                 </p>
                             </div>
                             <!-- <div class="paging"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_txt_02.png" ></div> -->
-                            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer_02.jpg"></div>
+                            <div class="img-area footer_02">
+                                <div class="description">
+                                    <span id="target">대상자 : ${resVo.target}</span>
+                                    <p id="event-period">이벤트 기간 :  <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
+                                    <div class="description-info">
+                                        <div class="ad_txt">시술 결과는 개인에 따라 상이할 수 있으며, 치료방법에 따라 수가가 변동될 수 있습니다.</div>
+                                    </div>
+                                </div>
+                                <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer_02.jpg"></div> -->
+                            </div>
                         </section>
             
                         <!-- <section class="page" id="page-3">
@@ -380,7 +406,17 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                                     </div>
                                 </div>
                             </div>
-                            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer_02.jpg"></div>
+                            <div class="img-area footer_02">
+                                <div class="description">
+                                    <span id="target">대상자 : ${resVo.target}</span>
+                                    <p id="event-period">이벤트 기간 :  <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
+                                    <div class="description-info">
+                                        <div class="ad_txt">시술 결과는 개인에 따라 상이할 수 있으며, 치료방법에 따라 수가가 변동될 수 있습니다.</div>
+                                    </div>
+                                </div>
+                                <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer_02.jpg"></div> -->
+                            </div>
+                            <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer_02.jpg"></div> -->
                         </section>
 
                         <div class="overlay"></div>
