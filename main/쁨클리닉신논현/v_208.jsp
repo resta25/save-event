@@ -120,7 +120,14 @@ pageEncoding="UTF-8"%>
 .form input[type="radio"]:checked + span:after {content:''; -moz-transform:rotate(-45deg) scale(1) translate(29%, -43%); -ms-transform:rotate(-45deg) scale(1) translate(29%, -43%); -webkit-transform:rotate(-45deg) scale(1) translate(29%, -43%); transform:rotate(-45deg) scale(1) translate(29%, -43%); -moz-transition:-moz-transform 200ms ease-out; -o-transition:-o-transform 200ms ease-out; -webkit-transition:-webkit-transform 200ms ease-out; transition:transform 200ms ease-out;}
 
 
-#wrap {font-family: 'Pretendard'; width: 1080px;}
+* {font-family: "Noto Sans KR", sans-serif; box-sizing: border-box;}
+#page_landing_c .wrap_curd {background: transparent;}
+#page_landing_c .wrap_curd * {font-size: 100%; font-family: inherit;}
+html{
+    height: 100%;
+}
+#page_landing_c main {max-width: 1080px;}
+#wrap {font-family: 'Pretendard'; width: 100%;}
 
 /* 비디오영역 */
 #location {position: absolute; top: 16%; left: 7%; width: 45%;}
