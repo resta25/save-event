@@ -138,10 +138,10 @@ html{
 .user_box .user_info {display: flex; flex-flow: row wrap; justify-content: space-between;}
 .user_box .user_info input::placeholder {color: #9cafae;}
 /* 첫번째 form 입력칸 */
-#form-1 .user_box .user_info input {background: #e3edec; border: none; font-size: 150%; padding: 1em; padding-right: 0; border-radius: 0.8em; width: 47.25%; margin-bottom: 1%;}
+#form-1 .user_box .user_info input {background: #e3edec; border: none; font-size: 150%; padding: 1em; padding-right: 0; border-radius: 0.8em; width: 49.5%; margin-bottom: 1%;}
 #form-1 .user_box .user_info input:nth-of-type(3) {width: 100%;}
 /* 두번째 form 입력칸 */
-#form-2 .user_box .user_info input {background: #fff; border: none; font-size: 150%; padding: 1em; padding-right: 0; border-radius: 0.8em; width: 47.25%; margin-bottom: 1%;}
+#form-2 .user_box .user_info input {background: #fff; border: none; font-size: 150%; padding: 1em; padding-right: 0; border-radius: 0.8em; width: 49.5%; margin-bottom: 1%;}
 #form-2 .user_box .user_info input:nth-of-type(3) {width: 100%;}
 
 .form .agBox {margin: 3% auto; text-align: center;}
