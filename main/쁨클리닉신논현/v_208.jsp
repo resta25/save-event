@@ -213,7 +213,7 @@ html{
                         <div class="user_info">
                             <input type="text" name="name" id="name" class="inp" required="" autocomplete="off" placeholder="성함"> <!-- 이름 -->
                             <input type="tel" name="age" id="age" class="inp" required="" autocomplete="off" maxlength="2" placeholder="나이"> <!-- 나이 -->
-                            <input type="tel" name="phone" id="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="전화번호('-제외')"> <!-- 연락처 -->
+                            <input type="tel" name="phone" class="phone2" id="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="전화번호('-제외')"> <!-- 연락처 -->
                         </div>
                     </div>
         
@@ -288,7 +288,7 @@ html{
                         <div class="user_info">
                             <input type="text" name="name" id="name" class="inp" required="" autocomplete="off" placeholder="성함"> <!-- 이름 -->
                             <input type="tel" name="age" id="age" class="inp" required="" autocomplete="off" maxlength="2" placeholder="나이"> <!-- 나이 -->
-                            <input type="tel" name="phone" id="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="전화번호('-제외')"> <!-- 연락처 -->
+                            <input type="tel" name="phone" class="phone1" id="phone" class="inp" required="" autocomplete="off" maxlength="11" placeholder="전화번호('-제외')"> <!-- 연락처 -->
                         </div>
                     </div>
         
@@ -415,15 +415,23 @@ html{
 	}
 	
 	document.addEventListener('DOMContentLoaded', function() {
-	    const phoneInput = document.getElementById('phone');
+	    // const phoneInput = document.getElementById('phone');
+	    const phoneInput1 = document.querySelector('.phone1');
+	    const phoneInput2 = document.querySelector('.phone2');
 
 	    // 페이지 로드 시 기본값 설정
-	    phoneInput.value = '010';
+	    phoneInput1.value = '010';
+	    phoneInput2.value = '010';
 
 	    // 입력값이 사라지면 다시 '010' 넣기
-	    phoneInput.addEventListener('input', function() {
-	        if (!phoneInput.value.startsWith('010')) {
-	            phoneInput.value = '010';
+	    phoneInput1.addEventListener('input', function() {
+	        if (!phoneInput1.value.startsWith('010')) {
+	            phoneInput1.value = '010';
+	        }
+	    });
+	    phoneInput2.addEventListener('input', function() {
+	        if (!phoneInput2.value.startsWith('010')) {
+	            phoneInput2.value = '010';
 	        }
 	    });
 	});
