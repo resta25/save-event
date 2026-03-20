@@ -170,6 +170,10 @@ pageEncoding="UTF-8"%>
     #page_landing_c input[type="checkbox"]:checked + span:after {
         border-color: #000;
     }
+
+    .footer {padding: 2.334% 2% 2.5%; background-color: #6e6e6e; text-align: center;}
+    
+    .footer * {color: #a5a5a5; text-align: center; font-family: 'Pretendard'; font-size: 100%;}
         
     @keyframes pulsating {
         50% {
@@ -220,8 +224,11 @@ pageEncoding="UTF-8"%>
     .wrap_form .description p, .wrap_form .description .ad_txt {font-size: 3.85vw;}
     #page_landing_c .question_box .q_select label, label.selected_label {font-size: 85%;}
 
+    .footer * {font-size: 90%;}
+
 }
 @media screen and (max-width: 640px){
+    .footer * {font-size: 85%;}
 }
 @media screen and (max-width: 480px){
     #page_landing_c .description {padding: 3.37% 0 1.37%;}
@@ -237,14 +244,19 @@ pageEncoding="UTF-8"%>
     #page_landing_c .legend {width: 25%;}
     #page_landing_c input:not( [type="checkbox"], [type="radio"], [type="range"], [type="image"] ), select { font-size: 105%; border-radius: 0px; padding: 2% 3%;}
 
+    .footer * {font-size: 73%;}
 }
 @media screen and (max-width: 395px){
     .subscribe .content {padding: 0.5rem 0.2rem;}
     #page_landing_c .wrap_form .description.orage-box > * {font-size: 85%;}
 
+    .footer * {font-size: 67%;}
+
 }
 @media screen and (max-width: 375px){
     .subscribe {padding: 0;}
+
+    .footer * {font-size: 63%;}
 }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/GmarketSans/GmarketSans.css" type="text/css"/>
@@ -325,8 +337,10 @@ pageEncoding="UTF-8"%>
             </div>
 
             <div class="container">
-                <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div> -->
-                <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div>
+                <div class="footer">
+                    <span class="target">대상 : ${resVo.target}</span>
+                    <p>온네이처 주식회사 | 신현록 | 110111-9155361 | 서울특별시 성동구 성수이로 118, 6층 622호</p>
+                </div>
             </div>
         
         <div id="modal2" class="modal modal2" style="display: none;">
