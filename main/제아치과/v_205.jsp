@@ -93,10 +93,7 @@ pageEncoding="UTF-8"%>
     .btn_submit {background-color: transparent !important;}
     input:not( [type="checkbox"], [type="radio"], [type="range"] ):disabled, input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border: none;}
     .wrap_form .submit {position: relative; width: 85.466%; height: auto; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png') no-repeat center center / 100% 100%; margin: 3% auto; padding: 0% 0;}
-    .wrap_form .submit input[type="image"] {
-        width: 71.46% !important; margin: 0 auto; animation: pulsating 0.8s linear infinite;
-        -webkit-animation: pulsating 0.8s linear infinite;
-    }
+    .wrap_form .submit input[type="image"] {width: 71.46% !important; margin: 0 auto; animation: pulsating 0.8s linear infinite; -webkit-animation: pulsating 0.8s linear infinite;}
 
     :is(#page_landing_a, #page_landing_c) .wrap_curd .btn_submit {padding: 6% 0;}
 
@@ -104,28 +101,46 @@ pageEncoding="UTF-8"%>
     .select-box {width: 100%;}
     .select-box .q_select {outline: none; border: none; width: 100%; padding: 3%; text-align: center; border: 1px solid #bebebe; border-radius: 0.3em; font-weight: 600;}
     #page_landing_c .wrap_curd {padding: 7.684% 2.927%; background: transparent;}
-    #page_landing_c .wrap_curd .q_select {font-size: 150%;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center; justify-content: flex-end;}
+    #page_landing_c .wrap_curd .q_select {width: 100%; font-size: 150%; display: flex; align-items: center; justify-content: flex-end;}
     #page_landing_c .wrap_form .description {width: 100%;}
     #page_landing_c .wrap_form .description .ad_txt {font-family: 'Paperlogy';}
 
     #page_landing_c .description.footer {width: 100%; padding: 1.115% 0; background-color: #8e8e8e; text-align: center;}
     #page_landing_c .description.footer #target {margin: 0.5% 0;}
-    
-    /* #page_landing_c .wrap_form .description.orage-box{display: flex; justify-content: flex-start; padding-top:3%; padding-bottom: 3%; padding-left: 1.5%; gap: 4px;}
-    #page_landing_c .wrap_form .description.orage-box > * {background-color: #0a151e; color:#fff; font-size:110%; border-radius:999px; color:#fff; padding:2% 3%; line-height: 1.06; font-weight: 500; letter-spacing: -0.9px; margin: 0;}
-    #page_landing_c .wrap_form .description.orage-box > span{background-color: #0a151e;} */
 
-    #page_landing_c .wrap_form .question {position: relative; display: flex; align-items: center; justify-content: center; font-family: 'Paperlogy';}
-    #page_landing_c .wrap_form .question .btn-agreement {font-weight: 700; font-family: 'Paperlogy';}
+    #page_landing_c .wrap_form .agBox {position: relative; display: flex; align-items: center; justify-content: center; font-family: 'Paperlogy';}
+    #page_landing_c .wrap_form .agBox .btn-agreement {font-weight: 700; font-family: 'Paperlogy';}
     #page_landing_c .wrap_form .question_box > div:not(.formContents):not(.txt-area),
-    #page_landing_c .wrap_form .question_box > label {display: flex; align-items: center; justify-content: space-between; gap: 1%; border-radius: 25px; background-color: #dadada; padding: 2.926% 3.901%; box-sizing: border-box; margin-bottom: 2%;}
+    #page_landing_c .wrap_form .question_box > label {width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1%; border-radius: 25px; background-color: #dadada; padding: 2.926% 3.901%; box-sizing: border-box; margin-bottom: 2%;}
     #page_landing_c .wrap_form .question_box > label input {background: url("//static.savemkt.com/event/v_${eventSeq}/check.png") no-repeat right 1.5rem center; background-color: #fff;}
     #page_landing_c .wrap_form .question_box > div.txt-area {width: 81.42%; margin: 0 auto 9%;}
 
-    #page_landing_c .wrap_form .legend {font-family: 'Elice DX Neolli'; font-size: 280%; font-weight: 500; line-height: 1; letter-spacing: -1.78px; color: #0a151e;}
+    /* 질문 줄 전체를 감싸는 컨테이너 */
+    #page_landing_c .wrap_form .question, 
+    #page_landing_c .wrap_form .user_name, 
+    #page_landing_c .wrap_form .user_phone { display: flex; align-items: center; justify-content: space-between; /* 왼쪽 정렬 */ width: 100%; margin-bottom: 2%; /* 줄 간격 */ background-color: #dadada; /* 배경색 */ border-radius: 15px; /* 라운드 처리 */ padding: 10px 20px; box-sizing: border-box;}
+
+    /* 왼쪽 질문 텍스트 영역 너비 고정 */
+    #page_landing_c .wrap_form .legend { flex: 0 0 30%; /* 질문 영역 너비를 30%로 고정 */ font-size: 1.5rem; /* 폰트 크기 조정 */ font-family: 'Paperlogy'; font-weight: 700; color: #000; text-align: left;}
+
+    #page_landing_c .wrap_form .question:nth-child(1) .legend {flex: 0 0 50%;}
+
+    /* 오른쪽 답변 영역(선택지/입력창) 너비 고정 */
+    #page_landing_c .wrap_form .q_select,
+    #page_landing_c .wrap_form .inp {flex: 0 0 70%; /* 답변 영역 너비를 70%로 고정 */ display: flex; gap: 10px; /* 버튼 사이 간격 */}
+    #page_landing_c .wrap_form .question:nth-child(1) .q_select, #page_landing_c .wrap_form .question:nth-child(1) .inp {flex: 0 0 46.5%;}
+
+    /* 라디오 버튼(네/아니오 등) 디자인 */
+    #page_landing_c .wrap_form .q_select label {flex: 1; /* 선택지 개수가 달라도 해당 영역 안에서 균등 배분 */ background-color: #fff; padding: 10px 0; border-radius: 8px; text-align: center; cursor: pointer; font-size: 1.2rem; font-weight: 500; margin: 0 !important; /* 기존 마진 제거 */}
+
+    /* 텍스트 입력창 디자인 */
+    #page_landing_c .wrap_form .inp {width: 100% !important; /* flex-basis 안에서 꽉 차게 */ border: none; border-radius: 8px; background-color: #fff; padding: 12px; font-size: 1.2rem; position: static; /* 기존 absolute 해제 필수 */}
+
+    /* 라디오 input 숨기기 */
+    #page_landing_c .wrap_form .q_select input[type="radio"] {display: none;}
+
+    #page_landing_c .wrap_form .legend {font-family: 'Elice DX Neolli'; font-size: 280%; min-width: 24%; font-weight: 500; line-height: 1; letter-spacing: -0.05em; color: #0a151e;}
+    #page_landing_c .wrap_form .first .legend {min-width: 50%;}
     #page_landing_c .wrap_form .agBox .legend {max-width: max-content;}
     .selected_area{background-color:#000; padding:3% 5%;}
     #page_landing_c .wrap_form .question_box .agBox .question {display: flex; align-items: center; width: 100%;}
@@ -136,10 +151,10 @@ pageEncoding="UTF-8"%>
     label.selected_label, 
     #page_landing_c .wrap_form .agBox .disagree{display: inline-block; border-radius: 1rem; font-size: 187%; text-align: center;  color: #0a151e; font-weight: 500; cursor: pointer; padding: 3% 2%; font-family: 'Elice DX Neolli';}
     #page_landing_c .wrap_form .agBox .disagree {margin-right: 0;}
-     #page_landing_c .wrap_form .question_box .q_select label + label {margin-left: 7.555%;}
+     #page_landing_c .wrap_form .question_box .q_select label + label {margin-left: 2.555%;}
     #page_landing_c .wrap_form .question_box .q_select:nth-of-type(2) label.on, label.add1{background-color: #000; color:#fff;}
     #page_landing_c .wrap_form .question_box .q_select:nth-of-type(4) label.on, label.add2{background-color: #000;}
-    #page_landing_c .wrap_form .question_box .q_select label {flex-shrink: 0; background-color: #fff; max-width: 192px; width: 100%;}
+    #page_landing_c .wrap_form .question_box .q_select label {flex-shrink: 0; background-color: #fff; }
     #page_landing_c .wrap_form .question_box .q_select label.on, label.add3{background-color: #fff83d; color:#00385c;}
 
     /* user db입력칸 (이름) */
@@ -152,10 +167,11 @@ pageEncoding="UTF-8"%>
     #page_landing_c .wrap_form .user_info .user_phone img {width:100%;}
 
     /* 이름, 연락처 공통 */
-    #page_landing_c .wrap_form .user_info input {background: #ffeef4; padding: 2%; font-size: 150%; border-radius: 0.5rem; width: 67%;
-    position: absolute; left: 29%; top: 14%; height: 70%; border: 1px solid #e3ccd4;}
+    /* #page_landing_c .wrap_form .user_info input {background: #ffeef4; padding: 2%; font-size: 150%; border-radius: 0.5rem; width: 67%;
+    position: absolute; left: 29%; top: 14%; height: 70%; border: 1px solid #e3ccd4;} */
 
-    #page_landing_c .wrap_form .inp{font-size: 120%; border-radius: 10px; border: solid 1px #bebebe; background-color: #fff; min-height: 34px; padding: 3%; box-sizing: border-box;}
+    #page_landing_c .wrap_form .inp{    width: 63%;
+    margin-left: 0; font-size: 120%; border-radius: 10px; border: solid 1px #bebebe; background-color: #fff; min-height: 34px; padding: 3%; box-sizing: border-box;}
     #page_landing_c .wrap_form input[type="checkbox"] + span:before{border-color:#fff;}
     #page_landing_c .wrap_form .submit input[type="image"]{animation: pulsating 0.8s linear infinite; -webkit-animation: pulsating 0.8s linear infinite;}
 
@@ -168,15 +184,6 @@ pageEncoding="UTF-8"%>
 
     #page_landing_c .wrap_form .agBox.on label{background-color:#fff83d; color: #00385c;}
 
-    #page_landing_c .wrap_form ul.table_box{width:90%;}
-    #page_landing_c .wrap_form ul.table_box li{display: flex; margin-bottom:2%;   }
-    #page_landing_c .wrap_form ul.table_box li  >*{background-color: #fff;  padding:1% 10px; border-radius:25px; border:1px solid #000; box-sizing: border-box;}
-    #page_landing_c .wrap_form ul.table_box li .th{width:20%;}
-    #page_landing_c .wrap_form ul.table_box li .td{width: 78%; display:none; position: relative;}
-    #page_landing_c .wrap_form ul.table_box li .td.cursor_box::after{position: absolute; top: 50%; left: 54%; transform: translateY(-50%); display: block; content: ''; width: 2px; height: 50%; background-color: #000; animation: blink-effect 1s step-end infinite;}
-    #page_landing_c .wrap_form ul.table_box li .td.cursor_box span{position: absolute; top: 50%; left: 60%; transform: translateY(-50%); display: block; font-size:120%;}
-
-
     #page_landing_c .wrap_form ul.table_box li:nth-child(2) .th,
     #page_landing_c .wrap_form ul.table_box li:nth-child(3) .th{margin-right:1%;}
     #page_landing_c .wrap_form ul.table_box li.on .th{border-radius: 25px 0 0 25px; border-right:none;}
@@ -186,15 +193,7 @@ pageEncoding="UTF-8"%>
     background: #fff;
     border: 13px solid #3ea3d1;
     border-radius: 40px;}
-
-    /* 비용 결과 */
-    #page_landing_c .wrap_form .result {margin: 0 auto; width: 90%; position: relative;}
-    #page_landing_c .wrap_form .result .value {display: flex; position: absolute; left: 4%; top: 42%; transform: translateY(-50%); width: 37.5%;}
-    #page_landing_c .wrap_form .result .value .add_value {font-size: 120%; background-color: #fff83d; border-radius: 0.5em; width: 49%; padding:0.5em 1em; margin: 0; font-weight: 800;
-    text-align: center; color: #00385c; cursor: pointer; display: none; }
-    #page_landing_c .wrap_form .result .value .add1_value {margin-right: 2%;}
-    #page_landing_c .wrap_form .result .value .add2_value {}
-    
+ 
     #page_landing_c .wrap_curd .warn-txt {
         padding: 2% 3% 0%;
         line-height: 1.27;
@@ -222,7 +221,7 @@ pageEncoding="UTF-8"%>
         color: #ff0000;
     }
     [class^="popup-"] {
-        position: absolute;
+        position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -238,6 +237,7 @@ pageEncoding="UTF-8"%>
         text-align: center;
         opacity: 1;
         visibility: visible;
+        padding: 30px 5%;
     }
     [class^="popup-"] p,
     [class^="popup-"] span {
@@ -282,11 +282,18 @@ pageEncoding="UTF-8"%>
         50% {transform: scale(0.95);}
         100% {transform: scale(1);}
     }
-    @keyframes blink-effect {
-        50% {opacity: 0;}
-    }
 
+@media screen and (max-width: 960px){
+    /* #page_landing_c .wrap_form .legend {font-size: 250%;} */
+    #page_landing_c .wrap_form .question_box .q_select label, label.selected_label, #page_landing_c .wrap_form .agBox .disagree {
+        font-size: 157%;
+    }
+}
 @media screen and (max-width: 768px){
+    #page_landing_c .wrap_form .legend {font-size: 190%;}
+    #page_landing_c .wrap_form .question_box .q_select label, label.selected_label, #page_landing_c .wrap_form .agBox .disagree {
+        font-size: 127%;
+    }
     .subscribe {padding: 3% 2%; height: 150px;}
     .subscribe .content {padding: 0.5rem 0.7rem;}
     .subscribe .content > div {margin-right: 0; font-size: 0.8rem;}
@@ -298,10 +305,6 @@ pageEncoding="UTF-8"%>
     .content .text {padding: 4px 0;}
     .subscribe_container .title {padding: 2rem 0 0; font-size: 1.8rem; margin-bottom: 0.6875rem;}
 
-    /* .popup-confirm {width: 450px;}
-    .popup-confirm p {font-size: 200%;}
-    .popup-confirm .btn-box button {width: 120px; height: 40px; font-size: 100%;} */
-
     [class^="popup-"] {width: 90vw; font-size: 2.5vw; border-radius: 20px; top: 57%;}
     .popup-valid .btn-box button {width: 50vw; height: 40px}
 
@@ -309,14 +312,20 @@ pageEncoding="UTF-8"%>
 }
 
 @media screen and (max-width: 480px){
-    #page_landing_c .wrap_form .question_box .q_select label, 
-    label.selected_label, 
-    #page_landing_c .wrap_form .agBox .disagree {max-width: 70px; font-size: 60%; border-radius: 4px;}
-    /* #page_landing_c .wrap_form .agBox .ag_btn {width: 45%;}
-    #page_landing_c .wrap_form .agBox .disagree {width: 45%; margin-left: 0;} */
+    #page_landing_c .wrap_form .legend {font-size: 135%;}
+    #page_landing_c .wrap_form .question_box .q_select label, label.selected_label, #page_landing_c .wrap_form .agBox .disagree {
+        font-size: 90%; border-radius: 0.5rem;
+    }
+    #page_landing_c .wrap_form .question:nth-child(1) .q_select, #page_landing_c .wrap_form .question:nth-child(1) .inp {
+        flex: 0 0 41.5%;
+    }
+    #page_landing_c .wrap_form .question:nth-child(1) .legend {flex: 0 0 55%;}
+
+    #page_landing_c .wrap_form .q_select, #page_landing_c .wrap_form .inp {flex: 0 0 64%; gap: 5px;}
+    
+
     #page_landing_c .wrap_form .result .value .add_value {font-size: 90%; padding: 0.5em;}
-    #page_landing_c .wrap_form .legend {font-size: 100%;}
-    #page_landing_c .wrap_form .description.orage-box > * {font-size: 95%;}
+    /* #page_landing_c .wrap_form .legend {font-size: 100%;} */
     #page_landing_c .wrap_form .inp {font-size: 13px;}
     .wrap_form .agBox a {margin-top: 0; white-space: nowrap;}
 
@@ -332,7 +341,9 @@ pageEncoding="UTF-8"%>
 }
 @media screen and (max-width: 395px){
     .subscribe .content {padding: 0.5rem 0.2rem;}
-    #page_landing_c .wrap_form .description.orage-box > * {font-size: 85%;}
+
+    #page_landing_c .wrap_form .legend {font-size: 110%;}
+    #page_landing_c .wrap_form .question_box .q_select label, label.selected_label, #page_landing_c .wrap_form .agBox .disagree {font-size: 75%;}
 
     /* .popup-confirm {width: 360px;}
     .popup-confirm p {font-size: 150%;} */
@@ -359,7 +370,6 @@ pageEncoding="UTF-8"%>
                         </div>
                         <div class="question_container">
                             <div class="question_box">
-                                <div class="img-area txt-area"><img src="//static.savemkt.com/event/v_${eventSeq}/txt.png"></div>
                                 <div class="question">
                                     <span class="legend">수도권에 거주하시나요?</span>
                                     <div class="q_select">
@@ -367,6 +377,7 @@ pageEncoding="UTF-8"%>
                                         <label>아니요<input type="radio" name="tadd1" value="아니요"></label>
                                     </div>
                                 </div>
+
                                 <div class="question">
                                     <span class="legend">연령대</span>
                                     <div class="q_select">
@@ -375,30 +386,20 @@ pageEncoding="UTF-8"%>
                                         <label>40대<input type="radio" name="tadd2" value="40대"></label>
                                     </div>
                                 </div>
-                                <div class="question">
-                                    <span class="legend">고민사항</span>
-                                    <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_04.png"></div> -->
-                                    <div class="q_select">
-                                        <label>치아색상<input type="radio" name="tadd3" value="치아색상"></label>
-                                        <label>치아모양<input type="radio" name="tadd3" value="치아모양"></label>
-                                        <label>기타<input type="radio" name="tadd3" value="기타"></label>
-                                    </div>
-                                </div>        
 
                                 <div class="user_name">
                                     <span class="legend">이름</span>
-                                    <input type="text" name="name" id="name" class="inp" required autocomplete="off">
+                                    <input type="text" name="name" id="name" class="inp" placeholder="이름을 입력해주세요" required>
                                 </div>
+
                                 <div class="user_phone">
                                     <span class="legend">연락처</span>
-                                    <input type="tel" name="phone" id="phone" class="inp" required autocomplete="off" maxlength="11">
+                                    <input type="tel" name="phone" id="phone" class="inp" value="010-" required maxlength="11">
                                 </div>
-                                
-                            </div>   
+                            </div>
                             <div class="agBox">
-                                <div class="question">
-                                    <!-- <span class="legend">개인정보 수집 · 이용</span> -->
-                                     혜택 제공을 위한&nbsp;
+                                <!-- <span class="legend">개인정보 수집 · 이용</span> -->
+                                    혜택 제공을 위한&nbsp;
                                     <a href="#">
                                         <span class="btn-agreement">개인정보 처리방침</span>
                                         <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_09.png"></div> -->
@@ -408,7 +409,6 @@ pageEncoding="UTF-8"%>
                                         <label><input name="agBox" type="checkbox">동의</label>
                                         <a href="javascript:void(0);" class="disagree">미동의</a>
                                     </div> -->
-                                </div>
                             </div>
                         </div>
 
