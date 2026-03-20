@@ -286,13 +286,13 @@ pageEncoding="UTF-8"%>
 @media screen and (max-width: 960px){
     /* #page_landing_c .wrap_form .legend {font-size: 250%;} */
     #page_landing_c .wrap_form .question_box .q_select label, label.selected_label, #page_landing_c .wrap_form .agBox .disagree {
-        font-size: 157%;
+        font-size: 147%;
     }
 }
 @media screen and (max-width: 768px){
     #page_landing_c .wrap_form .legend {font-size: 190%;}
     #page_landing_c .wrap_form .question_box .q_select label, label.selected_label, #page_landing_c .wrap_form .agBox .disagree {
-        font-size: 127%;
+        font-size: 117%;
     }
     .subscribe {padding: 3% 2%; height: 150px;}
     .subscribe .content {padding: 0.5rem 0.7rem;}
@@ -314,7 +314,7 @@ pageEncoding="UTF-8"%>
 @media screen and (max-width: 480px){
     #page_landing_c .wrap_form .legend {font-size: 135%;}
     #page_landing_c .wrap_form .question_box .q_select label, label.selected_label, #page_landing_c .wrap_form .agBox .disagree {
-        font-size: 90%; border-radius: 0.5rem;
+        font-size: 80%; border-radius: 0.5rem;
     }
     #page_landing_c .wrap_form .question:nth-child(1) .q_select, #page_landing_c .wrap_form .question:nth-child(1) .inp {
         flex: 0 0 41.5%;
@@ -386,6 +386,16 @@ pageEncoding="UTF-8"%>
                                         <label>40대<input type="radio" name="tadd2" value="40대"></label>
                                     </div>
                                 </div>
+
+                                <div class="question">
+                                    <span class="legend">고민사항</span>
+                                    <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_04.png"></div> -->
+                                    <div class="q_select">
+                                        <label>치아색상<input type="radio" name="tadd3" value="치아색상"></label>
+                                        <label>치아모양<input type="radio" name="tadd3" value="치아모양"></label>
+                                        <label>기타<input type="radio" name="tadd3" value="기타"></label>
+                                    </div>
+                                </div> 
 
                                 <div class="user_name">
                                     <span class="legend">이름</span>
