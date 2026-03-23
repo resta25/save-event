@@ -621,7 +621,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 			,'add1': '설문1'
 			// ,'add2': '설문2'
 			// ,'add3': '설문3'
-			// ,'agBox': '개인정보'
+			,'agBox': '개인정보'
 		};
 		
 		validateForm(procForm, required);
