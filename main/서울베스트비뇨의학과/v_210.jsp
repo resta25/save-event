@@ -76,8 +76,13 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 #page-2 .paging{padding: 0 14.87% 3%;}
 #page-2 .poster_04 {margin: 2.506% 0 7.517%;}
 
-#page-2.page .paging button {background-image: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb_01.png')}
-#page-2.page .paging button img {width: 55% !important; margin: 0; margin-left: auto; margin-right: 3%;}
+
+#page-2.page .paging button,
+#page-3.page .paging button {background-image: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb_01.png')}
+#page-2.page .paging button img,
+#page-3.page .paging button img {width: 55% !important; margin: 0; margin-left: auto; margin-right: 3%;}
+
+#page-3 .poster_06 {margin: 2.506% 0 7.517%;}
 
 .form-box {margin-top: 10%;}
 #wrap .formContents {position: static;}
@@ -135,13 +140,13 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 785px;
+    width: 575px;
     height: max-content;
     margin: 0;
-    padding: 30px 0;
+    padding: 30px;
     font-size: 150%;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 25px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -170,7 +175,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     font-size: 150%;
 }
 [class^="popup-"] .btn-box button {
-    background-color: #0202c5;
+    background-color: #0a2f85;
     color: #fff;
     width: 195px;
     height: 80px;
@@ -277,37 +282,23 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                                     <button type="button" onclick="pageSelFuc(4,$(this))" class="first"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_txt_02.png"></button>
                                 </p>
                         </section>
-            
-                        <!-- <section class="page" id="page-3">
-                            <div class="img-area poster_05"><img src="//static.savemkt.com/event/v_${eventSeq}/gage_02.png"></div>
-                            <div class="img-area poster_06" style="margin-top: 5%;"><img src="//static.savemkt.com/event/v_${eventSeq}/q_02.png"></div>
-                            <div class="question_box">
-                                <div class="q_select">
-                                    <label><input type="radio" onclick="setTimeout(show4pg, 100)" onclick="pageFuc(3,$(this))" name="tage" value="40">40대</label>
-                                    <label><input type="radio" onclick="setTimeout(show4pg, 100)" onclick="pageFuc(3,$(this))" name="tage" value="50">50대</label>
-                                    <label><input type="radio" onclick="setTimeout(show4pg, 100)" onclick="pageFuc(3,$(this))" name="tage" value="60">60대</label>
+                        <section class="page" id="page-3">
+                            <div class="img-area poster_05"><img src="//static.savemkt.com/event/v_${eventSeq}/q_02.png"></div>
+                                <div class="img-area poster_06"><img src="//static.savemkt.com/event/v_${eventSeq}/gage_02.png"></div>
+                                <div class="question_box">
+                                    <div class="q_select">
+                                        <label><input type="radio" onclick="setTimeout(show4pg, 100)" onclick="pageFuc(3,$(this))" name="tadd2" value="예">예</label>
+                                        <label><input type="radio" name="tadd2" value="아니오">아니오</label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="next_btn_inQuestion"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_02.png" onclick="pageSelFuc(2,$(this))"></div> 
-                        </section> -->
-            
-                        <!-- <section class="page" id="page-4">
-                            <div class="img-area poster_07"><img src="//static.savemkt.com/event/v_${eventSeq}/gage_03.png"></div>
-                            <div class="img-area poster_08" style="margin-top: 5%;"><img src="//static.savemkt.com/event/v_${eventSeq}/q_03.png"></div>
-                            <div class="question_box">
-                                <div class="q_select">
-                                    <label><input type="radio" onclick="setTimeout(show5pg, 100)" onclick="pageFuc(4,$(this))" name="add3" value="대구">대구</label>
-                                    <label><input type="radio" onclick="setTimeout(show5pg, 100)" onclick="pageFuc(4,$(this))" name="add3" value="경산">경산</label>
-                                    <label><input type="radio" onclick="setTimeout(show5pg, 100)" onclick="pageFuc(4,$(this))" name="add3" value="구미">구미</label>
-                                    <label><input type="radio" onclick="setTimeout(show5pg, 100)" onclick="pageFuc(4,$(this))" name="add3" value="기타">기타</label>
-                                </div>
-                            </div>
-                            <div class="next_btn_inQuestion"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_02.png" onclick="pageSelFuc(3,$(this))"></div> 
-                        </section> -->
+                                <p class="paging">
+                                    <button type="button" onclick="pageSelFuc(4,$(this))" class="first"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_txt_02.png"></button>
+                                </p>
+                        </section>
             
                         <section class="page" id="page-4">
-                            <div class="img-area poster_09"><img src="//static.savemkt.com/event/v_${eventSeq}/q_02.png"></div>
-                            <div class="img-area poster_10" style="margin-top: 5%;"><img src="//static.savemkt.com/event/v_${eventSeq}/gage_02.png"></div>
+                            <div class="img-area poster_09"><img src="//static.savemkt.com/event/v_${eventSeq}/q_03.png"></div>
+                            <div class="img-area poster_10" style="margin-top: 5%;"><img src="//static.savemkt.com/event/v_${eventSeq}/gage_03.png"></div>
                             <div class="form-box poster_11">
                                 <div class="formGroup">
                                     <div class="table_box top">
@@ -331,6 +322,16 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                             <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer_02.jpg"></div> -->
                         </section>
 
+                        <div class="overlay"></div>
+                        <div class="popup-confirm">
+                            <div class="img-area">
+                                <img src="//static.savemkt.com/event/v_${eventSeq}/pop_txt.png">
+                            </div>
+                            <div class="btn-box">
+                                <button type="button" class="btn-confirm">확인</button>
+                            </div>
+                        </div>
+
                         <!-- 개인정보처리방침 전문 -->
                         <div id="modal2" class="modal modal2" style="display: none;">
                             <div class="modal-content">
@@ -342,7 +343,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                             <p id="event-period">이벤트 기간 :  <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
                             <span id="target">대상자 : ${resVo.target}</span>
                         </div>
-                        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div>	
+                        <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div>	 -->
                     </div>
                     <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
                     <input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
@@ -382,33 +383,21 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         $('.popup-confirm').hide();
 	});
 
-    // $('input[name="tadd1"]').on('change', function () {
-    //     if ($(this).val() === "아니오") {
-    //         $('.overlay, .popup-confirm').show();
-    //     }
-    // });
+    $('input[name="tadd2"]').on('change', function () {
+        if ($(this).val() === "아니오") {
+            $('.overlay, .popup-confirm').show();
+        }
+    });
 
     // popup-confirm > 확인 버튼
     $('.btn-confirm').on('click', function () {
         $('.overlay, .popup-confirm').hide();
 
         // ✅ 선택 초기화
-        $('input[name="tadd1"]').prop('checked', false);
+        $('input[name="tadd2"]').prop('checked', false);
         $('.q_select label').removeClass('on');
     });
 
-    // popup-confirm > 나가기 버튼
-    $('.btn-out').on('click', function(){
-        $('.overlay, .popup-confirm').hide();
-
-        $('.page').hide();   // 다른 페이지 숨기기
-        resetPage1();        // ⭐ GSAP 상태 초기화
-        show1pg();           // 애니메이션 다시 실행
-
-        $('input[name="tadd1"]').prop('checked', false);
-        $('.q_select label').removeClass('on');
-        $(document).scrollTop(0);
-    });
 
     function resetPage1() {
         // page-1 자체
@@ -456,38 +445,42 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
         animation02.to('#page-1 .poster_01', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
-        animation02.to('#page-1 .poster_02', { x: -100, opacity: 0, delay: 0.6, duration: 0.2, ease: "power1.out"}, 0);
+        animation02.to('#page-1 .poster_02', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
+        animation02.to('#page-1 .paging', { x: -100, opacity: 0, delay: 0.6, duration: 0.2, ease: "power1.out"}, 0);
         animation02.to('#page-1', { display: 'none' });
         animation02.to('#page-2', { display: 'block', duration: 0.1 });
         animation02.from('#page-2 .poster_03', {x: +200, opacity: 0, duration: 0.2});
         animation02.from('#page-2 .poster_04', {x: +200, opacity: 0, duration: 0.2});
+        animation02.from('#page-2 .paging', {x: +200, opacity: 0, delay: 0.2, duration: 0.2});
         animation02.from('#page-2 .question_box .q_select > label', {x: +200, opacity: 0, duration: 0.2, stagger: 0.1});
         animation02.from('#page-2 .next_btn_inQuestion', {x: +200, opacity: 0, duration: 0.3, stagger: 0.1});
     }
 
     // 세번째 페이지
-    // function show3pg() {
-    //     if (isAnimating) return; // 이미 애니메이션 중이면 실행 안 함
-    //     isAnimating = true; // 애니메이션 시작 상태로 변경
-
-    //     const animation03 = gsap.timeline({
-    //         onComplete: () => {
-    //             isAnimating = false; // 애니메이션 끝나면 플래그 해제
-    //         }
-    //     });
-    //     animation03.to('#page-2 .poster_03', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
-    //     animation03.to('#page-2 .poster_04', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
-    //     animation03.to('#page-2 .question_box .q_select > label', {x: -100, opacity: 0});
-    //     animation03.to('#page-2 .next_btn_inQuestion', {x: -100, opacity: 0});
-    //     animation03.to('#page-2', { display: 'none' });
-    //     animation03.to('#page-3', { display: 'block', duration: 0.1 });
-    //     animation03.from('#page-3 .poster_05', {x: +200, opacity: 0, duration: 0.});
-    //     animation03.from('#page-3 .poster_06', {x: +200, opacity: 0, duration: 0.});
-    //     animation03.from('#page-3 .question_box .q_select > label', {x: +200, opacity: 0, duration: 0.2, stagger: 0.1});
-    //     animation03.from('#page-3 .next_btn_inQuestion', {x: +200, opacity: 0, duration: 0.2, stagger: 0.1});
-    // }
-    // 마지막 페이지
     function show3pg() {
+        if (isAnimating) return; // 이미 애니메이션 중이면 실행 안 함
+        isAnimating = true; // 애니메이션 시작 상태로 변경
+
+        const animation03 = gsap.timeline({
+            onComplete: () => {
+                isAnimating = false; // 애니메이션 끝나면 플래그 해제
+            }
+        });
+        animation03.to('#page-2 .poster_03', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
+        animation03.to('#page-2 .poster_04', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
+        animation03.to('#page-2 .paging', { x: -100, opacity: 0, delay: 0.6, duration: 0.2, ease: "power1.out"}, 0);
+        animation03.to('#page-2 .question_box .q_select > label', {x: -100, opacity: 0});
+        animation03.to('#page-2 .next_btn_inQuestion', {x: -100, opacity: 0});
+        animation03.to('#page-2', { display: 'none' });
+        animation03.to('#page-3', { display: 'block', duration: 0.1 });
+        animation03.from('#page-3 .poster_05', {x: +200, opacity: 0, duration: 0.2});
+        animation03.from('#page-3 .poster_06', {x: +200, opacity: 0, duration: 0.2});
+        animation03.from('#page-3 .paging', {x: +200, opacity: 0, duration: 0.2});
+        animation03.from('#page-3 .question_box .q_select > label', {x: +200, opacity: 0, duration: 0.2, stagger: 0.1});
+        animation03.from('#page-3 .next_btn_inQuestion', {x: +200, opacity: 0, duration: 0.2, stagger: 0.1});
+    }
+    // 마지막 페이지
+    function show4pg() {
         history.scrollRestoration = 'manual';
 
         if (isAnimating) return; // 이미 애니메이션 중이면 실행 안 함
@@ -498,16 +491,17 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                 isAnimating = false; // 애니메이션 끝나면 플래그 해제
             }
         });
-        animation03.to('#page-2 .poster_03', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
-        animation03.to('#page-2 .poster_04', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
-        animation03.to('#page-2 .question_box .q_select > label', {x: -100, opacity: 0});
-        animation03.to('#page-2 .next_btn_inQuestion', {x: -100, opacity: 0});
-        animation03.to('#page-2', { display: 'none' });
-        // animation03.to('#page-3 .poster_05', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
-        // animation03.to('#page-3 .poster_06', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
-        // animation03.to('#page-3 .question_box .q_select > label', {x: -100, opacity: 0});
-        // animation03.to('#page-3 .next_btn_inQuestion', {x: -100, opacity: 0});
-        // animation03.to('#page-3', { display: 'none' });
+        // animation03.to('#page-2 .poster_03', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
+        // animation03.to('#page-2 .poster_04', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
+        // animation03.to('#page-2 .question_box .q_select > label', {x: -100, opacity: 0});
+        // animation03.to('#page-2 .next_btn_inQuestion', {x: -100, opacity: 0});
+        // animation03.to('#page-2', { display: 'none' });
+        animation03.to('#page-3 .poster_05', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
+        animation03.to('#page-3 .poster_06', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
+        animation03.to('#page-3 .paging', { x: -100, opacity: 0, delay: 0.6, duration: 0.2, ease: "power1.out"}, 0);
+        animation03.to('#page-3 .question_box .q_select > label', {x: -100, opacity: 0});
+        animation03.to('#page-3 .next_btn_inQuestion', {x: -100, opacity: 0});
+        animation03.to('#page-3', { display: 'none' });
         animation03.to('#page-4', { display: 'block', duration: 0.1 });
         animation03.from('#page-4 .poster_07', {x: +200, opacity: 0, duration: 0.2});
         animation03.from('#page-4 .poster_08', {x: +200, opacity: 0, duration: 0.2});
@@ -597,13 +591,13 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 		// 	procForm.querySelector("input[name='age']").value = tage.value;
 		// }
 
-		// let selectedRadio2 = procForm.querySelector('input[name="tadd2"]:checked');
-		// if (!selectedRadio2) {
-		// 	alert("설문을 선택해주세요.");
-		// 	return;
-		// } else {
-		// 	procForm.querySelector("input[name='add2']").value = selectedRadio2.value;
-		// }
+		let selectedRadio2 = procForm.querySelector('input[name="tadd2"]:checked');
+		if (!selectedRadio2) {
+			alert("설문을 선택해주세요.");
+			return;
+		} else {
+			procForm.querySelector("input[name='add2']").value = selectedRadio2.value;
+		}
 	
 		/*
 		let selectedRadio2 = procForm.querySelector(`input[name="tadd2"]:checked`).value;
@@ -619,7 +613,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 			, 'age': '나이'
 			,'phone': '전화번호'
 			,'add1': '설문1'
-			// ,'add2': '설문2'
+			,'add2': '설문2'
 			// ,'add3': '설문3'
 			,'agBox': '개인정보'
 		};
