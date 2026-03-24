@@ -127,16 +127,15 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     .btn-agreement {flex-shrink: 0; text-align: center; font-size: 1.4rem;  display: block; color: #000; font-family: 'GmarketSans';}
     .btn-agreement b {font-weight: 700; font-size: 100%; font-family: 'GmarketSans';}
     /* submit btn */
-    /* .form .submit {width: 85%; margin: 0 auto; padding: 5% 0;}
-    .form .submit input[type="image"] {width: 100%;} */
-    
     .form .submit {display: flex; align-items: center; justify-content: center; margin: 1em auto 0; padding: 0;}
-    .form .submit {position: relative; width: 70.155%; height: 134px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png') no-repeat center center / 100% 100%; margin: 3% auto; padding: 0% 0;}
+    .form .submit {position: relative; width: 70.155%; height: 134px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png') no-repeat center center / 100% 100%; margin: 1% auto; padding: 0% 0;}
     .form .submit input[type="image"] {
         width: 71.46% !important; margin: 0 auto; animation: pulsating 0.8s linear infinite;
         -webkit-animation: pulsating 0.8s linear infinite;
     }
-    .form .submit input[type="image"] {width: 21.46% !important;}
+    .form .submit input[type="image"] {width: 61.46% !important;}
+
+    .sub-txt {text-align: center; font-family: 'GmarketSans'; font-weight: 300; font-size: 16px;}
 
 
     /* 거주자 팝업 */
@@ -238,6 +237,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 
         .poster_01::before {content: ''; position: absolute; top: -19%; width: 100%; height: 19px; background-color: #075fa5;}
         .poster_01::after {content: ''; position: absolute; bottom: -19%; width: 100%; height: 19px; background-color: #075fa5;}
+
+        .sub-txt {font-size: 12px;}
     }
     @media screen and (max-width: 500px){
         /* .roulette {padding: 4% 9.5% 4.19%;} */
@@ -260,7 +261,10 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         [class^="popup-"] .btn-box button {width: 115px; height: 50px;}
         /* #page_landing_c .form .table_box input {padding: 1.5rem 0 1.5rem 2rem;} */
 
+        .form .submit {margin-top: 3%;}
         .form .submit input[type="image"] {width: 71.46% !important;}
+
+        .sub-txt {font-size: 9px;}
     }
     
 </style>
@@ -401,6 +405,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                                         <div class="table_box bottom">
                                             <input type="tel" name="phone" id="phone" value="" class="inp inp-phone" required autocomplete="off" maxlength="11" placeholder="전화번호"/>
                                         </div>
+                                        <div class="sub-txt">타인의 정보를 무단으로 도용할 시, 관련 법령에 따라 제재를 받을 수 있습니다.</div>
                                         <div class="submit"><input type="image" onclick="fnForm('form-1')" value="" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_txt_03.png" /></div>
                                     </div>
                                     <div class="description">

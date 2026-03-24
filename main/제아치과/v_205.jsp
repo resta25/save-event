@@ -188,12 +188,10 @@ pageEncoding="UTF-8"%>
     #page_landing_c .wrap_form ul.table_box li:nth-child(3) .th{margin-right:1%;}
     #page_landing_c .wrap_form ul.table_box li.on .th{border-radius: 25px 0 0 25px; border-right:none;}
     #page_landing_c .wrap_form ul.table_box li.on .td{border-radius:0 25px 25px 0; border-left:none;}
-    .question_container {padding: 6.945% 2.398%;
-    margin-top: 66.5%;
-    background: #fff;
-    border: 13px solid #3ea3d1;
-    border-radius: 40px;}
- 
+    .question_container {padding: 6.945% 2.398%; margin-top: 66.5%; background: #fff; border: 13px solid #3ea3d1; border-radius: 40px;}
+    .question_container .img-area {width: 81.315%; margin: 0 auto 3%;}
+    .question_container .sub-txt {width: 100%; margin: 0 auto 3%; text-align: center; font-weight: 300; font-size: 16px;}
+
     #page_landing_c .wrap_curd .warn-txt {
         padding: 2% 3% 0%;
         line-height: 1.27;
@@ -309,6 +307,8 @@ pageEncoding="UTF-8"%>
     .popup-valid .btn-box button {width: 50vw; height: 40px}
 
     .count {font-size: 150% !important;}
+
+    #page_landing_c .wrap_curd .sub-txt {font-size: 12px;}
 }
 
 @media screen and (max-width: 480px){
@@ -333,6 +333,8 @@ pageEncoding="UTF-8"%>
 
     #page_landing_c .description.footer p, #page_landing_c .description.footer #target {font-size: 80%;}
     #page_landing_c .wrap_form .description .ad_txt {font-size: 12px;}
+
+    #page_landing_c .wrap_curd .sub-txt {font-size: 9px;}
 
     /* #page_landing_c .wrap_curd .btn-agreement {font-size: 12px;} */
 
@@ -364,11 +366,13 @@ pageEncoding="UTF-8"%>
                 <form class="wrap_curd" id="form-1" method="POST" accept-charset="utf-8">
                         <div class="img-area top-img">
                             <div class="img-area roulette">
-                                    <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.png">
-                                    <div class="count_box"><div class="count"></div></div>
-                                </div>
+                                <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.png">
+                                <div class="count_box"><div class="count"></div></div>
+                            </div>
                         </div>
                         <div class="question_container">
+                            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/txt_01.png"></div>
+                            <div class="sub-txt">타인의 정보를 무단으로 도용할 시, 관련 법령에 따라 제재를 받을 수 있습니다.</div>
                             <div class="question_box">
                                 <div class="question">
                                     <span class="legend">수도권에 거주하시나요?</span>
