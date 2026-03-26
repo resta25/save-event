@@ -300,6 +300,8 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
             </ol><br/>
             <h3>개인정보 취급 위탁</h3>
             <ol>
+                <li>개인정보 취급 위탁을 받는자 : (주)세이브마케팅</li>
+                <li>개인정보 취급 위탁을 하는 업무의 내용 : 고객정보 저장 및 서버관리</li>
                 <li>개인정보 취급 위탁을 받는자 : (주)하랑고치</li>
                 <li>개인정보 취급 위탁을 하는 업무의 내용 : 고객정보 저장 및 서버관리</li>
                 <li class="desc">*상기 동의를 거부할 권리가 있으나, 수집 및 이용에 동의하지 않을 경우 ${resVo.objectName} 상담 및 이벤트 참여가 불가능합니다.</li>
