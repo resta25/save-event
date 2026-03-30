@@ -158,7 +158,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     .form .submit input[type="image"] {width: 100%;} */
     
     .form .submit {position: relative; display: flex; align-items: center; width: 70.155%; height: 134px; margin: 5% auto; padding: 0% 0; position: relative; width: 100%; height: 186px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png') no-repeat center center / 100% 100%;}
-    .form .submit input[type="image"] {width: 70.46% !important; margin-right: 40px; margin-left: auto; animation: pulsating 0.8s linear infinite;
+    .form .submit input[type="image"] {width: 70.46% !important; margin-right: 70px; margin-left: auto; animation: pulsating 0.8s linear infinite;
 -webkit-animation: pulsating 0.8s linear infinite;}
 
     /* 거주자 팝업 */
