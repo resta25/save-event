@@ -158,7 +158,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     .form .submit input[type="image"] {width: 100%;} */
     
     .form .submit {position: relative; display: flex; align-items: center; width: 70.155%; height: 134px; margin: 5% auto; padding: 0% 0; position: relative; width: 100%; height: 186px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png') no-repeat center center / 100% 100%;}
-    .form .submit input[type="image"] {width: 70.46% !important; margin-right: 0px; margin-left: auto; animation: pulsating 0.8s linear infinite;
+    .form .submit input[type="image"] {width: 70.46% !important; margin-right: 40px; margin-left: auto; animation: pulsating 0.8s linear infinite;
 -webkit-animation: pulsating 0.8s linear infinite;}
 
     /* 거주자 팝업 */
@@ -268,6 +268,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         .form .video-area {border-width: 4px;}
         .form .video-area::after {bottom: 8px; right: 8px;}
         [class^="popup-"] .btn-box button {width: 112px; height: 47px;}
+        .form .submit input[type="image"] {margin-right: 20px;}
         /* #page_landing_c .form .table_box input {padding: 1.5rem 0 1.5rem 2rem;} */
     }
     
@@ -629,13 +630,15 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 
         // 버튼 페이지 이동 함수 (설문)
 	function pageSelFuc(num, obj) {
-        if($('input[name="tadd' + num + '"]').is(':checked')) {
-            $('.section0' + num).fadeOut(function() {
-                $('.section0' + (num + 1)).fadeIn();
-                $(document).scrollTop(0);
-            });
-        } else {
-            alert('설문을 체크해 주세요.');
+        if(!isAnimating){
+            if($('input[name="tadd' + num + '"]').is(':checked')) {
+                $('.section0' + num).fadeOut(function() {
+                    $('.section0' + (num + 1)).fadeIn();
+                    $(document).scrollTop(0);
+                });
+            } else {
+                alert('설문을 체크해 주세요.');
+            }
         }
 	}
 
@@ -645,7 +648,6 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     });
 
     function fnForm(formId){
-        console.log('click')
 		/* form 자동 처리 방지 */
 		event.preventDefault();
 		/* form id로 proc */
