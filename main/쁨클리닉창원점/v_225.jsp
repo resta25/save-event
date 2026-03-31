@@ -352,8 +352,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         
                     <section class="page" id="page-4">
                         <div class="inner">
-                            <div class="img-area poster_09"><img src="//static.savemkt.com/event/v_${eventSeq}/gage_02.png"></div>
-                            <div class="img-area poster_10" style="margin-top: 5%;"><img src="//static.savemkt.com/event/v_${eventSeq}/q_02.png"></div>
+                            <div class="img-area poster_09"><img src="//static.savemkt.com/event/v_${eventSeq}/q_02.png"></div>
+                            <div class="img-area poster_10" style="margin-top: 5%;"><img src="//static.savemkt.com/event/v_${eventSeq}/gage_02.png"></div>
                             <div class="form-box poster_11">
                                 <div class="formGroup">
                                     <div class="table_box top">
