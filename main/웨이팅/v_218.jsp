@@ -339,7 +339,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                                         <span class="legend">전화번호</span>
                                         <input type="tel" name="phone" id="phone" value="010" class="inp inp-phone" required autocomplete="off" maxlength="11" placeholder="전화번호"/>
                                     </div>
-                                    <div class="submit"><input type="image" onclick="fnForm('form-1')" value="" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_txt.png" /></div>
+                                    <div class="submit"><input type="image" onclick="fnForm('form-1')" value="" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_txt_01.png" /></div>
                                 </div>
                                 <div class="description">
                                     <p id="event-period">이벤트 기간 :  <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
@@ -366,29 +366,6 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                             <div class="modal-content">
                                 <span class="close" id="close">×</span>
                                 <p>
-                                    개인정보처리방침<br><br>
-                                    병원 제휴의 요청 개인정보 수집 및 이용 동의<br><br>
-
-                                    [개인정보 수집 및 이용 동의]<br><br>
-
-                                    - 수집 · 이용 주체 : 이벤트 신청<br>
-                                    - 수집 · 이용 목적 : 신청한 이벤트 안내, 추가적인 상담 및 방문 예약, 이벤트 신청자 관리<br>
-                                    - 수집 · 이용 항목 : 이름, 연락처, 성별, 출생연도, 설문내용<br>
-                                    - 보유 및 이용 기간 : 의료법 등 관련 병령에서 정한 보존 기간<br><br>
-
-                                    * 동의를 거부할 권리가 있으나, 거부 시 이벤트 참여가 제한됩니다.<br>
-                                    * 고객 동의 철회 시 지체없이 파기합니다.<br><br>
-
-
-                                    [개인정보 처리위탁 동의]<br><br>
-
-                                    - 수탁자 : 병원 제휴의 요청<br>
-                                    - 위탁 업무 내용<br>
-                                    └ 온라인, 모바일을 통한 고객 정보 수집 및 관리<br>
-                                    └ 고객정보 서버 운영 및 관리<br>
-                                    └ 서비스 신청 내역 관리를 위한 개인정보 전송<br>
-                                    └ 서비스 제공을 위해 필요한 개인정보 관련 업무 처리<br>
-                                    - 위탁 항목 : 이름, 연락처, 성별, 출생연도, 설문내용
                                 </p>
                             </div>
                         </div>
