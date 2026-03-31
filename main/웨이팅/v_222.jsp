@@ -274,7 +274,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 
     .sub_txt {font-size: 90%;}
 
-    .form .table_box .legend, .form .question_box .legend {font-size: 152%;}
+    .form .table_box .legend, .form .question_box .legend {font-size: 125%;}
 }
     
 </style>
