@@ -134,6 +134,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 #page-2.page .paging button img,
 #page-3.page .paging button img {width: 31% !important;}
 
+#page-3.page .paging {padding-top: 0;}
+
 #page-3 .poster_06 {margin: 2.506% 0 7.517%;}
 #page-3 .sm-txt {font-size: 60%; font-weight: 500;}
 
@@ -276,7 +278,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     .count_box {top: 36%; left: 55%;}
     .count_box, .count {font-size: 2.2rem;}
     .page .paging button {height: 70px;}
-    .form .submit {height: 72px;}
+    .form .submit {height: 72px; margin-top: 5%;}
     .agBox, .btn-agreement {font-size: 1rem;}
 
     [class^="popup-"] {width: 90vw; font-size: 2.5vw; border-radius: 20px; top: 57%;}
@@ -314,6 +316,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     .form .submit input[type="image"] {width: 71.46% !important;}
 
     .form .formContents .description * {font-size: 85%;}
+
+    .form .table_box + .table_box {margin-top: 4.5%;}
 
     .sub_txt {font-size: 90%;}
 
