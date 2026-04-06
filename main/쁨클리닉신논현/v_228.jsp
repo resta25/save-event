@@ -60,7 +60,7 @@ pageEncoding="UTF-8"%>
             <div class="wrap_form">
                 <form class="wrap_curd" id="form-1" method="POST" accept-charset="utf-8">
                     <ul class="layout_add01 question">
-                        <li>해당되는 피부 고민을 선택해주세요</li>
+                        <li>해당되는 고민 사항을 선택해주세요</li>
                     </ul>
                     <ul class="layout_add02">
                         <li>
