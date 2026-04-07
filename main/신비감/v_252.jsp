@@ -223,7 +223,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     [class^="popup-"] {width: 90vw; font-size: 2.5vw; border-radius: 20px; top: 57%;}
 
     .poster_01 .sub-txt {font-size: 70%;}
-    .count-box .count {font-size: 100%;}
+    .count-box .count {font-size: 100%; top: 20.5%;}
     .popup-count .count-box {top: 11%;}
     .popup-count button {top: 11%;}
     .form .gif-area::before {height: 35px;}
