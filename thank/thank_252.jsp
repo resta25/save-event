@@ -36,6 +36,8 @@
 
 @media screen and (max-width: 768px){
 	.btn-group {width: 35vw;}
+
+    .video-area::before {font-size: 80%;}
 }
 </style>
 <div class="thanks">
