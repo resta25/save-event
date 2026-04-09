@@ -123,7 +123,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     width: 71.46% !important; margin: 0 auto; animation: pulsating 0.8s linear infinite;
     -webkit-animation: pulsating 0.8s linear infinite;
 }
-.form .submit input[type="image"] {width: 70% !important; margin: 0; margin-left: auto; margin-right: 3%;}
+.form .submit input[type="image"] {width: 70% !important; margin: 0 auto;}
 
 
 /* 거주자 팝업 */
@@ -287,8 +287,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                                 <div class="img-area poster_06"><img src="//static.savemkt.com/event/v_${eventSeq}/gage_02.png"></div>
                                 <div class="question_box">
                                     <div class="q_select">
-                                        <label><input type="radio" onclick="setTimeout(show4pg, 100)" onclick="pageFuc(3,$(this))" name="tadd2" value="예">예</label>
-                                        <label><input type="radio" name="tadd2" value="아니오">아니오</label>
+                                        <label><input type="radio" onclick="setTimeout(show4pg, 100)" onclick="pageFuc(3,$(this))" name="tadd2" value="서울/경기">서울/경기</label>
+                                        <label><input type="radio" onclick="setTimeout(show4pg, 100)" onclick="pageFuc(3,$(this))" name="tadd2" value="그 외 지역">그 외 지역</label>
                                     </div>
                                 </div>
                                 <p class="paging">
@@ -311,7 +311,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                                         <input type="tel" name="phone" id="phone" value="" class="inp inp-phone" required autocomplete="off" maxlength="11" placeholder="전화번호"/>
                                     </div>
                                     <div class="agBox">
-                                        <label><input name="agBox" type="checkbox"><span>개인정보수집이용동의</span></label> <a href="#" class="btn-agreement">[자세히 보기]</a>
+                                        <a href="javascript:void(0);" class="btn-agreement">혜택 제공을 위한 <b>개인정보처리방침</b>에 동의해 주세요</a>
                                     </div>
                                     <div class="submit"><input type="image" onclick="fnForm('form-1')" value="" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_txt.png" /></div>
                                 </div>
@@ -406,20 +406,20 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         $('.popup-confirm').hide();
 	});
 
-    $('input[name="tadd2"]').on('change', function () {
-        if ($(this).val() === "아니오") {
-            $('.overlay, .popup-confirm').show();
-        }
-    });
+    // $('input[name="tadd2"]').on('change', function () {
+    //     if ($(this).val() === "아니오") {
+    //         $('.overlay, .popup-confirm').show();
+    //     }
+    // });
 
     // popup-confirm > 확인 버튼
-    $('.btn-confirm').on('click', function () {
-        $('.overlay, .popup-confirm').hide();
+    // $('.btn-confirm').on('click', function () {
+    //     $('.overlay, .popup-confirm').hide();
 
-        // ✅ 선택 초기화
-        $('input[name="tadd2"]').prop('checked', false);
-        $('.q_select label').removeClass('on');
-    });
+    //     // ✅ 선택 초기화
+    //     $('input[name="tadd2"]').prop('checked', false);
+    //     $('.q_select label').removeClass('on');
+    // });
 
 
     function resetPage1() {
@@ -638,7 +638,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 			,'add1': '설문1'
 			,'add2': '설문2'
 			// ,'add3': '설문3'
-			,'agBox': '개인정보'
+			// ,'agBox': '개인정보'
 		};
 		
 		validateForm(procForm, required);
