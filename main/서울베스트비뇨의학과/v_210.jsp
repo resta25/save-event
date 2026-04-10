@@ -65,15 +65,19 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 /* 시침, 초침 */
 .container {position: relative;}
 
-.page .paging{padding:15% 10% 3%; margin: 0 auto; display: flex; justify-content: space-between;}
+.page .paging {padding: 0 14.87% 3%;; margin: 0 auto; display: flex; justify-content: space-between;}
 .page .paging button{width:100%; box-sizing: border-box; background: none; padding: 0; cursor: pointer;}
 .page .paging button {position: relative; width: 100%; height: 148px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png') no-repeat center center / 100% 100%; margin: 0 auto; padding: 0% 0;}
-.page .paging button img {width: 63.37% !important; margin: 4% auto 0; animation: pulsating 0.8s linear infinite; -webkit-animation: pulsating 0.8s linear infinite;}
+.page .paging button img {width: 63.37% !important; margin: 3.5% auto 0; animation: pulsating 0.8s linear infinite; -webkit-animation: pulsating 0.8s linear infinite;}
 .page .paging button a {display:block;}
 
 #page-1 {position: relative;}
-#page-1 .paging{position: absolute; bottom: 11%; left: 50%; transform: translateX(-50%); padding: 0; width: 69.26%;}
-#page-2 .paging{padding: 0 14.87% 3%;}
+#page-1 .paging{position: absolute; bottom: 13%; left: 50%; transform: translateX(-50%); padding: 0; width: 69.26%;}
+
+#page-1 .poster_01 {padding: 5% 7% 6%; background: url('//static.savemkt.com/event/v_${eventSeq}/bg_01.jpg') no-repeat top center / 100% 100%;}
+#page-1 .poster_03 {padding: 13% 12% 35%; background: url('//static.savemkt.com/event/v_${eventSeq}/bg_02.jpg') no-repeat top center / 100% 100%;}
+
+#page-2 .paging {padding: 0 14.87% 3%;}
 #page-2 .poster_04 {margin: 2.506% 0 7.517%;}
 
 
@@ -118,7 +122,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 .sub_txt {text-align: center;}
 
 .form .submit {display: flex; align-items: center; justify-content: center; margin: 1em auto 0; padding: 0;}
-.form .submit {position: relative; width: 70.155%; height: 134px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb_01.png') no-repeat center center / 100% 100%; margin: 3% auto; padding: 0% 0;}
+.form .submit {position: relative; width: 90.155%; height: 134px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb_01.png') no-repeat center center / 100% 100%; margin: 3% auto; padding: 0% 0;}
 .form .submit input[type="image"] {
     width: 71.46% !important; margin: 0 auto; animation: pulsating 0.8s linear infinite;
     -webkit-animation: pulsating 0.8s linear infinite;
@@ -259,10 +263,13 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                         <!-- <div class="clock-work"></div> -->
                         <section class="page" id="page-1">
                             <div class="poster_01">
-                                <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.jpg"></div>
+                                <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.png"></div>
                             </div>
                             <div class="poster_02">
                                 <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg"></div>
+                            </div>
+                            <div class="poster_03">
+                                <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_03.png"></div>
                                 <p class="paging">
                                     <button type="button" onclick="show2pg()" class="first"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_txt_01.png"></button>
                                 </p>
@@ -448,7 +455,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     function show1pg(){
         const animation01 = gsap.timeline();
         animation01.from('#page-1 .poster_01', { y: +50, delay: 0.2, opacity: 0, ease: "power1.out"},0);
-        animation01.from('#page-1 .poster_02', { y: +50, delay: 0.6, opacity: 0, stagger: 0.1, ease: "power1.out"},0);
+        animation01.from('#page-1 .poster_02', { y: +50, delay: 0.4, opacity: 0, stagger: 0.1, ease: "power1.out"},0);
+        animation01.from('#page-1 .poster_03', { y: +50, delay: 0.6, opacity: 0, stagger: 0.1, ease: "power1.out"},0);
         animation01.from('#page-1 .agBox', { y: +50, delay: 0.8, opacity: 0, stagger: 0.1, ease: "power1.out"},0);
     }
     show1pg();
@@ -468,15 +476,16 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
         animation02.to('#page-1 .poster_01', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
-        animation02.to('#page-1 .poster_02', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
+        animation02.to('#page-1 .poster_02', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
+        animation02.to('#page-1 .poster_03', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
         animation02.to('#page-1 .paging', { x: -100, opacity: 0, delay: 0.6, duration: 0.2, ease: "power1.out"}, 0);
         animation02.to('#page-1', { display: 'none' });
         animation02.to('#page-2', { display: 'block', duration: 0.1 });
         animation02.from('#page-2 .poster_03', {x: +200, opacity: 0, duration: 0.2});
         animation02.from('#page-2 .poster_04', {x: +200, opacity: 0, duration: 0.2});
-        animation02.from('#page-2 .paging', {x: +200, opacity: 0, delay: 0.2, duration: 0.2});
         animation02.from('#page-2 .question_box .q_select > label', {x: +200, opacity: 0, duration: 0.2, stagger: 0.1});
-        animation02.from('#page-2 .next_btn_inQuestion', {x: +200, opacity: 0, duration: 0.3, stagger: 0.1});
+        // animation02.from('#page-2 .next_btn_inQuestion', {x: +200, opacity: 0, duration: 0.3, stagger: 0.1});
+        animation02.from('#page-2 .paging', {x: +200, opacity: 0, delay: 0.2, duration: 0.2});
     }
 
     // 세번째 페이지
@@ -491,16 +500,16 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         });
         animation03.to('#page-2 .poster_03', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
         animation03.to('#page-2 .poster_04', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
-        animation03.to('#page-2 .paging', { x: -100, opacity: 0, delay: 0.6, duration: 0.2, ease: "power1.out"}, 0);
-        animation03.to('#page-2 .question_box .q_select > label', {x: -100, opacity: 0});
-        animation03.to('#page-2 .next_btn_inQuestion', {x: -100, opacity: 0});
+        animation03.to('#page-2 .question_box .q_select > label', { x: -100, opacity: 0, delay: 0.6, duration: 0.2, ease: "power1.out"}, 0);
+        animation03.to('#page-2 .paging', {x: -100, opacity: 0});
+        // animation03.to('#page-2 .next_btn_inQuestion', {x: -100, opacity: 0});
         animation03.to('#page-2', { display: 'none' });
         animation03.to('#page-3', { display: 'block', duration: 0.1 });
         animation03.from('#page-3 .poster_05', {x: +200, opacity: 0, duration: 0.2});
         animation03.from('#page-3 .poster_06', {x: +200, opacity: 0, duration: 0.2});
-        animation03.from('#page-3 .paging', {x: +200, opacity: 0, duration: 0.2});
-        animation03.from('#page-3 .question_box .q_select > label', {x: +200, opacity: 0, duration: 0.2, stagger: 0.1});
-        animation03.from('#page-3 .next_btn_inQuestion', {x: +200, opacity: 0, duration: 0.2, stagger: 0.1});
+        animation03.from('#page-3 .question_box .q_select > label', {x: +200, opacity: 0, duration: 0.2});
+        animation03.from('#page-3 .paging', {x: +200, opacity: 0, duration: 0.2, stagger: 0.1});
+        // animation03.from('#page-3 .next_btn_inQuestion', {x: +200, opacity: 0, duration: 0.2, stagger: 0.1});
     }
     // 마지막 페이지
     function show4pg() {
@@ -521,9 +530,9 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         // animation03.to('#page-2', { display: 'none' });
         animation03.to('#page-3 .poster_05', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
         animation03.to('#page-3 .poster_06', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
-        animation03.to('#page-3 .paging', { x: -100, opacity: 0, delay: 0.6, duration: 0.2, ease: "power1.out"}, 0);
-        animation03.to('#page-3 .question_box .q_select > label', {x: -100, opacity: 0});
-        animation03.to('#page-3 .next_btn_inQuestion', {x: -100, opacity: 0});
+        animation03.to('#page-3 .question_box .q_select > label', { x: -100, opacity: 0, delay: 0.6, duration: 0.2, ease: "power1.out"}, 0);
+        animation03.to('#page-3 .paging', {x: -100, opacity: 0});
+        // animation03.to('#page-3 .next_btn_inQuestion', {x: -100, opacity: 0});
         animation03.to('#page-3', { display: 'none' });
         animation03.to('#page-4', { display: 'block', duration: 0.1 });
         animation03.from('#page-4 .poster_07', {x: +200, opacity: 0, duration: 0.2});
@@ -581,13 +590,15 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 
         // 버튼 페이지 이동 함수 (설문)
 	function pageSelFuc(num, obj) {
-        if($('input[name="tadd' + num + '"]').is(':checked')) {
-            $('.section0' + num).fadeOut(function() {
-                $('.section0' + (num + 1)).fadeIn();
-                $(document).scrollTop(0);
-            });
-        } else {
-            alert('설문을 체크해 주세요.');
+        if(!isAnimating){
+            if($('input[name="tadd' + num + '"]').is(':checked')) {
+                $('.section0' + num).fadeOut(function() {
+                    $('.section0' + (num + 1)).fadeIn();
+                    $(document).scrollTop(0);
+                });
+            } else {
+                alert('설문을 체크해 주세요.');
+            }
         }
 	}
 
