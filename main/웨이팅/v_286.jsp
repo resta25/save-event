@@ -276,6 +276,9 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     .sub_txt {font-size: 90%;}
 
     .form .table_box .legend, .form .question_box .legend {font-size: 125%;}
+
+    #page-1 .video-box {border-width: 4px;}
+    .form-box {margin-top: 4.54%;}
 }
     
 </style>
