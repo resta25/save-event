@@ -60,14 +60,13 @@ pageEncoding="UTF-8"%>
             <div class="wrap_form">
                 <form class="wrap_curd" id="form-1" method="POST" accept-charset="utf-8">
                     <ul class="layout_add01 question">
-                        <li>해당되는 피부 고민을 선택해주세요</li>
+                        <li>해당되는 고민 사항을 선택해주세요</li>
                     </ul>
                     <ul class="layout_add02">
                         <li>
-                            <label><input type="radio" name="tadd1" value="팔자주름" class="answer">팔자주름</label>
-                            <label><input type="radio" name="tadd1" value="심부볼" class="answer">심부볼</label>
-                            <label><input type="radio" name="tadd1" value="이중턱" class="answer">이중턱</label>
-                            <label><input type="radio" name="tadd1" value="피부 탄력" class="answer">피부 탄력</label>
+                            <label><input type="radio" name="tadd1" value="뱃살" class="answer">뱃살</label>
+                            <label><input type="radio" name="tadd1" value="허벅지살" class="answer">허벅지살</label>
+                            <label><input type="radio" name="tadd1" value="팔뚝살" class="answer">팔뚝살</label>
                             <label><input type="radio" name="tadd1" value="기타" class="answer">기타</label>
                         </li>
                     </ul> 
@@ -82,7 +81,7 @@ pageEncoding="UTF-8"%>
                                 <th class="branch_th">*지점 선택</th>
                                 <td class="branch_td">
                                     <div class="wrap_radio">
-                                        <label><input type="radio" name="branch" class="store-radio"> 창원 </label>
+                                        <label><input type="radio" name="branch" class="store-radio"> ${resVo.branch} </label>
                                     </div>
                                     <script>
                                         document.addEventListener('DOMContentLoaded', function() {

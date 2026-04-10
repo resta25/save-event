@@ -56,7 +56,7 @@ pageEncoding="UTF-8"%>
 
 <body id="page_landing_c" class="loaded">
     <main>
-        <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.png" alt="landing_top" class="landing_top">
+        <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.jpg" alt="landing_top" class="landing_top">
             <div class="wrap_form">
                 <form class="wrap_curd" id="form-1" method="POST" accept-charset="utf-8">
                     <ul class="layout_add01 question">
