@@ -64,10 +64,10 @@ pageEncoding="UTF-8"%>
                     </ul>
                     <ul class="layout_add02">
                         <li>
-                            <label><input type="radio" name="tadd1" value="팔자주름" class="answer">팔자주름</label>
-                            <label><input type="radio" name="tadd1" value="심부볼" class="answer">심부볼</label>
-                            <label><input type="radio" name="tadd1" value="이중턱" class="answer">이중턱</label>
-                            <label><input type="radio" name="tadd1" value="피부 탄력" class="answer">피부 탄력</label>
+                            <label><input type="radio" name="tadd1" value="기미" class="answer">기미</label>
+                            <label><input type="radio" name="tadd1" value="잡티" class="answer">잡티</label>
+                            <label><input type="radio" name="tadd1" value="색소침착" class="answer">색소침착</label>
+                            <label><input type="radio" name="tadd1" value="주근깨" class="answer">주근깨</label>
                             <label><input type="radio" name="tadd1" value="기타" class="answer">기타</label>
                         </li>
                     </ul> 
@@ -82,7 +82,7 @@ pageEncoding="UTF-8"%>
                                 <th class="branch_th">*지점 선택</th>
                                 <td class="branch_td">
                                     <div class="wrap_radio">
-                                        <label><input type="radio" name="branch" class="store-radio"> 창원 </label>
+                                        <label><input type="radio" name="branch" class="store-radio"> ${resVo.branch} </label>
                                     </div>
                                     <script>
                                         document.addEventListener('DOMContentLoaded', function() {

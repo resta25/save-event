@@ -78,7 +78,7 @@ pageEncoding="UTF-8"%>
                             <col width="70%">
                         </colgroup>
                         <tbody>
-                            <tr>
+                            <!-- <tr>
                                 <th class="branch_th">*지점 선택</th>
                                 <td class="branch_td">
                                     <div class="wrap_radio">
@@ -93,7 +93,7 @@ pageEncoding="UTF-8"%>
                                         });
                                     </script>
                                 </td>
-                            </tr>
+                            </tr> -->
                             <tr>
                                 <th>*이름</th>
                                 <td><input type="text" placeholder="이름을 입력해주세요." id="name" name="name"></td>
