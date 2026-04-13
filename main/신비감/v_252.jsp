@@ -52,7 +52,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 
 /* 비디오 영역 */
 .form .gif-area {position: relative; border: 8px solid #6ebfff; border-right: 0; border-left: 0;}
-.form .gif-area::after {position: absolute; bottom: 12px; right: 12px; content: '생성형 AI 이미지로 변환한 콘텐츠입니다.'; color: #858585; font-size: 10px;}
+/* .form .gif-area::after {position: absolute; bottom: 12px; right: 12px; content: '생성형 AI 이미지로 변환한 콘텐츠입니다.'; color: #858585; font-size: 10px;} */
 .form .gif-area::before {content: ''; width: 29.26%; height: 72px; position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%); background: url('//static.savemkt.com/event/v_${eventSeq}/gif_txt.png') no-repeat center center / 100% 100%;}
 .form .gif-area img {display: block; width: 100%; height: 100%;}
 /* .form #location {position: absolute; top: 0; left: 0; width: 100%; height: 100%; max-height: 813px; object-fit: cover;}  */
@@ -64,7 +64,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 .count {color: #f0ff00; font-size: 4rem; font-family: 'GmarketSans'; font-weight: 500;}
 
 /* count */
-.count-box {position: absolute; top: 7%; left: 50%; transform: translateX(-50%); width: 69.445%;}
+.count-box {position: absolute; top: 7%; left: 50%; transform: translateX(-50%); width: 74.445%;}
 .count-box .count {color: #f3d700; font-size: 2.7rem; font-family: 'GmarketSans'; font-weight: 500; position: absolute; top: 23.5%; left: 50.8%; width: 7%; text-align: center;}
 .popup-count {position: relative;}
 .popup-count .count-box {top: 9%; font-size: 90%;}
@@ -89,7 +89,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 
 .form-box {margin-top: 10%;}
 #wrap .formContents {position: static;}
-.form .formContents .description {width:90%;margin:0 auto;text-align:center;box-sizing:border-box; font-family: 'GmarketSans'; font-weight: 300;}
+.form .formContents .description {width:90%; margin: 5% auto 0; text-align:center;box-sizing:border-box; font-family: 'GmarketSans'; font-weight: 300;}
 .form .formContents .description * {font-family: 'GmarketSans'; font-weight: 300; color: #000; font-family: 'GmarketSans';}
 .form-box .form-box-top {padding:5% 5% 0;}
 .form-box .description {padding-bottom:2%;}
@@ -119,12 +119,12 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 /* .form .submit {width: 85%; margin: 0 auto; padding: 5% 0;}
 .form .submit input[type="image"] {width: 100%;} */
 
-.sub-txt {font-size: 20px; color: #fff; text-align: center;}
+.sub-txt {font-size: 20px; color: #000; text-align: center;}
 
 .form .submit {display: flex; align-items: center; justify-content: center; margin: 1em auto 0; padding: 0;}
 .form .submit {position: relative; width: 100%; height: 134px;margin: 3% auto; padding: 0% 0;}
 .form .submit input[type="image"] {
-    width: 71.46% !important; animation: pulsating 0.8s linear infinite;
+    width: 100% !important; animation: pulsating 0.8s linear infinite;
     -webkit-animation: pulsating 0.8s linear infinite;
 }
 
@@ -213,7 +213,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 @media screen and (max-width: 786px) {
     #page-1 .paging {padding-top: 3%; padding-bottom: 4%;}
     .form .table_box {border-radius: 9px;}
-    #page_landing_c .form .table_box input {padding: 1.4rem 0 1.5rem; font-size: 1.4rem;}
+    .form-box {margin-top: 7%;}
+    #page_landing_c .form .table_box input {padding: 1rem 0 1.1rem; font-size: 1.4rem;}
     .count_box {top: 36%; left: 56%;}
     .count_box, .count {font-size: 2.2rem;}
     .page .paging button {height: 66px;}
@@ -223,10 +224,10 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     [class^="popup-"] {width: 90vw; font-size: 2.5vw; border-radius: 20px; top: 57%;}
 
     .poster_01 .sub-txt {font-size: 70%;}
-    .count-box .count {font-size: 100%; top: 20.5%;}
+    .count-box .count {font-size: 100%; top: 21.5%;}
     .popup-count .count-box {top: 11%;}
     .popup-count button {top: 11%;}
-    .form .gif-area::before {height: 35px;}
+    .form .gif-area::before {height: 27px;}
 }
 @media screen and (max-width: 500px){
     .roulette {padding: 4% 9.5% 4.19%;}
@@ -269,7 +270,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                                 <video id="location" playsinline="" muted="" loop="" src="//static.savemkt.com/event/v_${eventSeq}/video.mp4" type="video/mp4"></video>
                                 <script>setTimeout(function(){ $('#location').trigger('play'); },500);</script>
                             </div> -->
-                            <p class="sub-txt">개인의 체질 및 건강 상태에 따라 효과에는 차이가 있을 수 있습니다</p>
+                            <!-- <p class="sub-txt">개인의 체질 및 건강 상태에 따라 효과에는 차이가 있을 수 있습니다</p> -->
                         </div>
         
                         <div class="agBox">
@@ -303,7 +304,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                                     <div class="table_box bottom">
                                         <input type="tel" name="phone" id="phone" value="" class="inp inp-phone" required autocomplete="off" maxlength="11" placeholder="전화번호"/>
                                     </div>
-                                    <p class="sub-txt">※ 동일 정보로 <strong>중복 신청 시, 전체 신청이 무효 처리</strong>될 수 있습니다.</p>
+                                    <!-- <p class="sub-txt">※ 동일 정보로 <strong>중복 신청 시, 전체 신청이 무효 처리</strong>될 수 있습니다.</p> -->
                                     <div class="submit"><input type="image" onclick="fnForm('form-1')" value="" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_01.png" /></div>
                                 </div>
                                 <div class="description">
@@ -349,7 +350,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                         <div class="img-area poster_10" style="margin-top: 5%;"><img src="//static.savemkt.com/event/v_${eventSeq}/q_02.png"></div>
                     </section> -->
 
-                    <div class="overlay"></div>
+                    <!-- <div class="overlay"></div>
                     <div class="popup-count">
                         <button type="button"></button>
                         <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/popup.jpg"></div>
@@ -358,7 +359,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                             <span class="timer"></span>
                             <span>*소진 시 혜택 전으로 돌아갑니다.*</span>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- 개인정보처리방침 전문 -->
                     <div id="modal2" class="modal modal2" style="display: none;">
@@ -402,8 +403,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 		initDate();
         saleupAgreement();
 
-        $('.overlay').hide();
-        $('.popup-count').hide();
+        // $('.overlay').hide();
+        // $('.popup-count').hide();
 
         history.scrollRestoration = 'manual';
 	});
@@ -436,10 +437,10 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     //     $(document).scrollTop(0);
     // });
 
-    $('.popup-count button').on('click', function(){
-        $('.overlay').hide();
-        $('.popup-count').hide();
-    });
+    // $('.popup-count button').on('click', function(){
+    //     $('.overlay').hide();
+    //     $('.popup-count').hide();
+    // });
 
     function resetPage1() {
         // page-1 자체
@@ -491,38 +492,38 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         if (isAnimating) return; // 이미 애니메이션 중이면 실행 안 함
         isAnimating = true; // 애니메이션 시작 상태로 변경
 
-        setTimeout(() => {
-            $('.overlay').show();
-            $('.popup-count').show();
+        // setTimeout(() => {
+        //     $('.overlay').show();
+        //     $('.popup-count').show();
 
-            let totalSeconds = 7 * 60;
+        //     let totalSeconds = 7 * 60;
 
-            function updateCountdown() {
-                let hours = Math.floor(totalSeconds / 3600);
-                let minutes = Math.floor((totalSeconds % 3600) / 60);
-                let seconds = totalSeconds % 60;
+        //     function updateCountdown() {
+        //         let hours = Math.floor(totalSeconds / 3600);
+        //         let minutes = Math.floor((totalSeconds % 3600) / 60);
+        //         let seconds = totalSeconds % 60;
 
-                // 두 자리 포맷
-                // hours = String(hours).padStart(2, '0');
-                minutes = String(minutes).padStart(2, '0');
-                seconds = String(seconds).padStart(2, '0');
+        //         // 두 자리 포맷
+        //         // hours = String(hours).padStart(2, '0');
+        //         minutes = String(minutes).padStart(2, '0');
+        //         seconds = String(seconds).padStart(2, '0');
 
-                $('.timer').text('00시간 ' + minutes + '분 ' + seconds + '초');
+        //         $('.timer').text('00시간 ' + minutes + '분 ' + seconds + '초');
 
-                if (totalSeconds <= 0) {
-                    clearInterval(timer);
-                    return;
-                }
+        //         if (totalSeconds <= 0) {
+        //             clearInterval(timer);
+        //             return;
+        //         }
 
-                totalSeconds--;
-            }
+        //         totalSeconds--;
+        //     }
 
-            // 최초 1번 실행
-            updateCountdown();
+        //     // 최초 1번 실행
+        //     updateCountdown();
 
-            // 1초마다 실행
-            const timer = setInterval(updateCountdown, 1000);
-        }, 1000);
+        //     // 1초마다 실행
+        //     const timer = setInterval(updateCountdown, 1000);
+        // }, 1000);
 
         let remainingCount = 10; // 초기 인원수
         const $countElement = $('.count'); // 숫자를 표시하는 요소
