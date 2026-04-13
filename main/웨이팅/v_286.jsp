@@ -154,6 +154,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 .form .submit input[type="image"] {
     width: 71.46% !important; margin: 0 auto; animation: pulsating 0.8s linear infinite;
     -webkit-animation: pulsating 0.8s linear infinite;
+    margin-left: 21%;
 }
 .form .submit input[type="image"] {}
 
