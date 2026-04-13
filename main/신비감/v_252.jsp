@@ -122,7 +122,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 .sub-txt {font-size: 20px; color: #000; text-align: center;}
 
 .form .submit {display: flex; align-items: center; justify-content: center; margin: 1em auto 0; padding: 0;}
-.form .submit {position: relative; width: 100%; height: 134px;margin: 3% auto; padding: 0% 0;}
+.form .submit {position: relative; width: 100%; height: 134px; margin: 6% auto 0; padding: 0% 0;}
 .form .submit input[type="image"] {
     width: 100% !important; animation: pulsating 0.8s linear infinite;
     -webkit-animation: pulsating 0.8s linear infinite;
