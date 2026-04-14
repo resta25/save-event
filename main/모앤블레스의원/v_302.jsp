@@ -69,9 +69,9 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {
 input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border: none;}
 
 /* 룰렛 영역 */
-.roulette {padding: 4.92% 5% 8.8%;}
+.roulette {padding: 4.92% 5% 6.667%;}
 .roulette image {width: 100%;}
-.count_box {width: 70%; text-align: center; font-size: 2.8rem; color: #fff; position: absolute; top: 26.5%; left: 56.5%; transform: translateX(-50%);}
+.count_box {width: 70%; text-align: center; font-size: 2.8rem; color: #fff; position: absolute; top: 29%; left: 56.5%; transform: translateX(-50%);}
 .count {color: #f0ff00; font-size: 4.5rem; font-family: 'Pretendard';; font-weight: 500;}
 
 /* 시침, 초침 */
@@ -90,7 +90,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     -webkit-animation: pulsating 0.8s linear infinite;}
     .page .paging button a {display:block;}
     
-    #page-1 .paging{padding-top:5%;}
+    #page-1 .paging {padding-top: 3.334%;}
     
     .form-box {margin-top: 10%;}
     #wrap .formContents {position: static;}
@@ -127,7 +127,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     .form .table_box.bottom option {font-size: 2.8rem;}
     
     /* 개인정보 처리방침 */
-    .agBox {padding-bottom: 5%; font-family: 'Pretendard';; font-weight: 500; font-size: 1.4rem; line-height: 1; text-align: center;}
+    .agBox {padding: 5.649% 0 0; font-family: 'Pretendard';; font-weight: 500; font-size: 1.4rem; line-height: 1; text-align: center;}
     .btn-agreement {flex-shrink: 0; text-align: center; font-size: 1.4rem; color: #000; font-family: 'Pretendard';}
     .btn-agreement b {font-weight: 700; font-size: 100%; font-family: 'Pretendard';}
     /* submit btn */
@@ -135,9 +135,9 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     .form .submit input[type="image"] {width: 100%;} */
     
     .form .submit {display: flex; align-items: center; justify-content: center; margin: 1em auto 0; padding: 0;}
-    .form .submit {position: relative; width: 70.155%; height: 134px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png') no-repeat center center / 100% 100%; margin: 3% auto; padding: 0% 0;}
+    .form .submit {position: relative; width: 83.878%; height: 147px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png') no-repeat center center / 100% 100%; margin: 3% auto; padding: 0% 0;}
     .form .submit input[type="image"] {
-        width: 71.46% !important; margin: 0 auto; margin-left: auto; margin-right: 9%; animation: pulsating 0.8s linear infinite;
+        width: 62.078% !important; margin: 0 auto; margin-right: 14%; animation: pulsating 0.8s linear infinite;
         -webkit-animation: pulsating 0.8s linear infinite;
     }
 
@@ -227,19 +227,19 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         #page_landing_c .form .table_box input, #page_landing_c .form select.table_box {padding: 1.5rem 0 1rem 2rem; font-size: 1.4rem; border-radius: 9px;}
         #page_landing_c .form select.table_box option {font-size: 1.4rem;}
         #page_landing_c .form select.table_box  {padding: 1.45rem 0 1.45rem 2rem;}
-        .count_box {top: 28%; left: 55.7%;}
+        .count_box {top: 29%; left: 55.7%;}
         .count_box, .count {font-size: 2.2rem;}
         .page .paging button {height: 66px;}
-        .form .submit {height: 53px;}
+        .form .submit {height: 66px; margin-bottom: 5%;}
         .agBox, .btn-agreement {font-size: 1rem;}
 
         [class^="popup-"] {width: 90vw; font-size: 2.5vw; border-radius: 20px; top: 57%;}
     }
     @media screen and (max-width: 500px){
         .roulette {padding: 4% 9.5% 4.19%;}
-        .poster_01 > .img-area {width: 67.03%; margin: 0 auto 4.15%;}
+        /* .poster_01 > .img-area {width: 67.03%; margin: 0 auto 4.15%;} */
         .poster_01 > .full-area {width: 100%; margin: 0 0 2.15%;}
-        .count_box, .count {font-size: 1.35rem;}
+        .count_box, .count {font-size: 1.4rem;}
         .form .description p,
         .form .description .ad_txt,
         .form .description span {font-size: 80%;}
@@ -282,14 +282,14 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                                 <div class="img-area full-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg"></div>
                             </div>
             
-                            <p class="paging poster_02">
-                                <button type="button" onclick="show2pg()" class="first"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_txt.png"></button>
-                            </p>
                             <div class="agBox">
                                 혜택 제공을 위한
                                 <a href="javascript:void(0);" class="btn-agreement"><b>개인정보처리방침</b></a>
                                 에 동의해 주세요
                             </div>
+                            <p class="paging poster_02">
+                                <button type="button" onclick="show2pg()" class="first"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_txt.png"></button>
+                            </p>
                         </section>
         
                     <section class="page" id="page-2">
