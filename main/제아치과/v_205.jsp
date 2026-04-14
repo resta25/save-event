@@ -156,6 +156,9 @@ pageEncoding="UTF-8"%>
     #page_landing_c .wrap_form .question_box .q_select:nth-of-type(4) label.on, label.add2{background-color: #000;}
     #page_landing_c .wrap_form .question_box .q_select label {flex-shrink: 0; background-color: #fff; }
     #page_landing_c .wrap_form .question_box .q_select label.on, label.add3{background-color: #fff83d; color:#00385c;}
+    #page_landing_c .wrap_form .question .select-box {background-color: #fff;  border-radius: 10px; border: solid 1px #bebebe; min-height: 34px; padding: 1.5% 3%; box-sizing: border-box;}
+    #page_landing_c .wrap_form .question select {width: 100%; border: none; outline: none; appearance: none; background: url('//static.savemkt.com/event/v_${eventSeq}/icon_select_down.png') no-repeat center right / 40px 30px; font-size: 120%; padding: 0;}
+    #page_landing_c .wrap_form .question option {font-size: 120%; padding: 0;}
 
     /* user db입력칸 (이름) */
     #page_landing_c .wrap_form .user_info {width: 90%; margin: 0 auto;}
@@ -190,7 +193,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .wrap_form ul.table_box li.on .td{border-radius:0 25px 25px 0; border-left:none;}
     .question_container {padding: 6.945% 2.398%; margin-top: 66.5%; background: #fff; border: 13px solid #3ea3d1; border-radius: 40px;}
     .question_container .img-area {width: 81.315%; margin: 0 auto 3%;}
-    .question_container .sub-txt {width: 100%; margin: 0 auto 3%; text-align: center; font-weight: 300; font-size: 16px;}
+    .question_container .sub-txt {width: 100%; margin: 0 auto 3%; text-align: center; font-weight: 300; font-size: 135% !important;}
 
     #page_landing_c .wrap_curd .warn-txt {
         padding: 2% 3% 0%;
@@ -237,6 +240,11 @@ pageEncoding="UTF-8"%>
         visibility: visible;
         padding: 30px 5%;
     }
+    .popup-first,
+    .popup-first-out  {
+        width: 695px; 
+        padding: 30px 1%;
+    }
     [class^="popup-"] p,
     [class^="popup-"] span {
         text-align: center;
@@ -244,10 +252,32 @@ pageEncoding="UTF-8"%>
         font-weight: 700;
         font-family: 'Elice DX Neolli';
     }
+    .popup-first-out p {
+        font-family: 'Paperlogy';
+        letter-spacing: -0.05em;
+        line-height: 1.27;
+    }
     [class^="popup-"] strong {
         color: #ff0000;
         font-weight: 700;
         font-family: 'Elice DX Neolli';
+    }
+    .popup-first strong {
+        font-family: 'Paperlogy';
+        font-weight: 600;
+        line-height: 1.27;
+        display: block;
+        margin-top: 3%;
+        font-size: 90%;
+    }
+    .popup-first-out strong {
+        font-family: 'Paperlogy';
+        font-weight: 600;
+        line-height: 1.27;
+        display: block;
+        margin-top: 3%;
+        font-size: 90%;
+        color: #000;
     }
     [class^="popup-"] .btn-box {
         display: flex;
@@ -265,6 +295,10 @@ pageEncoding="UTF-8"%>
         font-weight: 700;
         border-radius: 0.5rem;
         font-family: 'Elice DX Neolli';
+    }
+    .popup-confirm .btn-box .btn-out,
+    .popup-first-out .btn-box .btn-out {
+        background-color: #022848;
     }
     .popup-valid .btn-box button {
         width: 65%;
@@ -335,6 +369,12 @@ pageEncoding="UTF-8"%>
     #page_landing_c .wrap_form .description .ad_txt {font-size: 12px;}
 
     #page_landing_c .wrap_curd .sub-txt {font-size: 9px;}
+
+    .popup-first strong,
+    .popup-first-out strong {font-size: 70%;}
+
+    #page_landing_c .wrap_form .question select {background-size: 20px 10px;}
+    #page_landing_c .wrap_form .question select, #page_landing_c .wrap_form .question option {font-size: 80%; height: 100%;}
 
     /* #page_landing_c .wrap_curd .btn-agreement {font-size: 12px;} */
 
@@ -409,6 +449,25 @@ pageEncoding="UTF-8"%>
                                 <div class="user_phone">
                                     <span class="legend">연락처</span>
                                     <input type="tel" name="phone" id="phone" class="inp" value="010-" required maxlength="11">
+                                </div>
+
+                                <div class="question">
+                                    <span class="legend">상담가능시간</span>
+                                    <div class="q_select select-box">
+                                        <select name="tadd4" class="table_box bottom" id="add4" required>
+                                            <option value="">희망 상담시간</option>
+                                            <option value="09시~10시">09시~10시</option>
+                                            <option value="10시~11시">10시~11시</option>
+                                            <option value="11시~12시">11시~12시</option>
+                                            <option value="12시~13시">12시~13시</option>
+                                            <option value="13시~14시">13시~14시</option>
+                                            <option value="14시~15시">14시~15시</option>
+                                            <option value="15~16시">15시~16시</option>
+                                            <option value="16~17시">16시~17시</option>
+                                            <option value="17~18시">17시~18시</option>
+                                            <option value="그 외 또는 주말">그 외 또는 주말</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div class="agBox">
@@ -502,6 +561,26 @@ pageEncoding="UTF-8"%>
                 <button type="button" class="btn-out">해당없음<br />(나가기)</button>
             </div>
         </div>
+        <div class="popup-first">
+            <p>
+                신청하시는 본인이 맞으신가요? <br />
+                <strong>※ 타인의 정보를 무단 도용 시 관련 법령에 <br />따라 제재를 받을 수 있습니다.</strong>
+            </p>
+            <div class="btn-box">
+                <button type="button" class="btn-confirm" onclick="closeAllPopup()">예</button>
+                <button type="button" class="btn-out" onclick="showPopup('.popup-first-out')">아니요</button>
+            </div>
+        </div>
+        <div class="popup-first-out">
+            <p>
+                본 이벤트는 본인만 신청 가능합니다. <br />
+                <strong>타인의 명의 도용 시 법적 제재를 받을 수 있습니다.</strong>
+            </p>
+            <div class="btn-box">
+                <button type="button" class="btn-confirm">확인</button>
+                <button type="button" class="btn-out">해당없음<br />(나가기)</button>
+            </div>
+        </div>
         
         <div id="modal2" class="modal modal2" style="display: none;">
             <div class="modal-content">
@@ -563,44 +642,25 @@ pageEncoding="UTF-8"%>
         })
     },2000);
 
-    // 신청 인원 카운트다운 기능
-    let remainingCount = 15; // 초기 인원수
-    const $countElement = $('.remaining-count'); // 숫자를 표시하는 요소
-
-    // 카운트다운 시작
-    const countdownInterval = setInterval(() => {
-        if (remainingCount > 3) {
-            remainingCount--; // 1명 차감
-            $countElement.text(remainingCount + '명'); // 새로운 값 표시
-        } else {
-            clearInterval(countdownInterval); // 0명이 되면 카운트다운 중지
-            $countElement.text(3 + '명'); // 0으로 표시
-        }
-    }, 2000); // 2000ms = 2초 간격
-
     // count
     $(document).ready(function() {
-        let count = 15; // 초기 인원 수
-        const intervalTime = 2000; // 2초마다 업데이트
+        let count = 15;
+        const intervalTime = 2000;
 
-        // 인원 수 업데이트 함수
-        function updateCount() {
-            let countText = count + '명'
-            $('.count').text(countText); // 인원 수를 화면에 표시
+        $('.count').text(count + '명');
 
-            count--; // 인원 수 감소
-            if (count < 3) {
-                count = 15; // 0이 되면 다시 45로 초기화
+        const interval = setInterval(() => {
+            count--;
+
+            $('.count').text(count + '명');
+
+            if (count <= 3) {
+                clearInterval(interval);
             }
-        }
 
-        // 3초마다 updateCount 함수 실행
-        setInterval(updateCount, intervalTime);
-
-        // 페이지 로드 시 초기 인원 표시
-        updateCount();
+        }, intervalTime);
     });
-	
+        
 	var modal2 = document.getElementById("modal2");
 	var agree = document.querySelector(".agBox .btn-agreement");
 	var close2 = document.getElementById("close");
@@ -637,9 +697,34 @@ pageEncoding="UTF-8"%>
 		$(this.parentNode).addClass('on');	
 	});
 
-    $('.overlay').hide();
+    // $('.overlay').hide();
     $('.popup-valid').hide();
     $('.popup-confirm').hide();
+    $('.popup-first-out').hide();
+
+    function showPopup(popup){
+        $('[class^="popup-"]').hide();
+        $(popup).show();
+        $('.overlay').show();
+    }
+
+    function closeAllPopup(){
+        $('[class^="popup-"]').hide();
+        $('.overlay').hide();
+    }
+
+    $('.popup-first .btn-confirm').on('click', function(){
+        closeAllPopup();
+    });
+
+    // 아니요
+    $('.popup-first .btn-out').on('click', function(){
+        showPopup('.popup-first-out'); // overlay 유지됨
+    });
+
+    $('.popup-first-out .btn-confirm, .popup-first-out .btn-out').on('click', function(){
+        closeAllPopup();
+    });
 
     let isConfirm = false;
 
@@ -677,13 +762,12 @@ pageEncoding="UTF-8"%>
     });
 
     // popup-confirm > 확인 버튼
-    $('.btn-confirm').on('click', function(){
+    $('.popup-confirm .btn-confirm').on('click', function(){
         $('.overlay, .popup-confirm').hide();
-        // fnForm('form-1'); // ✅ 실제 제출 실행
     });
 
     // popup-confirm > 취소 버튼
-    $('.btn-out').on('click', function(){
+    $('.popup-confirm .btn-out').on('click', function(){
         $('.overlay, .popup-confirm').hide();
     });
 
@@ -762,6 +846,16 @@ pageEncoding="UTF-8"%>
 		} else {
 			procForm.querySelector("input[name='add3']").value = selectedRadio3.value;
 		}
+
+        if($('input[name="name"]').val() != "" && $('input[name="phone"]').val().length == 11){
+            let selectedRadio4 = procForm.querySelector(`select[name="tadd4"]`).value;
+            if (!selectedRadio4) {
+                alert("희망 상담시간 항목을 입력해주세요.");
+                return;
+            } else {
+                procForm.querySelector("input[name='add4']").value = selectedRadio4.value;
+            }
+        }
 
 		/*
 		let selectedRadio2 = procForm.querySelector(`input[name="tadd2"]:checked`).value;
