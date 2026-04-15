@@ -107,7 +107,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     .form .table_box.bottom input {}
     
     /* 개인정보 처리방침 */
-    .agBox {display: flex; align-items: center; justify-content: center; padding-bottom: 5%; font-family: 'GmarketSans'; font-weight: 500; font-size: 1.4rem; line-height: 1;}
+    .agBox {display: flex; align-items: center; justify-content: center; padding-top: 5%; font-family: 'GmarketSans'; font-weight: 500; font-size: 1.4rem; line-height: 1;}
     .btn-agreement {flex-shrink: 0; text-align: center; font-size: 1.4rem;  display: block; color: #000; font-family: 'GmarketSans';}
     .btn-agreement b {font-weight: 700; font-size: 100%; font-family: 'GmarketSans';}
     /* submit btn */
@@ -115,7 +115,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     .form .submit input[type="image"] {width: 100%;} */
     
     .form .submit {display: flex; align-items: center; justify-content: center; margin: 1em auto 0; padding: 0;}
-    .form .submit {position: relative; width: 70.155%; height: 134px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png') no-repeat center center / 100% 100%; margin: 3% auto; padding: 0% 0;}
+    .form .submit {position: relative; width: 90.155%; height: 154px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png') no-repeat center center / 100% 100%; margin: 3% auto; padding: 0% 0;}
     .form .submit input[type="image"] {
         width: 71.46% !important; margin: 0 auto; margin-left: auto; margin-right: 9%; animation: pulsating 0.8s linear infinite;
         -webkit-animation: pulsating 0.8s linear infinite;
@@ -201,14 +201,14 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     }
     @media screen and (max-width: 786px) {
         #page-1 .paging {padding-top: 2.5%;}
-        .agBox {padding-bottom: 2.5%;}
+        .agBox {padding-top: 2.5%;}
         .form .table_box {border-radius: 9px;}
         #page_landing_c .form .table_box input {padding: 1.5rem 0 1rem 2rem;
         font-size: 1.4rem;}
         .count_box {top: 36%; left: 56%;}
         .count_box, .count {font-size: 2.2rem;}
         .page .paging button {height: 66px;}
-        .form .submit {height: 53px;}
+        .form .submit {height: 73px;}
         .agBox, .btn-agreement {font-size: 1rem;}
 
         [class^="popup-"] {width: 90vw; font-size: 2.5vw; border-radius: 20px; top: 57%;}
@@ -216,7 +216,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     @media screen and (max-width: 500px){
         .sub-txt {font-size: 85%;}
         .roulette {padding: 4% 9.5% 4.19%;}
-        .poster_01 > .img-area {width: 67.03%; margin: 0 auto 4.15%;}
+        .poster_01 > .img-area {width: 87.03%; margin: 0 auto 4.15%;}
         .count_box, .count {font-size: 1.25rem;}
         .form .description p,
         .form .description .ad_txt,
@@ -225,7 +225,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         #page_landing_c input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {padding: unset;}
         .form-box .description {padding-bottom: 4%;}
         .form .video-area {border-width: 4px;}
-        .form .video-area::after {bottom: 8px; right: 8px;}
+        .form .video-area::after {bottom: 8px; right: 8px; font-size: 7px;}
         [class^="popup-"] .btn-box button {width: 115px; height: 50px;}
         /* #page_landing_c .form .table_box input {padding: 1.5rem 0 1.5rem 2rem;} */
     }
@@ -265,14 +265,14 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                             </div>
                         </div>
         
-                        <p class="paging poster_02">
-                            <button type="button" onclick="show2pg()" class="first"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_txt.png"></button>
-                        </p>
                         <div class="agBox">
                             혜택 제공을 위한&nbsp;
                             <a href="javascript:void(0);" class="btn-agreement"><b>개인정보처리방침</b></a>
                             에 동의해 주세요
                         </div>
+                        <p class="paging poster_02">
+                            <button type="button" onclick="show2pg()" class="first"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_txt.png"></button>
+                        </p>
                     </section>
         
                     <section class="page" id="page-2">
