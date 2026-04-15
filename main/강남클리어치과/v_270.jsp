@@ -15,6 +15,12 @@ pageEncoding="UTF-8"%>
     font-style: normal;
 }
 @font-face {
+    font-family: 'GmarketSans';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
 	font-family: 'Elice DX Neolli';
 	font-weight: 300;
 	font-style: normal;
@@ -70,8 +76,9 @@ pageEncoding="UTF-8"%>
 	.content + .content {border-top: 1px solid #ddd;}
 	.content * {padding: 8px 10px;}
 
-    .count_box {width: 15%; text-align: center; font-size: 2.8rem; color: #fff; position: absolute; top: 31.5%; left: 58.5%; transform: translateX(-50%);}
-    .count {color: #ffde00; font-size: 360% !important; font-family: 'GmarketSans'; font-weight: 700; line-height: 1;}
+    .count_box {display: flex; align-items: center; min-width: 13%; font-size: 2.8rem; color: #fff; position: absolute; top: 31.5%; left: 58.7%; transform: translateX(-50%);}
+    .count {flex-shrink: 0; width: 50%; color: #ffde00; font-size: 360% !important; font-family: 'GmarketSans'; font-weight: 500; line-height: 1; text-align: right;}
+    .count-txt {flex-shrink: 0; color: #ffde00; font-size: 360% !important; font-family: 'GmarketSans'; font-weight: 500; line-height: 1;}
 
     /* 실시간 신청 현황 */
     .subscribe_container {width: 100%; background: #fff; padding: 0 4.5rem 4.5rem;}
@@ -106,11 +113,11 @@ pageEncoding="UTF-8"%>
     #page_landing_c .wrap_form .description .ad_txt {font-family: 'Paperlogy';}
 
     #page_landing_c .description.footer {width: 100%; padding: 1.115% 0; background-color: #8e8e8e; text-align: center;}
-    #page_landing_c .description.footer #target, #page_landing_c .description.footer p {margin: 0.5% 0;}
+    /* #page_landing_c .description.footer #target, #page_landing_c .description.footer p {margin: 0.5% 0;} */
     #page_landing_c .description.footer p {line-height: 1.21;}
 
     #page_landing_c .wrap_form .agBox {position: relative; display: flex; align-items: center; justify-content: center; font-family: 'Paperlogy';}
-    #page_landing_c .wrap_form .agBox .btn-agreement {font-weight: 700; font-family: 'Paperlogy';}
+    #page_landing_c .wrap_form .agBox .btn-agreement {font-weight: 700; font-family: 'Paperlogy'; font-size: 130%;}
     #page_landing_c .wrap_form .question_box > div:not(.formContents):not(.txt-area),
     #page_landing_c .wrap_form .question_box > label {width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1%; border-radius: 25px; background-color: #dadada; padding: 2.926% 3.901%; box-sizing: border-box; margin-bottom: 2%;}
     #page_landing_c .wrap_form .question_box > label input {background: url("//static.savemkt.com/event/v_${eventSeq}/check.png") no-repeat right 1.5rem center; background-color: #fff;}
@@ -176,7 +183,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .wrap_form input[type="checkbox"] + span:before{border-color:#fff;}
     #page_landing_c .wrap_form .submit input[type="image"]{animation: pulsating 0.8s linear infinite; -webkit-animation: pulsating 0.8s linear infinite;}
 
-    #page_landing_c .wrap_form .agBox {width: auto; font-size: 100%; text-align: center;}
+    #page_landing_c .wrap_form .agBox {width: auto; font-size: 100%; text-align: center; margin: 5% auto 0; font-size: 150% !important;}
     #page_landing_c .wrap_form .agBox .ag_btn {left: 55%; flex-grow: 1;}
     #page_landing_c .wrap_form .agBox label{background-color: #127ee3;}
     #page_landing_c .wrap_form .agBox .disagree{background-color: #fff; font-weight: 400; color: #0a151e;}
@@ -189,9 +196,9 @@ pageEncoding="UTF-8"%>
     #page_landing_c .wrap_form ul.table_box li:nth-child(3) .th{margin-right:1%;}
     #page_landing_c .wrap_form ul.table_box li.on .th{border-radius: 25px 0 0 25px; border-right:none;}
     #page_landing_c .wrap_form ul.table_box li.on .td{border-radius:0 25px 25px 0; border-left:none;}
-    .question_container {padding: 6.945% 2.398%; margin-top: 66.5%; background: #fff; border: 13px solid #3ea3d1; border-radius: 40px;}
+    .question_container {padding: 6.945% 2.398% 4.945%; margin-top: 68.5%; background: #fff; border: 13px solid #3ea3d1; border-radius: 40px;}
     .question_container .img-area {width: 81.315%; margin: 0 auto 3%;}
-    .question_container .sub-txt {width: 100%; margin: 0 auto 3%; text-align: center; font-weight: 300; font-size: 16px;}
+    .question_container .sub-txt {width: 100%; margin: 0 auto 3%; text-align: center; font-weight: 300; font-size: 157% !important;}
 
     #page_landing_c .wrap_curd .warn-txt {
         padding: 2% 3% 0%;
@@ -293,7 +300,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .wrap_form .question_box .q_select label, label.selected_label, #page_landing_c .wrap_form .agBox .disagree {
         font-size: 117%;
     }
-    .subscribe {padding: 3% 2%; height: 150px;}
+    .subscribe {padding: 3% 2%; height: 318px;}
     .subscribe .content {padding: 0.5rem 0.7rem;}
     .subscribe .content > div {margin-right: 0; font-size: 0.8rem;}
     .subscribe_container {padding: 0 1.5rem 1rem 1.5rem;}
@@ -302,12 +309,13 @@ pageEncoding="UTF-8"%>
     .subscribe_bg {padding: 3.75% 3.5%;}
     .content * {padding: 8px 0px;}
     .content .text {padding: 4px 0;}
-    .subscribe_container .title {padding: 2rem 0 0; font-size: 1.8rem; margin-bottom: 0.6875rem;}
+    .subscribe_container .title {padding: 1rem 0 0; font-size: 1.8rem; margin-bottom: 0.6875rem;}
 
     [class^="popup-"] {width: 90vw; font-size: 2.5vw; border-radius: 20px; top: 57%;}
     .popup-valid .btn-box button {width: 50vw; height: 40px}
 
     .count {font-size: 150% !important;}
+    .count-txt {font-size: 150% !important;}
 
     #page_landing_c .wrap_curd .sub-txt {font-size: 12px;}
 }
@@ -332,10 +340,16 @@ pageEncoding="UTF-8"%>
 
     #page_landing_c .wrap_curd .warn-txt {font-size: 100%;}
 
-    #page_landing_c .description.footer p, #page_landing_c .description.footer #target {font-size: 80%;}
+    #page_landing_c .description.footer p, #page_landing_c .description.footer #target {font-size: 75%;}
     #page_landing_c .wrap_form .description .ad_txt {font-size: 12px;}
 
     #page_landing_c .wrap_curd .sub-txt {font-size: 9px;}
+
+    .question_container {border-width: 8px;}
+    .question_container .sub-txt {font-size: 72% !important;}
+    #page_landing_c .wrap_form .agBox {font-size: 100% !important;}
+    #page_landing_c .wrap_form .agBox .btn-agreement {font-size: 110%;}
+
 
     /* #page_landing_c .wrap_curd .btn-agreement {font-size: 12px;} */
 
@@ -368,7 +382,7 @@ pageEncoding="UTF-8"%>
                         <div class="img-area top-img">
                             <div class="img-area roulette">
                                 <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.png">
-                                <div class="count_box"><div class="count"></div></div>
+                                <div class="count_box"><div class="count"></div><span class="count-txt">명</span></div>
                             </div>
                         </div>
                         <div class="question_container">
@@ -411,19 +425,6 @@ pageEncoding="UTF-8"%>
                                     <input type="tel" name="phone" id="phone" class="inp" value="010-" required maxlength="11">
                                 </div>
                             </div>
-                            <div class="agBox">
-                                <!-- <span class="legend">개인정보 수집 · 이용</span> -->
-                                    혜택 제공을 위한&nbsp;
-                                    <a href="#">
-                                        <span class="btn-agreement">개인정보 처리방침</span>
-                                        <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_09.png"></div> -->
-                                    </a>
-                                    에 동의해주세요
-                                    <!-- <div class="q_select ag_btn">
-                                        <label><input name="agBox" type="checkbox">동의</label>
-                                        <a href="javascript:void(0);" class="disagree">미동의</a>
-                                    </div> -->
-                            </div>
                         </div>
 
                         <!-- <div class="img-area result">
@@ -439,6 +440,20 @@ pageEncoding="UTF-8"%>
                             허위·부정확한 정보 제출 시 <br />
                             <strong>법적 책임 및 손해배상 청구</strong>가 발생할 수 있습니다
                         </p> -->
+
+                        <div class="agBox">
+                            <!-- <span class="legend">개인정보 수집 · 이용</span> -->
+                                혜택 제공을 위한&nbsp;
+                                <a href="#">
+                                    <span class="btn-agreement">개인정보 처리방침</span>
+                                    <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_09.png"></div> -->
+                                </a>
+                                에 동의해주세요
+                                <!-- <div class="q_select ag_btn">
+                                    <label><input name="agBox" type="checkbox">동의</label>
+                                    <a href="javascript:void(0);" class="disagree">미동의</a>
+                                </div> -->
+                        </div>
                         <div class="submit"><input type="image" onclick="fnForm('form-1')" value="" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_txt.png" /></div>	
 
                         <div class="description">
@@ -564,29 +579,14 @@ pageEncoding="UTF-8"%>
         })
     },2000);
 
-    // 신청 인원 카운트다운 기능
-    let remainingCount = 15; // 초기 인원수
-    const $countElement = $('.remaining-count'); // 숫자를 표시하는 요소
-
-    // 카운트다운 시작
-    const countdownInterval = setInterval(() => {
-        if (remainingCount > 3) {
-            remainingCount--; // 1명 차감
-            $countElement.text(remainingCount + '명'); // 새로운 값 표시
-        } else {
-            clearInterval(countdownInterval); // 0명이 되면 카운트다운 중지
-            $countElement.text(3 + '명'); // 0으로 표시
-        }
-    }, 2000); // 2000ms = 2초 간격
-
-    // count
+    // 신청 인원 카운트다운
     $(document).ready(function() {
         let count = 15; // 초기 인원 수
         const intervalTime = 2000; // 2초마다 업데이트
 
         // 인원 수 업데이트 함수
         function updateCount() {
-            let countText = count + '명'
+            let countText = count
             $('.count').text(countText); // 인원 수를 화면에 표시
 
             count--; // 인원 수 감소
