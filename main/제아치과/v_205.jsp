@@ -89,7 +89,7 @@ pageEncoding="UTF-8"%>
     .subscribe .content .date {text-align: right;}
 
     #page_landing_c main {max-width: 1080px;}
-    #page_landing_c .wrap_form {padding: 0; border: 0;  background: url('//static.savemkt.com/event/v_${eventSeq}/bg.jpg') no-repeat center top / 100% 100%;}
+    #page_landing_c .wrap_form {padding: 0; border: 0;  background: #fff url('//static.savemkt.com/event/v_${eventSeq}/bg.jpg') no-repeat center top / 100% 100%;}
     .btn_submit {background-color: transparent !important;}
     input:not( [type="checkbox"], [type="radio"], [type="range"] ):disabled, input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border: none;}
     .wrap_form .submit {position: relative; width: 85.466%; height: auto; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png') no-repeat center center / 100% 100%; margin: 3% auto; padding: 0% 0;}
@@ -329,7 +329,7 @@ pageEncoding="UTF-8"%>
     .subscribe {padding: 3% 2%; height: 150px;}
     .subscribe .content {padding: 0.5rem 0.7rem;}
     .subscribe .content > div {margin-right: 0; font-size: 0.8rem;}
-    .subscribe_container {padding: 0 1.5rem 1rem 1.5rem;}
+    .subscribe_container {padding: 0 1.5rem 1rem 1.5rem; margin-top: -1%;}
     .subscribe .content .name {width: 10%;}
 
     .subscribe_bg {padding: 3.75% 3.5%;}
@@ -342,10 +342,12 @@ pageEncoding="UTF-8"%>
 
     .count {font-size: 150% !important;}
 
-    #page_landing_c .wrap_curd .sub-txt {font-size: 12px;}
+    #page_landing_c .wrap_curd .sub-txt {font-size: 12px !important;}
 }
 
 @media screen and (max-width: 480px){
+    #page_landing_c .wrap_form {background-size: 100% auto;}
+    /* .question_container {margin-top: 79.5%;} */
     #page_landing_c .wrap_form .legend {font-size: 135%;}
     #page_landing_c .wrap_form .question_box .q_select label, label.selected_label, #page_landing_c .wrap_form .agBox .disagree {
         font-size: 80%; border-radius: 0.5rem;
@@ -368,7 +370,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .description.footer p, #page_landing_c .description.footer #target {font-size: 80%;}
     #page_landing_c .wrap_form .description .ad_txt {font-size: 12px;}
 
-    #page_landing_c .wrap_curd .sub-txt {font-size: 9px;}
+    #page_landing_c .wrap_curd .sub-txt {font-size: 9px !important;}
 
     .popup-first strong,
     .popup-first-out strong {font-size: 70%;}
