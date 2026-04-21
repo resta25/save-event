@@ -294,7 +294,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                                 <div class="img-area poster_06"><img src="//static.savemkt.com/event/v_${eventSeq}/gage_02.png"></div>
                                 <div class="question_box">
                                     <div class="q_select">
-                                        <label><input type="radio" onclick="setTimeout(show4pg, 100)" onclick="pageFuc(3,$(this))" name="tadd2" value="서울/경기">서울/경기</label>
+                                        <label><input type="radio" onclick="setTimeout(show4pg, 100)" onclick="pageFuc(3,$(this))" name="tadd2" value="서울">서울</label>
+                                        <label><input type="radio" onclick="setTimeout(show4pg, 100)" onclick="pageFuc(3,$(this))" name="tadd2" value="경기">경기</label>
                                         <label><input type="radio" onclick="setTimeout(show4pg, 100)" onclick="pageFuc(3,$(this))" name="tadd2" value="그 외 지역">그 외 지역</label>
                                     </div>
                                 </div>
