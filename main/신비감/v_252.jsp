@@ -681,6 +681,6 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 			// ,'agBox': '개인정보'
 		};
 		
-		validateForm(procForm, required);
+		validateForms(procForm, required);
 	}
 </script>
