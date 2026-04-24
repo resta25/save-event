@@ -87,7 +87,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 
 .inner {padding: 5% 7% 0;}
 
-.form-box {margin-top: 10%;}
+.form-box {margin-top: 5%;}
+#page-2 .sub-txt {margin-bottom: 5%; text-align: center; font-size: 150%;}
 #wrap .formContents {position: static;}
 .form .formContents .description {width:90%; margin: 5% auto 0; text-align:center;box-sizing:border-box; font-family: 'GmarketSans'; font-weight: 300;}
 .form .formContents .description * {font-family: 'GmarketSans'; font-weight: 300; color: #000; font-family: 'GmarketSans';}
@@ -245,6 +246,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     [class^="popup-"] .btn-box button.btn-out {font-size: 105%;}
     .sub-txt {font-size: 11px;}
     /* #page_landing_c .form .table_box input {padding: 1.5rem 0 1.5rem 2rem;} */
+
+    #page-2 .sub-txt {font-size: 70%;}
 }
     
 </style>
@@ -295,6 +298,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                             <div class="img-area poster_04"><img src="//static.savemkt.com/event/v_${eventSeq}/q_01.png"></div>
                             <div class="form-box poster_05">
                                 <div class="formGroup">
+                                    <p class="sub-txt">타인의 정보를 무단으로 도용할 시, 관련 법령에 따라 제재를 받을 수 있습니다.</p>
                                     <div class="table_box top">
                                         <input type="text" name="name" id="name" value="" class="inp" required autocomplete="off" placeholder="이름"/>
                                     </div>
