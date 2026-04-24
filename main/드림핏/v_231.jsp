@@ -183,11 +183,12 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 
 .sub_txt {text-align: center;}
 
+.table_box + .sub_txt {margin-top: 8%; font-size: 100%;}
 .form .submit {display: flex; align-items: center; justify-content: center; margin: 1em auto 0; padding: 0;}
 .form .submit {position: relative;     width: 100%;
     height: 160px;
     background: url("//static.savemkt.com/event/v_${eventSeq}/btn_newsb_02.png") no-repeat center center / 100% 100%;
-    margin: 13% auto 5%;
+    margin: 7% auto 5%;
     padding: 0% 0;}
 .form .submit input[type="image"] {
     width: 71.46% !important; margin: 0 auto; animation: pulsating 0.8s linear infinite;
@@ -322,6 +323,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     .sub_txt {font-size: 90%;}
 
     .form .table_box .legend {font-size: 125%;}
+
+    .table_box + .sub_txt {font-size: 70%;}
 }
     
 </style>
@@ -436,6 +439,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                                         <div class="table_box bottom">
                                             <input type="tel" name="phone" id="phone" value="010" class="inp inp-phone" required autocomplete="off" maxlength="11" placeholder="전화번호"/>
                                         </div>
+                                        <p class="sub_txt">타인의 정보를 무단으로 도용할 시, 관련 법령에 따라 제재를 받을 수 있습니다</p>
                                         <div class="submit"><input type="image" onclick="fnForm('form-1')" value="" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_txt_02.png" /></div>
                                     </div>
                                     <div class="description">
