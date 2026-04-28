@@ -222,7 +222,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         #page-1 .paging {padding-top: 2.5%;}
         .agBox {padding-top: 2.5%;}
         .form .table_box {border-radius: 9px;}
-        #page_landing_c .form .table_box input {padding: 1.5rem 0 1rem 2rem;
+        #page_landing_c .form .table_box input {padding: 1.5rem 1rem;
         font-size: 1.4rem;}
         .count_box {top: 36%; left: 56%;}
         .count_box, .count {font-size: 2.2rem;}
