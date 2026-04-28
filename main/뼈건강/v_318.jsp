@@ -394,7 +394,33 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                     <div id="modal2" class="modal modal2" style="display: none;">
                         <div class="modal-content">
                             <span class="close" id="close">×</span>
-                            <p></p>
+                            <p>
+                                개인정보처리방침<br />
+                                건강기능식품 판매 이벤트 개인정보 수집 및 이용 동의<br /><br />
+
+                                [개인정보 수집 및 이용 동의]<br /><br />
+
+                                - 수집 · 이용 주체 : 이벤트 및 상품 판매 운영자<br />
+                                - 수집 · 이용 목적 : 신청한 이벤트 안내, 상품 안내 및 구매 관련 문의 응대, 주문 및 배송 관련 안내, 신청자 관리<br />
+                                - 수집 · 이용 항목 : 이름, 연락처, 성별, 출생연도, 설문내용<br />
+                                - 보유 및 이용 기간 :<br />
+                                └ 계약 또는 청약철회 등에 관한 기록 : 5년<br />
+                                └ 대금결제 및 재화 등의 공급에 관한 기록 : 5년<br />
+                                └ 소비자 불만 또는 분쟁처리에 관한 기록 : 3년<br /><br />
+
+                                * 동의를 거부할 권리가 있으나, 거부 시 이벤트 참여 및 서비스 이용이 제한됩니다.<br />
+                                * 고객 동의 철회 시 지체없이 파기합니다.<br /><br />
+
+                                [개인정보 처리위탁 동의]<br /><br />
+
+                                - 수탁자 : 이벤트 및 마케팅 운영 대행사<br />
+                                - 위탁 업무 내용<br />
+                                └ 온라인, 모바일을 통한 고객 정보 수집 및 관리<br />
+                                └ 고객정보 서버 운영 및 관리<br />
+                                └ 서비스 신청 및 주문/배송 관련 개인정보 처리<br />
+                                └ 마케팅 및 광고 운영 관련 업무<br />
+                                - 위탁 항목 : 이름, 연락처, 성별, 출생연도, 설문내용
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -429,7 +455,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 		//드래그, 우클릭 방지
 		blockSourceView();
 		initDate();
-        ppeumAgreement();
+        // ppeumAgreement();
 
         $('.overlay').hide();
         $('.popup-confirm').hide();
