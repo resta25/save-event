@@ -5,25 +5,9 @@ pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/landing.css">
 <link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/leetaewook/gmarket-sans-dynamic-subset/GmarketSans.css" />
 <style>
-@font-face {
-    font-family: 'GmarketSans';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'GmarketSans';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'GmarketSans';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-}
+
 * {font-family: 'Gmarket Sans';}
 .page:not(#page-1){display:none; }
 #wrap{background:#ffffff; max-width: 1080px; width: 100%;}
@@ -62,11 +46,11 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 .roulette {padding: 4.92% 5% 8.8%;}
 .roulette image {width: 100%;}
 .count_box {width: 70%; text-align: center; font-size: 2.8rem; color: #fff; position: absolute; top: 32.5%; left: 56.5%; transform: translateX(-50%);}
-.count {color: #f0ff00; font-size: 4rem; font-family: 'GmarketSans'; font-weight: 500;}
+.count {color: #f0ff00; font-size: 4rem; font-family: 'Gmarket Sans'; font-weight: 500;}
 
 /* count */
 .count-box {position: absolute; top: 17%; left: 50%; transform: translateX(-50%); width: 74.445%;}
-.count-box .count {color: #f3d700; font-size: 3rem; font-family: 'GmarketSans'; font-weight: 500; position: absolute; top: 23%; left: 51.5%; width: 7%; text-align: center;}
+.count-box .count {color: #f3d700; font-size: 3rem; font-family: 'Gmarket Sans'; font-weight: 500; position: absolute; top: 23%; left: 51.5%; width: 7%; text-align: center;}
 .popup-count {position: relative;}
 .popup-count .count-box {top: 9%; font-size: 90%;}
 .popup-count .count {font-weight: 400; position: relative; left: 0; top: 0; width: max-content; font-size: 100%; color: #000; font-family: inherit;}
@@ -74,9 +58,9 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 
 .poster_01 {padding-top: 3.72%;}
 .poster_01 > .img-area {width: 100%; margin: 0 auto;}
-.poster_01 > .img-area:nth-child(2) {width: 67.964%; margin: 9% auto 3.25%;}
-.poster_01 > .img-area:nth-child(3) {width: 80.742%; margin: 9% auto 3.25%;}
-.poster_01 .sub-txt {color: #000; font-size: 1.2rem; text-align: right; font-family: 'GmarketSans'; font-weight: 300; padding-right: 5px;}
+.poster_01 > .img-area:nth-child(2) {width: 69.964%; margin: 9% auto 5.25%;}
+.poster_01 > .img-area:nth-child(3) {width: 80.742%; margin: 9% auto 5.25%;}
+.poster_01 .sub-txt {color: #000; font-size: 1.2rem; text-align: right; font-family: 'Gmarket Sans'; font-weight: 300; padding-right: 5px;}
 
 .page .paging{padding:15% 10% 3%; margin: 0 auto; display: flex;    justify-content: space-between;}
 .page .paging button{width:100%; box-sizing: border-box; background: none; padding: 0; cursor: pointer;}
@@ -86,21 +70,21 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 .page .paging button a {display:block;}
 
 #page-1 {background: url("//static.savemkt.com/event/v_${eventSeq}/bg.jpg") no-repeat center top / 100% 100%;}
-#page-1 .paging{padding-top: 3.53%;}
+#page-1 .paging{padding-top: 3.53%; padding-bottom: 7%;}
 
 .inner {padding: 5% 7% 0;}
 
 .form-box {margin-top: 5%;}
 #page-2 .sub-txt {margin-bottom: 5%; text-align: center; font-size: 150%;}
 #wrap .formContents {position: static;}
-.form .formContents .description {width:90%; margin: 5% auto 0; text-align:center;box-sizing:border-box; font-family: 'GmarketSans'; font-weight: 300;}
-.form .formContents .description * {font-family: 'GmarketSans'; font-weight: 300; color: #000; font-family: 'GmarketSans';}
+.form .formContents .description {width:90%; margin: 5% auto 0; text-align:center;box-sizing:border-box; font-family: 'Gmarket Sans'; font-weight: 300;}
+.form .formContents .description * {font-family: 'Gmarket Sans'; font-weight: 300; color: #000; font-family: 'Gmarket Sans';}
 .form-box .form-box-top {padding:5% 5% 0;}
 .form-box .description {padding-bottom:2%;}
 .form .question_box {padding: 3.2% 0 0; margin-bottom: 18px;}
-.form .question_box .q_txt {font-size: 200%; font-weight: 700; font-family: 'GmarketSans';}
+.form .question_box .q_txt {font-size: 200%; font-weight: 700; font-family: 'Gmarket Sans';}
 .form .question_box .q_select {display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; font-size: 150%;}
-.form .question_box .q_select label{padding: 4% 0 2.5%; cursor:pointer; background: #ededed; border-radius: 1.9rem; font-size: 200%; font-weight: 500; font-family: 'GmarketSans'; text-align: center;}
+.form .question_box .q_select label{padding: 4% 0 2.5%; cursor:pointer; background: #ededed; border-radius: 1.9rem; font-size: 200%; font-weight: 500; font-family: 'Gmarket Sans'; text-align: center;}
 .form .question_box .q_select label.on{background: #000; color: #fff; font-weight: 700;}
 .form .question_box .q_select label img{width:95%;}
 
@@ -110,13 +94,13 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 /* 이름, 전화번호 boz */
 .formGroup {}
 .form .table_box{ padding:0;background:#f4f4f4;border-radius:27px; margin-bottom: 18px; }
-.form .table_box input {background: #ededed; border-radius: 1.9rem; font-size: 2.8rem; border: none; background: transparent; width: 100%; padding: 2rem 0 1.5rem 1.5rem; font-family: 'GmarketSans'; font-weight: 700;}
-.form .table_box input::placeholder{color: rgba(0, 0, 0, 0.7); font-family: 'GmarketSans'; font-weight: 500;}
+.form .table_box input {background: #ededed; border-radius: 1.9rem; font-size: 2.8rem; border: none; background: transparent; width: 100%; padding: 2rem 0 1.5rem 1.5rem; font-family: 'Gmarket Sans'; font-weight: 700;}
+.form .table_box input::placeholder{color: rgba(0, 0, 0, 0.7); font-family: 'Gmarket Sans'; font-weight: 500;}
 
 /* 개인정보 처리방침 */
-.agBox {padding-top: 3.16%; font-family: 'GmarketSans'; font-weight: 500; font-size: 1.4rem; line-height: 1; color: #fff; text-align: center;}
-.btn-agreement {flex-shrink: 0; text-align: center; font-size: 1.4rem; color: #fff; font-family: 'GmarketSans';}
-.btn-agreement b {font-weight: 700; font-size: 100%; font-family: 'GmarketSans'; color: #fff;}
+.agBox {padding-top: 7.16%; font-family: 'Gmarket Sans'; font-weight: 500; font-size: 1.4rem; line-height: 1; color: #fff; text-align: center;}
+.btn-agreement {flex-shrink: 0; text-align: center; font-size: 1.4rem; color: #fff; font-family: 'Gmarket Sans';}
+.btn-agreement b {font-weight: 700; font-size: 100%; font-family: 'Gmarket Sans'; color: #fff;}
 /* submit btn */
 /* .form .submit {width: 85%; margin: 0 auto; padding: 5% 0;}
 .form .submit input[type="image"] {width: 100%;} */
@@ -126,7 +110,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 .form .submit {display: flex; align-items: center; justify-content: center; margin: 0 auto; padding: 0;}
 .form .submit {position: relative; width: 95%; height: 179px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb_02.png') no-repeat center center / 100% 100%; margin: 3% auto; padding: 0% 0;}
 .form .submit input[type="image"] {
-    width: 61.46% !important; margin: 0 auto; margin-right: 9%; animation: pulsating 0.8s linear infinite;
+    width: 61.46% !important; margin: 0 auto; margin-right: 13%; animation: pulsating 0.8s linear infinite;
     -webkit-animation: pulsating 0.8s linear infinite;
 }
 
@@ -277,10 +261,10 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     color: #fff;
     letter-spacing: -1px;
 }
-.keyword-bands .band-front .kw {
+.keyword-bands .band .kw {
     transition: color 1s ease-in-out;
 }
-.keyword-bands .band-front .kw.active {
+.keyword-bands .band .kw.active {
     color: #fff000;
 }
 
@@ -386,14 +370,14 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                             <!-- ▼ 하단 X자 띠 키워드 (뒤 띠는 흰색 고정 / 앞 띠는 #fff000 색상으로 하나씩 교차 변경) -->
                             <div class="keyword-bands">
                                 <div class="band band-back">
-                                    <span>#뱃살</span>
-                                    <span>#팔뚝살</span>
-                                    <span>#허벅지살</span>
-                                    <span>#얼굴주름</span>
-                                    <span>#뱃살</span>
-                                    <span>#팔뚝살</span>
-                                    <span>#허벅지살</span>
-                                    <span>#얼굴주름</span>
+                                    <span class="kw">#뱃살</span>
+                                    <span class="kw">#팔뚝살</span>
+                                    <span class="kw">#허벅지살</span>
+                                    <span class="kw">#얼굴주름</span>
+                                    <span class="kw">#뱃살</span>
+                                    <span class="kw">#팔뚝살</span>
+                                    <span class="kw">#허벅지살</span>
+                                    <!-- <span class="kw">#얼굴주름</span> -->
                                 </div>
                                 <div class="band band-front">
                                     <span class="kw">#뱃살</span>
@@ -558,19 +542,44 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 
         history.scrollRestoration = 'manual';
 
-        // ▼ 앞 띠 키워드 색상 교차 변경 (#fff000)
+        // ▼ 앞/뒤 띠 키워드 색상 교차 변경 (#fff000)
+        // 앞 띠: 처음 → 끝 방향, 뒤 띠: 끝 → 처음 방향 (서로 반대 방향)
         (function startKeywordColorAnimation() {
-            var $kw = $('.keyword-bands .band-front .kw');
-            if (!$kw.length) return;
+            var $frontKw = $('.keyword-bands .band-front .kw');
+            var $backKw  = $('.keyword-bands .band-back .kw');
+            if (!$frontKw.length && !$backKw.length) return;
 
             var idx = 0;
-            // 초기 1개 활성화
-            $kw.eq(idx).addClass('active');
 
+            function applyActive() {
+                // 동시에 보이도록 뒤 띠를 먼저 active 처리 (paint 순서 보정)
+                $backKw.removeClass('active');
+                $frontKw.removeClass('active');
+
+                if ($backKw.length) {
+                    // 끝에서부터 역방향으로 진행
+                    var backIdx = ($backKw.length - 1) - (idx % $backKw.length);
+                    $backKw.eq(backIdx).addClass('active');
+                }
+                if ($frontKw.length) {
+                    var frontIdx = idx % $frontKw.length;
+                    $frontKw.eq(frontIdx).addClass('active');
+                }
+            }
+
+            // 첫 페인트가 끝난 후 첫 활성화를 적용하여 두 띠의 transition 시작점을 동일하게 맞춤
+            if (window.requestAnimationFrame) {
+                requestAnimationFrame(function () {
+                    requestAnimationFrame(applyActive);
+                });
+            } else {
+                applyActive();
+            }
+
+            var cycleLen = Math.max($frontKw.length, $backKw.length, 1);
             setInterval(function () {
-                $kw.removeClass('active');
-                idx = (idx + 1) % $kw.length;
-                $kw.eq(idx).addClass('active');
+                idx = (idx + 1) % cycleLen;
+                applyActive();
             }, 1200); // 천천히 변경되도록 1.2초 간격
         })();
 
