@@ -11,6 +11,8 @@ pageEncoding="UTF-8"%>
 	.content + .content {border-top: 1px solid #ddd;}
 	.content * {padding: 8px 10px;}
 
+    .sub-txt {text-align: center; font-size: 150%; background: #dddede; padding: 3% 0; font-weight: 600; word-break: keep-all;}
+
     .popup {max-width: 1080px; background-color: rgba(0, 0, 0, 0.3); backdrop-filter: blur(0);}
     #page_landing_c main .popup img {width: 91.83%; margin: 0 auto;}
     
@@ -229,6 +231,7 @@ pageEncoding="UTF-8"%>
 
                 <section class="page" id="page-2">
                     <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg" alt="landing_top" class="landing_top">
+                    <p class="sub-txt">타인의 정보를 무단으로 도용할 시, 관련 법령에 따라 제재를 받을 수 있습니다.</p>
                     <div class="question_group">
                         <div class="question_box">
                             <div class="img-area q_01_img">

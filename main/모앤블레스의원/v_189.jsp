@@ -92,7 +92,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     
     #page-1 .paging{padding-top:5%;}
     
-    .form-box {margin-top: 10%;}
+    .form-box {margin-top: 5%;}
+    .sub-txt {margin-bottom: 5%; font-size: 150%; text-align: center; word-break: keep-all; font-weight: 600;}
     #wrap .formContents {position: static;}
     .form .formContents .description {width:90%;margin:0 auto;text-align:center;box-sizing:border-box; font-family: 'Pretendard';; font-weight: 300;}
     .form .formContents .description * {font-family: 'Pretendard';; font-weight: 300;}
@@ -246,6 +247,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         #page_landing_c input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {padding: unset;}
         .form-box .description {padding-bottom: 4%;}
         [class^="popup-"] .btn-box button {width: 105px; height: 43px;}
+        .sub-txt {font-size: 100%;}
         /* #page_landing_c .form .table_box input, #page_landing_c .form select.table_box {padding: 1.5rem 0 1.5rem 2rem;} */
     }
     
@@ -334,6 +336,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                         <div class="img-area poster_09"><img src="//static.savemkt.com/event/v_${eventSeq}/gage_02.png"></div>
                         <div class="img-area poster_10" style="margin-top: 5%;"><img src="//static.savemkt.com/event/v_${eventSeq}/q_02.png"></div>
                         <div class="form-box poster_11">
+                            <p class="sub-txt">타인의 정보를 무단으로 도용할 시, 관련 법령에 따라 제재를 받을 수 있습니다.</p>
                             <div class="formGroup">
                                 <div class="table_box top">
                                     <input type="text" name="name" id="name" value="" class="inp" required autocomplete="off" placeholder="이름"/>
