@@ -226,19 +226,20 @@ pageEncoding="UTF-8"%>
 @media screen and (max-width: 640px){
 }
 @media screen and (max-width: 480px){
-    #page_landing_c .img-area .btm_box2 {bottom: 1.5%;}
     #page_landing_c .img-area .btm_box .agBox {font-size: 70%; font-weight: 400;}
     #page_landing_c .btm_box .agBox label span {font-size: 80%;}
     #page_landing_c .description {padding: 3.37% 0 1.37%;}
     #page_landing_c .description p {font-size: 90%;}
     #page_landing_c .description .ad_txt, #page_landing_c .description .target {font-size: 90%;}
     #page_landing_c .agBox label span {font-size: 90%;}
-    #page_landing_c .wrap_form .agBox a {font-size: 50%;}
+    /* #page_landing_c .wrap_form .agBox a {font-size: 50%;} */
     #page_landing_c .wrap_form {padding: 40px 20px 30px !important;}
     #page_landing_c .legend {font-size: 90%; height: 25px;}
     #page_landing_c .inp {font-size: 90%;}
     #page_landing_c .question_box > div:not(.formContents) + div:not(.formContents) {margin-top: 5.1%;}
     #page_landing_c .question_box .q_select label {height: 56px; font-size: 70%;}
+
+    #page_landing_c .agBox {font-size: 90%;}
 
 }
 @media screen and (max-width: 395px){
