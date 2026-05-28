@@ -439,6 +439,7 @@ pageEncoding="UTF-8"%>
     var swiper = new Swiper(".mySwiper", {
         spaceBetween: 30,
         // centeredSlides: true,
+        speed: 700,
         autoplay: {
             delay: 5000,
             disableOnInteraction: false,
