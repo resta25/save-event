@@ -279,11 +279,11 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                         <div class="img-area poster_04"><img src="//static.savemkt.com/event/v_${eventSeq}/q_01.png"></div>
                         <div class="question_box">
                             <div class="q_select">
-                                <label><input type="radio" onclick="setTimeout(show3pg, 100)" onclick="pageFuc(2,$(this))" name="tadd1" value="예">예</label>
+                                <label><input type="radio" name="tadd1" value="예">예</label>
                                 <label><input type="radio" name="tadd1" value="아니오">아니오</label>
                             </div>
                         </div>
-                        <div class="next_btn_inQuestion"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_02.png" onclick="pageSelFuc(4,$(this))"></div>
+                        <div class="next_btn_inQuestion"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_02.png" onclick="pageSelFuc(1, show3pg)"></div>
                     </section>
         
                     <section class="page" id="page-3">
@@ -291,13 +291,15 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                         <div class="img-area poster_06"><img src="//static.savemkt.com/event/v_${eventSeq}/q_02.png"></div>
                         <div class="question_box">
                             <div class="q_select">
-                                <label><input type="radio" onclick="setTimeout(show4pg, 100)" onclick="pageFuc(3,$(this))" name="tadd2" value="이번주">이번주</label>
-                                <label><input type="radio" onclick="setTimeout(show4pg, 100)" onclick="pageFuc(3,$(this))" name="tadd2" value="2주 이내">2주 이내</label>
-                                <label><input type="radio" onclick="setTimeout(show4pg, 100)" onclick="pageFuc(3,$(this))" name="tadd2" value="한달 이내">한달 이내</label>
-                                <label><input type="radio" onclick="setTimeout(show4pg, 100)" onclick="pageFuc(3,$(this))" name="tadd2" value="상담 후 결정">상담 후 결정</label>
+                                <label><input type="radio" name="tadd2" value="급행 (오늘 또는 내일)">급행 (오늘 또는 내일)</label>
+                                <label><input type="radio" name="tadd2" value="평일 오전">평일 오전</label>
+                                <label><input type="radio" name="tadd2" value="평일 오후">평일 오후</label>
+                                <label><input type="radio" name="tadd2" value="평일 저녁">평일 저녁</label>
+                                <label><input type="radio" name="tadd2" value="토요일 오전">토요일 오전</label>
+                                <label><input type="radio" name="tadd2" value="상담 후 결정">상담 후 결정</label>
                             </div>
                         </div>
-                        <div class="next_btn_inQuestion"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_02.png" onclick="pageSelFuc(4,$(this))"></div>
+                        <div class="next_btn_inQuestion"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_02.png" onclick="pageSelFuc(2, show4pg)"></div>
                     </section>
         
                     <!-- <section class="page" id="page-4">
@@ -581,13 +583,12 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     });
 
     // 버튼 페이지 이동 함수 (설문)
-	function pageSelFuc(num, obj) {
+	function pageSelFuc(num, nextFn) {
         if(!isAnimating){
             if($('input[name="tadd' + num + '"]').is(':checked')) {
-                $('.section0' + num).fadeOut(function() {
-                    $('.section0' + (num + 1)).fadeIn();
-                    $(document).scrollTop(0);
-                });
+                if (typeof nextFn === 'function') {
+                    nextFn();
+                }
             } else {
                 alert('설문을 체크해 주세요.');
             }
