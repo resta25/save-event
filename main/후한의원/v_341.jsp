@@ -202,18 +202,24 @@ pageEncoding="UTF-8"%>
 @media screen and (max-width: 640px){
 }
 @media screen and (max-width: 480px){
+    .swiper-area .swiper-container {border-radius: 10px;}
+    .swiper-area .swiper-pagination {bottom: 1% !important;}
+    .swiper-pagination-bullet {width: 11px !important; height: 8px !important; border-radius: 4px !important;}
+    .swiper-pagination-bullet-active {width: 32px !important;}
     #page_landing_c .img-area .btm_box .agBox {font-size: 70%; font-weight: 400;}
     #page_landing_c .btm_box .agBox label span {font-size: 80%;}
-    #page_landing_c .description {padding: 3.37% 0 1.37%;}
+    #page_landing_c .description {padding: 3.37% 0 2.37%;}
     #page_landing_c .description p {font-size: 90%;}
     #page_landing_c .description .ad_txt, #page_landing_c .description .target {font-size: 90%; word-break: keep-all;}
     #page_landing_c .agBox label span {font-size: 90%;}
     /* #page_landing_c .wrap_form .agBox a {font-size: 50%;} */
-    #page_landing_c .wrap_form {padding: 0px 9.45% 30px !important;}
+    /* #page_landing_c .wrap_form {padding: 0px 9.45% 30px !important;} */
     #page_landing_c .legend {font-size: 90%; height: 25px;}
     #page_landing_c .inp {font-size: 135%; border-radius: 1rem; border-width: 4px;}
     #page_landing_c .question_box > div:not(.formContents) + div:not(.formContents) {margin-top: 5.1%;}
     #page_landing_c .question_box .q_select label {height: 56px; font-size: 70%;}
+
+    .wrap_form .table_box.bottom {padding: 5px 5px; font-size: 202% !important; border-radius: 1rem; border-width: 4px; width: 98%; background-size: 20px 15px; background-position: right 5% center; margin: 4.655% auto;}
 
     #page_landing_c .agBox {font-size: 90%;}
 
@@ -314,7 +320,7 @@ pageEncoding="UTF-8"%>
                 <div class="description">
                     <p id="event-period"></p>
                     <span class="target">대상 : ${resVo.target}</span>
-                    <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
+                    <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br />상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
                 </div>
 
                 <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
@@ -359,6 +365,29 @@ pageEncoding="UTF-8"%>
             <div class="modal-content">
                 <span class="close" id="close">×</span>
                 <p>
+                    개인정보처리방침<br />
+                    병원 제휴의 요청 개인정보 수집 및 이용 동의<br /><br />
+
+                    [개인정보 수집 및 이용 동의]<br /><br />
+
+                    - 수집 · 이용 주체 : 이벤트 신청<br />
+                    - 수집 · 이용 목적 : 신청한 이벤트 안내, 추가적인 상담 및 방문 예약, 이벤트 신청자 관리<br />
+                    - 수집 · 이용 항목 : 이름, 연락처, 성별, 출생연도, 설문내용<br />
+                    - 보유 및 이용 기간 : 의료법 등 관련 병령에서 정한 보존 기간<br /><br />
+
+                    * 동의를 거부할 권리가 있으나, 거부 시 이벤트 참여가 제한됩니다.<br />
+                    * 고객 동의 철회 시 지체없이 파기합니다.<br /><br />
+
+
+                    [개인정보 처리위탁 동의]<br /><br />
+
+                    - 수탁자 : 병원 제휴의 요청<br />
+                    - 위탁 업무 내용<br />
+                    └ 온라인, 모바일을 통한 고객 정보 수집 및 관리<br />
+                    └ 고객정보 서버 운영 및 관리<br />
+                    └ 서비스 신청 내역 관리를 위한 개인정보 전송<br />
+                    └ 서비스 제공을 위해 필요한 개인정보 관련 업무 처리<br />
+                    - 위탁 항목 : 이름, 연락처, 성별, 출생연도, 설문내용
                 </p>
             </div>
         </div>
@@ -366,13 +395,11 @@ pageEncoding="UTF-8"%>
 </body>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<!--공통_script start --><script src="/js/agreement.js"></script><!--공통_script end-->
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
 <script>
     $(document).ready(function(){
         blockSourceView();//드래그, 우클릭 방지
         initDate();
-        saleupAgreement2();
 
         //신청현황 리스트
         getComment(`${eventSeq}`);
@@ -557,12 +584,12 @@ pageEncoding="UTF-8"%>
         // procForm.querySelector("input[name='add1']").value = selectedRadio1;
 
         if($('input[name="name"]').val() != "" && $('input[name="age"]').val() != "" && $('input[name="phone"]').val().length == 11){
-            let selectedRadio2 = procForm.querySelector(`select[name="tadd1"]`).value;
-            if (!selectedRadio2) {
-                alert("성별 항목을 입력해주세요.");
+            let selectedRadio1 = procForm.querySelector(`select[name="tadd1"]`).value;
+            if (!selectedRadio1) {
+                alert("지점 항목을 선택해주세요.");
                 return;
             } else {
-                procForm.querySelector("input[name='add1']").value = selectedRadio2.value;
+                procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
             }
         }
         
@@ -603,7 +630,7 @@ pageEncoding="UTF-8"%>
 			'name': '이름'
 			,'age': '나이'
 			,'phone': '전화번호'
-			// ,'add1': '설문1'
+			,'add1': '설문1'
 			// ,'add2': '설문2'
 			// ,'add3': '설문3'
 			// ,'agBox': '개인정보'
