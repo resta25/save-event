@@ -201,6 +201,7 @@ pageEncoding="UTF-8"%>
 @media screen and (max-width: 640px){
 }
 @media screen and (max-width: 480px){
+    #page_landing_c .wrap_curd .q_group {padding: 36px 0 26px;}
     #page_landing_c .wrap_curd .q_group .q_txt {font-size: 95%;}
     .swiper-area .swiper-container {border-radius: 10px;}
     .swiper-area .swiper-pagination {bottom: 1% !important;}
