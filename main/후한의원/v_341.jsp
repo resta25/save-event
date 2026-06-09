@@ -216,11 +216,11 @@ pageEncoding="UTF-8"%>
     /* #page_landing_c .wrap_form .agBox a {font-size: 50%;} */
     /* #page_landing_c .wrap_form {padding: 0px 9.45% 30px !important;} */
     #page_landing_c .legend {font-size: 90%; height: 25px;}
-    #page_landing_c .inp {font-size: 135%; border-radius: 1rem; border-width: 4px;}
+    #page_landing_c .inp {font-size: 135%; border-radius: 1rem; border-width: 2px; padding: 2.488% 4.335% !important;}
     #page_landing_c .question_box > div:not(.formContents) + div:not(.formContents) {margin-top: 5.1%;}
     #page_landing_c .question_box .q_select label {height: 56px; font-size: 70%;}
 
-    .wrap_form .table_box.bottom {padding: 5px 5px; font-size: 202% !important; border-radius: 1rem; border-width: 4px; width: 98%; background-size: 20px 15px; background-position: right 5% center; margin: 4.655% auto;}
+    .wrap_form .table_box.bottom {padding: 4.7% 4.335% 2.5%; font-size: 202% !important; border-radius: 1rem; border-width: 2px; width: 97%; background-size: 20px 15px; background-position: right 5% center; margin: 4.655% auto;}
 
     #page_landing_c .agBox {font-size: 90%;}
 
