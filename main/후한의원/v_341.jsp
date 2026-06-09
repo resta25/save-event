@@ -7,9 +7,10 @@ pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/css/landing.css">
 <link rel="stylesheet" href="/css/common_sand.css">
 <style>
-    @import url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard.css');
+    @import url('https://cdn.jsdelivr.net/gh/fonts-archive/GmarketSans/GmarketSans.css');
+    /* @import url('https://cdn.jsdelivr.net/gh/fonts-archive/Pretendard/Pretendard.css'); */
 
-    * {font-family: "Pretendard", sans-serif; box-sizing: border-box;}
+    * {font-family: "Gmarket Sans", sans-serif; box-sizing: border-box;}
     #page_landing_c .wrap_curd * {font-size: 100%; font-family: inherit;}
     html{
         height: 100%;
@@ -119,7 +120,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .user_info input {background: #ffeef4; padding: 2%; font-size: 150%; border-radius: 0.5rem; width: 67%;
     position: absolute; left: 29%; top: 14%; height: 70%; border: 1px solid #e3ccd4;}
 
-    .wrap_form .table_box, #page_landing_c .inp {font-size: 315%; line-height: 1; border: 3px solid #989898; color: #464646; min-height: 34px; padding: 4.488% 8.335%; box-sizing: border-box; margin-left: 0; border-radius: 2rem; transition: 0s;}
+    .wrap_form .table_box, #page_landing_c .inp {font-size: 315%; line-height: 1; border: 3px solid #989898; color: #464646; min-height: 34px; padding: 4.488% 8.335%; box-sizing: border-box; margin-left: 0; border-radius: 2rem; transition: 0s; font-family: 'Gmarket Sans';}
     #page_landing_c .inp::placeholder {color: #929292;}
     .wrap_form .table_box {margin-top: 4.655%; color: #464646; font-size: 474% !important; display: block; height: 100%; width: 100%; appearance: none; background: url("//static.savemkt.com/event/v_${eventSeq}/arrow.png") no-repeat right 10% center / 54px 47px;}
     /* #page_landing_c input[type="checkbox"] + span:before {border-color:#fff;} */
@@ -176,7 +177,7 @@ pageEncoding="UTF-8"%>
 
     /* 상단 슬라이드 */
 .swiper-area {position: relative;}
-.swiper-area .swiper-container {position: absolute; top: 20.507%; left: 4.825%; width: 90.353%; border: 2px solid rgba(56, 38, 92, 0.35); box-shadow: 7px 0 7px rgba(0, 0, 0, 0.15); background-color: #fafafa; border-radius: 25px; padding: 2.408% 3.797% 6.575%;}
+.swiper-area .swiper-container {position: absolute; top: 32.507%; left: 4.825%; width: 90.353%; border: 2px solid rgba(56, 38, 92, 0.35); box-shadow: 7px 0 7px rgba(0, 0, 0, 0.15); background-color: #fafafa; border-radius: 25px; padding: 2.408% 3.797% 6.575%;}
 .swiper-area .swiper-pagination {bottom: 5% !important;}
 .swiper-pagination-bullet {width: 21px !important; height: 17px !important; background-color: #cbb5dd !important; border-radius: 8px !important; opacity: 1 !important;}
 .swiper-pagination-bullet-active {background-color: #38265c !important; width: 52px !important;}
@@ -242,8 +243,9 @@ pageEncoding="UTF-8"%>
 <body id="page_landing_c" class="loaded">
     <main>
         <div class="img-area count-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.jpg"></div>
+        <div class="img-area count-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg"></div>
         <div class="img-area swiper-area">
-            <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg">
+            <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_03.jpg">
             <div class="swiper-container">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
@@ -280,22 +282,25 @@ pageEncoding="UTF-8"%>
                                 <select name="tadd1" class="table_box bottom" id="add1" required>
                                     <option value="">지점</option>
                                     <option value="강남점">강남점</option>
-                                    <option value="건대점">건대점</option>
+                                    <option value="구미점">구미점</option>
+                                    <option value="광주점">광주점</option>
                                     <option value="노원점">노원점</option>
+                                    <option value="대구점">대구점</option>
                                     <option value="대전점">대전점</option>
-                                    <option value="천안점">천안점</option>
-                                    <option value="창원점">창원점</option>
-                                    <option value="춘천점">춘천점</option>
-                                    <option value="부산점">부산점</option>
                                     <option value="부천점">부천점</option>
+                                    <option value="부산점">부산점</option>
+                                    <option value="수원점">수원점</option>
+                                    <option value="신림점">신림점</option>
+                                    <option value="안양점">안양점</option>
+                                    <option value="원주점">원주점</option>
                                     <option value="인천점">인천점</option>
-                                    <option value="수원점">수원점 </option>
-                                    <option value="분당점">분당점 </option>
-                                    <option value="일산점">일산점 </option>
-                                    <option value="대구점">대구점 </option>
-                                    <option value="울산점">울산점 </option>
-                                    <option value="광주점">광주점 </option>
+                                    <option value="일산점">일산점</option>
                                     <option value="전주점">전주점</option>
+                                    <option value="제주점">제주점</option>
+                                    <option value="창원점">창원점</option>
+                                    <option value="천안점">천안점</option>
+                                    <option value="청주점">청주점</option>
+                                    <option value="춘천점">춘천점</option>
                                 </select>
                                 <!-- <div class="user_text">
                                     <span class="legend">문 의</span>
@@ -320,7 +325,7 @@ pageEncoding="UTF-8"%>
                 <div class="description">
                     <p id="event-period"></p>
                     <span class="target">대상 : ${resVo.target}</span>
-                    <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 <br />상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
+                    <div class="ad_txt">안심하세요! 본원에서는 고객님의 소중한 개인정보를 <br />상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
                 </div>
 
                 <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
@@ -344,7 +349,7 @@ pageEncoding="UTF-8"%>
             </form>
         </div>
         
-        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_03.jpg"></div>
+        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_04.jpg"></div>
 
         <div class="subscribe_container">
             <div class="title">
@@ -450,7 +455,7 @@ pageEncoding="UTF-8"%>
         // centeredSlides: true,
         speed: 700,
         autoplay: {
-            delay: 5000,
+            delay: 3000,
             disableOnInteraction: false,
         },
         loop:true,
