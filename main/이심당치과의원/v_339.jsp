@@ -279,11 +279,11 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                         <div class="img-area poster_04"><img src="//static.savemkt.com/event/v_${eventSeq}/q_01.png"></div>
                         <div class="question_box">
                             <div class="q_select">
-                                <label><input type="radio" name="tadd1" value="예">예</label>
+                                <label onclick="pageSelFuc(1, show3pg)"><input type="radio" name="tadd1" value="예">예</label>
                                 <label><input type="radio" name="tadd1" value="아니오">아니오</label>
                             </div>
                         </div>
-                        <div class="next_btn_inQuestion"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_02.png" onclick="pageSelFuc(1, show3pg)"></div>
+                        <!-- <div class="next_btn_inQuestion"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_02.png" onclick="pageSelFuc(1, show3pg)"></div> -->
                     </section>
         
                     <section class="page" id="page-3">
@@ -291,15 +291,15 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                         <div class="img-area poster_06"><img src="//static.savemkt.com/event/v_${eventSeq}/q_02.png"></div>
                         <div class="question_box">
                             <div class="q_select">
-                                <label><input type="radio" name="tadd2" value="급행 (오늘 또는 내일)">급행 (오늘 또는 내일)</label>
-                                <label><input type="radio" name="tadd2" value="평일 오전">평일 오전</label>
-                                <label><input type="radio" name="tadd2" value="평일 오후">평일 오후</label>
-                                <label><input type="radio" name="tadd2" value="평일 저녁">평일 저녁</label>
-                                <label><input type="radio" name="tadd2" value="토요일 오전">토요일 오전</label>
-                                <label><input type="radio" name="tadd2" value="상담 후 결정">상담 후 결정</label>
+                                <label onclick="pageSelFuc(2, show4pg)"><input type="radio" name="tadd2" value="급행 (오늘 또는 내일)">급행 (오늘 또는 내일)</label>
+                                <label onclick="pageSelFuc(2, show4pg)"><input type="radio" name="tadd2" value="평일 오전">평일 오전</label>
+                                <label onclick="pageSelFuc(2, show4pg)"><input type="radio" name="tadd2" value="평일 오후">평일 오후</label>
+                                <label onclick="pageSelFuc(2, show4pg)"><input type="radio" name="tadd2" value="평일 저녁">평일 저녁</label>
+                                <label onclick="pageSelFuc(2, show4pg)"><input type="radio" name="tadd2" value="토요일 오전">토요일 오전</label>
+                                <label onclick="pageSelFuc(2, show4pg)"><input type="radio" name="tadd2" value="상담 후 결정">상담 후 결정</label>
                             </div>
                         </div>
-                        <div class="next_btn_inQuestion"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_02.png" onclick="pageSelFuc(2, show4pg)"></div>
+                        <!-- <div class="next_btn_inQuestion"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_02.png" onclick="pageSelFuc(2, show4pg)"></div> -->
                     </section>
         
                     <!-- <section class="page" id="page-4">
@@ -390,15 +390,52 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 </body>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
 <script>
-    $(document).ready(function() {
-		//드래그, 우클릭 방지
-		blockSourceView();
-		initDate();
+    let isAnimating = false;
+
+    // ==========================
+    // UI LOCK (핵심)
+    // ==========================
+    function lockUI() {
+        $('body').addClass('ui-lock');
+    }
+
+    function unlockUI() {
+        $('body').removeClass('ui-lock');
+    }
+
+    function isBlocked() {
+        return isAnimating;
+    }
+
+    $(document).ready(function () {
+        blockSourceView();
+        initDate();
         isimdangAgreement2();
 
-        $('.overlay').hide();
-        $('.popup-confirm').hide();
-	});
+        $('.overlay, .popup-confirm').hide();
+
+        // 라벨 UI 클릭 상태 관리 (단일화)
+        $(document).on('click', '.q_select label', function (e) {
+            if (isBlocked()) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                return false;
+            }
+
+            // label on 상태만 관리 (checked는 input이 담당)
+            $(this).closest('.q_select').find('label').removeClass('on');
+            $(this).addClass('on');
+        });
+
+        // input 직접 클릭도 차단
+        $(document).on('click', 'input[name="tadd1"], input[name="tadd2"]', function (e) {
+            if (isBlocked()) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                return false;
+            }
+        });
+    });
 
     $('input[name="tadd1"]').on('change', function () {
         if ($(this).val() === "아니오") {
@@ -449,93 +486,155 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     agree.onclick = function () { modal2.style.display = "block"; }
     close2.onclick = function () { modal2.style.display = "none"; }
 
-    let isAnimating = false; // 애니메이션 상태 플래그
-    // 첫번째 페이지
-    function show1pg(){    
-        const animation01 = gsap.timeline();
-        animation01.from('#page-1 .poster_01', { y: +50, delay: 0.2, opacity: 0, ease: "power1.out"},0);
-        animation01.from('#page-1 .poster_02', { y: +50, delay: 0.6, opacity: 0, stagger: 0.1, ease: "power1.out"},0);
-        animation01.from('#page-1 .agBox', { y: +50, delay: 0.8, opacity: 0, stagger: 0.1, ease: "power1.out"},0);
+    function isBlocked() {
+        return isAnimating;
     }
-    show1pg();
-    // 두번째 페이지
-    function show2pg() {
-        if (isAnimating) return; // 이미 애니메이션 중이면 실행 안 함
-        isAnimating = true; // 애니메이션 시작 상태로 변경
 
-        const animation02 = gsap.timeline({
-            onComplete: () => {
-                isAnimating = false; // 애니메이션 끝나면 플래그 해제
-            }
+    $(document).on('click', 'input[name="tadd1"], input[name="tadd2"]', function (e) {
+        if (isBlocked()) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            return false;
+        }
+    });
+
+    $(document).on('click', '.q_select label', function (e) {
+        if (isBlocked()) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            return false;
+        }
+    });
+
+    $('input[name="tadd1"]').prop('checked', false);
+    $('input[name="tadd2"]').prop('checked', false);
+    $('.q_select label').removeClass('on');
+
+    // 첫번째 페이지
+    function show1pg() {
+        const tl = gsap.timeline();
+
+        tl.from('#page-1 .poster_01', {
+            y: 50,
+            opacity: 0,
+            delay: 0.2,
+            ease: "power1.out"
         });
+
+        tl.from('#page-1 .poster_02', {
+            y: 50,
+            opacity: 0,
+            ease: "power1.out"
+        });
+
+        tl.from('#page-1 .agBox', {
+            y: 50,
+            opacity: 0,
+            ease: "power1.out"
+        });
+    }
+
+    show1pg();
+
+        // 두번째 페이지
+    function show2pg() {
+        if (isAnimating) return;
+        isAnimating = true;
+        lockUI();
 
         const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-        animation02.to('#page-1 .poster_01', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
-        animation02.to('#page-1 .poster_02', { x: -100, opacity: 0, delay: 0.6, duration: 0.2, ease: "power1.out"}, 0);
-        animation02.to('#page-1', { display: 'none' });
-        animation02.to('#page-2', { display: 'block', duration: 0.1 });
-        // animation02.to('.count_box', { top: '38%', duration: 0 }, "<");
-        animation02.set('.count_box', {
+        const tl = gsap.timeline({
+            onComplete: () => {
+                isAnimating = false;
+                unlockUI();
+            }
+        });
+
+        tl.to('#page-1', { opacity: 0, duration: 0.2 })
+        .set('#page-1', { display: 'none' })
+        .set('#page-2', { display: 'block', opacity: 1 });
+
+        tl.set('.count_box', {
             top: isMobile ? '35%' : '38%'
-        }, "<");
-        animation02.to('.roulette', { paddingBottom: '5.19%', duration: 0 }, "<");
-        animation02.from('#page-2 .poster_03', {x: +200, opacity: 0, duration: 0.2});
-        animation02.from('#page-2 .poster_04', {x: +200, opacity: 0, duration: 0.2});
-        animation02.from('#page-2 .question_box .q_select > label', {x: +200, opacity: 0, duration: 0.2, stagger: 0.1});
-        animation02.from('#page-2 .next_btn_inQuestion', {x: +200, opacity: 0, duration: 0.3, stagger: 0.1});
-    }
+        });
 
-    // 세번째 페이지
+        tl.from('#page-2 .poster_03', {
+            x: 200,
+            opacity: 0,
+            duration: 0.2
+        });
+
+        tl.from('#page-2 .poster_04', {
+            x: 200,
+            opacity: 0,
+            duration: 0.2
+        });
+
+        tl.from('#page-2 .q_select label', {
+            x: 200,
+            opacity: 0,
+            stagger: 0.1
+        });
+    }
+        // 세번째 페이지
     function show3pg() {
-        if (isAnimating) return; // 이미 애니메이션 중이면 실행 안 함
-        isAnimating = true; // 애니메이션 시작 상태로 변경
+        if (isAnimating) return;
+        isAnimating = true;
+        lockUI();
 
-        const animation03 = gsap.timeline({
+        const tl = gsap.timeline({
             onComplete: () => {
-                isAnimating = false; // 애니메이션 끝나면 플래그 해제
+                isAnimating = false;
+                unlockUI();
             }
         });
-        animation03.to('#page-2 .poster_03', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
-        animation03.to('#page-2 .poster_04', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
-        animation03.to('#page-2 .question_box .q_select > label', {x: -100, opacity: 0});
-        animation03.to('#page-2 .next_btn_inQuestion', {x: -100, opacity: 0});
-        animation03.to('#page-2', { display: 'none' });
-        animation03.to('#page-3', { display: 'block', duration: 0.1 });
-        animation03.from('#page-3 .poster_05', {x: +200, opacity: 0, duration: 0.});
-        animation03.from('#page-3 .poster_06', {x: +200, opacity: 0, duration: 0.});
-        animation03.from('#page-3 .question_box .q_select > label', {x: +200, opacity: 0, duration: 0.2, stagger: 0.1});
-        animation03.from('#page-3 .next_btn_inQuestion', {x: +200, opacity: 0, duration: 0.2, stagger: 0.1});
+
+        tl.to('#page-2', { opacity: 0, duration: 0.2 })
+        .set('#page-2', { display: 'none' })
+        .set('#page-3', { display: 'block', opacity: 1 });
+
+        tl.from('#page-3 .poster_05', {
+            x: 200,
+            opacity: 0,
+            duration: 0.2
+        });
+
+        tl.from('#page-3 .poster_06', {
+            x: 200,
+            opacity: 0,
+            duration: 0.2
+        });
+
+        tl.from('#page-3 .q_select label', {
+            x: 200,
+            opacity: 0,
+            stagger: 0.1
+        });
     }
 
-    // 마지막 페이지
+        // 마지막 페이지
     function show4pg() {
-        if (isAnimating) return; // 이미 애니메이션 중이면 실행 안 함
-            isAnimating = true; // 애니메이션 시작 상태로 변경
+        if (isAnimating) return;
+        isAnimating = true;
+        lockUI();
 
-        const animation04 = gsap.timeline({
+        const tl = gsap.timeline({
             onComplete: () => {
-                isAnimating = false; // 애니메이션 끝나면 플래그 해제
+                isAnimating = false;
+                unlockUI();
             }
         });
-        animation04.to('#page-3 .poster_03', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
-        animation04.to('#page-3 .poster_04', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
-        animation04.to('#page-3 .question_box .q_select > label', {x: -100, opacity: 0});
-        animation04.to('#page-3 .next_btn_inQuestion', {x: -100, opacity: 0});
-        animation04.to('#page-3', { display: 'none' });
-        // animation04.to('#page-3 .poster_05', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
-        // animation04.to('#page-3 .poster_06', { x: -100, opacity: 0, delay: 0.4, duration: 0.2, ease: "power1.out"}, 0);
-        // animation04.to('#page-3 .question_box .q_select > label', {x: -100, opacity: 0});
-        // animation04.to('#page-3 .next_btn_inQuestion', {x: -100, opacity: 0});
-        // animation04.to('#page-3', { display: 'none' });
-        animation04.to('#page-4', { display: 'block', duration: 0.1 });
-        animation04.from('#page-4 .poster_07', {x: +200, opacity: 0, duration: 0.2});
-        animation04.from('#page-4 .poster_08', {x: +200, opacity: 0, duration: 0.2});
-        animation04.from('#page-4 .table_box.top', {x: +200, opacity: 0, duration: 0.2});
-        animation04.from('#page-4 .table_box.middle', {x: +200, opacity: 0, duration: 0.2});
-        animation04.from('#page-4 .table_box.bottom', {x: +200, opacity: 0, duration: 0.2});
-        animation04.from('#page-4 .submit', {x: +200, opacity: 0, duration: 0.2});
-        animation04.from('#page-4 .description', {x: +200, opacity: 0, duration: 0.2});
+
+        tl.to('#page-3', { opacity: 0, duration: 0.2 })
+        .set('#page-3', { display: 'none' })
+        .set('#page-4', { display: 'block', opacity: 1 });
+
+        tl.from('#page-4 .table_box, #page-4 .submit, #page-4 .description', {
+            x: 200,
+            opacity: 0,
+            stagger: 0.1
+        });
     }
 
     //설문 클릭 시 클래스on 추가
@@ -583,17 +682,17 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     });
 
     // 버튼 페이지 이동 함수 (설문)
-	function pageSelFuc(num, nextFn) {
-        if(!isAnimating){
-            if($('input[name="tadd' + num + '"]').is(':checked')) {
-                if (typeof nextFn === 'function') {
-                    nextFn();
-                }
-            } else {
-                alert('설문을 체크해 주세요.');
+    function pageSelFuc(num, nextFn) {
+        if (isBlocked()) return;
+
+        const checked = $('input[name="tadd' + num + '"]:checked');
+
+        if (checked.length > 0) {
+            if (typeof nextFn === 'function') {
+                nextFn();
             }
         }
-	}
+    }
 
     function fnForm(formId){
 		/* form 자동 처리 방지 */
