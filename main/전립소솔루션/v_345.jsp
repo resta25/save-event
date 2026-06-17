@@ -52,7 +52,7 @@ pageEncoding="UTF-8"%>
     width: 93.407407%;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 21.45%;}
+    bottom: 20%;}
 
     .img-area {position: relative;}
     .img-area .btm_box {position: absolute; bottom: 4%; left: 5%; width: 45.37037%; color: #fff;}
@@ -81,7 +81,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .description .target {color: #000; font-size: 150%; padding: 0; letter-spacing: -0.02em;}
 
     #page_landing_c .question {position: relative;}
-    #page_landing_c .question_box {width: 100%; margin: 9.635% auto 4%; padding: 0 4%;}
+    #page_landing_c .question_box {width: 100%; margin: 9.635% auto 2%; padding: 0 4%;}
     #page_landing_c .question_box  [class^="user_"] {display: flex; align-items: center; justify-content: center; column-gap: 32px;}
     #page_landing_c .question_box > div:not(.formContents),
     #page_landing_c .question_box > .legend {width: 100%; font-size: 150%;}
@@ -185,7 +185,138 @@ pageEncoding="UTF-8"%>
 .swiper-area .swiper.mySwiper2 {bottom: 31.358%; left: 3.804%; width: 92.394%;}
 .swiper-slide img {width: 100%;}
 
-    
+/* 개인정보 처리방침 */
+.agBox {display: flex; align-items: center; justify-content: center; padding-bottom: 2.5%; font-family: 'Paperlogy'; font-weight: 500; font-size: 1.4rem; line-height: 1;}
+.btn-agreement {flex-shrink: 0; text-align: center; font-size: 1.4rem;  display: block; color: #000; font-family: 'Paperlogy';}
+.btn-agreement b {font-weight: 700; font-size: 100%; font-family: 'Paperlogy';}
+
+/* 동의 박스 (전체/필수/선택) */
+.agree_box {width: 50%; margin: 0 auto 2%; padding: 0 2%; font-family: 'Paperlogy'; box-sizing: border-box;}
+.agree_box > * {font-size: 1.2rem !important;}
+.agree_box ul {list-style: none; padding: 0; margin: 0;}
+.agree_box li {display: flex; align-items: center; padding: 6px 0; font-size: 1.6rem; color: #222; font-weight: 500; line-height: 1.3;}
+.agree_box li label {display: inline-flex; align-items: center; cursor: pointer; font-family: 'Paperlogy'; font-weight: 500;}
+.agree_box li input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid #444;
+    background-color: #fff;
+    border-radius: 2px;
+    margin-right: 8px;
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+    vertical-align: middle;
+}
+.agree_box li input[type="checkbox"]:checked {
+    background-color: #222;
+    border-color: #222;
+}
+.agree_box li input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.agree_box li.all-agree {font-weight: 700; padding-bottom: 4px;}
+.agree_box li .btn-detail {color: #222; font-weight: 700; margin-left: 6px; cursor: pointer; text-decoration: none; font-family: 'Paperlogy';}
+.agree_box li .btn-detail:hover {text-decoration: underline;}
+
+/* 약관 팝업 */
+.agree-popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9998;
+}
+.agree-popup-overlay.show {display: block;}
+.agree-popup {
+    display: none;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 720px;
+    background: #fff;
+    border-radius: 12px;
+    z-index: 9999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    /* overflow: hidden; */
+    flex-direction: column;
+    font-family: 'Paperlogy';
+}
+.agree-popup.show {display: flex;}
+.agree-popup .ag-header {
+    flex-shrink: 0;
+    padding: 30px 20px 10px;
+}
+.agree-popup .ag-header h2 {
+    margin: 0;
+    font-size: 22px;
+    color: #000;
+    font-family: 'Paperlogy';
+    font-weight: 700;
+    background-color: transparent;
+    padding: 0;
+    height: auto;
+    line-height: 1;
+}
+.agree-popup .ag-close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #000;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    font-family: 'Paperlogy';
+    z-index: 10;
+    user-select: none;
+}
+.agree-popup .ag-body {
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 10px 20px 20px;
+    color: #333;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    font-family: 'Paperlogy';
+    font-weight: 400;
+    word-break: break-all;
+}
+.agree-popup .ag-body .intro {margin-bottom: 14px; white-space: pre-line;}
+.agree-popup .ag-body .toc {margin-bottom: 18px; padding-left: 18px;}
+.agree-popup .ag-body .toc li {list-style: decimal; margin: 2px 0;}
+.agree-popup .ag-body .section-title {
+    margin: 16px 0 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: 'Paperlogy';
+}
+.agree-popup .ag-body .section-content {
+    padding: 5px 0;
+    margin-bottom: 6px;
+}
+
+
 @media screen and (max-width: 820px){
     .timer-box #timer {font-size: 2.5rem;}
 }
@@ -214,6 +345,18 @@ pageEncoding="UTF-8"%>
 @media screen and (max-width: 640px){
 }
 @media screen and (max-width: 480px){
+    .agree_box {width: 95%;}
+    .agree_box li {font-size: 1.05rem; padding-top: 2px;}
+    .agree_box li input[type="checkbox"] {width: 14px; height: 14px; margin-right: 6px;}
+    .agree_box li input[type="checkbox"]:checked::after {left: 4px; top: 0px; width: 4px; height: 8px;}
+    .agree-popup .ag-header {padding: 26px 16px 8px;}
+    .agree-popup .ag-header h2 {font-size: 16px;}
+    .agree-popup .ag-body {height: 350px; font-size: 1.05rem; padding: 8px 16px 16px;}
+    .agree-popup .ag-body .section-title {font-size: 1.15rem;}
+
+    .agree_box li label {font-size: 80%;}
+    .agree_box li .btn-detail {font-size: 75% !important;}
+
         #page_landing_c input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {
             padding: 4% 3% 2%;
         }
@@ -293,9 +436,30 @@ pageEncoding="UTF-8"%>
     
                         </div>
                         
-                        <div class="agBox">
+                        <!-- <div class="agBox">
                             <label><input name="agBox" type="checkbox"><span>&nbsp;(필수) 개인정보 수집 및 이용 동의</span></label> <a href="#" class="btn-agreement">[자세히 보기]</a>
-                        </div>
+                        </div> -->
+                        <div class="agree_box">
+                                <ul>
+                                    <li class="all-agree">
+                                        <label>
+                                            <input type="checkbox" id="chkAll"/>전체 동의
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" id="agree1" name="agBox" class="chk_item" value="Y"/>(필수) 개인정보 수집 및 이용 동의
+                                        </label>
+                                        <a href="javascript:void(0);" class="btn-detail" onclick="openAgreePopup('agreePopup1'); return false;">[자세히 보기]</a>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" id="agree2" name="agree2" class="chk_item" value="Y"/>(선택) 광고성정보(전화, 문자) 수신 동의
+                                        </label>
+                                        <a href="javascript:void(0);" class="btn-detail" onclick="openAgreePopup('agreePopup2'); return false;">[자세히 보기]</a>
+                                    </li>
+                                </ul>
+                            </div>
 
                         <div class="submit"><input type="image" value="" onclick="fnForm('form-1')" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png" /></div>	
 
@@ -375,6 +539,61 @@ pageEncoding="UTF-8"%>
                 </p>
             </div>
         </div>
+
+        <!-- 동의 약관 팝업 오버레이 -->
+        <div class="agree-popup-overlay" id="agreePopupOverlay" onclick="closeAgreePopup();"></div>
+
+        <!-- (필수) 개인정보 수집 및 이용 동의 팝업 -->
+        <div class="agree-popup" id="agreePopup1">
+            <span class="ag-close" onclick="closeAgreePopup();">&times;</span>
+            <div class="ag-header">
+                <h2>개인정보처리방침</h2>
+            </div>
+            <div class="ag-body">
+                <p class="section-title">병원 제휴의 요청 개인정보 수집 및 이용 동의</p>
+                
+                <div class="section-content">
+                    [개인정보 수집 및 이용 동의]<br /><br />
+
+                    - 수집 · 이용 주체 : 이벤트 신청<br />
+                    - 수집 · 이용 목적 : 신청한 이벤트 안내, 추가적인 상담 및 방문 예약, 이벤트 신청자 관리<br />
+                    - 수집 · 이용 항목 : 이름, 연락처, 성별, 출생연도, 설문내용<br />
+                    - 보유 및 이용 기간 : 의료법 등 관련 병령에서 정한 보존 기간<br /><br />
+
+                    * 동의를 거부할 권리가 있으나, 거부 시 이벤트 참여가 제한됩니다.<br />
+                    * 고객 동의 철회 시 지체없이 파기합니다.<br /><br />
+
+
+                    [개인정보 처리위탁 동의]<br /><br />
+
+                    - 수탁자 : 병원 제휴의 요청<br />
+                    - 위탁 업무 내용<br />
+                    └ 온라인, 모바일을 통한 고객 정보 수집 및 관리<br />
+                    └ 고객정보 서버 운영 및 관리<br />
+                    └ 서비스 신청 내역 관리를 위한 개인정보 전송<br />
+                    └ 서비스 제공을 위해 필요한 개인정보 관련 업무 처리<br />
+                    - 위탁 항목 : 이름, 연락처, 성별, 출생연도, 설문내용</div>
+            </div>
+        </div>
+
+        <!-- (선택) 광고성정보 수신 동의 팝업 -->
+        <div class="agree-popup" id="agreePopup2">
+            <span class="ag-close" onclick="closeAgreePopup();">&times;</span>
+            <div class="ag-header">
+                <h2>개인정보 수집·이용 및 제공 동의서</h2>
+            </div>
+            <div class="ag-body">
+                <div class="intro">뷰티트렌드(이하 "회사")가 [전립소 참당귀황귀 프리미엄] 등을 위한 목적으로 아래와 같이 귀하의 개인정보를 수집·이용하는 것에 동의합니다.</div>
+
+                <p class="section-title">I. 홍보 및 마케팅 동의</p>
+                <div class="section-content">- 수집목적 : 제품 상담 및 판매, 이벤트 등 광고성 정보 전달<br />
+                - 수집항목 : (필수) 성명, 연락처, 성별, 나이<br />
+                - 보유기간 : 수집동의일로부터 5년간<br /><br />
+
+                ※ 회사는 전화, 문자, 이메일, 모바일 앱, 카카오톡 등을 통해 귀하에게 연락할 수 있습니다.<br />
+                ※ 동의를 거부하실 수 있으나, 거부하는 경우 제품소개, 이벤트 참여 등의 소식을 받을 수 없습니다.</div>
+            </div>
+        </div>
     </main>
 </body>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -382,6 +601,67 @@ pageEncoding="UTF-8"%>
 <!--공통_script start --><script src="/js/agreement.js"></script><!--공통_script end-->
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
 <script>
+    // ===== 동의 약관 팝업 (전역 함수, inline onclick에서 호출) =====
+    function openAgreePopup(popupId) {
+        console.log('[openAgreePopup] called with', popupId);
+        var popups = document.querySelectorAll('.agree-popup');
+        for (var i = 0; i < popups.length; i++) {
+            popups[i].classList.remove('show');
+        }
+        var target = document.getElementById(popupId);
+        if (target) {
+            target.classList.add('show');
+        } else {
+            console.warn('[openAgreePopup] target not found:', popupId);
+        }
+        var overlay = document.getElementById('agreePopupOverlay');
+        if (overlay) overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeAgreePopup() {
+        console.log('[closeAgreePopup] called');
+        var popups = document.querySelectorAll('.agree-popup');
+        for (var i = 0; i < popups.length; i++) {
+            popups[i].classList.remove('show');
+        }
+        var overlay = document.getElementById('agreePopupOverlay');
+        if (overlay) overlay.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+
+    // 개인정보 처리방침(modal2) 관련 이벤트
+    (function() {
+        var modal2 = document.getElementById("modal2");
+        var agree = document.querySelector(".agBox .btn-agreement");
+        var close2 = document.getElementById("close");
+        if (agree && modal2) {
+            agree.onclick = function () { modal2.style.display = "block"; };
+        }
+        if (close2 && modal2) {
+            close2.onclick = function () { modal2.style.display = "none"; };
+        }
+    })();
+
+    // ===== 동의 박스 체크박스 동기화 =====
+    $(document).ready(function() {
+        var $chkAll = $('#chkAll');
+        var $chkItems = $('.agree_box .chk_item');
+
+        // 전체 동의 클릭 시 모든 항목 체크/해제
+        $chkAll.on('click', function() {
+            $chkItems.prop('checked', this.checked);
+        });
+
+        // 개별 체크 시 전체동의 동기화
+        $chkItems.on('click', function() {
+            var total = $chkItems.length;
+            var checked = $chkItems.filter(':checked').length;
+            $chkAll.prop('checked', total === checked);
+        });
+    });
+
+
     $(document).ready(function(){
         blockSourceView();//드래그, 우클릭 방지
         initDate();
@@ -409,6 +689,14 @@ pageEncoding="UTF-8"%>
                 $(obj).append(html);
             }
         });
+
+        if(resultData.length >= 10){
+            $('.subscribe_group').show();
+            return;
+        } else {
+            $('.subscribe_group').hide();
+            return;
+        }
     }
 
     // let dataNum;
