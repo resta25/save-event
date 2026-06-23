@@ -213,8 +213,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         [class^="popup-"] {width: 90vw; font-size: 2.5vw; border-radius: 20px; top: 57%;}
     }
     @media screen and (max-width: 500px){
-        .roulette {padding: 4% 9.5% 4.19%;}
-        .poster_01 > .img-area {width: 67.03%; margin: 0 auto 4.15%;}
+        .roulette {padding: 4% 7.5% 4.19%;}
+        .poster_01 > .img-area {width: 81.03%; margin: 0 auto 4.15%;}
         .count_box, .count {font-size: 1.25rem;}
         .sub-txt {font-size: 80%;}
         .form .description p,
