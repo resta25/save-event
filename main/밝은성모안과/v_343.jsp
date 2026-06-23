@@ -144,6 +144,7 @@ pageEncoding="UTF-8"%>
         margin: 0 auto 0;
     }
 
+    #page-1 .first,
     .db_btn, .submit input[type="image"] {animation: pulsating 0.8s linear infinite;
         -webkit-animation: pulsating 0.8s linear infinite;}
         
