@@ -604,9 +604,9 @@ pageEncoding="UTF-8"%>
     });
 
     $('input[name="tadd2"]').on('change', function () {
+        $('input[name="tadd2"]').closest('label').removeClass('on');
         if ($(this).val() === "그 외 지역") {
             $('.overlay, .popup_02').show();
-            $('input[name="tadd2"]').closest('label').removeClass('on');
 
         } else {
             $(this).closest('label').addClass('on');
