@@ -391,7 +391,7 @@ pageEncoding="UTF-8"%>
 <body id="page_landing_c" class="loaded">
     <main>
         <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.gif"></div>
-        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg"></div>
+        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.gif"></div>
         <div class="img-area gif-area">
             <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_03.gif">
             <!-- <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_03.jpg"> -->
@@ -506,7 +506,7 @@ pageEncoding="UTF-8"%>
 
             <div class="container">
                 <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div> -->
-                <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div> -->
+                <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div>
             </div>
         
         <div id="modal2" class="modal modal2" style="display: none;">
