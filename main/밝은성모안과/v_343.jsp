@@ -61,7 +61,7 @@ pageEncoding="UTF-8"%>
    
     #page_landing_c .wrap_form {padding: 0; border: none;}
     #page_landing_c .wrap_curd {background: transparent;}
-    #page_landing_c .wrap_curd .question_container {padding: 10% 4.951% 0;}
+    /* #page_landing_c .wrap_curd .question_container {padding: 10% 4.951% 0;} */
     /* user db입력칸 (이름) */
     /* #page_landing_c .wrap_curd .q_select {display: grid; grid-template-columns: repeat(3, 1fr); gap: 1%; font-size: 150%; flex-grow: 1;} */
     #page_landing_c .description p, #page_landing_c .description .ad_txt {text-align: center; font-family: 'Pretendard'; font-weight: 400;}
@@ -298,8 +298,8 @@ pageEncoding="UTF-8"%>
 
                     <section class="page" id="page-3">
                         <div class="inner">
-                            <div class="img-area poster_02"><img src="//static.savemkt.com/event/v_${eventSeq}/q_01.png"></div>
-                            <div class="img-area poster_03 gage"><img src="//static.savemkt.com/event/v_${eventSeq}/gage_01.png"></div>
+                            <div class="img-area poster_02"><img src="//static.savemkt.com/event/v_${eventSeq}/q_02.png"></div>
+                            <div class="img-area poster_03 gage"><img src="//static.savemkt.com/event/v_${eventSeq}/gage_02.png"></div>
                             <div class="question_box">
                                 <div class="q_select">
                                     <label><input type="radio" name="tadd2" value="서울">서울</label>
@@ -329,6 +329,7 @@ pageEncoding="UTF-8"%>
                                         <div class="q_text img-area">
                                             <img src="//static.savemkt.com/event/v_${eventSeq}/txt.png">
                                         </div>
+                                        <div class="img-area poster_03 gage"><img src="//static.savemkt.com/event/v_${eventSeq}/gage_03.png"></div>
                                         <div class="question_box">
                                             <div class="user_name">
                                                 <!-- <span class="legend">이 름</span> -->
@@ -756,7 +757,6 @@ pageEncoding="UTF-8"%>
         if (isBlocked()) return;
 
         const checked = $('input[name="tadd' + num + '"]:checked');
-        console.log(num)
 
         if (checked.length > 0) {
             if (typeof nextFn === 'function') {
