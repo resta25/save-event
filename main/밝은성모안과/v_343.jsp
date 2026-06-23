@@ -101,6 +101,9 @@ pageEncoding="UTF-8"%>
     #page_landing_c .question_box .q_select label {display: inline-flex; width: 100%; align-items: center; justify-content: center; border-radius:0.5rem; font-size: 275%; text-align: center;  color: #0a151e; font-weight: 400; cursor: pointer; padding: 3% 2%; background-color: #f3f3f3; border-radius: 27px;}
     #page_landing_c .question_box .q_select label.on {background-color: #e1d3d3;}
     #page_landing_c .question_box .q_select label + label {margin-top: 2%;}
+
+    #page-3 .q_select {display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2%;}
+    #page-3 .q_select label + label {margin-top: 0;}
     /* #page_landing_c .question_box .q_select:nth-of-type(2) label.on, label.add1{background-color: #000;} */
     /* #page_landing_c .question_box .q_select label.on, label.add3{background-color: #8ed3ff; color:#00385c;} */
 
@@ -163,7 +166,7 @@ pageEncoding="UTF-8"%>
         display: none;
     }
     .popup-box {z-index: 999; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 945px; width: 73.541%; margin: 0 auto; padding: 9% 0 3.5%; box-sizing: border-box; display: none; background-color: #fff; border-radius: 25px;}
-    .popup-box > .img-area {width: 45.715%; margin: 0 auto;}
+    .popup-box > .img-area {width: 60%; margin: 0 auto;}
     .popup-box.popup_02 > .img-area {width: 60%;}
     .popup-box .btn-box {text-align: center;}
     .popup-box .btn-box .btn-confirm {margin-top: 5%; padding: 0; cursor: pointer; box-sizing: border-box; transition: 0s; width: 33.122%; border-radius: 12px;}
@@ -206,7 +209,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .question_box .q_select label {font-size: 125%; border-radius: 12px;}
 
     .popup-box {border-radius: 12px; width: 90%;}
-    .popup-box > .img-area {width: 67%;}
+    .popup-box > .img-area {width: 78%;}
     .popup-box.popup_02 > .img-area {width: 78%;}
     .popup-box .btn-box .btn-confirm {width: 50%; margin-top: 7%;}
 
@@ -278,8 +281,9 @@ pageEncoding="UTF-8"%>
                             <div class="img-area poster_03 gage"><img src="//static.savemkt.com/event/v_${eventSeq}/gage_01.png"></div>
                             <div class="question_box">
                                 <div class="q_select">
-                                    <label><input type="radio" name="tadd1" value="0.5 이하">0.5 이하</label>
-                                    <label><input type="radio" name="tadd1" value="0.5 이상">0.5 이상</label>
+                                    <label><input type="radio" name="tadd1" value="서울">서울</label>
+                                    <label><input type="radio" name="tadd1" value="경기">경기</label>
+                                    <label><input type="radio" name="tadd1" value="그 외 지역">그 외 지역</label>
                                 </div>
                             </div>
                             <p class="paging">
@@ -302,9 +306,10 @@ pageEncoding="UTF-8"%>
                             <div class="img-area poster_03 gage"><img src="//static.savemkt.com/event/v_${eventSeq}/gage_02.png"></div>
                             <div class="question_box">
                                 <div class="q_select">
-                                    <label><input type="radio" name="tadd2" value="서울">서울</label>
-                                    <label><input type="radio" name="tadd2" value="경기">경기</label>
-                                    <label><input type="radio" name="tadd2" value="그 외 지역">그 외 지역</label>
+                                    <label><input type="checkbox" name="tadd2[]" value="평일 오전">평일 오전</label>
+                                    <label><input type="checkbox" name="tadd2[]" value="평일 오후">평일 오후</label>
+                                    <label><input type="checkbox" name="tadd2[]" value="토요일">토요일</label>
+                                    <label><input type="checkbox" name="tadd2[]" value="수술의향 없음">수술의향 없음</label>
                                 </div>
                             </div>
                             <p class="paging">
@@ -595,22 +600,27 @@ pageEncoding="UTF-8"%>
     },2000);
 
     $('input[name="tadd1"]').on('change', function () {
-        if ($(this).val() === "0.5 이상") {
+        const $tadd1Labels = $('input[name="tadd1"]').closest('label');
+        $tadd1Labels.removeClass('on');
+
+        if ($(this).val() === "그 외 지역") {
             $('.overlay, .popup_01').show();
-            $('input[name="tadd1"]').closest('label').removeClass('on');
         } else {
             $(this).closest('label').addClass('on');
         }
     });
 
-    $('input[name="tadd2"]').on('change', function () {
-        $('input[name="tadd2"]').closest('label').removeClass('on');
-        if ($(this).val() === "그 외 지역") {
-            $('.overlay, .popup_02').show();
+    $('input[name="tadd2[]"]').on('change', function () {
+        const $tadd2Inputs = $('input[name="tadd2[]"]');
+        const $thisInput = $(this);
 
-        } else {
-            $(this).closest('label').addClass('on');
+        if ($thisInput.val() === "수술의향 없음" && $thisInput.is(':checked')) {
+            $('.overlay, .popup_02').show();
+            return;
         }
+
+        $tadd2Inputs.closest('label').removeClass('on');
+        $tadd2Inputs.filter(':checked').closest('label').addClass('on');
     });
 
     // popup-confirm > 확인 버튼
@@ -619,7 +629,7 @@ pageEncoding="UTF-8"%>
 
         // ✅ 선택 초기화
         $('input[name="tadd1"]').prop('checked', false);
-        $('#page-1 .q_select label').removeClass('on');
+        $('#page-2 .q_select label').removeClass('on');
     });
 
     // popup-confirm > 확인 버튼
@@ -627,8 +637,8 @@ pageEncoding="UTF-8"%>
         $('.overlay, .popup_02').hide();
 
         // ✅ 선택 초기화
-        $('input[name="tadd2"]').prop('checked', false);
-        $('#page-2 .q_select label').removeClass('on');
+        $('input[name="tadd2[]"]').prop('checked', false);
+        $('#page-3 .q_select label').removeClass('on');
     });
 
      // 첫번째 페이지
@@ -756,7 +766,8 @@ pageEncoding="UTF-8"%>
     function pageSelFuc(num, nextFn) {
         if (isBlocked()) return;
 
-        const checked = $('input[name="tadd' + num + '"]:checked');
+        const questionName = 'tadd' + num;
+        const checked = $('input[name="' + questionName + '"]:checked, input[name="' + questionName + '[]"]:checked');
 
         if (checked.length > 0) {
             if (typeof nextFn === 'function') {
@@ -828,13 +839,17 @@ pageEncoding="UTF-8"%>
 			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
 		}
 
-        let selectedRadio2 = procForm.querySelector('input[name="tadd2"]:checked');
-		if (!selectedRadio2) {
-			alert("설문을 선택해주세요.");
-			return;
-		} else {
-			procForm.querySelector("input[name='add2']").value = selectedRadio2.value;
-		}
+        let checkedValues;
+        checkedValues = $('#' + formId + ' input[name="tadd2[]"]:checked').map(function() {
+            return $(this).val();
+        }).get();
+        
+        if (!checkedValues.length >= 1) {
+            alert("고민사항 항목을 선택해주세요.");
+            return;
+        } else {
+            procForm.querySelector("input[name='add2']").value = checkedValues;
+        }
 		
 		// 필수값 체크 항목
 		var required = {
