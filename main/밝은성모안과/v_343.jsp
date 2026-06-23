@@ -167,7 +167,7 @@ pageEncoding="UTF-8"%>
     }
     .popup-box {z-index: 999; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 945px; width: 73.541%; margin: 0 auto; padding: 9% 0 3.5%; box-sizing: border-box; display: none; background-color: #fff; border-radius: 25px;}
     .popup-box > .img-area {width: 60%; margin: 0 auto;}
-    .popup-box.popup_02 > .img-area {width: 60%;}
+    .popup-box.popup_02 > .img-area {width: 48%;}
     .popup-box .btn-box {text-align: center;}
     .popup-box .btn-box .btn-confirm {margin-top: 5%; padding: 0; cursor: pointer; box-sizing: border-box; transition: 0s; width: 33.122%; border-radius: 12px;}
     
@@ -210,7 +210,7 @@ pageEncoding="UTF-8"%>
 
     .popup-box {border-radius: 12px; width: 90%;}
     .popup-box > .img-area {width: 78%;}
-    .popup-box.popup_02 > .img-area {width: 78%;}
+    .popup-box.popup_02 > .img-area {width: 60%;}
     .popup-box .btn-box .btn-confirm {width: 50%; margin-top: 7%;}
 
     #page_landing_c .img-area .btm_box .agBox {font-size: 70%; font-weight: 400;}
