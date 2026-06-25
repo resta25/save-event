@@ -260,8 +260,15 @@ pageEncoding="UTF-8"%>
                                 <label><input name="agBox" type="checkbox"><span>개인정보수집 및 이용동의</span></label> <a href="#" class="btn-agreement">[내용 보기]</a>
                             </div> -->
                             <div class="btn_box">
-                                <button type="button" class="first"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_agree.png"></button>
-                                <button type="button" onclick="alert('미동의 시 설문에 참여 하실 수 없습니다.');" class="first"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_disagree.png"></button>
+                                <button type="button" class="first btn-agree-toggle">
+                                    <img
+                                        class="js-agree-img"
+                                        src="//static.savemkt.com/event/v_${eventSeq}/btn_agree.png"
+                                        data-default-src="//static.savemkt.com/event/v_${eventSeq}/btn_agree.png"
+                                        data-on-src="//static.savemkt.com/event/v_${eventSeq}/btn_agree_on.png"
+                                    >
+                                </button>
+                                <button type="button" onclick="alert('미동의 시 설문에 참여 하실 수 없습니다.');" class="first btn-disagree-toggle"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_disagree.png"></button>
                             </div>
                             <input type="checkbox" name="agBox" value="Y" style="display:none;">
                             <div class="question_box">
@@ -270,7 +277,7 @@ pageEncoding="UTF-8"%>
                                 </div>
                                 <div class="q_select">
                                     <label><input type="radio" onclick="alert('혜택 제공 대상이 아닙니다')" name="" value="네"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_yes.png"></label>
-                                    <label><input type="radio" name="tadd1" value="아니오"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_no.png"></label>
+                                    <label><input type="radio" name="tadd1" value="아니오" class="js-tadd1-no"><img class="js-tadd1-no-img" src="//static.savemkt.com/event/v_${eventSeq}/btn_no.png" data-default-src="//static.savemkt.com/event/v_${eventSeq}/btn_no.png" data-on-src="//static.savemkt.com/event/v_${eventSeq}/btn_no_on.png"></label>
                                 </div>
                             </div>
                             <div class="question_box">
@@ -278,7 +285,7 @@ pageEncoding="UTF-8"%>
                                     <img src="//static.savemkt.com/event/v_${eventSeq}/q_02.png">
                                 </div>
                                 <div class="q_select">
-                                    <label><input type="radio" name="tadd2" value="서울, 수도권"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_01.png"></label>
+                                    <label><input type="radio" name="tadd2" value="서울, 수도권" class="js-tadd2-seoul"><img class="js-tadd2-seoul-img" src="//static.savemkt.com/event/v_${eventSeq}/btn_01.png" data-default-src="//static.savemkt.com/event/v_${eventSeq}/btn_01.png" data-on-src="//static.savemkt.com/event/v_${eventSeq}/btn_01_on.png"></label>
                                     <label><input type="radio" onclick="alert('혜택 제공 대상이 아닙니다')" name="" value="그 외 지역"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_02.png"></label>
                                 </div>
                             </div>
@@ -365,16 +372,37 @@ pageEncoding="UTF-8"%>
         initDate();
         jineyeAgreement();
 
-        $('.btn_box .first').first().on('click', function() {
+        $('.btn-agree-toggle').on('click', function() {
             $('input[name="agBox"]').prop('checked', true);
+            syncSelectionImages();
         });
+
+        $('.btn-disagree-toggle').on('click', function() {
+            $('input[name="agBox"]').prop('checked', false);
+            syncSelectionImages();
+        });
+
+        function swapByChecked($img, isChecked) {
+            const defaultSrc = $img.data('default-src');
+            const onSrc = $img.data('on-src');
+            $img.attr('src', isChecked ? onSrc : defaultSrc);
+        }
+
+        function syncSelectionImages() {
+            swapByChecked($('.js-agree-img'), $('input[name="agBox"]').is(':checked'));
+            swapByChecked($('.js-tadd1-no-img'), $('.js-tadd1-no').is(':checked'));
+            swapByChecked($('.js-tadd2-seoul-img'), $('.js-tadd2-seoul').is(':checked'));
+        }
 
         $('.question_box .q_select input[type="radio"]').on('click', function() {
             const $clicked = $(this);
             const $siblings = $clicked.closest('.q_select').find('input[type="radio"]').not($clicked);
             $siblings.prop('checked', false);
             $clicked.prop('checked', true);
+            syncSelectionImages();
         });
+
+        syncSelectionImages();
 
         //신청현황 리스트
         getComment(`${eventSeq}`);
