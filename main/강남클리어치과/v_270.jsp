@@ -494,13 +494,14 @@ pageEncoding="UTF-8"%>
                 <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div> -->
                 <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div> -->
             </div>
-
+            
             <div class="description footer">
                 <span id="target">대상자 : ${resVo.target}</span>
                 <p id="event-period">이벤트 기간 :  <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
                 <p>시술 결과는개인에 따라 상이할 수 있으며, 치료방법에 따라 수가가 변동될 수 있습니다. <br />
                     부작용 안내 : 시림·이물감 및 드물게 탈락 가능성(개인차 있음) ㅣ 정가: 55만원 </p>
-            </div>	
+                </div>	
+            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div>
 
         <div class="overlay"></div>
         <div class="popup-valid">
