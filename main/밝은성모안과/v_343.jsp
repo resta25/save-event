@@ -66,6 +66,7 @@ pageEncoding="UTF-8"%>
     /* #page_landing_c .wrap_curd .q_select {display: grid; grid-template-columns: repeat(3, 1fr); gap: 1%; font-size: 150%; flex-grow: 1;} */
     #page_landing_c .description p, #page_landing_c .description .ad_txt {text-align: center; font-family: 'Pretendard'; font-weight: 400;}
     
+    #page-1 .top-img {z-index: 10; position: fixed; top: 0; left: 50%; transform: translateX(-50%); max-width: 1080px; width: 100%;}
     #page-1 .poster_01 {position: relative;}
     #page-1 .paging {position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%); width: 90%; text-align: center;}
 
@@ -180,7 +181,7 @@ pageEncoding="UTF-8"%>
 
 /* 비디오 영역 */
 .video-area {position: relative;}
-.video-area .video-box {position: absolute; bottom: 15.2%; left: 3.95%; width: calc(484 / 1080 * 100%); max-width: 484px; aspect-ratio: 484 / 286; overflow: hidden; }
+.video-area .video-box {position: absolute; bottom: 19.3%; left: 3.95%; width: calc(484 / 1080 * 100%); max-width: 484px; aspect-ratio: 484 / 286; overflow: hidden; }
 .video-area .video-box.box02 {left: unset; right: 3.75%;}
 .video-area .video-box video {display: block; width: 100%; height: 100%; object-fit: cover; margin-top: -0.5%;}
 
@@ -242,7 +243,7 @@ pageEncoding="UTF-8"%>
             <form class="wrap_curd" id="form-1" method="POST" accept-charset="utf-8">
                 <div class="formContents">
                     <section class="page" id="page-1">
-                        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.gif"></div>
+                        <div class="img-area top-img"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.gif"></div>
                         <div class="img-area video-area">
                             <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg">
                             <div class="video-box box01">
@@ -438,6 +439,7 @@ pageEncoding="UTF-8"%>
     $(document).ready(function(){
         blockSourceView();//드래그, 우클릭 방지
         initDate();
+        
         sungmoAgreementWithText(`
             개인정보처리방침
 
@@ -598,6 +600,29 @@ pageEncoding="UTF-8"%>
             $(this).show().parent().append(this)
         })
     },2000);
+
+    function syncPage1TopPadding() {
+        const $topImg = $('#page-1 .top-img');
+        if (!$topImg.length) return;
+
+        const topImgHeight = $topImg.outerHeight() || 0;
+        $('#page-1').css({'padding-top': topImgHeight + 'px'});
+    }
+
+    // 이미지 로딩/리사이즈 이후에 고정영역 높이를 다시 맞춘다.
+    $(window).on('load resize orientationchange', syncPage1TopPadding);
+    $('#page-1 .top-img img').on('load', syncPage1TopPadding);
+    syncPage1TopPadding();
+
+    // 리프레시 시 브라우저의 스크롤 복원으로 하단에서 시작하는 문제 방지.
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    $(window).on('pageshow', function () {
+        window.scrollTo(0, 0);
+    });
+
+
 
     $('input[name="tadd1"]').on('change', function () {
         const $tadd1Labels = $('input[name="tadd1"]').closest('label');
