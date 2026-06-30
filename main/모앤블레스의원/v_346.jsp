@@ -254,7 +254,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                         <div class="img-area poster_04"><img src="//static.savemkt.com/event/v_${eventSeq}/gage_01.png"></div>
                         <div class="question_box">
                             <div class="q_select">
-                                <label><input type="radio" name="tadd1" value="예">예</label>
+                                <label><input type="radio" name="tadd1" onclick="pageSelFuc(1,$(this))" value="예">예</label>
                                 <label><input type="radio" name="tadd1" value="아니오">아니오</label>
                             </div>
                         </div>
@@ -505,9 +505,11 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         `);
 	});
 
+    let isAnimating = false; // 애니메이션 상태 플래그
 
     $('input[name="tadd1"]').on('change', function () {
         if ($(this).val() === "아니오") {
+            if (isAnimating) return;
             $('.overlay, .popup-confirm').show();
         }
     });
@@ -556,7 +558,6 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     agree.onclick = function () { modal2.style.display = "block"; }
     close2.onclick = function () { modal2.style.display = "none"; }
 
-    let isAnimating = false; // 애니메이션 상태 플래그
     // 첫번째 페이지
     function show1pg(){    
         const animation01 = gsap.timeline();
