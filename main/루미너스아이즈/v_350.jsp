@@ -385,7 +385,7 @@ pageEncoding="UTF-8"%>
             
 		});
 
-        // $('.subscribe_container').toggle(resultData.length >= 10);
+        $('.subscribe_container').toggle(resultData.length >= 10);
 	}
 
 	setInterval(function(){
