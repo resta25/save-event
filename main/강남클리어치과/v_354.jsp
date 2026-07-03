@@ -188,8 +188,8 @@ pageEncoding="UTF-8"%>
 
     .gage {margin: 4.295% 0 6%;}
 
-    #page-3 .sub-txt {font-size: 10px; margin-bottom: 5px;}
-    .notice-area > * {font-size: 10px;}
+    #page-3 .sub-txt {font-size: 9px; margin-bottom: 5px;}
+    .notice-area > * {font-size: 9px;}
 
     #page-2 .inner, #page-3 .inner {width: 83%;}
     #page_landing_c .wrap_curd .count-area .count-box {top: 20.5%; left: 55%; width: 55px; font-size: 24px;}
