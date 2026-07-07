@@ -13,7 +13,7 @@ pageEncoding="UTF-8"%>
     * {font-family: "Pretendard", sans-serif; box-sizing: border-box;}
     #page_landing_c .wrap_curd {padding: 4.6rem 4.9rem; border-radius: 2.5rem;}
     #page_landing_c .wrap_curd * {font-size: 100%; font-family: inherit;}
-    #page_landing_c .wrap_form {border: 0; padding: 4.3rem 4rem; box-sizing: border-box; background-color: #001133;}
+    /* #page_landing_c .wrap_form {border: 0; padding: 4.3rem 4rem; box-sizing: border-box; background-color: #001133;} */
     html{height: 100%;}
     main {position: relative;}
 	.content {padding: 2rem 1rem;}
@@ -28,6 +28,7 @@ pageEncoding="UTF-8"%>
 
     /* 설문 영역 */
     .question_box {margin-top: 6.8rem;}
+    .q_text.img-area {width: 66.759259%; margin: 0 auto;}
     #page_landing_c .question_box [class^="user_"] {display: flex; align-items: center; column-gap: 5.5rem;}
     #page_landing_c .question_box [class^="user_"] + [class^="user_"] {margin-top: 2.2rem;}
     #page_landing_c .question_box [class^="user_"] .legend {flex-shrink: 0; width: 12.5rem; font-size: 3.6rem; font-weight: 400;}
@@ -122,17 +123,22 @@ pageEncoding="UTF-8"%>
 @media screen and (max-width: 480px){
     html, body {font-size: 1.7vw;}
 
+    #page_landing_c .wrap_curd .agBox {font-size: 90%;}
+
     .count-area .count {font-size: 3rem; right: 34.5%; width: 7rem;}
     .question_box {margin-top: 4rem;}
     #page_landing_c .question_box [class^="user_"] {column-gap: 2rem;}
     #page_landing_c .question_box [class^="user_"] input {font-size: 3rem;}
-    #page_landing_c .question_box [class^="user_"] .legend {width: 10.5rem; font-size: 3rem;}
+    #page_landing_c .question_box [class^="user_"]:not(.user_gender) input {font-size: 2.4rem;}
+    #page_landing_c .question_box [class^="user_"] .legend {width: 5.5rem; font-size: 2.4rem;}
     .wrap_form div:not(.agBox) input[type="radio"] + span {font-size: 3rem !important; padding-left: 5rem;} 
     .wrap_form div:not(.agBox) input[type="radio"] + span:after {left: 0.6rem; width: 2.5rem; height: 1.3rem;}
     .wrap_form div:not(.agBox) input[type="radio"] + span:before {width: 3rem; height: 3rem;}
     .wrap_form .description p, .wrap_form .description span, .wrap_form .description .ad_txt {font-size: 1.4rem !important;}
 
     .q_select {column-gap: 1rem; margin-top: 2.9rem;}
+    .q_text.img-area {width: 78%;}
+    #page_landing_c .wrap_curd {padding: 0.6rem 1.9rem;}
     #page_landing_c .wrap_curd .q_select label {width: calc((100% - 3rem) / 4); font-size: 2rem; padding: 1rem 0;}
 
     .fixed .timer-box {left: 45%; font-size: 125%;}
@@ -163,10 +169,10 @@ pageEncoding="UTF-8"%>
                                     <img src="//static.savemkt.com/event/v_${eventSeq}/txt_01.png">
                                 </div>
                                 <div class="q_select">
-                                    <label><input type="radio" name="tadd1" value="고혈압">고혈압</label>
-                                    <label><input type="radio" name="tadd1" value="혈관질환">혈관질환</label>
-                                    <label><input type="radio" name="tadd1" value="관절 · 연골">관절 · 연골</label>
-                                    <label><input type="radio" name="tadd1" value="기타">기타</label>
+                                    <label><input type="checkbox" name="tadd1[]" value="고혈압">고혈압</label>
+                                    <label><input type="checkbox" name="tadd1[]" value="혈관질환">혈관질환</label>
+                                    <label><input type="checkbox" name="tadd1[]" value="관절 · 연골">관절 · 연골</label>
+                                    <label><input type="checkbox" name="tadd1[]" value="기타">기타</label>
                                 </div>
                                 <div class="question_box">
                                     <div class="user_name">
@@ -242,10 +248,10 @@ pageEncoding="UTF-8"%>
                                 <img src="//static.savemkt.com/event/v_${eventSeq}/txt_01.png">
                             </div>
                             <div class="q_select">
-                                <label><input type="radio" name="tadd1" value="고혈압">고혈압</label>
-                                <label><input type="radio" name="tadd1" value="혈관질환">혈관질환</label>
-                                <label><input type="radio" name="tadd1" value="관절 · 연골">관절 · 연골</label>
-                                <label><input type="radio" name="tadd1" value="기타">기타</label>
+                                <label><input type="checkbox" name="tadd1[]" value="고혈압">고혈압</label>
+                                <label><input type="checkbox" name="tadd1[]" value="혈관질환">혈관질환</label>
+                                <label><input type="checkbox" name="tadd1[]" value="관절 · 연골">관절 · 연골</label>
+                                <label><input type="checkbox" name="tadd1[]" value="기타">기타</label>
                             </div>
                             <div class="question_box">
                                 <div class="user_name">
@@ -343,6 +349,11 @@ pageEncoding="UTF-8"%>
                 </span>
             </div>
         </div>
+
+        <div class="container">
+            <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div> -->
+            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div>
+        </div>
     </main>
 </body>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
@@ -383,39 +394,44 @@ pageEncoding="UTF-8"%>
     const minutesEl = countdown.querySelector('.minutes');
     const secondsEl = countdown.querySelector('.second');
 
-    const maxSeconds = 3 * 3600 + 59 * 60; // 시작 시간
-    let totalSeconds = maxSeconds;
+    const maxSeconds = 3 * 3600 + 59 * 60; // 시작 시간(초)
+    const maxMilliseconds = maxSeconds * 1000;
+    const startTime = Date.now();
+    let timerAnimationId = null;
 
     function updateTimer() {
-        const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
-        const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
-        const seconds = String(totalSeconds % 60).padStart(2, '0');
+        const elapsedMs = Date.now() - startTime;
+        const remainingMs = Math.max(0, maxMilliseconds - elapsedMs);
+        const remainingSeconds = Math.floor(remainingMs / 1000);
+
+        const hours = String(Math.floor(remainingSeconds / 3600)).padStart(2, '0');
+        const minutes = String(Math.floor((remainingSeconds % 3600) / 60)).padStart(2, '0');
+        const seconds = String(remainingSeconds % 60).padStart(2, '0');
 
         hoursEl.textContent = hours;
         minutesEl.textContent = minutes;
         secondsEl.textContent = seconds;
 
-        if (totalSeconds <= 0) {
-            clearInterval(timer);
+        // 구간 분기 없이 이징 곡선으로 부드럽게 감소
+        const progress = 1 - (remainingMs / maxMilliseconds); // 0 ~ 1
+        const minGaugeWidth = 15;
+        const easingStrength = 250; // 값이 클수록 초반 감소가 더 빠름
+        const easedProgress = (1 - Math.exp(-easingStrength * progress)) / (1 - Math.exp(-easingStrength));
+        const gaugeWidth = 100 - ((100 - minGaugeWidth) * easedProgress);
+
+        document.querySelector('.gauge-bar').style.width = Math.max(gaugeWidth, minGaugeWidth) + '%';
+
+        if (remainingMs <= 0) {
+            if (timerAnimationId) {
+                cancelAnimationFrame(timerAnimationId);
+            }
             return;
         }
 
-        // 남은 비율 계산
-        const ratio = totalSeconds / maxSeconds;
-
-        // 게이지 감소
-        document.querySelector('.gauge-bar').style.width = (ratio * 100) + '%';
-
-        if (totalSeconds <= 0) {
-            clearInterval(timer);
-            return;
-        }
-
-        totalSeconds--;
+        timerAnimationId = requestAnimationFrame(updateTimer);
     }
 
     updateTimer(); // 최초 표시
-    const timer = setInterval(updateTimer, 1000);
 
     $(document).ready(function(){
         blockSourceView();//드래그, 우클릭 방지
@@ -505,17 +521,11 @@ pageEncoding="UTF-8"%>
     },2000);
 
     
-    $(document).on("change", "input[name^='tadd']", function() {
-        const name = $(this).attr("name");
+    $('input[name="tadd1[]"]').on('change', function () {
+        const $tadd1Inputs = $('input[name="tadd1[]"]');
 
-        // 같은 그룹의 모든 label에서 active 제거
-        $("input[name='" + name + "']").each(function() {
-            $(this).closest("label").removeClass("active");
-        });
-
-        // 현재 선택된 라벨의 label에 active 추가
-        $(this).closest("label").addClass("active");
-
+        $tadd1Inputs.closest('label').removeClass('active');
+        $tadd1Inputs.filter(':checked').closest('label').addClass('active');
     });
 
     // 상단 슬라이드
@@ -666,14 +676,17 @@ pageEncoding="UTF-8"%>
         // procForm.querySelector("input[name='add1']").value = selectedRadio1;
         
 		// 라디오버튼에 대한 필수값 확인 - 체크된게 하나도 없을때 경고창
-        let selectedRadio1 = procForm.querySelector('input[name="tadd1"]:checked');
-		if (!selectedRadio1) {
-			alert("설문을 선택해주세요.");
-			return;
-		} else {
-			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
-		}
-
+        let checkedValues;
+        checkedValues = $('#' + formId + ' input[name="tadd1[]"]:checked').map(function() {
+            return $(this).val();
+        }).get();
+        
+        if (!checkedValues.length >= 1) {
+            alert("설문을 선택해주세요.");
+            return;
+        } else {
+            procForm.querySelector("input[name='add1']").value = checkedValues;
+        }
 		 let selectedRadio2 = procForm.querySelector('input[name="tadd2"]').value;
         procForm.querySelector("input[name='add2']").value = selectedRadio2;
 
