@@ -131,7 +131,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .wrap_form .question:nth-child(1) .q_select, #page_landing_c .wrap_form .question:nth-child(1) .inp {flex: 0 0 46.5%;}
 
     /* 라디오 버튼(네/아니오 등) 디자인 */
-    #page_landing_c .wrap_form .q_select label {flex: 1; /* 선택지 개수가 달라도 해당 영역 안에서 균등 배분 */ background-color: #fff; padding: 10px 0; border-radius: 8px; text-align: center; cursor: pointer; font-size: 1.2rem; font-weight: 500; margin: 0 !important; /* 기존 마진 제거 */}
+    #page_landing_c .wrap_form .q_select label {flex: 1; /* 선택지 개수가 달라도 해당 영역 안에서 균등 배분 */ background-color: #fff; padding: 10px 0; border-radius: 8px; text-align: center; cursor: pointer; font-size: 1.2rem; font-weight: 700; margin: 0 !important; /* 기존 마진 제거 */}
 
     /* 텍스트 입력창 디자인 */
     #page_landing_c .wrap_form .inp {width: 100% !important; /* flex-basis 안에서 꽉 차게 */ border: none; border-radius: 8px; background-color: #fff; padding: 12px; font-size: 1.2rem; position: static; /* 기존 absolute 해제 필수 */}
@@ -139,7 +139,7 @@ pageEncoding="UTF-8"%>
     /* 라디오 input 숨기기 */
     #page_landing_c .wrap_form .q_select input[type="radio"] {display: none;}
 
-    #page_landing_c .wrap_form .legend {font-family: 'Elice DX Neolli'; font-size: 280%; min-width: 24%; font-weight: 500; line-height: 1; letter-spacing: -0.05em; color: #0a151e;}
+    #page_landing_c .wrap_form .legend {font-family: 'Elice DX Neolli'; font-size: 280%; min-width: 24%; font-weight: 700; line-height: 1; letter-spacing: -0.05em; color: #0a151e;}
     #page_landing_c .wrap_form .first .legend {min-width: 50%;}
     #page_landing_c .wrap_form .agBox .legend {max-width: max-content;}
     .selected_area{background-color:#000; padding:3% 5%;}
@@ -348,6 +348,7 @@ pageEncoding="UTF-8"%>
 @media screen and (max-width: 480px){
     #page_landing_c .wrap_form {background-size: 100% auto;}
     /* .question_container {margin-top: 79.5%;} */
+    .question_container {border-width: 6px;}
     #page_landing_c .wrap_form .legend {font-size: 135%;}
     #page_landing_c .wrap_form .question_box .q_select label, label.selected_label, #page_landing_c .wrap_form .agBox .disagree {
         font-size: 80%; border-radius: 0.5rem;
