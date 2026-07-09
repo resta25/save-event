@@ -68,6 +68,8 @@ pageEncoding="UTF-8"%>
 
     .db_btn, .submit input[type="image"] {animation: pulsating 0.8s linear infinite;
         -webkit-animation: pulsating 0.8s linear infinite;}
+
+    .top-img {position: fixed; top: 0; z-index: 1;}
         
     @keyframes pulsating {
         50% {
@@ -134,6 +136,7 @@ pageEncoding="UTF-8"%>
 
 <body id="page_landing_c" class="loaded">
     <main>
+        <div class="top-img"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_00.png"></div>
         <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.jpg"></div>
         <div class="gif-area">
             <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/txt_01.png"></div>
