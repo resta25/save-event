@@ -67,7 +67,7 @@ pageEncoding="UTF-8"%>
     input:not( [type="checkbox"], [type="radio"], [type="range"] ):disabled, input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border: none;}
 
     #wrap{font-family: 'noto sans kr'; overflow: hidden;}
-    .top-img {width: 100%; margin: 0 auto;}
+    .top-img {width: 100%; margin: 0 auto; max-width: 860px;}
 
     .img-area {position: relative;}
     .img-area .btm_box {position: absolute; bottom: 4%; left: 5%; width: 45.37037%; color: #fff;}
@@ -174,7 +174,7 @@ pageEncoding="UTF-8"%>
         -webkit-animation: pulsating 0.8s linear infinite;}
     
     .top-img {position: fixed; top: 0; z-index: 1;}
-    
+
     @keyframes pulsating {
         50% {
             transform: scale(0.95);
@@ -261,7 +261,7 @@ pageEncoding="UTF-8"%>
 
 <body id="page_landing_c" class="loaded">
     <main>
-        <div class="top-img"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.jpg"></div>
+        <div class="top-img"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_00.png"></div>
         <div class="img-area">
             <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.jpg">
             <div class="btm_box">
