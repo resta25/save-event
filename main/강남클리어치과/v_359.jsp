@@ -49,7 +49,13 @@ pageEncoding="UTF-8"%>
     #wrap{font-family: 'Gmarket Sans'; overflow: hidden;}
 
     .video-wrap {position: relative;}
-    .video-wrap::before {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(239deg, rgba(0, 0, 0, 0), rgb(0 0 0));}
+    .video-wrap::before {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.5) 40%,
+    rgba(0, 0, 0, 0.15) 75%,
+    rgba(0, 0, 0, 0) 100%
+);}
     .video-wrap::after {content: ''; position: absolute; bottom: 8.74%; left: 3.65%; width: 72.962963%; height: 62.883%; background: url('//static.savemkt.com/event/v_${eventSeq}/main_txt_01.png') no-repeat center center / 100% 100%;}
     .video-box video {display: block; width: 100%; height: 100%;}
     .video-box::after {content: '* 생성형 AI 모델 영상 사용'; position: absolute; bottom: 1%; right: 1%; color: rgba(255, 255, 255, 0.15); font-size: 15px;}
