@@ -169,7 +169,7 @@ pageEncoding="UTF-8"%>
                 <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.png"></div>
             </div>
         </div>
-        <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.gif"></div> -->
+        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.gif"></div>
         <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_03.jpg"></div>
         <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_04.jpg"></div>
         <div class="wrap_form">
