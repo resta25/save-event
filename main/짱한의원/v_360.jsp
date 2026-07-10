@@ -34,6 +34,7 @@ pageEncoding="UTF-8"%>
     }
 
     * {font-family: "Presentation", sans-serif; box-sizing: border-box;}
+    #wrap {background: #fff;}
     #page_landing_c .wrap_curd * {font-size: 100%; font-family: inherit;}
     html{
         height: 100%;
@@ -61,16 +62,15 @@ pageEncoding="UTF-8"%>
     }
     .subscribe .content .date {text-align: right;}
 
-    #page_landing_c main {max-width: 860px; background-color: #000;}
+    #page_landing_c main {max-width: 860px; background-color:#fff; padding-bottom: 6rem;}
     #page_landing_c {padding: 0; border: 0;}
     #page_landing_c .btn_submit {background-color: transparent !important;}
     input:not( [type="checkbox"], [type="radio"], [type="range"] ):disabled, input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border: none;}
 
     #wrap{font-family: 'noto sans kr'; overflow: hidden;}
-    .top-img {width: 100%; margin: 0 auto; max-width: 860px;}
 
     .img-area {position: relative;}
-    .img-area .btm_box {position: absolute; bottom: 4%; left: 5%; width: 45.37037%; color: #fff;}
+    .img-area .btm_box {position: absolute; bottom: 4%; left: 50%; transform: translateX(-50%); width: 70%; color: #fff;}
     #page_landing_c .btm_box .agBox label span {color: #fff;}
     #page_landing_c  .img-area .btm_box .agBox {margin: 0 auto 2%; color: #fff; transition: 0s;}
     #page_landing_c  .img-area .btm_box .agBox .btn-agreement {font-weight: 700;}
@@ -83,7 +83,7 @@ pageEncoding="UTF-8"%>
     .select-box {width: 100%;}
     .select-box .q_select {outline: none; border: none; width: 100%; padding: 3%; text-align: center; border: 1px solid #bebebe; border-radius: 0.3em; font-weight: 600;}
    
-    #page_landing_c .wrap_form {background-color: #fff; padding: 43px 34px 30px !important;}
+    #page_landing_c .wrap_form {background-color: #fff; padding: 43px 34px 30px !important; border: none;}
     #page_landing_c .wrap_curd {background-color: #fff;}
     #page_landing_c .wrap_curd .question_container {padding-top: 0 !important;}
 
@@ -141,7 +141,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .user_info input {background: #ffeef4; padding: 2%; font-size: 150%; border-radius: 0.5rem; width: 67%;
     position: absolute; left: 29%; top: 14%; height: 70%; border: 1px solid #e3ccd4;}
 
-    #page_landing_c .inp {font-size: 120%; border: 2px solid #929292; min-height: 34px; padding: 1% 3%; box-sizing: border-box; margin-left: 0; border-radius: 0; transition: 0s;}
+    #page_landing_c .inp {font-size: 3rem; text-align: center; border: 2px solid #60002d; border-radius: 0.5rem; margin: 0.5rem 0; padding: 1rem 0;}
     #page_landing_c .inp::placeholder {color: #929292;}
     /* #page_landing_c input[type="checkbox"] + span:before {border-color:#fff;} */
     /* #page_landing_c .submit input[type="image"] {animation: pulsating 0.8s linear infinite; -webkit-animation: pulsating 0.8s linear infinite;} */
@@ -170,10 +170,11 @@ pageEncoding="UTF-8"%>
         margin: 0 auto 0;
     }
 
-    .db_btn, .submit input[type="image"] {animation: pulsating 0.8s linear infinite;
-        -webkit-animation: pulsating 0.8s linear infinite;}
+    .db_btn, .submit input[type="image"] {
+        /* animation: pulsating 0.8s linear infinite;
+        -webkit-animation: pulsating 0.8s linear infinite; */
+    }
     
-    .top-img {position: fixed; top: 0; z-index: 1;}
 
     @keyframes pulsating {
         50% {
@@ -196,6 +197,24 @@ pageEncoding="UTF-8"%>
         bottom: 0%;
         cursor: pointer;
     }
+
+    /* 슬라이드 영역 */
+    .silde-wrap {max-width: 860px; position: relative;}
+    .swiper.mySwiper {position: absolute; top: 28%; left: 50%; transform: translateX(-50%); width: 80%;}
+    .swiper-slide {}
+    .swiper-slide img {width: 100%;}
+
+    /* 설문영역 */
+    .question-box {}
+    .question-box .question {width: 50%; margin: 0 auto;}
+    .question-box .question img {width: 100%;}
+    input:is([type="checkbox"]) {width: 0; height: 0;}
+
+    .question-box .q_select {padding: 2rem; display: flex; flex-wrap: wrap; column-gap: 1rem;}
+    .question-box .q_select label {width: 49%;}
+
+    /* 고정버튼 */
+    .fixed {position: fixed; z-index: 9; bottom: 0%; cursor: pointer; max-width: 860px;}
     
 @media screen and (max-width: 820px){
     .timer-box #timer {font-size: 2.5rem;}
@@ -217,6 +236,8 @@ pageEncoding="UTF-8"%>
 
     #page_landing_c .question_box {width: 90%;}
     .wrap_form .agBox {width: 100%;}
+
+    .wrap_form input[type="checkbox"] {width: 15px !important; height: 15px !important; border: 1px solid #000 !important;}
     #page_landing_c .wrap_curd label {font-size: 12px;}
     #page_landing_c .formGroup .user_info + .user_info {margin-top: 3%;}
     #page_landing_c .formGroup .user_info input {margin-left: 5px;}
@@ -235,13 +256,20 @@ pageEncoding="UTF-8"%>
     #page_landing_c .description .ad_txt, #page_landing_c .description .target {font-size: 90%;}
     #page_landing_c .agBox label span {font-size: 90%;}
     /* #page_landing_c .wrap_form .agBox a {font-size: 50%;} */
-    #page_landing_c .wrap_form {padding: 40px 20px 30px !important;}
+    /* #page_landing_c .wrap_form {padding: 40px 20px 30px !important;} */
     #page_landing_c .legend {font-size: 90%; height: 25px;}
     #page_landing_c .inp {font-size: 90%;}
     #page_landing_c .question_box > div:not(.formContents) + div:not(.formContents) {margin-top: 5.1%;}
     #page_landing_c .question_box .q_select label {height: 56px; font-size: 70%;}
 
     #page_landing_c .agBox {font-size: 90%;}
+
+    .question-box .q_select label {width: 47%;}
+    .question-box .q_select {padding: 1rem;}
+
+    #page_landing_c .wrap_form {padding: 1rem 2rem !important;}
+
+    #page_landing_c input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {font-size: 2rem; padding: 0.5rem 0;}
 
 }
 @media screen and (max-width: 395px){
@@ -259,13 +287,16 @@ pageEncoding="UTF-8"%>
 <script src="/js/sweetalert2.js"></script>
 <script src="/js/common.js"></script>
 
+<!-- swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
+
 <body id="page_landing_c" class="loaded">
     <main>
-        <div class="top-img"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_00.png"></div>
         <div class="img-area">
             <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.jpg">
             <div class="btm_box">
-                <div class="db_btn"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png"></div>
+                <div class="db_btn"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
                 <div class="agBox">
                     <label><span>개인정보처리방침에 동의합니다. </span></label>&nbsp;<a href="#" class="btn-agreement">[보기]</a>
                 </div>
@@ -273,57 +304,59 @@ pageEncoding="UTF-8"%>
         </div>
         <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg"></div>
         <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_03.jpg"></div>
-        <div class="img-area">
+        <div class="silde-wrap">
             <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_04.jpg">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="//static.savemkt.com/event/v_${eventSeq}/slide_01.png"></div>
+                    <div class="swiper-slide"><img src="//static.savemkt.com/event/v_${eventSeq}/slide_02.png"></div>
+                    <div class="swiper-slide"><img src="//static.savemkt.com/event/v_${eventSeq}/slide_03.png"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <div class="question"><img src="//static.savemkt.com/event/v_${eventSeq}/txt_01.png"></div>
+            <div class="q_select">
+                <label><input type="checkbox" name="tadd1[]" value="뱃살 팔뚝살 허벅지살"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_01.png"></label>
+                <label><input type="checkbox" name="tadd1[]" value="식욕 조절"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_02.png"></label>
+                <label><input type="checkbox" name="tadd1[]" value="반복되는 요요"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_03.png"></label>
+                <label><input type="checkbox" name="tadd1[]" value="출산 후 체중"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_04.png"></label>
+                <label><input type="checkbox" name="tadd1[]" value="갱년기 뱃살"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_05.png"></label>
+                <label><input type="checkbox" name="tadd1[]" value="기타"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_06.png"></label>
+            </div>
+        </div>
+
+        <!-- <div class="img-area">
+            <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_05.jpg">
+
             <div class="btm_box btm_box2">
                 <div class="db_btn"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_02.png"></div>
                 <div class="agBox">
                     <label><span>개인정보처리방침에 동의합니다. </span></label>&nbsp;<a href="#" class="btn-agreement">[보기]</a>
                 </div>
             </div>
-        </div>
-        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_05.jpg"></div>
-        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_06.jpg"></div>
+        </div> -->
 
             <div class="wrap_form">
                 <form class="wrap_curd" id="form-1" method="POST" accept-charset="utf-8">
                     <div class="formGroup">
                         <div class="form_inner">
-                            <div class="question_container">
-                                <div class="q_text img-area">
-                                    <img src="//static.savemkt.com/event/v_${eventSeq}/txt.png">
-                                </div>
-                                <div class="question_box">
-                                    <div class="user_name">
-                                        <span class="legend">이 름</span>
-                                        <input type="text" name="name" id="name" class="inp" required placeholder="이름을 입력해 주세요" autocomplete="off">
-                                    </div>
-                                    <div class="user_age">
-                                        <span class="legend">나 이</span>
-                                        <input type="tel" name="age" id="age" class="inp" required=""  placeholder="나이를 입력해 주세요" autocomplete="off" maxlength="2" placeholder="">
-                                    </div>
-                                    <div class="user_phone">
-                                        <span class="legend">연 락 처</span>
-                                        <input type="tel" name="phone" id="phone" class="inp" required autocomplete="off" maxlength="11">
-                                    </div>
-                                    <!-- <div class="user_text">
-                                        <span class="legend">문 의</span>
-                                        <input type="text" name="tadd1" id="tadd1" class="inp" required placeholder="(선택 사항)">
-                                    </div> -->
-                                </div>   
+                            <div class="db-box">
+                                <input type="text" name="name" id="name" class="inp" required placeholder="이름을 입력해 주세요" autocomplete="off">
+                                <input type="tel" name="age" id="age" class="inp" required=""  placeholder="나이를 입력해 주세요" autocomplete="off" maxlength="2" placeholder="">
+                                <input type="tel" name="phone" id="phone" class="inp" required autocomplete="off" maxlength="11">
                             </div>
-    
                         </div>
-
-                        <div class="submit"><input type="image" value="" onclick="fnForm('form-1')" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_02.png" /></div>	
 
                         <div class="agBox">
-                            개인정보 처리방침에 동의합니다. <a href="javascript:void(0);" class="btn-agreement">[보기]</a>
+                            <label><input type="checkbox" name="agBox">
+                                <span>개인정보 처리방침에 동의합니다.</span>
+                            </label><a href="javascript:void(0);" class="btn-agreement">[보기]</a>
                         </div>
 
-                        <!-- <div class="agBox">
-                            <label><input name="agBox" type="checkbox"><span>개인정보수집 및 이용동의</span></label> <a href="#" class="btn-agreement">[내용 보기]</a>
-                        </div> -->
+                        <div class="submit"><input type="image" value="" onclick="fnForm('form-1')" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newSb.png" /></div>	
+
                     </div>
 
                     <div class="description">
@@ -375,6 +408,8 @@ pageEncoding="UTF-8"%>
                 </p>
             </div>
         </div>
+
+        <div class="img-area fixed db_btn"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newSb_02.png"></div>
     </main>
 </body>
 <!--공통_script start --><script src="/js/agreement.js"></script><!--공통_script end-->
@@ -387,6 +422,62 @@ pageEncoding="UTF-8"%>
 
         //신청현황 리스트
         getComment(`${eventSeq}`);
+    });
+
+    //설문 on/off
+    $('input[name*="tadd"]').on('change', function () {
+        const $img = $(this).closest('label').find('img');
+
+        if ($(this).is(':checked')) {
+            $img.attr('src', $img.attr('src').replace('_off', '_on'));
+        } else {
+            $img.attr('src', $img.attr('src').replace('_on', '_off'));
+        }
+    });
+
+    // $('input[name="tadd1[]"]').on('change', function () {
+    //     console.log($(this).val(), $(this).is(':checked'));
+    // });
+
+    //개인정보처리방침
+    if (typeof window.thisAgreementWithText !== 'function') {
+        window.thisAgreementWithText = function(policyText, selector) {
+            var targetSelector = selector || '.modal-content p';
+            var modal = $(targetSelector);
+            modal.text((policyText || '').trim());
+            modal.css('white-space', 'pre-line');
+        };
+    }
+
+    $(document).ready(function(){
+        blockSourceView();//드래그, 우클릭 방지
+        initDate();
+        
+        thisAgreementWithText(`
+                개인정보처리방침
+                병원 제휴의 요청 개인정보 수집 및 이용 동의
+
+                [개인정보 수집 및 이용 동의]
+
+                - 수집 · 이용 주체 : 이벤트 신청
+                - 수집 · 이용 목적 : 신청한 이벤트 안내, 추가적인 상담 및 방문 예약, 이벤트 신청자 관리
+                - 수집 · 이용 항목 : 이름, 연락처, 성별, 출생연도, 설문내용
+                - 보유 및 이용 기간 : 의료법 등 관련 병령에서 정한 보존 기간
+
+                * 동의를 거부할 권리가 있으나, 거부 시 이벤트 참여가 제한됩니다.
+                * 고객 동의 철회 시 지체없이 파기합니다.
+
+
+                [개인정보 처리위탁 동의]
+
+                - 수탁자 : 병원 제휴의 요청
+                - 위탁 업무 내용
+                └ 온라인, 모바일을 통한 고객 정보 수집 및 관리
+                └ 고객정보 서버 운영 및 관리
+                └ 서비스 신청 내역 관리를 위한 개인정보 전송
+                └ 서비스 제공을 위해 필요한 개인정보 관련 업무 처리
+                - 위탁 항목 : 이름, 연락처, 성별, 출생연도, 설문내용
+            `);
     });
 
     let dataNum;
@@ -427,6 +518,18 @@ pageEncoding="UTF-8"%>
             $(this).show().parent().append(this)
         })
     },2000);
+
+    // 슬라이드 영역
+    var swiper = new Swiper('.mySwiper', {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        slidesPerView: 1,
+        loop:true,
+      });
 
     var images = [
         'event_main_02_01.jpg',
@@ -544,13 +647,34 @@ pageEncoding="UTF-8"%>
 		var phoneNum = $('input[name="phone"]').val();
 	});
 
+    $('input[name="tadd1[]"]').on('change', function () {
+        const $tadd1Inputs = $('input[name="tadd1[]"]');
+
+        $tadd1Inputs.closest('label').removeClass('active');
+        $tadd1Inputs.filter(':checked').closest('label').addClass('active');
+    });
+
+
     //submit
 	function fnForm(formId){
 		/* form 자동 처리 방지 */
 		event.preventDefault();
 		/* form id로 proc */
 		let procForm = document.getElementById(formId);
-		
+
+        // 라디오버튼에 대한 필수값 확인 - 체크된게 하나도 없을때 경고창
+        let checkedValues;
+        checkedValues = $('#' + formId + ' input[name="tadd1[]"]:checked').map(function() {
+            return $(this).val();
+        }).get();
+        
+        if (!checkedValues.length >= 1) {
+            alert("설문을 선택해주세요.");
+            return;
+        } else {
+            procForm.querySelector("input[name='add1']").value = checkedValues;
+        }
+
         // let selectedRadio1 = procForm.querySelector('input[name="tadd1"]').value;
         // procForm.querySelector("input[name='add1']").value = selectedRadio1;
         
@@ -591,12 +715,14 @@ pageEncoding="UTF-8"%>
 			'name': '이름'
 			,'age': '나이'
 			,'phone': '전화번호'
-			// ,'add1': '설문1'
+			,'add1': '설문1'
 			// ,'add2': '설문2'
 			// ,'add3': '설문3'
 			// ,'agBox': '개인정보'
 		};
 		
 		validateForm(procForm, required);
+
+        return false;
 	}
 </script>
