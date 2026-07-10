@@ -6,33 +6,20 @@ pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/css/landing.css">
 <link rel="stylesheet" href="/css/common.css">
 <style>
-@font-face {
-    font-family: 'GmarketSans';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'GmarketSans';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'GmarketSans';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-}
-* {font-family: 'Gmarket Sans';}
+
+body {background: #D9D9D9;}
+html, body {font-size: 10px;}
+input{letter-spacing: -1px; font-family: 'Pretendard Variable', 'Pretendard', sans-serif;}
+button{margin: 0; padding: 0; background-color: transparent; border: none; cursor: pointer;}
+
 .page:not(#page-1){display:none;}
-#wrap{background:#ffffff;}
+
 .form, .form .formContents{background-color:#ffffff;}
 .page:not(#page-1) {width: 85%; margin: 0 auto;}
 .page:not(#page-1) .img-area {margin-bottom: 3%;}
 
 /* 초기화 css */
-#page_landing_c main {max-width: unset;}
+#page_landing_c main {max-width: unset; height: 100vh; background: transparent !important;}
 .form input[type="radio"] {
     border: 0;
     clip: rect(0 0 0 0);
@@ -44,191 +31,85 @@ pageEncoding="UTF-8"%>
     width: 1px;
 }
 .btn_submit {background: none; background-color: transparent !important;}
-input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {
-    height: auto;
-    padding: 0;
-}
+input:not( [type="checkbox"], [type="radio"], [type="range"] ), select { height: auto; padding: 1rem 1.5rem; text-align: center; border-radius: 0.5rem; font-size: 2rem; width: 100%;}
 input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border: none;}
 
-/* 비디오 영역 */
-.form .video-area {position: relative; padding-top: 75.27%; border: 8px solid #6ebfff; border-right: 0; border-left: 0;}
-.form .video-area::after {position: absolute; bottom: 12px; right: 12px; content: '실제 시술 영상을 생성형 AI로 변환한 콘텐츠입니다.'; color: #858585; font-size: 10px; }
-.form #location {position: absolute; top: 0; left: 0; width: 100%; height: 100%; max-height: 813px; object-fit: cover;} 
+#wrap{max-width: 600px; letter-spacing: -1px; font-family: 'Pretendard Variable', 'Pretendard', sans-serif; display: flex; flex-direction: column; height: 100%;}
+.form{flex-grow: 1;}
+.page:not(#page-1){display:none;}
+.pointColor{color: #0b0098;}
 
-/* 룰렛 영역 */
-.roulette {padding: 4.92% 5% 8.8%;}
-.roulette image {width: 100%;}
-.count_box {width: 70%; text-align: center; font-size: 2.8rem; color: #fff; position: absolute; top: 32.5%; left: 56.5%; transform: translateX(-50%);}
-.count {color: #f0ff00; font-size: 4rem; font-family: 'GmarketSans'; font-weight: 500;}
 
-/* 시침, 초침 */
-.container {position: relative;}
-/* .clock{position: absolute; top: 51.5%; left: 13%; background-color: #f0ff00; transition : all 0.05s; transition-timing-function : cubic-bezier(0.1, 2.7, 0.58, 1); transform-origin : 100%;}
-.hourHand{width: 1.5%; height: 2px; transform: translate(-50%, -50%) rotate(0deg);}
-.secondHand{left: 12.5%; width: 2.5%; height: 2px; transform: translate(-50%, -50%) rotate(0deg);} */
+.icon_box {padding:4% 10% 0;}
+.icon_box .icon{width:20%;margin:0 auto;transform: translateY(0%); animation: animate__floundering 1.5s cubic-bezier(.49,.16,.32,.86) infinite;}
+.icon_box .shadow{width:20%;margin:2% auto 0;}
+@keyframes animate__floundering { 50% {transform: translateY(-15%);} }
 
-.poster_01 > .img-area {width: 90%; margin: 0 auto 7.97%;}
+.page-1 {position:relative;}
+/* popup */
+.popup_box {display: none;position: fixed;bottom: -100%;left: 50%;transform: translateX(-50%);width: 100%;max-width: 600px;background: #fff;border-radius: 40px 40px 0 0;z-index: 890;transition: bottom 0.5s ease-in-out;}
+.popup_box .close_btn {position:absolute; top:5%; right:5%; width:3%;}
+.popup_box .close_btn img{width:100%;}
+.popup_box .popup_bar{position:absolute; top:-6%; left:50%; transform: translateX(-50%); width:15%; padding:1% 0; background:#fff; border-radius:50px;}
+.popup_box .inner {position:relative;padding:10% 0 0;}
+.popup_box .inner .popup_title{padding: 3% 4%; text-align: center; font-size:3.125rem; line-height: 1.4; font-weight: 700;}
+.popup_box .inner .popup_title .bold {font-weight: bold;}
+.popup_box .btn_box{display:flex; justify-content:center; gap:3%;padding:5% 10%;}
+.popup_box .btn_box .btn_disagree img {width:100%;}
+.popup_box .btn_box .btn_agree img {width:100%;}
 
-.page .paging{padding:15% 10% 3%; margin: 0 auto; display: flex;    justify-content: space-between;}
-.page .paging button{width:100%; box-sizing: border-box; background: none; padding: 0; cursor: pointer;}
-.page .paging button {position: relative; width: 100%; height: 186px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png') no-repeat center center / 100% 100%; margin: 0 auto; padding: 0% 0;}
-.page .paging button img {width: 61.46% !important; margin: 0 auto; animation: pulsating 0.8s linear infinite;
-    -webkit-animation: pulsating 0.8s linear infinite;}
-    .page .paging button a {display:block;}
-    
-    #page-1 .paging{padding-top:5%;}
-    
-    .form-box {margin-top: 10%;}
-    #wrap .formContents {position: static;}
-    .form .formContents .description {width:90%;margin:0 auto;text-align:center;box-sizing:border-box; font-family: 'GmarketSans'; font-weight: 300;}
-    .form .formContents .description * {font-family: 'GmarketSans'; font-weight: 300;}
-    .form-box .form-box-top {padding:5% 5% 0;}
-    .form-box .description {padding-bottom:2%;}
-    .form .question_box {text-align: center; padding: 4% 0 0; margin-bottom: 5%;}
-    .form .question_box .q_select {display: flex; flex-direction: column; font-size: 150%;}
-    .form .question_box .q_select label{width:100%; padding: 3% 0 2.5%; cursor:pointer; background: #ededed; border-radius: 0.8rem; font-size: 200%; font-weight: 500; font-family: 'GmarketSans';}
-    .form .question_box .q_select label.on{background: #aaa;}
-    .form .question_box .q_select label:not(:last-child){margin-bottom: 2%;}
-    .form .question_box .q_select label img{width:95%;}
-    
-    .form .next_btn_inQuestion {width: 70%; margin: 5% auto; cursor: pointer;}
-    .form .next_btn_inQuestion img {width: 100%;}
-    
-    /* 이름, 전화번호 boz */
-    .formGroup {}
-    .form .table_box{ padding:0;background:#f4f4f4;border-radius:27px; margin-bottom: 18px; }
-    .form .table_box input {background: #ededed; border-radius: 0.8rem; font-size: 2.8rem; border: none; background: transparent; width: 100%; padding: 1.5rem 0 1.5rem 2rem; font-family: 'GmarketSans'; font-weight: 500;}
-    .form .table_box input::placeholder{color: rgba(0, 0, 0, 0.7); text-align: left; font-family: 'GmarketSans'; font-weight: 500;}
-    
-    .form .table_box.top {width:95%;}
-    .form .table_box.middle {width: 95%;}
-    .form .table_box.bottom {width:95%;}
-    .form .table_box.txt_box {width:95%; height: 130px;}
-    .form .table_box.bottom input {}
+/* paging */
+.page .paging{display: flex; justify-content: space-between; padding: 3% 7% 5%;}
+.page .paging button{width: 48%; box-sizing: border-box;}
+.page .paging button img{width:100%;}
+.page .paging button a{display:block;}
 
-    .sub-txt {text-align: center;}
-    
-    /* 개인정보 처리방침 */
-    .agBox {display: flex; align-items: center; justify-content: center; padding-bottom: 5%; font-family: 'GmarketSans'; font-weight: 500; font-size: 1.4rem; line-height: 1;}
-    .btn-agreement {flex-shrink: 0; text-align: center; font-size: 1.4rem;  display: block; color: #000; font-family: 'GmarketSans';}
-    .btn-agreement b {font-weight: 700; font-size: 100%; font-family: 'GmarketSans';}
-    /* submit btn */
-    /* .form .submit {width: 85%; margin: 0 auto; padding: 5% 0;}
-    .form .submit input[type="image"] {width: 100%;} */
-    
-    .form .submit {display: flex; align-items: center; justify-content: center; margin: 1em auto 0; padding: 0;}
-    .form .submit {position: relative; width: 70.155%; height: 134px; background: url('//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png') no-repeat center center / 100% 100%; margin: 3% auto; padding: 0% 0;}
-    .form .submit input[type="image"] {
-        width: 71.46% !important; margin: 0 auto; margin-left: auto; margin-right: 9%; animation: pulsating 0.8s linear infinite;
-        -webkit-animation: pulsating 0.8s linear infinite;
-    }
+/* add 설문 */
+.question_box .question{ font-size: 3rem; text-align: center; line-height: 1.2;}
+.question_box .question span {font-size: 3rem; font-weight: 700;}
 
-    /* 거주자 팝업 */
-    .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-    [class^="popup-"] {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 785px;
-        height: max-content;
-        margin: 0;
-        padding: 30px 0;
-        font-size: 150%;
-        background-color: #fff;
-        border-radius: 10px;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        opacity: 1;
-        visibility: visible;
-    }
-    [class^="popup-"] p,
-    [class^="popup-"] span {
-        text-align: center;
-        font-size: 250%;
-        font-weight: 700;
-        font-family: 'GmarketSans';
-    }
-    [class^="popup-"] strong {
-        color: #ff0000;
-        font-weight: 700;
-        font-family: 'GmarketSans';
-    }
-    [class^="popup-"] .btn-box {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        margin-top: 5%;
-        font-size: 150%;
-    }
-    [class^="popup-"] .btn-box button {
-        background-color: #0202c5;
-        color: #fff;
-        width: 195px;
-        height: 80px;
-        padding-top: 1%;
-        font-size: 125%;
-        line-height: 1;
-        font-weight: 400;
-        border-radius: 0.5rem;
-        font-family: 'GmarketSans';
-    }
+/* #page-4 .question_box .question {padding: 1rem 16.3125rem 0;} */
+.question_box .q_select{display: flex; flex-direction: column; align-items: center; justify-content: center; padding:3% 0; gap: 1rem;}
+.question_box .q_select label{width: 65%;}
+.question_box .q_select label img{width: 100%;}
 
-    @keyframes pulsating {
-        50% {
-            transform: scale(0.95);
-        }
-    }
-    
-    
-    /* font */
-    @font-face {
-        font-family: 'GmarketSansMedium';
-        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-    @media screen and (max-width: 786px) {
-        #page-1 .paging {padding-top: 2.5%;}
-        .agBox {padding-bottom: 2.5%;}
-        .form .table_box {border-radius: 9px;}
-        #page_landing_c .form .table_box input {padding: 1.5rem 0 1rem 2rem;
-        font-size: 1.4rem;}
-        .count_box {top: 36%; left: 56%;}
-        .count_box, .count {font-size: 2.2rem;}
-        .page .paging button {height: 66px;}
-        .form .submit {height: 53px;}
-        .agBox, .btn-agreement {font-size: 1rem;}
+#page-2 .question_box .q_select {padding: 3% 0 24%;}
 
-        [class^="popup-"] {width: 90vw; font-size: 2.5vw; border-radius: 20px; top: 57%;}
-    }
-    @media screen and (max-width: 500px){
-        .roulette {padding: 4% 7.5% 4.19%;}
-        .poster_01 > .img-area {width: 81.03%; margin: 0 auto 4.15%;}
-        .count_box, .count {font-size: 1.25rem;}
-        .sub-txt {font-size: 80%;}
-        .form .description p,
-        .form .description .ad_txt,
-        .form .description span {font-size: 80%;}
-        .form .question_box .q_select label {font-size: 1.45rem;}
-        #page_landing_c input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {padding: unset;}
-        .form-box .description {padding-bottom: 4%;}
-        .form .video-area {border-width: 4px;}
-        .form .video-area::after {bottom: 8px; right: 8px;}
-        [class^="popup-"] .btn-box button {width: 115px; height: 50px;}
-        /* #page_landing_c .form .table_box input {padding: 1.5rem 0 1.5rem 2rem;} */
-    }
-    
+/* db단 */
+#page-3 .question_box .question{padding-top: 2rem;}
+/* #page-4 .question_box .question {padding: 1rem 13.6875rem 0;} */
+.form-group {display: grid; gap: 10px; margin: 0 auto; padding: 2% 5.125rem 2%;}
+/* .form-group > .item {background: #d3d3d3; border-radius: 0.8rem; text-align: center;} */
+
+
+/* cta 버튼 */
+.form .submit{width: 70%; margin: 0 auto; padding: 0;}
+.form .submit input[type="image"]{width: 100%;}
+
+.form .agBox{font-size: 100%;color:#000000e6; text-align: center;}
+.form .description{padding: 1% 0 0%; text-align: center;}
+.form .description p,
+.form .description span,
+.form .description .ad_txt {font-size: 80%;}
+
+/* 모달창 - 개인정보처리방침 */
+.overlay {z-index: 888; position: fixed; display: none; width: 100vw; height: 100vh; opacity: 0.5; background-color: #000;}
+.agreeModalBox {z-index: 999; display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 60px 30px 40px; width: 65%; max-width: 500px; box-sizing: border-box; border-radius: 0.3em; font-family: 'Noto Sans KR', sans-serif; background-color: #f5f6f7; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;}
+.agreeModalBox .closeBtn {position: absolute; top: 0; right: 2%; padding: 2%; cursor: pointer; font-size: 25px; color: #5e5e5e;}
+.agreeModalBox .newAgreement {position: relative; padding: 2% 4%; height: 150px; overflow-y: scroll; border: 1px solid #dadada;}
+.agreeModalBox .newAgreement .button {position: absolute; right: 3%; width: 95px;}
+.agreeModalBox .newAgreement .button a {display: block; padding: 1%; text-align: center; font-size: 10px; background-color: #e2e2e2;}
+.agreeModalBox .newAgreement .button a:focus {background-color: #dadada;}
+.agreeModalBox .newAgreement h3 {margin: 1% 0; font-size: 11px;}
+.agreeModalBox .newAgreement ol li {line-height: 12px; font-size: 10px;}
+
+/* .full-height {height: calc(var(--vh, 1vh) * 100); height: 100dvh;} */
+
+
+@media screen and (max-width: 786px) {
+}
+@media screen and (max-width: 500px){}
+
 </style>
 <!-- include -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"><!-- 애니메이션 -->
@@ -237,79 +118,81 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 <script src="/js/sweetalert2.js"></script>
 <script src="/js/common.js"></script>
 <body id="page_landing_c" class="loaded">
+    <div class="overlay"></div>
     <main>
         <div id="wrap" class="full-height"> 
             <div class="container">		
-                <div class="img-area"><img src="//static.resta.co.kr/event/v_${eventSeq}/event_main_01.jpg"></div>
-                <audio id="location" playsinline="" src="//static.resta.co.kr/event/v_${eventSeq}/radio_01.mp3" type="audio/mp3"></audio> 
+                <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.jpg"></div>
+                <audio id="location" playsinline="" src="//static.savemkt.com/event/v_${eventSeq}/radio_01.mp3" type="audio/mp3"></audio> 
             </div>
-
             <div class="form">
                 <form id="form-1" method="POST" accept-charset="utf-8">
 
                 <div class="container">
                     <div class="icon_box">
-                        <div class="img-area icon"><img src="//static.resta.co.kr/event/v_${eventSeq}/icon_01.gif"></div>
-                        <!-- <div class="img-area shadow"><img src="//static.resta.co.kr/event/v_${eventSeq}/shadow_01.png"></div> -->
+                        <div class="img-area icon"><img src="//static.savemkt.com/event/v_${eventSeq}/icon_01.png"></div>
+                        <div class="img-area shadow"><img src="//static.savemkt.com/event/v_${eventSeq}/shadow_01.png"></div>
                     </div>
                 </div>
                 <div class="formContents"> 
                     <section class="page" id="page-1">
                         <div class="question_box">
-                            <div class="question">
-                                <div class="img-area"><img src="//static.resta.co.kr/event/v_${eventSeq}/q_01.png"></div>
-                            </div>
+                            <div class="question"><span class="pointColor">원하는 서비스를 선택</span>하시면<br/>음성으로 안내드립니다.</div>
                             <div class="q_select">
-                                <label><input type="radio" name="tadd1" value="혜택 신청"><img src="//static.resta.co.kr/event/v_${eventSeq}/select_off_01.png"></label>
-                                <label><input type="radio" name="tadd1" value="지원 받기"><img src="//static.resta.co.kr/event/v_${eventSeq}/select_off_02.png"></label>
-                                <label><input type="radio" name="tadd1" value="비용 문의"><img src="//static.resta.co.kr/event/v_${eventSeq}/select_off_03.png"></label>
+                                <label><input type="radio" name="tadd1" value="혜택 받기"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_01.png"></label>
+                                <label><input type="radio" name="tadd1" value="예약 하기"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_02.png"></label>
+                                <label><input type="radio" name="tadd1" value="위치 문의"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_03.png"></label>
                             </div>
                         </div>
                         <div class="popup_box">
                             <!-- <div class="popup_bar"></div> -->
                             <div class="inner">
                                 <div class="popup_title">
-                                    안내를 위한 <span class="bold">개인정보 처리 방침</span>에<br>동의해 주세요.
+                                    서비스 안내를 위한<br/>개인정보 수집 및 이용에<br/>동의해주세요
                                 </div>
-                                <a href="javascript:void(0)" class="close_btn"><img src="//static.resta.co.kr/event/v_${eventSeq}/close.png"></a>
+                                <a href="javascript:void(0)" class="close_btn"><img src="//static.savemkt.com/event/v_${eventSeq}/close.png"></a>
                                 <div class="agBox">
-                                    <input name="agBox" type="checkbox" checked>
-                                    개인정보 처리 방침 <a href="#" class="agree_txt">[자세히 보기]</a>
+                                    <input name="agBox" type="hidden" checked>
+                                    [필수] 개인정보 수집 및 이용 동의 <a href="#" class="agree_txt">[자세히 보기]</a>
                                 </div>
                                 <input type="hidden" name="agBox" value="Y">
                                 <div class="btn_box">
-                                    <a href="javascript:void(0)" class="btn_disagree"><img src="//static.resta.co.kr/event/v_${eventSeq}/btn_newSb_01.png"></a>
-                                    <a href="javascript:void(0)" class="btn_agree"><img src="//static.resta.co.kr/event/v_${eventSeq}/btn_newSb_02.png"></a>
+                                    <a href="javascript:void(0)" class="btn_disagree"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newSb_01.png"></a>
+                                    <a href="javascript:void(0)" class="btn_agree"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newSb_02.png"></a>
                                 </div>
                             </div>
                         </div>
                     </section>
 
-                    <!-- <section class="page" id="page-2">
-                        <div class="question_box">
-                            <div class="question"><img src="//static.resta.co.kr/event/v_${eventSeq}/q_02.png"></div>
-                            <div class="q_select">
-                            <label><input type="radio" name="tadd2" value="서울"><img src="//static.resta.co.kr/event/v_${eventSeq}/select_off_04.png"></label>
-                            <label><input type="radio" name="tadd2" value="경기"><img src="//static.resta.co.kr/event/v_${eventSeq}/select_off_05.png"></label>
-                            <label><input type="radio" name="tadd2" value="인천"><img src="//static.resta.co.kr/event/v_${eventSeq}/select_off_06.png"></label>
-                            </div>
-                        </div>              
-                    </section> -->
-
-                    <!-- <section class="page" id="page-3">
-                        <div class="question_box">
-                            <div class="question"><img src="//static.resta.co.kr/event/v_${eventSeq}/q_03.png"></div>
-                            <div class="q_select">
-                            <label><input type="radio" name="add3" value="3개"><img src="//static.resta.co.kr/event/v_${eventSeq}/select_off_07.png"></label>
-                            <label><input type="radio" name="add3" value="4개"><img src="//static.resta.co.kr/event/v_${eventSeq}/select_off_08.png"></label>
-                            <label><input type="radio" name="add3" value="기타"><img src="//static.resta.co.kr/event/v_${eventSeq}/select_off_09.png"></label>
-                            </div>
-                        </div>              
-                    </section> -->
-
                     <section class="page" id="page-2">
                         <div class="question_box">
-                            <div class="question"><img src="//static.resta.co.kr/event/v_${eventSeq}/q_03.png"></div>
+                            <div class="question">현재 <span class="pointColor">거주하는 지역</span>을<br/>선택해주세요</div>
+                            <div class="q_select">
+                                <label><input type="radio" name="tadd2" value="대구"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_04.png"></label>
+                                <label><input type="radio" name="tadd2" value="경상북도"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_05.png"></label>
+                            </div>
+                        </div>              
+                    </section>
+
+                    <section class="page" id="page-3">
+                        <div class="question_box">
+                            <div class="question"><span class="pointColor">내원 가능 일정</span>을 선택해주세요.</div>
+                            <div class="q_select">
+                                <label><input type="radio" name="tadd3" value="급행 (오늘 또는 내일)"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_06.png"></label>
+                                <label><input type="radio" name="tadd3" value="평일 오전"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_07.png"></label>
+                                <label><input type="radio" name="tadd3" value="평일 오후"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_08.png"></label>
+                                <label><input type="radio" name="tadd3" value="평일 저녁"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_09.png"></label>
+                                <label><input type="radio" name="tadd3" value="토요일 오전"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_10.png"></label>
+                                <label><input type="radio" name="tadd3" value="상담 후 결정"><img src="//static.savemkt.com/event/v_${eventSeq}/select_off_11.png"></label>
+                            </div>
+                        </div>              
+                    </section>
+
+                    <section class="page" id="page-4">
+                        <div class="question_box">
+                            <div class="question">
+                                서비스 안내를 받으실 분의<br/><span class="pointColor">성함</span>과 <span class="pointColor">연락처</span>를 입력해주세요.
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="item">
@@ -320,11 +203,11 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                             </div>
                         </div>
                         
-                        <div class="submit"><input type="image" onclick="fnForm('form-1')" value="" class="btn_submit" src="//static.resta.co.kr/event/v_${eventSeq}/btn_newSb_03.png"></div>
+                        <div class="submit"><input type="image" onclick="fnForm('form-1')" value="" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newSb.png"></div>
                 
                         <div class="description">
                             <p id="event-period">이벤트 기간 :  <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
-                            <div class="ad_txt">안심하세요! 본원에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
+                            <!-- <div class="ad_txt">안심하세요! 본원에서는 고객님의 소중한 개인정보를 <br>상담 외 어떠한 목적으로도 사용하지 않습니다.</div> -->
                             <span>대상 : ${resVo.target}</span>
                         </div>
                     </section>
@@ -352,7 +235,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 
             <div class="container">  
                 <!-------- 푸터 없는 랜딩입니다. 복사시 주의 !!!! -------->
-                <div class="img-area"><img src="//static.resta.co.kr/event/v_${eventSeq}/footer.jpg"></div>	
+                <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div>	
             </div>
         </div>
 
@@ -528,6 +411,82 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 	    modal2.style.display = "none";
 	}
 
+    const $popup = $('.popup_box');
+    const $overlay = $('.overlay');
+    const $agreeModal = $('.agreeModalBox');
+    const $audio = $('#location');
+
+    function playAudio(pageNum) {
+        $audio.attr('src', '//static.savemkt.com/event/v_' + '${eventSeq}' + '/audio_0' + pageNum + '.mp3');
+        setTimeout(function() {
+            $audio.trigger('play');
+        }, 500);
+    }
+
+    // 페이지 이동 함수
+    function goToNextPage(currentPageId) {
+        const $current = $(currentPageId);
+
+        $current.fadeOut(() => $current.next().fadeIn());
+    }
+
+    // 음성 파일
+    function resetRadio(name) {
+        $(`input[name="${name}"]`).prop('checked', false).siblings('img').attr('src', (_, src) => src.replace('_on', '_off'));
+    }
+
+    // add1 처리
+    $('input[name="tadd1"]').on('click', () => {
+        $overlay.fadeIn();
+        $popup.show().css('bottom', '-100%').animate({
+            bottom: '0'
+        }, 500);
+        playAudio(1);
+    });
+
+    $('.popup_box .close_btn, .overlay').on('click', () => {
+        $popup.animate({ bottom: '-100%' }, 500, () => {
+            $overlay.fadeOut();
+            resetRadio('add1');
+        });
+    });
+
+    $('.btn_disagree').on('click', () => {
+        alert('미동의 시 설문에 참여 하실 수 없습니다.');
+    });
+
+    $('.btn_agree').on('click', () => {
+        $popup.animate({ bottom: '-100%' }, 500, () => {
+            $popup.hide();
+            $overlay.fadeOut();
+            goToNextPage('#page-1');
+            playAudio(2);
+        });
+    });
+
+    $('.agree_txt').on('click', () => {
+        $agreeModal.fadeIn();
+        $overlay.fadeIn();
+    });
+
+    $('.agreeModalBox .closeBtn').on('click', () => {
+        $agreeModal.fadeOut();
+        // $overlay.fadeOut();
+    });
+
+    // add2 처리
+    $('input[name="tadd2"]').on('click', function () {
+        goToNextPage('#page-2');
+        $('.icon_box').hide();
+        playAudio(3);
+    });
+    
+    // add3 처리
+    $('input[name="tadd3"]').on('click', function () {
+        goToNextPage('#page-3');
+        $('.icon_box').show();
+        playAudio(4);
+    });
 
     function fnForm(formId){
 		/* form 자동 처리 방지 */
@@ -538,26 +497,27 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 		// 라디오버튼에 대한 필수값 확인 - 체크된게 하나도 없을때 경고창
 		let selectedRadio1 = procForm.querySelector('input[name="tadd1"]:checked');
 		if (!selectedRadio1) {
-			alert("설문을 선택해주세요.");
+			alert("설문1을 선택해주세요.");
 			return;
 		} else {
 			procForm.querySelector("input[name='add1']").value = selectedRadio1.value;
 		}
 
-        // let tage = procForm.querySelector(`input[name="tage"]:checked`);
-		// if (!tage) {
-		// 	alert("연령을 선택해주세요.");
-		// 	return;
-		// } else {
-		// 	procForm.querySelector("input[name='age']").value = tage.value;
-		// }
-
 		let selectedRadio2 = procForm.querySelector('input[name="tadd2"]:checked');
 		if (!selectedRadio2) {
-			alert("설문을 선택해주세요.");
+			alert("설문2을 선택해주세요.");
 			return;
 		} else {
 			procForm.querySelector("input[name='add2']").value = selectedRadio2.value;
+		}
+
+
+		let selectedRadio3 = procForm.querySelector('input[name="tadd3"]:checked');
+		if (!selectedRadio3) {
+			alert("설문3을 선택해주세요.");
+			return;
+		} else {
+			procForm.querySelector("input[name='add3']").value = selectedRadio3.value;
 		}
 	
 		/*
@@ -571,11 +531,11 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 		// 필수값 체크 항목
 		var required = {
 			'name': '이름'
-			, 'age': '나이'
+			// , 'age': '나이'
 			,'phone': '전화번호'
 			,'add1': '설문1'
 			,'add2': '설문2'
-			// ,'add3': '설문3'
+			,'add3': '설문3'
 			// ,'agBox': '개인정보'
 		};
 		
