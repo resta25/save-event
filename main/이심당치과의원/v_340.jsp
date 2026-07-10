@@ -108,7 +108,23 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 
 @media screen and (max-width: 786px) {
 }
-@media screen and (max-width: 500px){}
+@media screen and (max-width: 500px){
+    .icon_box {padding: 7% 10% 0;}
+    .question_box .question,
+    .question_box .question span {font-size: 2.5rem;}
+    /* #page-3 .question_box .question, #page-3 .question_box .question span {font-size: 2rem;} */
+
+    .popup_box .inner .popup_title {font-size: 2.5rem;}
+    .question_box .q_select label {width: 70%;}
+    .form-group {padding: 2% 3.125rem 2%;}
+    #page_landing_c input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {
+        padding: 0.5rem 1rem;
+        width: 100%;
+    }
+
+    .form .submit {width: 85%;}
+
+}
 
 </style>
 <!-- include -->
