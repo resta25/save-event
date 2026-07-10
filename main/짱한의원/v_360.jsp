@@ -425,7 +425,7 @@ pageEncoding="UTF-8"%>
     });
 
     //설문 on/off
-    $('input[name*="tadd"]').on('change', function () {
+    $('input[name="tadd1[]"]').on('change', function () {
         const $img = $(this).closest('label').find('img');
 
         if ($(this).is(':checked')) {
@@ -434,6 +434,11 @@ pageEncoding="UTF-8"%>
             $img.attr('src', $img.attr('src').replace('_on', '_off'));
         }
     });
+
+    
+    // $('input[name="tadd1[]"]').on('change', function () {
+    //     const $tadd1Inputs = $('input[name="tadd1[]"]');
+    // });
 
     // $('input[name="tadd1[]"]').on('change', function () {
     //     console.log($(this).val(), $(this).is(':checked'));
@@ -647,13 +652,6 @@ pageEncoding="UTF-8"%>
 		var phoneNum = $('input[name="phone"]').val();
 	});
 
-    $('input[name="tadd1[]"]').on('change', function () {
-        const $tadd1Inputs = $('input[name="tadd1[]"]');
-
-        $tadd1Inputs.closest('label').removeClass('active');
-        $tadd1Inputs.filter(':checked').closest('label').addClass('active');
-    });
-
 
     //submit
 	function fnForm(formId){
@@ -663,17 +661,17 @@ pageEncoding="UTF-8"%>
 		let procForm = document.getElementById(formId);
 
         // 라디오버튼에 대한 필수값 확인 - 체크된게 하나도 없을때 경고창
-        let checkedValues;
-        checkedValues = $('#' + formId + ' input[name="tadd1[]"]:checked').map(function() {
-            return $(this).val();
-        }).get();
-        
-        if (!checkedValues.length >= 1) {
-            alert("설문을 선택해주세요.");
-            return;
-        } else {
-            procForm.querySelector("input[name='add1']").value = checkedValues;
-        }
+// 수정
+const checkedValues = $('input[name="tadd1[]"]:checked').map(function () {
+    return this.value;
+}).get();
+
+if (checkedValues.length < 1) {
+    alert("설문을 선택해주세요.");
+    return false;
+}
+
+procForm.querySelector("input[name='add1']").value = checkedValues.join(',');
 
         // let selectedRadio1 = procForm.querySelector('input[name="tadd1"]').value;
         // procForm.querySelector("input[name='add1']").value = selectedRadio1;
