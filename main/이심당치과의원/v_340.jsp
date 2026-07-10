@@ -31,17 +31,19 @@ button{margin: 0; padding: 0; background-color: transparent; border: none; curso
     width: 1px;
 }
 .btn_submit {background: none; background-color: transparent !important;}
-input:not( [type="checkbox"], [type="radio"], [type="range"] ), select { height: auto; padding: 1rem 1.5rem; text-align: center; border-radius: 0.5rem; font-size: 2rem; width: 100%;}
+input:not( [type="checkbox"], [type="radio"], [type="range"] ), select { height: auto; padding: 0.8rem 1.5rem; text-align: center; border-radius: 0.5rem; font-size: 1.7rem; width: 100%;}
 input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border: none;}
 
-#wrap{max-width: 600px; letter-spacing: -1px; font-family: 'Pretendard Variable', 'Pretendard', sans-serif; display: flex; flex-direction: column; height: 100%;}
+#wrap{max-width: 600px; letter-spacing: -1px; font-family: 'Pretendard Variable', 'Pretendard', sans-serif; display: flex; flex-direction: column; height: 100%;
+max-width: 600px; overflow: hidden; height: 100vh; /* fallback */ height: 100dvh; /* 최신 브라우저용 */
+padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);}
 .form{flex-grow: 1;}
 .page:not(#page-1){display:none;}
 .pointColor{color: #0b0098;}
 
 
 .icon_box {padding:4% 10% 0;}
-.icon_box .icon{width:20%;margin:0 auto;transform: translateY(0%); animation: animate__floundering 1.5s cubic-bezier(.49,.16,.32,.86) infinite;}
+.icon_box .icon{width:17%;margin:0 auto;transform: translateY(0%); animation: animate__floundering 1.5s cubic-bezier(.49,.16,.32,.86) infinite;}
 .icon_box .shadow{width:20%;margin:2% auto 0;}
 @keyframes animate__floundering { 50% {transform: translateY(-15%);} }
 
@@ -65,12 +67,12 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 .page .paging button a{display:block;}
 
 /* add 설문 */
-.question_box .question{ font-size: 3rem; text-align: center; line-height: 1.2;}
-.question_box .question span {font-size: 3rem; font-weight: 700;}
+.question_box .question{ font-size: 2.5rem; text-align: center; line-height: 1.2;}
+.question_box .question span {font-size: 2.5rem; font-weight: 700;}
 
 /* #page-4 .question_box .question {padding: 1rem 16.3125rem 0;} */
 .question_box .q_select{display: flex; flex-direction: column; align-items: center; justify-content: center; padding:3% 0; gap: 1rem;}
-.question_box .q_select label{width: 65%;}
+.question_box .q_select label{width: 50%;}
 .question_box .q_select label img{width: 100%;}
 
 #page-2 .question_box .q_select {padding: 3% 0 15.7%;}
