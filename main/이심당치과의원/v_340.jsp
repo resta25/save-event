@@ -19,7 +19,7 @@ button{margin: 0; padding: 0; background-color: transparent; border: none; curso
 .page:not(#page-1) .img-area {margin-bottom: 3%;}
 
 /* 초기화 css */
-#page_landing_c main {max-width: unset; height: 100vh; background: transparent !important;}
+#page_landing_c main {max-width: unset;  background: transparent !important;}
 .form input[type="radio"] {
     border: 0;
     clip: rect(0 0 0 0);
@@ -73,7 +73,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 .question_box .q_select label{width: 65%;}
 .question_box .q_select label img{width: 100%;}
 
-#page-2 .question_box .q_select {padding: 3% 0 24%;}
+#page-2 .question_box .q_select {padding: 3% 0 15.7%;}
 
 /* db단 */
 #page-3 .question_box .question{padding-top: 2rem;}
@@ -251,6 +251,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 
             <div class="container">  
                 <!-------- 푸터 없는 랜딩입니다. 복사시 주의 !!!! -------->
+                <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div>	
                 <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div>	
             </div>
         </div>
