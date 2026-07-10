@@ -661,17 +661,16 @@ pageEncoding="UTF-8"%>
 		let procForm = document.getElementById(formId);
 
         // 라디오버튼에 대한 필수값 확인 - 체크된게 하나도 없을때 경고창
-// 수정
-const checkedValues = $('input[name="tadd1[]"]:checked').map(function () {
-    return this.value;
-}).get();
+        const checkedValues = $('input[name="tadd1[]"]:checked').map(function () {
+            return this.value;
+        }).get();
 
-if (checkedValues.length < 1) {
-    alert("설문을 선택해주세요.");
-    return false;
-}
+        if (checkedValues.length < 1) {
+            alert("설문을 선택해주세요.");
+            return false;
+        }
 
-procForm.querySelector("input[name='add1']").value = checkedValues.join(',');
+        procForm.querySelector("input[name='add1']").value = checkedValues.join(',');
 
         // let selectedRadio1 = procForm.querySelector('input[name="tadd1"]').value;
         // procForm.querySelector("input[name='add1']").value = selectedRadio1;
@@ -716,7 +715,7 @@ procForm.querySelector("input[name='add1']").value = checkedValues.join(',');
 			,'add1': '설문1'
 			// ,'add2': '설문2'
 			// ,'add3': '설문3'
-			// ,'agBox': '개인정보'
+			,'agBox': '개인정보'
 		};
 		
 		validateForm(procForm, required);
