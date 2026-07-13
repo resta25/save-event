@@ -169,9 +169,9 @@ pageEncoding="UTF-8"%>
                                     <img src="//static.savemkt.com/event/v_${eventSeq}/txt_01.png">
                                 </div>
                                 <div class="q_select">
-                                    <label><input type="checkbox" name="tadd1[]" value="고혈압">고혈압</label>
+                                    <label><input type="checkbox" name="tadd1[]" value="기침 · 가래">기침 · 가래</label>
+                                    <label><input type="checkbox" name="tadd1[]" value="기관지 건강">기관지 건강</label>
                                     <label><input type="checkbox" name="tadd1[]" value="혈관질환">혈관질환</label>
-                                    <label><input type="checkbox" name="tadd1[]" value="관절 · 연골">관절 · 연골</label>
                                     <label><input type="checkbox" name="tadd1[]" value="기타">기타</label>
                                 </div>
                                 <div class="question_box">
@@ -248,9 +248,9 @@ pageEncoding="UTF-8"%>
                                 <img src="//static.savemkt.com/event/v_${eventSeq}/txt_01.png">
                             </div>
                             <div class="q_select">
-                                <label><input type="checkbox" name="tadd1[]" value="고혈압">고혈압</label>
+                                <label><input type="checkbox" name="tadd1[]" value="기침 · 가래">기침 · 가래</label>
+                                <label><input type="checkbox" name="tadd1[]" value="기관지 건강">기관지 건강</label>
                                 <label><input type="checkbox" name="tadd1[]" value="혈관질환">혈관질환</label>
-                                <label><input type="checkbox" name="tadd1[]" value="관절 · 연골">관절 · 연골</label>
                                 <label><input type="checkbox" name="tadd1[]" value="기타">기타</label>
                             </div>
                             <div class="question_box">
@@ -311,7 +311,7 @@ pageEncoding="UTF-8"%>
 
         <div class="container">
             <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div> -->
-            <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div> -->
+            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.png"></div>
         </div>
             
         <div class="subscribe_container">
