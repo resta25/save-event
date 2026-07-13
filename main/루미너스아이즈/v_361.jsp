@@ -14,6 +14,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .wrap_curd {padding: 4.6rem 4.9rem; border-radius: 2.5rem;}
     #page_landing_c .wrap_curd * {font-size: 100%; font-family: inherit;}
     /* #page_landing_c .wrap_form {border: 0; padding: 4.3rem 4rem; box-sizing: border-box; background-color: #001133;} */
+    #page_landing_c .wrap_form {background-color: #001133;}
     html{height: 100%;}
     main {position: relative;}
 	.content {padding: 2rem 1rem;}
@@ -66,10 +67,13 @@ pageEncoding="UTF-8"%>
     input:not( [type="checkbox"], [type="radio"], [type="range"] ):disabled, input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border: none;}
 
 
-    #page_landing_c .wrap_curd .submit {margin: 0 auto; padding: 0;}
+    #page_landing_c .wrap_curd .submit {margin: 0 auto;     background: url(//static.savemkt.com/event/v_361/btn_newsb.png) no-repeat center center / auto 100%;
+    padding: 6% 5%;}
     #page_landing_c .wrap_curd .submit input[type="image"] {
-        width: 100%;
+        width: 70%;
         margin: 0 auto 0;
+        padding: 0;
+        border-radius: 0;
     }
 
     .db_btn, .submit input[type="image"] {animation: pulsating 0.8s linear infinite;
@@ -202,7 +206,7 @@ pageEncoding="UTF-8"%>
                         <label><input name="agBox" type="checkbox"><span>개인정보 처리방침에 동의합니다. </span></label> <a href="#" class="btn-agreement">[보기]</a>
                     </div>
 
-                    <div class="submit"><input type="image" value="" onclick="fnForm('form-1')" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png" /></div>	
+                    <div class="submit"><input type="image" value="" onclick="fnForm('form-1')" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb_txt.png" /></div>	
 
                 </div>
 
@@ -233,87 +237,6 @@ pageEncoding="UTF-8"%>
             </form>
         </div>
         
-        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg"></div>
-        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_03.gif"></div>
-        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_04.jpg"></div>
-        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_05.jpg"></div>
-        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_06.gif"></div>
-
-        <div class="wrap_form wrap_form_2">
-            <form class="wrap_curd" id="form-2" method="POST" accept-charset="utf-8">
-                <div class="formGroup">
-                    <div class="form_inner">
-                        <div class="question_container">
-                            <div class="q_text img-area">
-                                <img src="//static.savemkt.com/event/v_${eventSeq}/txt_01.png">
-                            </div>
-                            <div class="q_select">
-                                <label><input type="checkbox" name="tadd1[]" value="기침 · 가래">기침 · 가래</label>
-                                <label><input type="checkbox" name="tadd1[]" value="기관지 건강">기관지 건강</label>
-                                <label><input type="checkbox" name="tadd1[]" value="혈관질환">혈관질환</label>
-                                <label><input type="checkbox" name="tadd1[]" value="기타">기타</label>
-                            </div>
-                            <div class="question_box">
-                                <div class="user_name">
-                                    <span class="legend">이름</span>
-                                    <input type="text" name="name" id="name" class="inp" required placeholder="이름을 입력해주세요" autocomplete="off">
-                                </div>
-                                <div class="user_age">
-                                    <span class="legend">나이</span>
-                                    <input type="tel" name="age" id="age" class="inp" required=""  placeholder="나이를 입력해주세요" autocomplete="off" maxlength="2" placeholder="">
-                                </div>
-                                <div class="user_phone">
-                                    <span class="legend">연락처</span>
-                                    <input type="tel" name="phone" id="phone" class="inp" required autocomplete="off" maxlength="11">
-                                </div>
-                                <div class="user_text">
-                                    <span class="legend">문의</span>
-                                    <input type="text" name="tadd2" id="tadd2" class="inp" required placeholder="문의사항을 입력해 주세요.(선택사항)">
-                                </div>
-                            </div>   
-                        </div>
-                    </div>
-                    
-                    <div class="agBox">
-                        <label><input name="agBox" type="checkbox"><span>개인정보 처리방침에 동의합니다. </span></label> <a href="#" class="btn-agreement">[보기]</a>
-                    </div>
-
-                    <div class="submit"><input type="image" value="" onclick="fnForm('form-2')" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png" /></div>	
-
-                </div>
-
-                <div class="description">
-                    <p id="event-period"></p>
-                    <span class="target">대상 : ${resVo.target}</span>
-                    <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
-                </div>
-
-                <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
-                <input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
-                <input type="hidden" id="site" 			name="site" value="${site}"/>
-                <input type="hidden" id="media" 		name="media" value="${media}"/>
-                <input type="hidden" id="interlock" 	name="interlock" value="${resVo.interlock}"/>
-                <input type="hidden" id="checkAgeMin" 	name="checkAgeMin" value="${resVo.checkAgeMin}"/>
-                <input type="hidden" id="checkAgeMax" 	name="checkAgeMax" value="${resVo.checkAgeMax}"/>
-                <input type="hidden" id="checkGender" 	name="checkGender" value="${resVo.checkGender}"/>
-                <input type="hidden" id="add1" 			name="add1" value=""/>
-                <input type="hidden" id="add2" 			name="add2" value=""/>
-                <input type="hidden" id="add3" 			name="add3" value=""/>
-                <input type="hidden" id="add4" 			name="add4" value=""/>
-                <input type="hidden" id="add5" 			name="add5" value=""/>
-                <input type="hidden" id="add6" 			name="add6" value=""/>
-                
-                <input type="hidden" id="agent" 		name="agent" 		value="${resVo.agent}"/>
-                <input type="hidden" id="objectItems" 	name="objectItems" 	value="${resVo.objectItems}"/>
-                <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
-            </form>
-        </div>
-
-        <div class="container">
-            <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div> -->
-            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.png"></div>
-        </div>
-            
         <div class="subscribe_container">
             <div class="title">
                 실시간 신청현황
@@ -333,7 +256,7 @@ pageEncoding="UTF-8"%>
             </div>
         </div>
 
-        <div class="img-area fixed">
+        <!-- <div class="img-area fixed">
             <div class="img-area fixed-area"><img src="//static.savemkt.com/event/v_${eventSeq}/fixed.png"></div>
             <div class="timer-box" id="countdown">
                 <span class="hours"></span> : 
@@ -348,7 +271,7 @@ pageEncoding="UTF-8"%>
                     <img src="//static.savemkt.com/event/v_${eventSeq}/db_btn.png">
                 </span>
             </div>
-        </div>
+        </div> -->
 
         <div class="container">
             <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div> -->
@@ -367,71 +290,71 @@ pageEncoding="UTF-8"%>
         };
     }
 
-    const fixedBar = document.querySelector('.fixed');
-    const targetForm = document.querySelectorAll('.wrap_form')[1]; // 두 번째 폼
+    // const fixedBar = document.querySelector('.fixed');
+    // const targetForm = document.querySelectorAll('.wrap_form')[1]; // 두 번째 폼
 
-    const observer = new IntersectionObserver(
-        ([entry]) => {
-            const $wrap = $('main');
-            if (entry.isIntersecting) {
-                fixedBar.style.display = 'none';
+    // const observer = new IntersectionObserver(
+    //     ([entry]) => {
+    //         const $wrap = $('main');
+    //         if (entry.isIntersecting) {
+    //             fixedBar.style.display = 'none';
 
-                $wrap.css('padding-bottom', 0);
+    //             $wrap.css('padding-bottom', 0);
 
-            } else {
-                fixedBar.style.display = 'block';
-            }
-        },
-        {
-            threshold: 0
-        }
-    );
+    //         } else {
+    //             fixedBar.style.display = 'block';
+    //         }
+    //     },
+    //     {
+    //         threshold: 0
+    //     }
+    // );
 
-    observer.observe(targetForm);
+    // observer.observe(targetForm);
 
-    const countdown = document.getElementById('countdown');
-    const hoursEl = countdown.querySelector('.hours');
-    const minutesEl = countdown.querySelector('.minutes');
-    const secondsEl = countdown.querySelector('.second');
+    // const countdown = document.getElementById('countdown');
+    // const hoursEl = countdown.querySelector('.hours');
+    // const minutesEl = countdown.querySelector('.minutes');
+    // const secondsEl = countdown.querySelector('.second');
 
-    const maxSeconds = 3 * 3600 + 59 * 60; // 시작 시간(초)
-    const maxMilliseconds = maxSeconds * 1000;
-    const startTime = Date.now();
-    let timerAnimationId = null;
+    // const maxSeconds = 3 * 3600 + 59 * 60; // 시작 시간(초)
+    // const maxMilliseconds = maxSeconds * 1000;
+    // const startTime = Date.now();
+    // let timerAnimationId = null;
 
-    function updateTimer() {
-        const elapsedMs = Date.now() - startTime;
-        const remainingMs = Math.max(0, maxMilliseconds - elapsedMs);
-        const remainingSeconds = Math.floor(remainingMs / 1000);
+    // function updateTimer() {
+    //     const elapsedMs = Date.now() - startTime;
+    //     const remainingMs = Math.max(0, maxMilliseconds - elapsedMs);
+    //     const remainingSeconds = Math.floor(remainingMs / 1000);
 
-        const hours = String(Math.floor(remainingSeconds / 3600)).padStart(2, '0');
-        const minutes = String(Math.floor((remainingSeconds % 3600) / 60)).padStart(2, '0');
-        const seconds = String(remainingSeconds % 60).padStart(2, '0');
+    //     const hours = String(Math.floor(remainingSeconds / 3600)).padStart(2, '0');
+    //     const minutes = String(Math.floor((remainingSeconds % 3600) / 60)).padStart(2, '0');
+    //     const seconds = String(remainingSeconds % 60).padStart(2, '0');
 
-        hoursEl.textContent = hours;
-        minutesEl.textContent = minutes;
-        secondsEl.textContent = seconds;
+    //     hoursEl.textContent = hours;
+    //     minutesEl.textContent = minutes;
+    //     secondsEl.textContent = seconds;
 
-        // 구간 분기 없이 이징 곡선으로 부드럽게 감소
-        const progress = 1 - (remainingMs / maxMilliseconds); // 0 ~ 1
-        const minGaugeWidth = 15;
-        const easingStrength = 250; // 값이 클수록 초반 감소가 더 빠름
-        const easedProgress = (1 - Math.exp(-easingStrength * progress)) / (1 - Math.exp(-easingStrength));
-        const gaugeWidth = 100 - ((100 - minGaugeWidth) * easedProgress);
+    //     // 구간 분기 없이 이징 곡선으로 부드럽게 감소
+    //     const progress = 1 - (remainingMs / maxMilliseconds); // 0 ~ 1
+    //     const minGaugeWidth = 15;
+    //     const easingStrength = 250; // 값이 클수록 초반 감소가 더 빠름
+    //     const easedProgress = (1 - Math.exp(-easingStrength * progress)) / (1 - Math.exp(-easingStrength));
+    //     const gaugeWidth = 100 - ((100 - minGaugeWidth) * easedProgress);
 
-        document.querySelector('.gauge-bar').style.width = Math.max(gaugeWidth, minGaugeWidth) + '%';
+    //     document.querySelector('.gauge-bar').style.width = Math.max(gaugeWidth, minGaugeWidth) + '%';
 
-        if (remainingMs <= 0) {
-            if (timerAnimationId) {
-                cancelAnimationFrame(timerAnimationId);
-            }
-            return;
-        }
+    //     if (remainingMs <= 0) {
+    //         if (timerAnimationId) {
+    //             cancelAnimationFrame(timerAnimationId);
+    //         }
+    //         return;
+    //     }
 
-        timerAnimationId = requestAnimationFrame(updateTimer);
-    }
+    //     timerAnimationId = requestAnimationFrame(updateTimer);
+    // }
 
-    updateTimer(); // 최초 표시
+    // updateTimer(); // 최초 표시
 
     $(document).ready(function(){
         blockSourceView();//드래그, 우클릭 방지
@@ -569,7 +492,7 @@ pageEncoding="UTF-8"%>
 
 	    // 페이지 로드 시 기본값 설정
 	    phoneInput.value = '010';
-	    phoneInput02.value = '010';
+	    // phoneInput02.value = '010';
 
 	    // 입력값이 사라지면 다시 '010' 넣기
 	    phoneInput.addEventListener('input', function() {
@@ -577,11 +500,11 @@ pageEncoding="UTF-8"%>
 	            phoneInput.value = '010';
 	        }
 	    });
-	    phoneInput02.addEventListener('input', function() {
-	        if (!phoneInput02.value.startsWith('010')) {
-	            phoneInput02.value = '010';
-	        }
-	    });
+	    // phoneInput02.addEventListener('input', function() {
+	    //     if (!phoneInput02.value.startsWith('010')) {
+	    //         phoneInput02.value = '010';
+	    //     }
+	    // });
 	});
 
     // $('.overlay').hide();
@@ -613,17 +536,17 @@ pageEncoding="UTF-8"%>
     // });
 
     // db-btn 클릭시 db단 이동
-    $('.db_btn').on('click',function(){
-        const formOffset = $('.wrap_form_2').offset().top;
+    // $('.db_btn').on('click',function(){
+    //     const formOffset = $('.wrap_form_2').offset().top;
 
-        $('html, body').animate({
-            scrollTop: formOffset
-        }, 500); // 500ms 동안 스크롤 이동
+    //     $('html, body').animate({
+    //         scrollTop: formOffset
+    //     }, 500); // 500ms 동안 스크롤 이동
 
-        const $wrap = $('main');
+    //     const $wrap = $('main');
 
-        $wrap.css('padding-bottom', 0);
-    })
+    //     $wrap.css('padding-bottom', 0);
+    // })
 
     // $('.btn-valid').on('click', function() {
     //     $('.overlay, .popup-valid').hide();
