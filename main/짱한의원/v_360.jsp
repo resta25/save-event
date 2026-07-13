@@ -304,9 +304,9 @@ input:is([type="checkbox"]) {width: 0; height: 0;}
             <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_01.jpg">
             <div class="btm_box">
                 <div class="db_btn"><img src="//static.savemkt.com/event/v_${eventSeq}/btn_newSb_01.png"></div>
-                <div class="agBox">
+                <!-- <div class="agBox">
                     <label><span>개인정보처리방침에 동의합니다. </span></label>&nbsp;<a href="#" class="btn-agreement">[보기]</a>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg"></div>
