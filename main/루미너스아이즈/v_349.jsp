@@ -13,14 +13,17 @@ pageEncoding="UTF-8"%>
     * {font-family: "Pretendard", sans-serif; box-sizing: border-box;}
     #page_landing_c .wrap_curd {padding: 4.6rem 4.9rem; border-radius: 2.5rem;}
     #page_landing_c .wrap_curd * {font-size: 100%; font-family: inherit;}
+    #page_landing_c .wrap_form {border: none; background-color: #001133;}
     /* #page_landing_c .wrap_form {border: 0; padding: 4.3rem 4rem; box-sizing: border-box; background-color: #001133;} */
     html{height: 100%;}
     main {position: relative;}
 	.content {padding: 2rem 1rem;}
 	.content + .content {border-top: 0.1rem solid #ddd;}
 	.content * {padding: 0.8rem 1rem;}
-    .wrap_form .agBox {margin: 0.7rem auto;}
+    .wrap_form .agBox {margin: 0.7rem auto; font-size: 2.2rem !important;}
     .container {display: block; width: 100%; height: 100%;}
+    #page_landing_c .wrap_curd label {gap: 0;}
+    .btn-agreement {margin-left: 4px;}
 
     .gif-area {background-color: #fff; width: 100%; padding-top: 6rem; padding-bottom: 3rem;}
     .gif-area .img-area {width: 90.648148%; margin: 0 auto;}
@@ -138,7 +141,7 @@ pageEncoding="UTF-8"%>
 
     .q_select {column-gap: 1rem; margin-top: 2.9rem;}
     .q_text.img-area {width: 78%;}
-    #page_landing_c .wrap_curd {padding: 0.6rem 1.9rem;}
+    #page_landing_c .wrap_curd {padding: 2.6rem 1.9rem;}
     #page_landing_c .wrap_curd .q_select label {width: calc((100% - 3rem) / 4); font-size: 2rem; padding: 1rem 0;}
 
     .fixed .timer-box {left: 45%; font-size: 125%;}
@@ -168,12 +171,12 @@ pageEncoding="UTF-8"%>
                                 <div class="q_text img-area">
                                     <img src="//static.savemkt.com/event/v_${eventSeq}/txt_01.png">
                                 </div>
-                                <div class="q_select">
+                                <!-- <div class="q_select">
                                     <label><input type="checkbox" name="tadd1[]" value="고혈압">고혈압</label>
                                     <label><input type="checkbox" name="tadd1[]" value="혈관질환">혈관질환</label>
                                     <label><input type="checkbox" name="tadd1[]" value="관절 · 연골">관절 · 연골</label>
                                     <label><input type="checkbox" name="tadd1[]" value="기타">기타</label>
-                                </div>
+                                </div> -->
                                 <div class="question_box">
                                     <div class="user_name">
                                         <span class="legend">이름</span>
@@ -189,7 +192,7 @@ pageEncoding="UTF-8"%>
                                     </div>
                                     <div class="user_text">
                                         <span class="legend">문의</span>
-                                        <input type="text" name="tadd2" id="tadd2" class="inp" required placeholder="문의사항을 입력해 주세요.(선택사항)">
+                                        <input type="text" name="tadd1" id="add1" class="inp" required placeholder="문의사항을 입력해 주세요.(선택사항)">
                                     </div>
                                 </div>   
                             </div>
@@ -199,7 +202,7 @@ pageEncoding="UTF-8"%>
                     </div>
                     
                     <div class="agBox">
-                        <label><input name="agBox" type="checkbox"><span>개인정보 처리방침에 동의합니다. </span></label> <a href="#" class="btn-agreement">[보기]</a>
+                        <label><input name="agBox" type="checkbox">혜택 제공을 위한 <a href="#" class="btn-agreement">개인정보 처리방침</a>에 동의해주세요</label>
                     </div>
 
                     <div class="submit"><input type="image" value="" onclick="fnForm('form-1')" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png" /></div>	
@@ -247,12 +250,12 @@ pageEncoding="UTF-8"%>
                             <div class="q_text img-area">
                                 <img src="//static.savemkt.com/event/v_${eventSeq}/txt_01.png">
                             </div>
-                            <div class="q_select">
+                            <!-- <div class="q_select">
                                 <label><input type="checkbox" name="tadd1[]" value="고혈압">고혈압</label>
                                 <label><input type="checkbox" name="tadd1[]" value="혈관질환">혈관질환</label>
                                 <label><input type="checkbox" name="tadd1[]" value="관절 · 연골">관절 · 연골</label>
                                 <label><input type="checkbox" name="tadd1[]" value="기타">기타</label>
-                            </div>
+                            </div> -->
                             <div class="question_box">
                                 <div class="user_name">
                                     <span class="legend">이름</span>
@@ -268,15 +271,16 @@ pageEncoding="UTF-8"%>
                                 </div>
                                 <div class="user_text">
                                     <span class="legend">문의</span>
-                                    <input type="text" name="tadd2" id="tadd2" class="inp" required placeholder="문의사항을 입력해 주세요.(선택사항)">
+                                    <input type="text" name="tadd1" id="add1" class="inp" required placeholder="문의사항을 입력해 주세요.(선택사항)">
                                 </div>
                             </div>   
                         </div>
                     </div>
                     
                     <div class="agBox">
-                        <label><input name="agBox" type="checkbox"><span>개인정보 처리방침에 동의합니다. </span></label> <a href="#" class="btn-agreement">[보기]</a>
+                        <label><input name="agBox" type="checkbox">혜택 제공을 위한 <a href="#" class="btn-agreement">개인정보 처리방침</a>에 동의해주세요</label>
                     </div>
+
 
                     <div class="submit"><input type="image" value="" onclick="fnForm('form-2')" class="btn_submit" src="//static.savemkt.com/event/v_${eventSeq}/btn_newsb.png" /></div>	
 
@@ -521,12 +525,12 @@ pageEncoding="UTF-8"%>
     },2000);
 
     
-    $('input[name="tadd1[]"]').on('change', function () {
-        const $tadd1Inputs = $('input[name="tadd1[]"]');
+    // $('input[name="tadd1[]"]').on('change', function () {
+    //     const $tadd1Inputs = $('input[name="tadd1[]"]');
 
-        $tadd1Inputs.closest('label').removeClass('active');
-        $tadd1Inputs.filter(':checked').closest('label').addClass('active');
-    });
+    //     $tadd1Inputs.closest('label').removeClass('active');
+    //     $tadd1Inputs.filter(':checked').closest('label').addClass('active');
+    // });
 
     // 상단 슬라이드
     // var swiper = new Swiper(".mySwiper", {
@@ -676,19 +680,19 @@ pageEncoding="UTF-8"%>
         // procForm.querySelector("input[name='add1']").value = selectedRadio1;
         
 		// 라디오버튼에 대한 필수값 확인 - 체크된게 하나도 없을때 경고창
-        let checkedValues;
-        checkedValues = $('#' + formId + ' input[name="tadd1[]"]:checked').map(function() {
-            return $(this).val();
-        }).get();
+        // let checkedValues;
+        // checkedValues = $('#' + formId + ' input[name="tadd1[]"]:checked').map(function() {
+        //     return $(this).val();
+        // }).get();
         
-        if (!checkedValues.length >= 1) {
-            alert("설문을 선택해주세요.");
-            return;
-        } else {
-            procForm.querySelector("input[name='add1']").value = checkedValues;
-        }
-		 let selectedRadio2 = procForm.querySelector('input[name="tadd2"]').value;
-        procForm.querySelector("input[name='add2']").value = selectedRadio2;
+        // if (!checkedValues.length >= 1) {
+        //     alert("설문을 선택해주세요.");
+        //     return;
+        // } else {
+        //     procForm.querySelector("input[name='add1']").value = checkedValues;
+        // }
+		 let selectedRadio2 = procForm.querySelector('input[name="tadd1"]').value;
+        procForm.querySelector("input[name='add1']").value = selectedRadio2;
 
 		// let selectedRadio2 = procForm.querySelector(`input[name="tadd2"]:checked`).value;
 		// procForm.querySelector("input[name='add2']").value = selectedRadio2;
@@ -702,10 +706,10 @@ pageEncoding="UTF-8"%>
 			'name': '이름'
 			,'age': '나이'
 			,'phone': '전화번호'
-			,'add1': '설문1'
+			// ,'add1': '설문1'
 			// ,'add2': '설문2'
 			// ,'add3': '설문3'
-			,'agBox': '개인정보'
+			// ,'agBox': '개인정보'
 		};
 		
 		validateForm(procForm, required);
