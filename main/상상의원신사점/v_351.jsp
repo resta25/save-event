@@ -24,6 +24,7 @@ pageEncoding="UTF-8"%>
     #page_landing_c .wrap_curd label {display: block; font-size: 2.2rem;}
 
     .video-area {position: relative;}
+    .video-area::after {content: '* 생성형 AI 모델 영상 사용'; font-size: 16px; color: #fff; position: absolute; bottom: 1%; right: 2%;}
     .video-area video {display: block; width: 100%; height: 100%;}
     .video-area .img-box {position: absolute; width: 75.0925926%; left: 5%; bottom: 5%;}
 
@@ -111,6 +112,7 @@ pageEncoding="UTF-8"%>
     /* .subscribe .content > div {margin-right: 0; font-size: 0.8rem;} */
     .subscribe_container {padding: 0 1.5rem 3rem 1.5rem;}
     .subscribe .content .name {width: 10%;}
+    .video-area::after {font-size: 10px;}
 
     #page_landing_c .question_box [class^="user_"]:not(.user_gender) input {font-size: 3rem;}
 
