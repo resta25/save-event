@@ -218,7 +218,7 @@ pageEncoding="UTF-8"%>
         height: 8px;
     }
 }
-@media screen and (max-width: 430px){
+@media screen and (max-width: 480px){
     .form .form_box .form_row .package,
     .nice-select.wide .current,
     .nice-select.wide .list .option {font-size: 1.2em;}
@@ -324,6 +324,8 @@ pageEncoding="UTF-8"%>
                 </p>
             </div>
         </div>
+
+        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.png"></div>	
     </main>
 </body>
 <!--공통_script start --><script src="/js/agreement.js"></script><!--공통_script end-->

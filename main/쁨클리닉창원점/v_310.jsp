@@ -375,6 +375,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                 <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
                 </form>
             </div>
+                        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.png"></div>	
         </div>
     </main>
 </body>
