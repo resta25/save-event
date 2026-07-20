@@ -65,7 +65,7 @@ pageEncoding="UTF-8"%>
 * {font-family: 'Gmarket Sans';}
 .page:not(#page-1){display:none;}
 #page_landing_c {background-color: #D9D9D9;}
-/* #page_landing_c main {max-width: 1080px;} */
+#page_landing_c main {max-width: 1080px;}
 #wrap {width: 100%;}
 /* .form, .form .formContents{background-color:#ffffff;} */
 .page:not(#page-1) {width: 100%; margin: 0 auto; background-color: #fff;}
@@ -398,7 +398,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                         </div>
                     </div>
                     <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div>	 -->
-                    <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div>	 -->
+                    <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.png"></div>	
                 </div>
                 <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
                 <input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>

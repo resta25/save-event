@@ -65,7 +65,7 @@ pageEncoding="UTF-8"%>
 * {font-family: 'Gmarket Sans';}
 .page:not(#page-1){display:none;}
 #page_landing_c {background-color: #D9D9D9;}
-/* #page_landing_c main {max-width: 1080px;} */
+#page_landing_c main {max-width: 1080px;}
 #wrap {width: 100%;}
 /* .form, .form .formContents{background-color:#ffffff;} */
 .page:not(#page-1) {width: 100%; margin: 0 auto; background-color: #fff;}
@@ -421,11 +421,29 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                 </form>
             </div>
         </div>
+        <div class="container">
+            <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div> -->
+            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.png"></div>
+        </div>
     </main>
 </body>
 <!--공통_script start --><script src="/js/agreement.js"></script><!--공통_script end-->
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
 <script>
+    let isAnimating = false; // 애니메이션 상태 플래그
+
+    function lockUI() {
+        $('body').addClass('ui-lock');
+    }
+
+    function unlockUI() {
+        $('body').removeClass('ui-lock');
+    }
+
+    function isBlocked() {
+        return isAnimating;
+    }
+
     $(document).ready(function() {
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
@@ -491,7 +509,6 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     agree.onclick = function () { modal2.style.display = "block"; }
     close2.onclick = function () { modal2.style.display = "none"; }
 
-    let isAnimating = false; // 애니메이션 상태 플래그
     // 첫번째 페이지
     function show1pg(){
         const animation01 = gsap.timeline();
@@ -504,10 +521,11 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     function show2pg() {
         if (isAnimating) return; // 이미 애니메이션 중이면 실행 안 함
         isAnimating = true; // 애니메이션 시작 상태로 변경
-
+        lockUI();
         const animation02 = gsap.timeline({
             onComplete: () => {
                 isAnimating = false; // 애니메이션 끝나면 플래그 해제
+                unlockUI();
             }
         });
 
@@ -553,10 +571,12 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     function show3pg() {
         if (isAnimating) return; // 이미 애니메이션 중이면 실행 안 함
             isAnimating = true; // 애니메이션 시작 상태로 변경
+            lockUI();
 
         const animation03 = gsap.timeline({
             onComplete: () => {
                 isAnimating = false; // 애니메이션 끝나면 플래그 해제
+                unlockUI();
             }
         });
         animation03.to('#page-2 .poster_03', { x: -100, opacity: 0, delay: 0.2, duration: 0.2, ease: "power1.out"}, 0);
@@ -625,6 +645,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 
     // 버튼 페이지 이동 함수 (설문)
 	function pageSelFuc(num, obj) {
+        if (isBlocked()) return;
+
         if(!isAnimating){
             if($('input[name="tadd' + num + '"]').is(':checked')) {
                 $('.section0' + num).fadeOut(function() {
@@ -643,7 +665,6 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     });
 
     function fnForm(formId){
-        console.log('click')
 		/* form 자동 처리 방지 */
 		event.preventDefault();
 		/* form id로 proc */

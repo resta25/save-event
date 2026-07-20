@@ -353,7 +353,7 @@ html{
         
             <div class="container">
                 <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div>
-                <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div>
+                <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.png"></div>
             </div>
         </div>
 
