@@ -324,6 +324,8 @@ pageEncoding="UTF-8"%>
                 </p>
             </div>
         </div>
+
+        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.png"></div>	
     </main>
 </body>
 <!--공통_script start --><script src="/js/agreement.js"></script><!--공통_script end-->
