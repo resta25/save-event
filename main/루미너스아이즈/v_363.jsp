@@ -76,6 +76,7 @@ pageEncoding="UTF-8"%>
 
     .db_btn, .submit input[type="image"] {width: 50%; animation: pulsating 0.8s linear infinite;
         -webkit-animation: pulsating 0.8s linear infinite;}
+    .fixed .db_btn {width: 100%;}
         
     @keyframes pulsating {
         50% {
@@ -101,7 +102,7 @@ pageEncoding="UTF-8"%>
         cursor: pointer;
     }
     .fixed .inner {position: absolute; bottom: 5%; width: 87.314815%; left: 50%; transform: translateX(-50%);}
-    .fixed .timer-box {position: absolute; top: 5%; position: absolute; top: 3%; left: 46%; color: #fff; font-size: 340%; font-family: 'Galmuri11';}
+    .fixed .timer-box {position: absolute; top: 5%; position: absolute; top: 3%; left: 46%; color: #fff; font-size: 310%; font-family: 'Galmuri11';}
     .fixed .timer-box span {color: #eb342c; font-size: 100%; font-family: 'Galmuri11';}
     .fixed .gauge-box {position: absolute; width: 91.111111%; top: 28%; left: 50%; transform: translateX(-50%); height: 10px;}
     .fixed .gauge-box .gauge-bar {width: 100%; height: 100%; background: linear-gradient(90deg, #ff0000 0%, #ffd800 100%);}
@@ -142,7 +143,7 @@ pageEncoding="UTF-8"%>
     .q_select {column-gap: 1rem; margin-top: 2.9rem;}
     #page_landing_c .wrap_curd .q_select label {font-size: 2rem; padding: 1rem 0;}
 
-    .fixed .timer-box {left: 45%; font-size: 125%;}
+    .fixed .timer-box {left: 46%; font-size: 95%;}
 }
 @media screen and (max-width: 395px){
 
@@ -247,7 +248,7 @@ pageEncoding="UTF-8"%>
         
         <div class="container">
             <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div> -->
-            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.png"></div>
+            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div>
         </div>
             
         <div class="subscribe_container">
@@ -269,6 +270,22 @@ pageEncoding="UTF-8"%>
             </div>
         </div>
 
+        <div class="img-area fixed">
+            <div class="img-area fixed-area"><img src="//static.savemkt.com/event/v_${eventSeq}/fixed.png"></div>
+            <div class="timer-box" id="countdown">
+                <span class="hours"></span> : 
+                <span class="minutes"></span> : 
+                <span class="second"></span>
+            </div>
+            <div class="gauge-box">
+                <div class="gauge-bar"></div>
+            </div>
+            <div class="inner">
+                <span class="db_btn">
+                    <img src="//static.savemkt.com/event/v_${eventSeq}/db_btn.png">
+                </span>
+            </div>
+        </div>
     </main>
 </body>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
@@ -282,27 +299,71 @@ pageEncoding="UTF-8"%>
         };
     }
 
-    // const fixedBar = document.querySelector('.fixed');
-    // const targetForm = document.querySelectorAll('.wrap_form'); // 두 번째 폼
+    const fixedBar = document.querySelector('.fixed');
+    const targetForm = document.querySelectorAll('.wrap_form')[0]; // 두 번째 폼
 
-    // const observer = new IntersectionObserver(
-    //     ([entry]) => {
-    //         const $wrap = $('main');
-    //         if (entry.isIntersecting) {
-    //             fixedBar.style.display = 'none';
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            const $wrap = $('main');
+            if (entry.isIntersecting) {
+                fixedBar.style.display = 'none';
 
-    //             $wrap.css('padding-bottom', 0);
+                $wrap.css('padding-bottom', 0);
 
-    //         } else {
-    //             fixedBar.style.display = 'block';
-    //         }
-    //     },
-    //     {
-    //         threshold: 0
-    //     }
-    // );
+            } else {
+                fixedBar.style.display = 'block';
+            }
+        },
+        {
+            threshold: 0
+        }
+    );
 
-    // observer.observe(targetForm);
+    observer.observe(targetForm);
+
+    const countdown = document.getElementById('countdown');
+    const hoursEl = countdown.querySelector('.hours');
+    const minutesEl = countdown.querySelector('.minutes');
+    const secondsEl = countdown.querySelector('.second');
+
+    const maxSeconds = 3 * 3600 + 59 * 60; // 시작 시간(초)
+    const maxMilliseconds = maxSeconds * 1000;
+    const startTime = Date.now();
+    let timerAnimationId = null;
+
+    function updateTimer() {
+        const elapsedMs = Date.now() - startTime;
+        const remainingMs = Math.max(0, maxMilliseconds - elapsedMs);
+        const remainingSeconds = Math.floor(remainingMs / 1000);
+
+        const hours = String(Math.floor(remainingSeconds / 3600)).padStart(2, '0');
+        const minutes = String(Math.floor((remainingSeconds % 3600) / 60)).padStart(2, '0');
+        const seconds = String(remainingSeconds % 60).padStart(2, '0');
+
+        hoursEl.textContent = hours;
+        minutesEl.textContent = minutes;
+        secondsEl.textContent = seconds;
+
+        // 구간 분기 없이 이징 곡선으로 부드럽게 감소
+        const progress = 1 - (remainingMs / maxMilliseconds); // 0 ~ 1
+        const minGaugeWidth = 15;
+        const easingStrength = 250; // 값이 클수록 초반 감소가 더 빠름
+        const easedProgress = (1 - Math.exp(-easingStrength * progress)) / (1 - Math.exp(-easingStrength));
+        const gaugeWidth = 100 - ((100 - minGaugeWidth) * easedProgress);
+
+        document.querySelector('.gauge-bar').style.width = Math.max(gaugeWidth, minGaugeWidth) + '%';
+
+        if (remainingMs <= 0) {
+            if (timerAnimationId) {
+                cancelAnimationFrame(timerAnimationId);
+            }
+            return;
+        }
+
+        timerAnimationId = requestAnimationFrame(updateTimer);
+    }
+
+    updateTimer(); // 최초 표시
 
     document.addEventListener('DOMContentLoaded', function () {
         const countBox = document.querySelector('.count-box');
@@ -493,7 +554,7 @@ pageEncoding="UTF-8"%>
 
     // db-btn 클릭시 db단 이동
     $('.db_btn').on('click',function(){
-        const formOffset = $('.wrap_form_2').offset().top;
+        const formOffset = $('.wrap_form').offset().top;
 
         $('html, body').animate({
             scrollTop: formOffset
