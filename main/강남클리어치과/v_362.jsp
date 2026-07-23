@@ -148,6 +148,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     #page-3 .question_box .question {padding: 0;}
 
     #page-2 .question_box .q_select {padding: 0;}
+    #page-3 .question_box .question, #page-3 .question_box .question span {font-size: 1.7rem;}
 
 }
 
