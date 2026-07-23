@@ -593,7 +593,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                 고객은 개인정보침해로 인한 구제를 받기 위하여 개인정보분쟁조정위원회, 한국인터넷진흥원 개인정보침해신고센터 등에 분쟁해결이나 상담 등을 신청할 수 있습니다. 이 밖에 기타 개인정보침해의 신고, 상담에 대하여는 아래의 기관에 문의하시기 바랍니다.
                 - 개인정보침해신고센터 / privacy.kisa.or.kr / 국번없이 118
                 - 대검찰청 사이버수사과 / www.spo.go.kr / 국번없이 1301
-                - 경찰청 사이버안전국 / police.go.kr / 국번없이 182
+                - 경찰청 사이버안전국 / police.go.kr / 국번없이 182 
             `);
     });
 
@@ -669,13 +669,6 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
             clearProps: 'transform'
         });
     }
-
-    // 개인정보 처리방침 관련 이벤트
-    var modal2 = document.getElementById("modal2");
-    var agree = document.querySelector(".agBox .btn-agreement");
-    var close2 = document.getElementById("close");
-    agree.onclick = function () { modal2.style.display = "block"; }
-    close2.onclick = function () { modal2.style.display = "none"; }
 
     // 첫번째 페이지
     function show1pg(){
