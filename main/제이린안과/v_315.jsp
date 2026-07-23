@@ -402,6 +402,12 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                         </div>
                     </div>
                 </div>
+
+                <div class="container bottom">
+                    <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div>
+                    <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.png"></div>
+                </div>
+
                 <input type="hidden" id="branch" 		name="branch" value="${resVo.branch}"/>
                 <input type="hidden" id="eventSeq" 		name="eventSeq" value="${resVo.eventSeq}"/>
                 <input type="hidden" id="site" 			name="site" value="${site}"/>
@@ -422,7 +428,6 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                 <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
                 </form>
             </div>
-            <div class="img-area notice-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div>
         </div>
     </main>
 </body>
@@ -433,8 +438,6 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 		//드래그, 우클릭 방지
 		blockSourceView();
 		initDate();
-
-        $('.notice-area').hide();
 
         $('.overlay').hide();
         $('.popup-confirm').hide();
