@@ -380,7 +380,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                     </section>
 
                     <div class="overlay"></div>
-                    <div class="popup-confirm">
+                    <!-- <div class="popup-confirm">
                         <div class="img-area">
                             <img src="//static.savemkt.com/event/v_${eventSeq}/pop_txt.png">
                         </div>
@@ -388,7 +388,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                             <button type="button" class="btn-confirm"></button>
                             <button type="button" class="btn-out"></button>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- 개인정보처리방침 전문 -->
                     <div id="modal2" class="modal modal2" style="display: none;">
@@ -427,9 +427,80 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
         </div>
     </main>
 </body>
-<!--공통_script start --><script src="/js/agreement.js"></script><!--공통_script end-->
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
 <script>
+
+    let isAnimating = false; // 애니메이션 상태 플래그
+
+    function lockUI() {
+        $('body').addClass('ui-lock');
+    }
+
+    function unlockUI() {
+        $('body').removeClass('ui-lock');
+    }
+
+    function isBlocked() {
+        return isAnimating;
+    }
+
+    $(document).ready(function() {
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        window.scrollTo(0,0);
+
+		//드래그, 우클릭 방지
+		blockSourceView();
+		initDate();
+        ppeumAgreement();
+
+        $('.overlay').hide();
+        $('.popup-confirm').hide();
+
+	});
+
+    $('input[name="tadd1"]').on('change', function () {
+        if ($(this).val() === "아니오") {
+            $('.overlay, .popup-confirm').show();
+        }
+    });
+
+    // popup-confirm > 확인 버튼
+    $('.btn-confirm').on('click', function () {
+        $('.overlay, .popup-confirm').hide();
+
+        // ✅ 선택 초기화
+        $('input[name="tadd1"]').prop('checked', false);
+        $('.q_select label').removeClass('on');
+    });
+
+    // popup-confirm > 나가기 버튼
+    $('.btn-out').on('click', function(){
+        $('.overlay, .popup-confirm').hide();
+
+        $('.page').hide();   // 다른 페이지 숨기기
+        resetPage1();        // ⭐ GSAP 상태 초기화
+        show1pg();           // 애니메이션 다시 실행
+
+        $('input[name="tadd1"]').prop('checked', false);
+        $('.q_select label').removeClass('on');
+        $(document).scrollTop(0);
+    });
+
+    function resetPage1() {
+        // page-1 자체
+        gsap.set('#page-1', { display: 'block', opacity: 1 });
+
+        // 내부 요소들 원위치
+        gsap.set('#page-1 .poster_01, #page-1 .poster_02, #page-1 .agBox', {
+            x: 0,
+            y: 0,
+            opacity: 1,
+            clearProps: 'transform'
+        });
+    }
 
     //개인정보처리방침
     var modal2 = document.getElementById("modal2");
@@ -596,79 +667,6 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                 - 경찰청 사이버안전국 / police.go.kr / 국번없이 182 
             `);
     });
-
-
-    let isAnimating = false; // 애니메이션 상태 플래그
-
-    function lockUI() {
-        $('body').addClass('ui-lock');
-    }
-
-    function unlockUI() {
-        $('body').removeClass('ui-lock');
-    }
-
-    function isBlocked() {
-        return isAnimating;
-    }
-
-    $(document).ready(function() {
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
-
-        window.scrollTo(0,0);
-
-		//드래그, 우클릭 방지
-		blockSourceView();
-		initDate();
-        ppeumAgreement();
-
-        $('.overlay').hide();
-        $('.popup-confirm').hide();
-
-	});
-
-    $('input[name="tadd1"]').on('change', function () {
-        if ($(this).val() === "아니오") {
-            $('.overlay, .popup-confirm').show();
-        }
-    });
-
-    // popup-confirm > 확인 버튼
-    $('.btn-confirm').on('click', function () {
-        $('.overlay, .popup-confirm').hide();
-
-        // ✅ 선택 초기화
-        $('input[name="tadd1"]').prop('checked', false);
-        $('.q_select label').removeClass('on');
-    });
-
-    // popup-confirm > 나가기 버튼
-    $('.btn-out').on('click', function(){
-        $('.overlay, .popup-confirm').hide();
-
-        $('.page').hide();   // 다른 페이지 숨기기
-        resetPage1();        // ⭐ GSAP 상태 초기화
-        show1pg();           // 애니메이션 다시 실행
-
-        $('input[name="tadd1"]').prop('checked', false);
-        $('.q_select label').removeClass('on');
-        $(document).scrollTop(0);
-    });
-
-    function resetPage1() {
-        // page-1 자체
-        gsap.set('#page-1', { display: 'block', opacity: 1 });
-
-        // 내부 요소들 원위치
-        gsap.set('#page-1 .poster_01, #page-1 .poster_02, #page-1 .agBox', {
-            x: 0,
-            y: 0,
-            opacity: 1,
-            clearProps: 'transform'
-        });
-    }
 
     // 첫번째 페이지
     function show1pg(){
