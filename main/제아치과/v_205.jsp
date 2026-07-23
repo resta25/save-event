@@ -537,16 +537,16 @@ pageEncoding="UTF-8"%>
                 </div>
             </div>
 
-            <div class="container">
-                <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div> -->
-                <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div> -->
-            </div>
-
             <div class="description footer">
                 <p id="event-period">이벤트 기간 :  <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
                 <span id="target">대상 : ${resVo.target}</span>
                 <p>시술 결과는개인에 따라 상이할 수 있으며, 치료방법에 따라 수가가 변동될 수 있습니다. </p>
-            </div>	
+            </div>
+            
+            <div class="container">
+                <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div> -->
+                <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.png"></div>
+            </div>
 
         <div class="overlay"></div>
         <div class="popup-valid">
