@@ -336,6 +336,8 @@ pageEncoding="UTF-8"%>
             </form>
         </div>
 
+        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div>
+
         <div id="modal2" class="modal modal2" style="display: none;">
             <div class="modal-content">
                 <span class="close" id="close">×</span>
