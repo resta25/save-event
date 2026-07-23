@@ -331,7 +331,7 @@ pageEncoding="UTF-8"%>
                 <span class="target">대상 : ${resVo.target}</span>
                 <p>시술 결과는개인에 따라 상이할 수 있으며, 치료방법에 따라 수가가 변동될 수 있습니다.</p>
             </div>
-            <!-- <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div> -->
+            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div>
             <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.png"></div>
         </div>
         
