@@ -28,6 +28,8 @@ pageEncoding="UTF-8"%>
     }
     .subscribe .content .date {text-align: right;}
 
+    .container.bottom {width: 100%;}
+
 @media screen and (max-width: 768px){
     .subscribe {padding: 3% 2%; height: 150px;}
     .subscribe .content {padding: 0.5rem 0.7rem;}
@@ -160,6 +162,7 @@ pageEncoding="UTF-8"%>
         </div>
         <img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg" alt="landing_top" class="landing_top">
 
+
         <div class="wrap_form">
             <form class="wrap_curd" id="form-2" method="POST" accept-charset="utf-8">
                 <ul class="layout_add01 question">
@@ -238,6 +241,11 @@ pageEncoding="UTF-8"%>
                 <input type="hidden" id="objectItems" 	name="objectItems" 	value="${resVo.objectItems}"/>
                 <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
             </form>
+        </div>
+        
+        <div class="container bottom">
+            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.jpg"></div>
+            <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.jpg"></div>
         </div>
         
         <div id="modal2" class="modal modal2" style="display: none;">
