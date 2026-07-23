@@ -133,9 +133,9 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     .question_box .question span {font-size: 2.5rem;}
     /* #page-3 .question_box .question, #page-3 .question_box .question span {font-size: 2rem;} */
 
-    .popup_box .inner .popup_title {font-size: 2.5rem;}
+    .popup_box .inner .popup_title {font-size: 2.3rem;}
     .question_box .q_select label {width: 70%;}
-    .form-group {padding: 2% 3.125rem 2%;}
+    .form-group {padding: 2% 3.125rem 0;}
     #page_landing_c input:not( [type="checkbox"], [type="radio"], [type="range"] ), select {
         padding: 0.5rem 1rem;
         width: 100%;
@@ -146,6 +146,8 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
     .form .submit {width: 85%;}
     .question_box .q_select,
     #page-3 .question_box .question {padding: 0;}
+
+    #page-2 .question_box .q_select {padding: 0;}
 
 }
 
