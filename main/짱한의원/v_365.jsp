@@ -20,8 +20,7 @@ pageEncoding="UTF-8"%>
 	.content {padding: 2rem 1rem;}
 	.content + .content {border-top: 0.1rem solid #ddd;}
 	.content * {padding: 0.8rem 1rem;}
-    .wrap_form .agBox {margin: 1.7rem auto 0.7rem;}
-    #page_landing_c .wrap_curd span {color: #fff; font-family: 'Elice DX Neolli';}
+    .wrap_form .agBox span {margin: 1.7rem auto 0.7rem !important; color: #fff;}
     .container {display: block; width: 100%; height: 100%;}
     #page_landing_c .wrap_curd label {display: block; font-size: 2.2rem;}
 
@@ -77,7 +76,8 @@ pageEncoding="UTF-8"%>
         border-radius: 0;
     }
 
-    .wrap_form .description p, .wrap_form .description .ad_txt {color: #fff;}
+    .wrap_form .description p, .wrap_form .description .ad_txt, .wrap_form .description span {color: #fff; font-family: 'Elice DX Neolli';}
+
     .description + .img-area {width: 90%; margin: 3rem auto 0;}
 
     .db_btn, .submit input[type="image"] {width: 50%; animation: pulsating 0.8s linear infinite;
@@ -215,7 +215,7 @@ pageEncoding="UTF-8"%>
                     <div class="description">
                         <p id="event-period"></p>
                         <span class="target">대상 : ${resVo.target}</span>
-                        <div class="ad_txt">안심하세요! ${resVo.agent}에서는 고객님의 소중한 개인정보를 상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
+                        <div class="ad_txt">안심하세요! 본페이지에서는 고객님의 소중한 개인정보를 상담 외 어떠한 목적으로도 사용하지 않습니다.</div>
                     </div>
                 </div>
 
