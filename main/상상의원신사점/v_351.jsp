@@ -50,7 +50,7 @@ pageEncoding="UTF-8"%>
     /* 실시간 신청 현황 */
     .subscribe_container {width: 100%; background: #1b0008; padding: 0 4.5rem 4rem;}
     .subscribe_bg {background: #f8f8f8; padding: 2.75% 3.5%; border-radius: 20px}
-    .subscribe_container .title {display: flex; align-items: center; justify-content: center; padding: 3.5rem 0 0; column-gap: 1.2rem; font-size: 3.5rem; text-align: center; color: #000; font-weight: 700; margin-bottom: 2.8rem; font-family: 'Gmarket Sans';}
+    .subscribe_container .title {display: flex; align-items: center; justify-content: center; padding: 3.5rem 0 0; column-gap: 1.2rem; font-size: 5.5rem; text-align: center; color: #fff; font-weight: 700; margin-bottom: 2.8rem; font-family: 'Gmarket Sans';}
     .subscribe {height: 185px; overflow: hidden; background-color: #f8f8f8; padding: 0;}
     .subscribe .content {display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0rem; border-bottom: 0;}
     .subscribe .content > div {font-size: 1.35rem; width: calc(100% / 3); text-align: center; font-weight: 600;}
@@ -119,7 +119,7 @@ pageEncoding="UTF-8"%>
     .subscribe_bg {padding: 3.75% 3.5%;}
     .content * {padding: 8px 0px;}
     .content .text {padding: 4px 0;}
-     .subscribe_container .title {width: 70%; margin: 0 auto 1.5rem; padding: 2rem 0 0; font-size: 1.8rem;}
+     .subscribe_container .title {width: 70%; margin: 0 auto 1.5rem; padding: 2rem 0 0; font-size: 2.8rem;}
 }
 @media screen and (max-width: 640px){
 }
@@ -252,8 +252,9 @@ pageEncoding="UTF-8"%>
             
         <div class="subscribe_container">
             <div class="title img-area">
-                <div class="img-area icon-img"><img src="//static.savemkt.com/event/v_${eventSeq}/icon_01.gif"></div>
-                <div class="img-area text-img"><img src="//static.savemkt.com/event/v_${eventSeq}/sub_title.png"></div>
+                <!-- <div class="img-area icon-img"><img src="//static.savemkt.com/event/v_${eventSeq}/icon_01.gif"></div>
+                <div class="img-area text-img"><img src="//static.savemkt.com/event/v_${eventSeq}/sub_title.png"></div> -->
+                실시간 신청현황
             </div>
             <div class="subscribe_bg">
                 <div class="subscribe" data-limit="10"></div>
