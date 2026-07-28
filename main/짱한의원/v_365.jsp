@@ -53,9 +53,9 @@ pageEncoding="UTF-8"%>
 
     /* 실시간 신청 현황 */
     .subscribe_container {width: 100%; background: #1b0008; padding: 0 4.5rem 4rem;}
-    .subscribe_bg {background: #f8f8f8; padding: 2.75% 3.5%; border-radius: 20px}
+    .subscribe_bg {background: #fff; padding: 2.75% 3.5%; border-radius: 20px}
     .subscribe_container .title {display: flex; align-items: center; justify-content: center; padding: 3.5rem 0 0; column-gap: 1.2rem; font-size: 5.5rem; text-align: center; color: #fff; font-weight: 700; margin-bottom: 2.8rem; font-family: 'Gmarket Sans';}
-    .subscribe {height: 185px; overflow: hidden; background-color: #f8f8f8; padding: 0;}
+    .subscribe {height: 185px; overflow: hidden; background-color: #fff; padding: 0;}
     .subscribe .content {display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0rem; border-bottom: 0;}
     .subscribe .content > div {font-size: 1.35rem; width: calc(100% / 3); text-align: center; font-weight: 600;}
     .subscribe .content .text {border: 1px solid #333f50; color: #333f50; width: 20%; max-width: 150px; text-align: center; border-radius: 999px; font-weight: 700;}
