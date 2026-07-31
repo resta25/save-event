@@ -238,6 +238,8 @@ pageEncoding="UTF-8"%>
                 <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
             </form>
         </div>
+
+        <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/event_main_02.jpg"></div>
         
         <!-- <div class="subscribe_container">
             <div class="title">
