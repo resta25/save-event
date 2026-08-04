@@ -364,13 +364,13 @@ pageEncoding="UTF-8"%>
         </div>
     </main>
 </body>
-<!--공통_script start --><script src="/js/agreement.js"></script><!--공통_script end-->
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
+<!--공통_script start --><script src="/js/agreement.js"></script><!--공통_script end-->
 <script>
     $(document).ready(function(){
         blockSourceView();//드래그, 우클릭 방지
         initDate();
-        jineyeAgreement();
+        jineyeAgreement(); 
 
         $('.btn-agree-toggle').on('click', function() {
             $('input[name="agBox"]').prop('checked', true);
