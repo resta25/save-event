@@ -278,16 +278,6 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
 </body>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
 <script>
-
-    const $popup = $('.popup_box');
-    const $overlay = $('.overlay');
-    const $agreeModal = $('.agreeModalBox');
-    const $audio = $('#location');
-
-    var agree = document.querySelectorAll(".agBox .agree_txt");
-    var modal2 = document.getElementById("modal2");
-	var close2 = document.getElementById("close");
-
     if (typeof window.thisAgreementWithText !== 'function') {
         window.thisAgreementWithText = function(policyText, selector) {
             var targetSelector = selector || '.modal-content p';
@@ -296,7 +286,7 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
             modal.css('white-space', 'pre-line');
         };
     }
-
+    
     $(document).ready(function(){
         blockSourceView();//드래그, 우클릭 방지
         initDate();
@@ -441,6 +431,15 @@ padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset
             - 경찰청 사이버안전국 / police.go.kr / 국번없이 182
             `);
     });
+
+    const $popup = $('.popup_box');
+    const $overlay = $('.overlay');
+    const $agreeModal = $('.agreeModalBox');
+    const $audio = $('#location');
+
+    var agree = document.querySelectorAll(".agBox .agree_txt");
+    var modal2 = document.getElementById("modal2");
+	var close2 = document.getElementById("close");
 
     agree.forEach(ag => ag.onclick = function () {
 	    modal2.style.display = "block";
