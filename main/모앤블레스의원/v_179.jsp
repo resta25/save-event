@@ -349,6 +349,7 @@ pageEncoding="UTF-8"%>
     </main>
 </body>
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
+<!--공통_script start --><script src="/js/agreement.js"></script><!--공통_script end-->
 <script>
     $(document).ready(function(){
         initDate();/* 기간항목 start */
