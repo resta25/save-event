@@ -369,13 +369,13 @@ pageEncoding="UTF-8"%>
 </body>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<!--공통_script start --><script src="/js/agreement.js"></script><!--공통_script end-->
 <!--공통_script start --><script src="/js/form-event.js"></script><!--공통_script end-->
+<!--공통_script start --><script src="/js/agreement.js"></script><!--공통_script end-->
 <script>
     $(document).ready(function(){
         blockSourceView();//드래그, 우클릭 방지
         initDate();
-        saleupAgreement2();
+        seoJaegeolAgreement();
 
         //신청현황 리스트
         getComment(`${eventSeq}`);

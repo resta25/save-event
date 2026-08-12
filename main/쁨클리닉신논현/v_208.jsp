@@ -373,6 +373,7 @@ html{
         blockSourceView();//드래그, 우클릭 방지
 		getComment(`${eventSeq}`);
 
+        //신논현점 = 강남본점
         ppeumNonhyeonAgreement();
     });
 	
