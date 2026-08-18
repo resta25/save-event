@@ -31,7 +31,7 @@ pageEncoding="UTF-8"%>
     .schedule-box {margin-top: 6.2rem; padding: 4.4rem 8.1rem 5.1rem; border-radius: 2.5rem; color: #fff; background: #212121;}
     .schedule-box .img-area.title {width: 100%; margin-bottom: 5.4rem;}
     .date-select {display: flex; align-items: center; justify-content: center; column-gap: 4.2rem;}
-    .date-select select {width: 100%; height: 11.2rem; line-height: 11.2rem; margin-left: 0; padding: .6rem; border: 0; border-radius: 2.5rem; color: #222; font-size: 5.3rem !important; font-weight: 700; text-align: center; background: #fff; font-family: 'Gmarket Sans' !important;}
+    .date-select select {width: 100%; height: 11.2rem; line-height: 11.2rem; margin-left: 0; padding: .6rem; border: 0; border-radius: 2.5rem; color: #222; font-size: 5.3rem !important; font-weight: 700; text-align: center; background: #fff; font-family: 'Gmarket Sans' !important; text-align: center;}
     .date-select span {font-size: 5.3rem !important; padding-top: 1rem; font-weight: 800; color: #fff; font-family: 'Gmarket Sans' !important;}
     .date-select select option:disabled {color: #c7c7c7;}
     .time-select {display: grid; grid-template-columns: repeat(5, 1fr); gap: 2.3rem 1rem; margin-top: 4.4rem;}
