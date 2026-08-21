@@ -83,6 +83,8 @@ pageEncoding="UTF-8"%>
 .page:not(#page-1) {width: 100%; margin: 0 auto; padding: 5.398% 5.5%; background-color: #fff;}
 .page#page-4 {padding-bottom: 5%;}
 .inner {box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.5); padding: 5%;}
+#page_landing_c .wrap_form {padding: 0 !important; border: none !important;}
+.wrap_form .table_box {width: 100% !important; padding: 0 !important;}
 
 /* 초기화 css */
 #page_landing_c main {max-width: unset;}
