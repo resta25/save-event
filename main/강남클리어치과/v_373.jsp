@@ -158,8 +158,23 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 .agreeModalBox .newAgreement h3 {margin: 1% 0; font-size: 11px;}
 .agreeModalBox .newAgreement ol li {line-height: 12px; font-size: 10px;}
 
-/* .full-height {height: calc(var(--vh, 1vh) * 100); height: 100dvh;} */
 
+/* 실시간 신청 현황 */
+.subscribe_container {width: 100%; background: #fff; padding: 0 2rem;}
+.subscribe_bg {background: #f8f8f8; padding: 3.75% 8.5%; border-radius: 20px}
+.subscribe_container .title {margin-top: 3rem; padding: 3.5rem 0 0; font-size: 3.5rem !important; text-align: center; color: #000; font-weight: 700; margin-bottom: 2.8rem; font-family: 'GangwonEducationTteontteon';}
+.subscribe_container .img-area {width: 40%; margin: 3% auto;}
+.subscribe {height: 53rem; padding: 2rem; overflow: hidden; background-color: #f8f8f8;}
+.subscribe .content {display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0rem; border-bottom: 1px solid rgba(28, 28, 28, 0.1);}
+.subscribe .content > div {font-size: 2rem; width: calc(100% / 4);}
+.subscribe .content > div.name {width: 15%; white-space: nowrap; overflow: hidden;}
+.subscribe .content > div.phone {width: 35%; text-align: center;}
+.subscribe .content .text {border: 1px solid #333f50; color: #333f50; width: 20%; max-width: 150px; text-align: center; border-radius: 999px; font-weight: 700;}
+.subscribe .content .text.color-bg {
+    background-color: #333f50;
+    color: #fff;
+}
+.subscribe .content .date {text-align: right;}
 
 @media screen and (max-width: 786px) {
     html {font-size: 1.5vw;}
@@ -278,10 +293,15 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                         <input type="hidden" id="objectName" 	name="objectName" 	value="${resVo.objectName}"/>
                     </form>
                 </div>
+
+                <div class="subscribe_container">
+                    <div class="title">현재까지 신청자</div>
+                    <div class="subscribe" data-limit="10"></div>
+                </div>
             </div>
 
+
             <div class="container">  
-                <!-------- 푸터 없는 랜딩입니다. 복사시 주의 !!!! -------->
                 <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.png"></div>	
                 <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.png"></div>	
             </div>
@@ -310,6 +330,9 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     $(document).ready(function(){
         blockSourceView();//드래그, 우클릭 방지
         initDate();
+
+        //신청현황 리스트
+        getComment(`${eventSeq}`);
         
         thisAgreementWithText(`
             개인정보처리방침
@@ -451,6 +474,43 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
             - 경찰청 사이버안전국 / police.go.kr / 국번없이 182
             `);
     });
+
+	function returnComment(resultData, meoreData){
+		$('.subscribe').each(function(idx,obj) {
+            
+            for(v in resultData) {
+                var data = resultData;
+                var reg = (data[v].regDate || '').trim();      // "08-21 09:59"
+                var parts = reg.split(/\s+/);                   // ["08-21", "09:59"]
+                var md = parts[0] || "";                        // "08-21"
+                var tm = parts[1] || "";   
+				var statusText = Math.random() < 0.5 ? '접수중' : '신청완료'; // 랜덤으로 '접수중' 또는 '접수완료' 선택
+				var backgroundClass = statusText === '신청완료' ? 'color-bg' : ''; // '접수완료'일 경우에만 클래스 추가
+				var html  = '<div class="content" data-id="'+ data[v].seq +'">';
+					html += '	<div class="name">'+ data[v].name +'</div>';
+					html += '	<div class="phone">'+ data[v].phone +'</div>';
+					html += '   <div class="text ' + backgroundClass + '">' + statusText + '</div>'; // 랜덤 텍스트 및 클래스 적용
+					html += '  <div class="date">'+ data[v].regDate +'</div>';
+					html += '</div>';
+				$(obj).append(html);
+			}
+            
+		});
+
+        if(resultData.length >= 10){
+            $('.subscribe_container').show();
+            return;
+        } else {
+            $('.subscribe_container').hide();
+            return;
+        }
+	}
+
+	setInterval(function(){
+        $('.subscribe .content:first').slideUp(function(){
+            $(this).show().parent().append(this)
+        })
+    },2000);
 
     var modal2 = document.getElementById("modal2");
 	var agree = document.querySelectorAll(".agBox .btn-agreement");
