@@ -220,7 +220,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     .question_container {border-width: 8px;}
     .question_container .sub-txt {font-size: 72% !important;}
 
-    .count_box {font-size: 2rem;}
+    .count_box {font-size: 1.5rem;}
     .question_container .sub-txt {font-size: 80%;}
     .form .legend {font-size: 135%;}
     .form .question, .form .user_name, .form .user_phone {padding: 15px 25px;}
