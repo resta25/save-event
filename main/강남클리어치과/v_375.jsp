@@ -67,7 +67,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 .count-txt {flex-shrink: 0; color: #ffde00; font-size: 100% !important; font-family: 'Gmarket Sans', sans-serif; font-weight: 500; line-height: 1;}
 
 /* 실시간 신청 현황 */
-.subscribe_container {width: 100%; background: #fff; padding: 0 4.5rem 4.5rem;}
+.subscribe_container {width: 100%; background: #fff; padding: 0 0 4.5rem;}
 .subscribe_bg {background: #f8f8f8; padding: 3.75% 8.5%; border-radius: 20px;}
 .subscribe_container .title {padding: 3.5rem 0 0; font-size: 3.5rem; text-align: center; color: #000; font-weight: 700; margin-bottom: 2.8rem;}
 .subscribe_container .img-area {width: 40%; margin: 3% auto;}
@@ -211,7 +211,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     .form .question:nth-child(1) .legend {flex: 0 0 55%;}
     .form .q_select,
     .form .inp {flex: 0 0 64%; gap: 5px;}
-    .form .inp {font-size: 13px;}
+    .form .inp {font-size: 100%;}
     .form .agBox {font-size: 100% !important;}
     .form .agBox a {margin-top: 0; white-space: nowrap;}
     .form .description .ad_txt {font-size: 12px;}
@@ -224,12 +224,24 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     .question_container .sub-txt {font-size: 80%;}
     .form .legend {font-size: 135%;}
     .form .question, .form .user_name, .form .user_phone {padding: 15px 25px;}
+
+    .subscribe_container .title {font-size: 2rem; margin-bottom: 2rem;}
+    .subscribe_bg {padding: 3.75% 3.5%;}
+    .subscribe .content > div {font-size: 1rem;}
+    .subscribe .content > div.name {width: 15%;}
+    .subscribe .content > div.phone {width: 33%;}
+    .subscribe .content > div.text {width: 20%;}
+    .subscribe .content > div.date {width: 28%;}
+
+    .subscribe {height: 350px;}
 }
 @media screen and (max-width: 395px) {
     .subscribe .content {padding: 0.5rem 0.2rem;}
     .form .legend {font-size: 110%;}
     .form .q_select label {font-size: 100%;}
     .form .agBox label span {font-size: 100%;}
+
+    .subscribe {height: 320px}
 }
 @media screen and (max-width: 375px) {
     .count_box {font-size: 1.5rem;}
