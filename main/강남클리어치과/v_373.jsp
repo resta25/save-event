@@ -38,7 +38,7 @@ main .page-title strong {color: #008d8f;}
 input:not( [type="checkbox"], [type="radio"], [type="range"] ), select { height: auto; padding: 0.8rem 1.5rem; text-align: center; border-radius: 0.5rem; font-size: 1.7rem; width: 100%;}
 input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border: none;}
 
-#wrap{max-width: 1080px; letter-spacing: -1px; font-family: 'noto sans kr', sans-serif; display: flex; flex-direction: column; background: #fff;}
+#wrap{max-width: 1080px; width: 100%; letter-spacing: -1px; font-family: 'noto sans kr', sans-serif; display: flex; flex-direction: column; background: #fff;}
 .form{flex-grow: 1;}
 .page:not(#page-1){display:none;}
 .pointColor{color: #005445;}
@@ -176,6 +176,9 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
 }
 .subscribe .content .date {text-align: right;}
 
+.container.footer {padding: 1.5rem; text-align: center; color: #606060; background-color: #373737;}
+.container.footer p, .container.footer span {color: #606060; font-size: inherit;}
+
 @media screen and (max-width: 786px) {
     html {font-size: 1.5vw;}
     .inner {padding: 6.8rem 4rem 14.3rem;}
@@ -200,6 +203,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     .question_box .q_select label .sel-item {height: 17rem; font-size: 3.8rem;}
 
     .form .description p, .form .description span, .form .description .ad_txt {font-size: 80%;}
+
+    .container.footer {font-size: 1.4rem;}
 }
 
 </style>
@@ -301,9 +306,13 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
             </div>
 
 
-            <div class="container">  
-                <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/notice.png"></div>	
-                <div class="img-area"><img src="//static.savemkt.com/event/v_${eventSeq}/footer.png"></div>	
+            <div class="container footer description">  
+                <p>
+                    정가: 55만원 -> 이벤트가 : 29만원<br />
+                    <span id="event-period">이벤트 기간 :  <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
+                    부작용 안내: 시림ㆍ이물감 및 드물게 탈락 가능성(개인차 있음)<br />
+                    시술 결과는 개인에 따라 상이할 수 있으며, 치료 방법에 따라 추가가 발생될 수 있습니다.<br />
+                </p>
             </div>
         </div>
 
