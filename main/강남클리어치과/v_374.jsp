@@ -222,7 +222,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                         <section class="page" id="page-2">
                             <div class="img-area progress"><img src="//static.savemkt.com/event/v_${eventSeq}/progress_02.png"></div>
                             <div class="question_box">
-                                <div class="question"><span class="lg-txt"><strong>이름과 연락처</strong>를 남겨주시면</span><span class="sm-txt"><strong>무삭제 라미네이트</strong>를 <strong>29만원</strong>에 해드려요!</span></div>
+                                <div class="question"><span class="lg-txt"><strong>이름과 연락처</strong>를 남겨주시면</span><span class="sm-txt"><strong>최소삭제 라미네이트</strong>를 <strong>29만원</strong>에 해드려요!</span></div>
                                 <div class="q_select">
                                     <label><input type="radio" name="tadd2" value="확인했습니다"><img src="//static.savemkt.com/event/v_${eventSeq}/select_03.png" alt=""></label>
                                     <label><input type="radio" name="" value="" onclick="alert('본 이벤트의 혜택 대상자가 아닙니다.')"><img src="//static.savemkt.com/event/v_${eventSeq}/select_04.png" alt=""></label>
@@ -233,7 +233,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                         <section class="page" id="page-3">
                             <div class="img-area progress"><img src="//static.savemkt.com/event/v_${eventSeq}/progress_03.png"></div>
                             <div class="question_box">
-                                <div class="question"><span class="sm-txt"><strong>무삭제 라미네이트</strong>를 <strong>29만원</strong>에 해드려요!</span><span class="lg-txt"><strong>이름과 연락처</strong>를 적어주세요</span></div>
+                                <div class="question"><span class="sm-txt"><strong>최소삭제 라미네이트</strong>를 <strong>29만원</strong>에 해드려요!</span><span class="lg-txt"><strong>이름과 연락처</strong>를 적어주세요</span></div>
                             </div>
                             <div class="form-group">
                                 <div class="item">
@@ -284,11 +284,12 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
             <div class="container">  
                 <div class="img-area notice-area">
                     <div class="description">
+                        <p>정가 : 55만원 → 이벤트가 : 29만원</p>
                         <p id="event-period">이벤트 기간 :  <?=date("Y년 m월 01일")." ~ ".date("Y년 m월 t일 까지")?></p>
-                        <span>대상 : ${resVo.target}</span>
+                        <!-- <span>대상 : ${resVo.target}</span> -->
                         <p>
-                            시술 결과는 개인에 따라 상이할 수 있으며, 치료방법에 따라 추가가 발생될 수 있습니다.<br />
-                            부작용 안내 : 시림·이물감 및 드물게 탈락 가능성(개인차 있음) | 정가: 55만원
+                            부작용 안내 : 시림 · 이물감 및 드물게 탈락 가능성(개인차 있음)<br />
+                            시술 결과는 개인에 따라 상이할 수 있으며, 치료 방법에 따라 추가가 발생될 수 있습니다.
                         </p>
                     </div>
                 </div>	
