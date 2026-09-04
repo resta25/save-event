@@ -171,8 +171,8 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
     .progress {margin: 0 auto 10.2rem;}
     .question_box .question {margin-bottom: 4.6rem; font-size: 3.6rem;}
 
-    .question_box .question .lg-txt {font-size: 4.8rem;}
-    .question_box .question .sm-txt {font-size: 3.6rem;}
+    .question_box .question .lg-txt {font-size: 4.6rem;}
+    .question_box .question .sm-txt {font-size: 3.4rem;}
     .question_box .question span + span {margin-top: 1.2rem;}
 
     .form-group .item input {padding: 2rem 2rem 1.5rem !important; font-size: 4rem; border-radius: 1.6rem;}
