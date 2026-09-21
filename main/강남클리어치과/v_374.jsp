@@ -211,7 +211,7 @@ input:not( [type="checkbox"], [type="radio"], [type="range"] ):read-only {border
                         <section class="page" id="page-1">
                             <div class="img-area progress"><img src="//static.savemkt.com/event/v_${eventSeq}/progress_01.png"></div>
                             <div class="question_box">
-                                <div class="question"><strong>라미네이트</strong>나 <strong>치아교정</strong>이 필요하신가요?</div>
+                                <div class="question"><strong>라미네이트</strong>가 필요하신가요?</div>
                                 <div class="q_select">
                                     <label><input type="radio" name="tadd1" value="예"><img src="//static.savemkt.com/event/v_${eventSeq}/select_01.png" alt=""></label>
                                     <label><input type="radio" name="" value="아니오" onclick="alert('본 이벤트의 혜택 대상자가 아닙니다.')"><img src="//static.savemkt.com/event/v_${eventSeq}/select_02.png" alt=""></label>
