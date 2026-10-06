@@ -94,7 +94,7 @@ pageEncoding="UTF-8"%>
     #modal2 .modal-content p {max-height: 55vh; overflow-y: auto; margin: 0; color: #555; font-size: 1.4rem; line-height: 1.65; text-align: left; white-space: pre-line;} */
 
     @media screen and (max-width: 720px) {
-        .formGroup {margin-top: 7.5rem;}
+        .formGroup {margin-top: 2.5rem;}
 
         #page_landing_c .wrap_curd .q_select label span {font-size: 2.7rem; padding-left: 3.5rem;}
         #page_landing_c .wrap_curd .q_select input[type="checkbox"] + span:before, #page_landing_c .wrap_curd .q_select input[type="radio"] + span:before {width: 2.1rem; height: 2.1rem;}
